@@ -1,0 +1,6 @@
+.*
+*~
+*#
+kanji_linux/Makefile
+moc_*
+*.ui
