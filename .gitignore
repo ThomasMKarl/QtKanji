@@ -1,6 +1,14 @@
 .*
 *~
 *#
-kanji_linux/Makefile
+Makefile
 moc_*
 *.ui
+*.o
+*.a
+*.so
+*.lib
+*.dll
+bin/linux/qtkanji
+bin/windows/qtkanji.exe
+doc/*
