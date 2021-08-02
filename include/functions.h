@@ -9,7 +9,8 @@
 namespace QtKanji {
   
 std::vector<std::string> explode(const std::string &delimiter, const std::string &string);
-
+void explode(const std::string &delimiter, const std::string &string, std::vector<std::string> &result);
+void shuffle(std::vector<std::string> &first, std::vector<std::string> &second, std::vector<std::string> &third);
 std::vector<unsigned int> convertStringsToIntegers(const std::vector<std::string> &strings);
 
 template<typename T>

@@ -11,6 +11,7 @@
 #include <QApplication>
 #include <QPainter>
 #include <QCheckBox>
+#include <QClipboard>
 
 #include <string>
 #include <fstream>

@@ -7,6 +7,7 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
 {
   successes = successes_;
   failures = failures_;
+  randId = failures + successes;
   dataHandler = std::make_shared<DataHandler>(dataHandler_);
   layout = std::make_unique<QGridLayout>();
  
@@ -16,7 +17,7 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
   setFont(std::move(textfont));
 
   setWindowTitle("QtKanji example #"
-		 + QString::number(dataHandler->indexContainer.size()+1)
+		 + QString::number(randId+1)
 		 + " of "
 		 + QString::number(dataHandler->dataFurigana.size()));
   setWindowIcon(QIcon("kanji.ico"));
@@ -31,19 +32,11 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-  randId = rand()%dataHandler->dataFurigana.size();
-  if(dataHandler->indexContainer.size() == dataHandler->dataFurigana.size())
+  if(randId == dataHandler->dataFurigana.size())
   {
     showResult(*this);
     return;
   }
-
-  while(contains(dataHandler->indexContainer, randId)
-	&& dataHandler->indexContainer.size()
-	!= dataHandler->dataFurigana.size())
-    randId = rand()%dataHandler->dataFurigana.size();
-
-  dataHandler->indexContainer.push_back(randId);
   
   if(dataHandler->fromEngToJap)
   {
@@ -56,6 +49,7 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
       (QString::fromStdString("Kanji: "), this);
     Kanji2 = std::make_unique<QLabel>
       (QString::fromStdString(dataHandler->dataKanji[randId]), this);
+    layout->addWidget(Kanji.get(), 2,0);
     layout->addWidget(Kanji2.get(),2,1);
   }
   else
@@ -64,6 +58,7 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
       (QString::fromStdString("Furigana: "), this);
     Furigana2 = std::make_unique<QLabel>
       (QString::fromStdString(dataHandler->dataFurigana[randId]), this);
+    layout->addWidget(Furigana.get(), 1,0);
     layout->addWidget(Furigana2.get(),1,1);
 
     displayKanji = std::make_unique<QLineEdit>(this);
@@ -76,6 +71,8 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
     (QString::fromStdString("Translation: "), this);
   English2 = std::make_unique<QLabel>
     (QString::fromStdString(dataHandler->dataEnglish[randId]), this);
+  layout->addWidget(English.get(),3,0);
+  layout->addWidget(English2.get(),3,1);
 
   Success = std::make_unique<QLabel>("Success!", this);
   Failure = std::make_unique<QLabel>("Failure!", this);
@@ -94,10 +91,6 @@ QtKanji::Example::Example(DataHandler &dataHandler_,
   layout->addWidget(continueButton.get(),1,2);
   continueButton->hide();
 
-  layout->addWidget(Furigana.get(),1,0);
-  layout->addWidget(Kanji.get(),2,0);
-  layout->addWidget(English.get(),3,0);
-  layout->addWidget(English2.get(),3,1);
 
   setLayout(layout.get());
 }
@@ -126,9 +119,9 @@ void QtKanji::Example::submitButtonClicked()
 
 void QtKanji::Example::continueButtonClicked()
 {
-    Example *ex = new Example(*dataHandler.get(), failures, successes);
-    this->close();
-    ex->show();
+  Example *ex = new Example(*dataHandler.get(), successes, failures);
+  this->close();
+  ex->show();
 }
 
 void QtKanji::Example::showSuccess()

@@ -6,6 +6,7 @@
 #include "datahandler.h"
 #include "examplewindow.h"
 #include "flashcard.h"
+#include "table.h"
 
 
 
@@ -17,9 +18,12 @@ class MainWindow : public QWidget
  public:
   static MainWindow createMainWindow(QWidget *parent = 0) {return MainWindow{parent};}
 
+  bool examplesAreToRandomize() {return randomize;}
+
   std::unique_ptr<QLineEdit> displayLowerLimit{}, displayUpperLimit{};
   std::unique_ptr<QLabel> lowerLimit{}, upperLimit{}, dataFail{}, cardboxFail{};
-  std::unique_ptr<QPushButton> signButton{}, cardboxButton{}, exampleButton{}, engjapButton{}, japengButton{};
+  std::unique_ptr<QPushButton> signButton{}, cardboxButton{}, exampleButton{}, engjapButton{}, japengButton{}, printButton{};
+  std::shared_ptr<QCheckBox> randomizeBox{};
   std::unique_ptr<QGridLayout> layout{};
   std::shared_ptr<Boxes> boxes{};
   std::shared_ptr<DataHandler> dataHandler{};
@@ -30,12 +34,17 @@ class MainWindow : public QWidget
   void exampleButtonClicked();
   void  engjapButtonClicked();
   void  japengButtonClicked();
+  void   printButtonClicked();
   void           boxChecked();
+  void     randomizeChecked();
 
  private:
   explicit MainWindow(QWidget *parent = 0);
   void startFlashcardWindow(bool fromCardbox);
   void startExampleWindow();
+  void printExamples();
+
+  bool randomize{false};
 };
 
 template <typename W>

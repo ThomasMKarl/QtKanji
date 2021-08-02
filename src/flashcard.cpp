@@ -1,4 +1,6 @@
 #include "flashcard.h"
+#include "table.h"
+
 
 QtKanji::Flashcard::Flashcard(DataHandler &dataHandler_,
 		              unsigned int successes_,
@@ -14,6 +16,8 @@ QtKanji::Flashcard::Flashcard(DataHandler &dataHandler_,
   successes = successes_;
   failures = failures_;
   boxes = std::make_shared<Boxes>(boxes_);
+
+  
   layout = std::make_unique<QGridLayout>();
  
   QFont textfont{};
@@ -115,10 +119,10 @@ void QtKanji::Flashcard::submitButtonClicked()
 
 void QtKanji::Flashcard::continueButtonClicked()
 {
-  Flashcard *flashcard = new Flashcard(*dataHandler.get(),
-				       successes, failures,
-				       fromCardbox, removeFlag,
-				       *boxes.get());
+  Flashcard *flashcard = createFlashcardWindow(*dataHandler.get(),
+				               successes, failures,
+				               fromCardbox, removeFlag,
+				               *boxes.get());
   this->close();
   flashcard->show();
 }
@@ -308,6 +312,8 @@ void QtKanji::Flashcard::setFlashcardLayout()
 
 void QtKanji::Flashcard::drawFlashcard(std::vector<unsigned int> &list)
 {
+  srand(time(NULL));
+  
   while((contains(dataHandler->indexContainer, randId)
 	|| !contains(list, randId))
 	&& dataHandler->indexContainer.size()

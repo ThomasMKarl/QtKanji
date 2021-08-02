@@ -16,6 +16,7 @@ HEADERS += \
     include/flashcard.h \
     include/functions.h \
     include/datahandler.h \
+    include/table.h \
     include/mainwindow.h \
     include/headers.h
 
@@ -24,6 +25,7 @@ SOURCES += \
     src/flashcard.cpp \
     src/functions.cpp \
     src/datahandler.cpp \
+    src/table.cpp \
     src/mainwindow.cpp \
     src/main.cpp
     

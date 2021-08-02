@@ -12,3 +12,4 @@ moc_*
 bin/linux/qtkanji
 bin/windows/qtkanji.exe
 doc/*
+*.html

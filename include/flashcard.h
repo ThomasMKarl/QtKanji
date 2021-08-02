@@ -9,6 +9,9 @@
 
 
 namespace QtKanji {
+
+class Table;
+  
 class Flashcard : public QWidget
 {
   Q_OBJECT
@@ -26,7 +29,7 @@ class Flashcard : public QWidget
 			  fromCardbox_, removeFlag_,
 			  boxes_,
 			  parent};}
-    
+  
   bool fromCardbox{false};
   int removeFlag{0};
   unsigned int randId{0};

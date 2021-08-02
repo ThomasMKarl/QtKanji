@@ -20,6 +20,10 @@ bool QtKanji::DataHandler::getLimits(MainWindow &mainwindow)
 
 bool QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
 {
+  dataFurigana.clear();
+  dataKanji.clear();
+  dataEnglish.clear();
+    
   std::string lowerLimitString =
     std::to_string(mainwindow.dataHandler->lowerLimit);
   std::string upperLimitString =
@@ -41,18 +45,21 @@ bool QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
        linedata <= upperLimitString)
     {
       std::getline(exampleData, linedata, '\n');
-      dataFurigana = explode(", ", linedata);
-      truedataFurigana = dataFurigana;
+      explode(", ", linedata, dataFurigana);
 
       std::getline(exampleData, linedata, '\n');
-      dataKanji = explode(", ", linedata);
-      truedataKanji = dataKanji;
+      explode(", ", linedata, dataKanji);
 
       std::getline(exampleData, linedata, '\n');
-      dataEnglish = explode(", ", linedata);
+      explode(", ", linedata, dataEnglish);
     }
   }
-
+  
+  if(mainwindow.examplesAreToRandomize()) shuffle(dataFurigana, dataKanji, dataEnglish);
+  
+  truedataFurigana = dataFurigana;
+  truedataKanji = dataKanji;
+  
   return true;
 }
 
