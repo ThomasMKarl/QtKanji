@@ -8,12 +8,14 @@ QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 6): QT += widgets
 
-TARGET = bin/linux/qtkanji
+TARGET = bin/qtkanji
 TEMPLATE = app
+RC_ICONS = kanji.ico
 
 HEADERS += \
     include/examplewindow.h \
-    include/flashcard.h \
+    include/flashcardwindow.h \
+    include/hadamitzkywindow.h \
     include/functions.h \
     include/datahandler.h \
     include/table.h \
@@ -22,7 +24,8 @@ HEADERS += \
 
 SOURCES += \
     src/examplewindow.cpp \
-    src/flashcard.cpp \
+    src/flashcardwindow.cpp \
+    src/hadamitzkywindow.cpp \
     src/functions.cpp \
     src/datahandler.cpp \
     src/table.cpp \

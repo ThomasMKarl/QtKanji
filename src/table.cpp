@@ -1,9 +1,9 @@
 #include "table.h"
 
 QtKanji::Table::Table(QWidget *parent): QWidget(parent)
-{  
-  layout = std::make_unique<QGridLayout>();
-  
+{
+  move(700,0);
+    
   QFont textfont{};
   textfont.setPointSize(15);
   textfont.setBold(false);
@@ -11,39 +11,76 @@ QtKanji::Table::Table(QWidget *parent): QWidget(parent)
   setWindowTitle("QtKanji Table");
   setWindowIcon(QIcon("kanji.ico"));
   
-  std::string linedata{};
-  std::ifstream kanjiData{"kanjidb.dat"};
-  if(!kanjiData) return;
-  while(!kanjiData.eof())
+  Coord coord{};
+  for(unsigned int index = 0; index < NUMBER_OF_KANJI; ++index)
   {
-    kanjiData.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::getline(kanjiData, linedata, '\n');
-    tableData.push_back(linedata);
+    coord = getCoordinate(index);
 
-    for(unsigned short int i = 0; i < 6; ++i)
-      kanjiData.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-  }
-  
-  unsigned int row, column;
-  for(unsigned int index = 0; index <= 143; ++index)
-  {
-    row = index/25;
-    column = index%25;
-
-    kanjiButtons.push_back(std::make_unique<QPushButton>(QString::fromStdString(tableData[index])));
-    kanjiButtons[index]->setFixedSize(25,25);
-    connect(kanjiButtons[index].get(),
+    kanjiButtons[index].setText( kanjiList[index] );
+    kanjiButtons[index].setFixedSize(25,25);
+    connect(&kanjiButtons[index],
 	    &QPushButton::clicked,
 	    this,
-	    [=](){ kanjiClicked(tableData[index]);});
-    layout->addWidget(kanjiButtons[index].get(),row,column);
+            [=](){ kanjiClicked(index); });
+	    layout.addWidget(&kanjiButtons[index],coord.row,coord.column);
   }
-
-  setLayout(layout.get());
+  
+  setLayout(&layout);
 }
 
-void QtKanji::Table::kanjiClicked(const std::string kanji)
+void QtKanji::Table::kanjiClicked(const unsigned int index)
 {
   QClipboard *clipboard = QGuiApplication::clipboard();
-  clipboard->setText(QString::fromStdString(kanji));
+  clipboard->setText( kanjiList[index] );
+  for(const auto & flashcard : flashcards)
+    flashcard->displaySign.setText( kanjiList[index] );
+}
+
+QtKanji::Coord QtKanji::Table::getCoordinate(unsigned int index)
+{
+  Coord coord{};
+  
+  if(index < 28)
+  {
+    coord.row    = 0;
+    coord.column = index;
+  }
+  else if(index < 100)
+  {
+    index -= 28;
+    coord.row    = index/12+1;
+    coord.column = index%12;
+  }
+  else if(index < 172)
+  {
+    index -= 100;
+    coord.row    = index/12+1;
+    coord.column = index%12+13;
+  }
+  else if(index < 244)
+  {
+    index -= 172;
+    coord.row    = index/12+7;
+    coord.column = index%12;
+  }
+  else if(index < 316)
+  {
+    index -= 244;
+    coord.row    = index/12+7;
+    coord.column = index%12+13;
+  }
+  else if(index < 460)
+  {
+    index -= 316;
+    coord.row    = index/24+26;
+    coord.column = index%24;
+  }
+  else if(index < 604)
+  {
+    index -= 460;
+    coord.row    = index/24+34;
+    coord.column = index%24;
+  }
+
+  return coord;
 }

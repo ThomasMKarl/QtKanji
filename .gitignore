@@ -13,3 +13,8 @@ bin/linux/qtkanji
 bin/windows/qtkanji.exe
 doc/*
 *.html
+object_script.qtkanji.Release
+qtkanji_plugin_import.cpp
+Makefile.Release
+kanji.pro.user
+qtkanji_resource.rc

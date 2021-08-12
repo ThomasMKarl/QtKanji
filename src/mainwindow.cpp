@@ -1,71 +1,96 @@
 #include "mainwindow.h"
+#include <iostream>
 
 QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 {
-  layout = std::make_unique<QGridLayout>();
+  move(0,0);
+  
+  //hadamitzkyWindow.show();
+  table = std::make_shared<Table>();
+  table->show();
   dataHandler = std::make_shared<DataHandler>();
-
+  //hadamitzkyWindow.radicalKanjiMap =
+  //std::vector<QtKanji::Uints> x = computeRadicalKanjiMap(dataHandler);
+  //std::cout << x[0][0] << std::endl;
+  //std::cout << "blub" << std::endl;
   QFont textfont{};
   textfont.setPointSize(15);
   textfont.setBold(false);
   setFont(std::move(textfont));
   setWindowTitle("QtKanji Mainwindow");
   setWindowIcon(QIcon("kanji.ico"));
-  
 
-  signButton = std::make_unique<QPushButton>("train kanji");
-  signButton->setFixedSize(150,30);
-  connect(signButton.get(),
+  addButtonsToLayout();
+  addBoxesToLayout();
+  addDisplaysToLayout();
+
+  dataFail.hide();
+  layout.addWidget(&dataFail,5,1);
+  
+  cardboxFail.hide();
+  layout.addWidget(&cardboxFail,5,1);
+
+  setLayout(&layout);
+}
+
+void QtKanji::MainWindow::addButtonsToLayout()
+{
+  signButton.setFixedSize(150,30);
+  connect(&signButton,
 	  &QPushButton::clicked,
 	  this,
 	  &MainWindow::signButtonClicked);
-  layout->addWidget(signButton.get(),4,0);
+  layout.addWidget(&signButton,4,0);
 
-  cardboxButton = std::make_unique<QPushButton>("cardbox");
-  cardboxButton->setFixedSize(150,30);
-  connect(cardboxButton.get(),
+  cardboxButton.setFixedSize(150,30);
+  connect(&cardboxButton,
 	  &QPushButton::clicked,
 	  this,
 	  &MainWindow::cardboxButtonClicked);
-  layout->addWidget(cardboxButton.get(),5,0);
+  layout.addWidget(&cardboxButton,5,0);
 	
-  exampleButton = std::make_unique<QPushButton>("train words");
-  exampleButton->setFixedSize(150,30);
-  connect(exampleButton.get(),
+  exampleButton.setFixedSize(150,30);
+  connect(&exampleButton,
           &QPushButton::clicked,
 	  this,
 	  &MainWindow::exampleButtonClicked);
-  layout->addWidget(exampleButton.get(),4,1);
-	
-  engjapButton = std::make_unique<QPushButton>("ふりがな - 漢字");
-  engjapButton->setFixedSize(150,30);
-  connect(engjapButton.get(),
+  layout.addWidget(&exampleButton,4,1);
+
+  engjapButton.setFixedSize(150,30);
+  connect(&engjapButton,
           &QPushButton::clicked,
 	  this,
 	  &MainWindow::engjapButtonClicked);
-  layout->addWidget(engjapButton.get(),1,0);
-  engjapButton->setCheckable(true);
-  engjapButton->setChecked(true);
+  layout.addWidget(&engjapButton,1,0);
+  engjapButton.setCheckable(true);
+  engjapButton.setChecked(true);
   
-  japengButton = std::make_unique<QPushButton>("漢字 - ふりがな");
-  japengButton->setFixedSize(150,30);
-  connect(japengButton.get(),
+  japengButton.setFixedSize(150,30);
+  connect(&japengButton,
           &QPushButton::clicked,
 	  this,
 	  &MainWindow::japengButtonClicked);
-  layout->addWidget(japengButton.get(),1,1);
-  japengButton->setCheckable(true);
+  layout.addWidget(&japengButton,1,1);
+  japengButton.setCheckable(true);
 
-  printButton = std::make_unique<QPushButton>("print examples");
-  printButton->setFixedSize(170,30);
-  connect(printButton.get(),
+  printButton.setFixedSize(190,30);
+  connect(&printButton,
           &QPushButton::clicked,
 	  this,
 	  &MainWindow::printButtonClicked);
-  layout->addWidget(printButton.get(),3,3);
+  layout.addWidget(&printButton,3,3);
 
+  searchButton.setFixedSize(150,30);
+  connect(&searchButton,
+          &QPushButton::clicked,
+	  this,
+	  &MainWindow::searchButtonClicked);
+  layout.addWidget(&searchButton,5,3);
+}
 
-  std::unique_ptr<Boxes> boxes_ = std::make_unique<Boxes>();
+void QtKanji::MainWindow::addBoxesToLayout()
+{
+  std::shared_ptr<Boxes> boxes_ = std::make_shared<Boxes>();
 
   boxes_->imiBox = std::make_unique<QCheckBox>("Hide Imi", this);
   boxes_->imiBox->setChecked(boxes_->hideImi);
@@ -74,14 +99,14 @@ QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 	  this,
 	  &MainWindow::boxChecked);
 
-  boxes_->kunBox = std::make_unique<QCheckBox>("Hide Kun", this);
+  boxes_->kunBox = std::make_unique<QCheckBox>("Hide Kun");
   boxes_->kunBox->setChecked(boxes_->hideKun);
   connect(boxes_->kunBox.get(),
           &QCheckBox::clicked,
 	  this,
 	  &MainWindow::boxChecked);
 
-  boxes_->onBox  = std::make_unique<QCheckBox>("Hide On" , this);
+  boxes_->onBox  = std::make_unique<QCheckBox>("Hide On");
   boxes_->onBox->setChecked(boxes_->hideOn);
   connect(boxes_->onBox.get(),
           &QCheckBox::clicked,
@@ -89,42 +114,35 @@ QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 	  &MainWindow::boxChecked);
 
   boxes = std::move(boxes_);
-  layout->addWidget(boxes->imiBox.get(),2,2);
-  layout->addWidget(boxes->kunBox.get(),3,2);
-  layout->addWidget(boxes->onBox.get(), 4,2);
+  layout.addWidget(boxes->imiBox.get(), 2,2);
+  layout.addWidget(boxes->kunBox.get(), 3,2);
+  layout.addWidget(boxes-> onBox.get(), 4,2);
 
-  randomizeBox = std::make_unique<QCheckBox>("randomize", this);
-  randomizeBox->setChecked(randomize);
-  connect(randomizeBox.get(),
+  randomizeBox.setChecked(randomize);
+  connect(&randomizeBox,
           &QCheckBox::clicked,
 	  this,
 	  &MainWindow::randomizeChecked);
-  layout->addWidget(randomizeBox.get(),2,3);
-		
-  displayLowerLimit = std::make_unique<QLineEdit>(this);
-  displayLowerLimit->setFixedSize(150,30);
-  lowerLimit = std::make_unique<QLabel>("from:", this);
-  displayLowerLimit->setText("317");
-  layout->addWidget(lowerLimit.get(),2,0);
-  layout->addWidget(displayLowerLimit.get(),2,1);
-     
-  displayUpperLimit = std::make_unique<QLineEdit>(this);
-  displayUpperLimit->setFixedSize(150,30);
-  upperLimit = std::make_unique<QLabel>("to:", this);
-  displayUpperLimit->setText("460");
-  layout->addWidget(upperLimit.get(),3,0);
-  layout->addWidget(displayUpperLimit.get(),3,1);
+  layout.addWidget(&randomizeBox,2,3);
+}
 
-  dataFail = std::make_unique<QLabel>("file error!", this);
-  dataFail->hide();
-  layout->addWidget(dataFail.get(),5,1);
-  
-  cardboxFail = std::make_unique<QLabel>("no cards in box.", this);
-  cardboxFail->hide();
-  layout->addWidget(cardboxFail.get(),5,1);
-  
-  
-  setLayout(std::move(layout).get());
+void QtKanji::MainWindow::addDisplaysToLayout()
+{
+  displayLowerLimit.setFixedSize(150,30);
+  displayLowerLimit.setText(QString::number(dataHandler->lowerLimit));
+  layout.addWidget(&lowerLimit,2,0);
+  layout.addWidget(&displayLowerLimit,2,1);
+     
+  displayUpperLimit.setFixedSize(150,30);
+  displayUpperLimit.setText(QString::number(dataHandler->upperLimit));
+  layout.addWidget(&upperLimit,3,0);
+  layout.addWidget(&displayUpperLimit,3,1);
+
+  search.setFixedSize(50,50);
+  QFont textfont{};
+  textfont.setPointSize(30);
+  search.setFont(std::move(textfont));
+  layout.addWidget(&search,4,3);
 }
 
 void QtKanji::MainWindow::signButtonClicked()
@@ -147,6 +165,11 @@ void QtKanji::MainWindow::exampleButtonClicked()
 void QtKanji::MainWindow::printButtonClicked()
 {
   printExamples();
+}
+
+void QtKanji::MainWindow::searchButtonClicked()
+{
+  searchKanji();
 }
 
 void QtKanji::MainWindow::boxChecked()
@@ -183,48 +206,60 @@ void QtKanji::MainWindow::randomizeChecked()
 
 void QtKanji::MainWindow::engjapButtonClicked()
 {
-  if(engjapButton->isChecked())
+  if(engjapButton.isChecked())
   {
     dataHandler->fromEngToJap = true;
-    japengButton->setChecked(false);
+    japengButton.setChecked(false);
   }
   else
   {
-    japengButton->setChecked(true);
+    japengButton.setChecked(true);
     japengButtonClicked();
   }
 }
 
 void QtKanji::MainWindow::japengButtonClicked()
 {
-  if(japengButton->isChecked())
+  if(japengButton.isChecked())
   {
     dataHandler->fromEngToJap = false;
-    engjapButton->setChecked(false);
+    engjapButton.setChecked(false);
   }
   else
   {
-    engjapButton->setChecked(true);
+    engjapButton.setChecked(true);
     engjapButtonClicked();
   }
 }
 
 void QtKanji::MainWindow::startFlashcardWindow(bool fromCardbox)
-{   
+{
   if(!dataHandler->getLimits(*this)) return;
-  if(!dataHandler->computeContainerData(*this, fromCardbox)) return;
+  if(!dataHandler->computeContainerData(*this) && fromCardbox) return;
+  cardboxFail.hide();
   dataHandler->indexContainer.clear();
   
   unsigned int successes{0}, failures{0};
   int removeFlag{0};
-  Flashcard *flashcard = Flashcard::createFlashcardWindow(*dataHandler.get(),
-			                                  successes, failures,
-			                                  fromCardbox, removeFlag,
-			                                  *boxes.get());
+  FlashcardWindow *flashcard =
+    FlashcardWindow::createFlashcardWindow(dataHandler,
+				           boxes,
+				           table,
+				           fromCardbox, removeFlag,
+				           successes, failures);
+  flashcard->show();
+}
 
-  Table *table = Table::createTable();
-
-  table->show();
+void QtKanji::MainWindow::startFlashcardWindow(unsigned int ID)
+{
+  dataHandler->indexContainer.clear();
+    
+  unsigned int successes{0}, failures{0};
+  int removeFlag{0};
+  FlashcardWindow *flashcard =
+    FlashcardWindow::createFlashcardWindow(dataHandler,
+				           table,
+				           ID);
   flashcard->show();
 }
 
@@ -234,7 +269,7 @@ void QtKanji::MainWindow::startExampleWindow()
   if(!dataHandler->computeExampleData(*this)) return;
 
   unsigned int successes{0}, failures{0};
-  Example *example = Example::createCardboxWindow(*dataHandler.get(), failures, successes);
+  ExampleWindow *example = ExampleWindow::createExampleWindow(dataHandler, failures, successes);
 
   example->show();
 }
@@ -248,7 +283,7 @@ void QtKanji::MainWindow::printExamples()
   std::ofstream furiganaFile{"examples_furigana.html"};
   if(!kanjiFile || !furiganaFile)
   {
-    dataFail->show();
+    dataFail.show();
     return;
   }
 
@@ -276,4 +311,22 @@ void QtKanji::MainWindow::printExamples()
 
   kanjiFile << footer;
   furiganaFile << footer;
+}
+
+void QtKanji::MainWindow::searchKanji()
+{
+  cardboxFail.hide();
+  
+  QString kanji = search.text();
+  const auto index = std::find(kanjiList.begin(), kanjiList.end(), kanji);
+  if(index == kanjiList.end())
+  {
+    dataFail.show();
+    return;
+  }
+  dataFail.hide();
+  
+  unsigned int Id = std::distance(kanjiList.begin(),index)+1;
+
+  startFlashcardWindow(Id);
 }

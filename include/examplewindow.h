@@ -8,45 +8,44 @@
 
 
 namespace QtKanji {
-class Example : public QWidget
+
+class ExampleWindow : public QWidget
 {
   Q_OBJECT
 
  public:
-  static Example* createCardboxWindow(DataHandler &dataHandler_,
-	                              unsigned int successes_,
-	                              unsigned int failures_,
-	                              QWidget *parent = 0)
-    {return new Example{dataHandler_, successes_, failures_, parent};}
+  static ExampleWindow* createExampleWindow(SharedData &dataHandler_,
+	                                    unsigned int successes_,
+	                                    unsigned int failures_,
+	                                    QWidget *parent = 0)
+    {return new ExampleWindow{dataHandler_, successes_, failures_, parent};}
   
-  std::unique_ptr<QLineEdit> displayFurigana{}, displayKanji{};
-  std::unique_ptr<QLabel>
-    Id{},
-    Furigana{}, Furigana2{},
-    English{}, English2{},
-    Kanji{}, Kanji2{},
-    Success{}, Success2{},
-    Failure{}, Failure2{},
-    Rate{}, Rate2{},
-    cards{};
-  std::unique_ptr<QPushButton> submitButton{}, continueButton{};
-  std::unique_ptr<QGridLayout> layout{};
-
-  unsigned int randId{0};
   unsigned int successes{0};
   unsigned int failures{0};
+  unsigned int randId{0};
+  
+  QLineEdit displayFurigana{}, displayKanji{};
+  QLabel Furigana{"Furigana:"}, Furigana2{},
+         English{"Translation: "}, English2{},
+         Kanji{"Kanji: "}, Kanji2{},
+         Success{"Success!"}, Success2{},
+         Failure{"Failure!"}, Failure2{},
+         Rate{}, Rate2{},
+         cards{};
+  QPushButton submitButton{"submit"}, continueButton{"continue"};
+  QGridLayout layout{};
 
-  std::shared_ptr<DataHandler> dataHandler{};
+  SharedData dataHandler{};
 
  private slots:
   void   submitButtonClicked();
   void continueButtonClicked();
 
  private:
-  explicit Example(DataHandler &dataHandler_,
-	           unsigned int successes_,
-	           unsigned int failures_,
-	           QWidget *parent = 0);
+  explicit ExampleWindow(SharedData &dataHandler_,
+	                 unsigned int successes_,
+	                 unsigned int failures_,
+	                 QWidget *parent = 0);
   void showFailure();
   void showSuccess();
 };

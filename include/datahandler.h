@@ -6,6 +6,7 @@
 
 
 namespace QtKanji {
+  
 struct Boxes
 {
   explicit Boxes() = default;
@@ -13,11 +14,9 @@ struct Boxes
   bool hideImi{false};
   bool hideKun{false};
   bool hideOn {false};
-  std::shared_ptr<QCheckBox> imiBox{}, kunBox{}, onBox{};
+  SharedCheckbox imiBox{}, kunBox{}, onBox{};
 };
 
-class MainWindow;
-class Flashcard;
 class DataHandler
 {
  public:
@@ -25,32 +24,28 @@ class DataHandler
   
   bool fromEngToJap{true};
   
-  unsigned int lowerLimit{245};
-  unsigned int upperLimit{460};
+  unsigned int lowerLimit{1};
+  unsigned int upperLimit{NUMBER_OF_KANJI};
   
   std::string pathToContainerData{"container.dat"};
   std::string pathToExampleData{"examples.dat"};
   std::string pathToKanjiData{"kanjidb.dat"};
   
-  std::vector<unsigned int> indexContainer{};
-  std::vector<unsigned int> indexInCardbox{};
-  
-  std::vector<std::string> dataFurigana{}, truedataFurigana{},
-                           dataKanji{}, truedataKanji{},
-                           dataEnglish{};
-  std::string dataSign{}, truedataSign{},
-              dataImi{}, truedataImi{},
-              dataOn{}, truedataOn{},
-              dataKun{}, truedataKun{};
-  std::vector<std::string> dataImiVector{}, truedataImiVector{},
-                           dataOnVector{}, truedataOnVector{},
-                           dataKunVector{}, truedataKunVector{};
+  Uints indexContainer{};
+  Uints indexInCardbox{};
+
+  Strings dataFurigana{}, dataKanji{}, dataEnglish{};
+  Strings truedataFurigana{}, truedataKanji{}, truedataEnglish{};
+
+  Flashcard flashcard{};
 
   bool getLimits(MainWindow &mainwindow);
   bool computeExampleData(MainWindow &mainwindow);
-  bool computeContainerData(MainWindow &mainwindow, bool fromCardbox);
+  bool computeContainerData(MainWindow &mainwindow);
   
-  void computeKanjiData(Flashcard &flashcard);
+  void computeKanjiData(unsigned int Id);
+
+  unsigned int computeRandomId(bool fromCardbox, unsigned int removeFlag);
 };
 
 };
