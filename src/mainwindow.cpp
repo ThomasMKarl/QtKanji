@@ -1,22 +1,18 @@
 #include "mainwindow.h"
-#include <iostream>
 
 QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 {
   move(0,0);
-  
-  //hadamitzkyWindow.show();
+
   table = std::make_shared<Table>();
   table->show();
   dataHandler = std::make_shared<DataHandler>();
-  //hadamitzkyWindow.radicalKanjiMap =
-  //std::vector<QtKanji::Uints> x = computeRadicalKanjiMap(dataHandler);
-  //std::cout << x[0][0] << std::endl;
-  //std::cout << "blub" << std::endl;
-  QFont textfont{};
+  hadamitzkyWindow.show();
+  hadamitzkyWindow.radicalKanjiMap = computeRadicalKanjiMap(dataHandler);
+  
   textfont.setPointSize(15);
   textfont.setBold(false);
-  setFont(std::move(textfont));
+  setFont(textfont);
   setWindowTitle("QtKanji Mainwindow");
   setWindowIcon(QIcon("kanji.ico"));
 
@@ -24,11 +20,12 @@ QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
   addBoxesToLayout();
   addDisplaysToLayout();
 
-  dataFail.hide();
+  hideErrors();
+
   layout.addWidget(&dataFail,5,1);
-  
-  cardboxFail.hide();
   layout.addWidget(&cardboxFail,5,1);
+  layout.addWidget(&searchFail,5,1);
+  layout.addWidget(&cardboxLimitFail,5,1);
 
   setLayout(&layout);
 }
@@ -51,14 +48,14 @@ void QtKanji::MainWindow::addButtonsToLayout()
 	
   exampleButton.setFixedSize(150,30);
   connect(&exampleButton,
-          &QPushButton::clicked,
+    &QPushButton::clicked,
 	  this,
 	  &MainWindow::exampleButtonClicked);
   layout.addWidget(&exampleButton,4,1);
 
   engjapButton.setFixedSize(150,30);
   connect(&engjapButton,
-          &QPushButton::clicked,
+    &QPushButton::clicked,
 	  this,
 	  &MainWindow::engjapButtonClicked);
   layout.addWidget(&engjapButton,1,0);
@@ -67,7 +64,7 @@ void QtKanji::MainWindow::addButtonsToLayout()
   
   japengButton.setFixedSize(150,30);
   connect(&japengButton,
-          &QPushButton::clicked,
+    &QPushButton::clicked,
 	  this,
 	  &MainWindow::japengButtonClicked);
   layout.addWidget(&japengButton,1,1);
@@ -75,14 +72,14 @@ void QtKanji::MainWindow::addButtonsToLayout()
 
   printButton.setFixedSize(190,30);
   connect(&printButton,
-          &QPushButton::clicked,
+    &QPushButton::clicked,
 	  this,
 	  &MainWindow::printButtonClicked);
   layout.addWidget(&printButton,3,3);
 
   searchButton.setFixedSize(150,30);
   connect(&searchButton,
-          &QPushButton::clicked,
+    &QPushButton::clicked,
 	  this,
 	  &MainWindow::searchButtonClicked);
   layout.addWidget(&searchButton,5,3);
@@ -102,14 +99,14 @@ void QtKanji::MainWindow::addBoxesToLayout()
   boxes_->kunBox = std::make_unique<QCheckBox>("Hide Kun");
   boxes_->kunBox->setChecked(boxes_->hideKun);
   connect(boxes_->kunBox.get(),
-          &QCheckBox::clicked,
+    &QCheckBox::clicked,
 	  this,
 	  &MainWindow::boxChecked);
 
   boxes_->onBox  = std::make_unique<QCheckBox>("Hide On");
   boxes_->onBox->setChecked(boxes_->hideOn);
   connect(boxes_->onBox.get(),
-          &QCheckBox::clicked,
+    &QCheckBox::clicked,
 	  this,
 	  &MainWindow::boxChecked);
 
@@ -120,7 +117,7 @@ void QtKanji::MainWindow::addBoxesToLayout()
 
   randomizeBox.setChecked(randomize);
   connect(&randomizeBox,
-          &QCheckBox::clicked,
+    &QCheckBox::clicked,
 	  this,
 	  &MainWindow::randomizeChecked);
   layout.addWidget(&randomizeBox,2,3);
@@ -139,10 +136,13 @@ void QtKanji::MainWindow::addDisplaysToLayout()
   layout.addWidget(&displayUpperLimit,3,1);
 
   search.setFixedSize(50,50);
-  QFont textfont{};
-  textfont.setPointSize(30);
-  search.setFont(std::move(textfont));
+  QFont searchTextfont{};
+  searchTextfont.setPointSize(30);
+  search.setFont(std::move(searchTextfont));
   layout.addWidget(&search,4,3);
+
+  table->search = &search;
+  hadamitzkyWindow.search = &search;
 }
 
 void QtKanji::MainWindow::signButtonClicked()
@@ -159,17 +159,42 @@ void QtKanji::MainWindow::cardboxButtonClicked()
 
 void QtKanji::MainWindow::exampleButtonClicked()
 {
-  startExampleWindow();
+  hideErrors();
+
+  CHECK_ERROR(dataHandler->getLimits(*this));
+
+  CHECK_ERROR(dataHandler->computeExampleData(*this));
+
+  ExampleWindow *example = ExampleWindow::createExampleWindow(dataHandler);
+
+  example->show();
 }
 
 void QtKanji::MainWindow::printButtonClicked()
 {
-  printExamples();
+  hideErrors();
+
+  CHECK_ERROR(dataHandler->getLimits(*this));
+
+  CHECK_ERROR(dataHandler->computeExampleData(*this));
+
+  CHECK_ERROR(dataHandler->printExamples());
 }
 
 void QtKanji::MainWindow::searchButtonClicked()
 {
-  searchKanji();
+  hideErrors();
+  
+  QString kanji = search.text();
+  unsigned int Id = dataHandler->searchKanjiId(kanji);
+
+  if(Id == 0)
+  {
+    displayErrorMessage(QtKanji::Error::FILE_ERROR);
+    return;
+  }
+
+  startFlashcardWindow(Id);
 }
 
 void QtKanji::MainWindow::boxChecked()
@@ -234,99 +259,68 @@ void QtKanji::MainWindow::japengButtonClicked()
 
 void QtKanji::MainWindow::startFlashcardWindow(bool fromCardbox)
 {
-  if(!dataHandler->getLimits(*this)) return;
-  if(!dataHandler->computeContainerData(*this) && fromCardbox) return;
-  cardboxFail.hide();
+  hideErrors();
+
+  CHECK_ERROR(dataHandler->getLimits(*this));
+  if(fromCardbox) CHECK_ERROR(dataHandler->computeContainerData(*this));
+  
   dataHandler->indexContainer.clear();
   
-  unsigned int successes{0}, failures{0};
-  int removeFlag{0};
   FlashcardWindow *flashcard =
-    FlashcardWindow::createFlashcardWindow(dataHandler,
-				           boxes,
-				           table,
-				           fromCardbox, removeFlag,
-				           successes, failures);
+    FlashcardWindow::createFlashcardWindow(randomize,
+                                           fromCardbox,
+                                           dataHandler,
+				                                   boxes,
+				                                   table);
   flashcard->show();
 }
 
 void QtKanji::MainWindow::startFlashcardWindow(unsigned int ID)
 {
+  hideErrors();
+  
   dataHandler->indexContainer.clear();
     
-  unsigned int successes{0}, failures{0};
-  int removeFlag{0};
   FlashcardWindow *flashcard =
     FlashcardWindow::createFlashcardWindow(dataHandler,
-				           table,
-				           ID);
+				                                   table,
+				                                   ID);
   flashcard->show();
 }
 
-void QtKanji::MainWindow::startExampleWindow()
+void QtKanji::MainWindow::displayErrorMessage(QtKanji::Error err)
 {
-  if(!dataHandler->getLimits(*this)) return;
-  if(!dataHandler->computeExampleData(*this)) return;
+  hideErrors();
 
-  unsigned int successes{0}, failures{0};
-  ExampleWindow *example = ExampleWindow::createExampleWindow(dataHandler, failures, successes);
-
-  example->show();
-}
-
-void QtKanji::MainWindow::printExamples()
-{
-  if(!dataHandler->getLimits(*this)) return;
-  if(!dataHandler->computeExampleData(*this)) return;
-
-  std::ofstream kanjiFile{"examples_kanji.html"};
-  std::ofstream furiganaFile{"examples_furigana.html"};
-  if(!kanjiFile || !furiganaFile)
+  switch(err)
   {
+   case QtKanji::Error::FILE_ERROR:
     dataFail.show();
     return;
-  }
-
-  const std::string header{"<!DOCTYPE html>\n<html>\n<head>\n<title>Kanji Examples</title>\n<meta charset='UTF-8'>\n</head>\n\n<body>\n<h1>Kanji Examples</h1>\n"};
-  const std::string footer{"\n</body>\n</html>"};
-  
-  kanjiFile << header;
-  furiganaFile << header;
-  
-  size_t counter{0};
-  for(const std::string &kanji    : dataHandler->dataKanji)
-  {
-    if(counter%10 == 0) kanjiFile << "<p>\n" << counter/10+1 << ".  ";
-    kanjiFile << kanji << "  +  ";
-    ++counter;
-  }
-
-  counter = 0;
-  for(const std::string &furigana : dataHandler->dataFurigana)
-  {
-    if(counter%10 == 0) furiganaFile << "<p>\n" << counter/10+1 << ".  ";
-    furiganaFile << furigana << "  +  ";
-    ++counter;
-  }
-
-  kanjiFile << footer;
-  furiganaFile << footer;
-}
-
-void QtKanji::MainWindow::searchKanji()
-{
-  cardboxFail.hide();
-  
-  QString kanji = search.text();
-  const auto index = std::find(kanjiList.begin(), kanjiList.end(), kanji);
-  if(index == kanjiList.end())
-  {
-    dataFail.show();
+   case QtKanji::Error::EMPTY_CARDBOX:
+    cardboxFail.show();
+    return;
+   case QtKanji::Error::KANJI_NOT_FOUND:
+    searchFail.show();
+    return;
+   case QtKanji::Error::NO_KANJI_WITHIN_RANGE:
+    cardboxLimitFail.show();
+    return;
+   default:
     return;
   }
+}
+
+void QtKanji::MainWindow::hideErrors()
+{
   dataFail.hide();
-  
-  unsigned int Id = std::distance(kanjiList.begin(),index)+1;
+  cardboxFail.hide();
+  searchFail.hide();
+  cardboxLimitFail.hide();
+}
 
-  startFlashcardWindow(Id);
+QtKanji::MainWindow::~MainWindow()
+{
+  table->search = nullptr;
+  hadamitzkyWindow.search = nullptr;
 }

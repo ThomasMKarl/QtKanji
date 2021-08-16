@@ -14,15 +14,11 @@ class ExampleWindow : public QWidget
   Q_OBJECT
 
  public:
-  static ExampleWindow* createExampleWindow(SharedData &dataHandler_,
-	                                    unsigned int successes_,
-	                                    unsigned int failures_,
-	                                    QWidget *parent = 0)
-    {return new ExampleWindow{dataHandler_, successes_, failures_, parent};}
+  static ExampleWindow* createExampleWindow(SharedData &dataHandler_, QWidget *parent = 0)
+    {return new ExampleWindow{dataHandler_, parent};}
   
   unsigned int successes{0};
   unsigned int failures{0};
-  unsigned int randId{0};
   
   QLineEdit displayFurigana{}, displayKanji{};
   QLabel Furigana{"Furigana:"}, Furigana2{},
@@ -33,19 +29,26 @@ class ExampleWindow : public QWidget
          Rate{}, Rate2{},
          cards{};
   QPushButton submitButton{"submit"}, continueButton{"continue"};
+  QFont textfont{};
   QGridLayout layout{};
 
   SharedData dataHandler{};
+
+  ExampleWindow(const ExampleWindow&) = delete;
+  ExampleWindow& operator=(const ExampleWindow&) = delete;
+  ExampleWindow(ExampleWindow&&) = delete;
+  ExampleWindow& operator=(ExampleWindow&&) = delete;
+  ~ExampleWindow() = default;
 
  private slots:
   void   submitButtonClicked();
   void continueButtonClicked();
 
  private:
-  explicit ExampleWindow(SharedData &dataHandler_,
-	                 unsigned int successes_,
-	                 unsigned int failures_,
-	                 QWidget *parent = 0);
+  explicit ExampleWindow(SharedData &dataHandler_, QWidget *parent = 0);
+  void setExampleWindowLayout();
+  void setButtonLayout();
+  void update();
   void showFailure();
   void showSuccess();
 };

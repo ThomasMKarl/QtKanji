@@ -1,36 +1,54 @@
 #include "examplewindow.h"
 
-QtKanji::ExampleWindow::ExampleWindow(SharedData &dataHandler_,
-		                      unsigned int successes_,
-		                      unsigned int failures_,
-		                      QWidget *parent) :
+QtKanji::ExampleWindow::ExampleWindow(SharedData &dataHandler_, QWidget *parent) :
   dataHandler{dataHandler_},
-  successes{successes_},
-  failures{failures_},
   QWidget(parent)
+{  
+  setButtonLayout();
+
+  setExampleWindowLayout();
+
+  update();
+}
+
+void QtKanji::ExampleWindow::setExampleWindowLayout()
 {
-  randId = failures + successes;
-  unsigned int numberOfExamples = dataHandler->dataFurigana.size();
+  const auto &EX = dataHandler->examples;
+
+  unsigned int Id = failures + successes + 1;
+
+  layout.addWidget(&Furigana, 1,0);
+  layout.addWidget(&Kanji, 2,0);
   
-  if(randId == numberOfExamples)
+  if(dataHandler->fromEngToJap)
   {
-    showResult(*this);
-    return;
+    layout.addWidget(&displayFurigana,1,1);
+
+    Kanji2.setText(QString::fromStdString(EX.dataKanji[Id-1]));
+    layout.addWidget(&Kanji2,2,1);
   }
+  else
+  {
+    Furigana2.setText(QString::fromStdString(EX.dataFurigana[Id-1]));
+    layout.addWidget(&Furigana2,1,1);
+
+    layout.addWidget(&displayKanji,2,1);
+  }
+
+  English2.setText(QString::fromStdString(EX.dataEnglish[Id-1]));
+  layout.addWidget(&English, 3,0);
+  layout.addWidget(&English2,3,1);
  
-  QFont textfont{};
-  textfont.setPointSize(20);
-  textfont.setBold(false);
-  setFont(std::move(textfont));
-
-  setWindowTitle("QtKanji example #"
-		 + QString::number(randId+1)
-		 + " of "
-		 + QString::number(numberOfExamples));
-  setWindowIcon(QIcon("kanji.ico"));
+  layout.addWidget(&Success,4,0);
+  layout.addWidget(&Failure,4,0); 
+  Success.setStyleSheet("color: green");
+  Failure.setStyleSheet("color: red");
   
-////////////////////////////////////////////////////////////////////////////////////////////////
+  setLayout(&layout);
+}
 
+void QtKanji::ExampleWindow::setButtonLayout()
+{
   connect(&submitButton,
 	  &QPushButton::clicked,
 	  this,
@@ -42,78 +60,84 @@ QtKanji::ExampleWindow::ExampleWindow(SharedData &dataHandler_,
 	  this,
 	  &ExampleWindow::continueButtonClicked);
   layout.addWidget(&continueButton,1,2);
-  continueButton.hide();
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-  
-  layout.addWidget(&Furigana, 1,0);
-  layout.addWidget(&Kanji, 2,0);
-  
-  if(dataHandler->fromEngToJap)
-  {
-    layout.addWidget(&displayFurigana,1,1);
-
-    Kanji2.setText(QString::fromStdString(dataHandler->dataKanji[randId]));
-    layout.addWidget(&Kanji2,2,1);
-  }
-  else
-  {
-    Furigana2.setText(QString::fromStdString(dataHandler->dataFurigana[randId]));
-    layout.addWidget(&Furigana2,1,1);
-
-    layout.addWidget(&displayKanji,2,1);
-  }
-
-  English2.setText(QString::fromStdString(dataHandler->dataEnglish[randId]));
-  layout.addWidget(&English, 3,0);
-  layout.addWidget(&English2,3,1);
-  
-////////////////////////////////////////////////////////////////////////////////////////////////
-  
-  layout.addWidget(&Success,4,0);
-  layout.addWidget(&Failure,4,0);
-  Success.hide();
-  Success.setStyleSheet("color: green");
-  Failure.hide();
-  Failure.setStyleSheet("color: red");
-  
-////////////////////////////////////////////////////////////////////////////////////////////////
 
   setLayout(&layout);
 }
 
+void QtKanji::ExampleWindow::update()
+{
+  textfont.setPointSize(20);
+  textfont.setBold(false);
+  setFont(textfont);
+
+  const auto &EX = dataHandler->examples;
+
+  unsigned int Id = failures + successes + 1;
+
+  unsigned int numberOfExamples = dataHandler->examples.dataFurigana.size();
+  
+  if(Id == numberOfExamples+1)
+  {
+    showResult(*this);
+    return;
+  }
+
+  continueButton.hide();
+  submitButton.show();
+
+  if(dataHandler->fromEngToJap) 
+    Kanji2.setText(QString::fromStdString(EX.dataKanji[Id-1]));
+  else 
+    Furigana2.setText(QString::fromStdString(EX.dataFurigana[Id-1]));
+
+  English2.setText(QString::fromStdString(EX.dataEnglish[Id-1]));
+
+  Success.hide();
+  Failure.hide();
+
+  adjustSize();
+
+  setWindowTitle("QtKanji example #"
+		 + QString::number(Id)
+		 + " of "
+		 + QString::number(numberOfExamples));
+  setWindowIcon(QIcon("kanji.ico"));
+}
+
 void QtKanji::ExampleWindow::submitButtonClicked()
 {
+  const auto &EX = dataHandler->examples;
+
+  unsigned int Id = failures + successes + 1;
+
+  std::string dataFurigana{}, dataKanji{};
   if(dataHandler->fromEngToJap)
   {
-    dataHandler->dataFurigana[randId] =
-      displayFurigana.text().toStdString();
+    dataFurigana = displayFurigana.text().toStdString();
 
-    if(dataHandler->dataFurigana[randId]
-       == dataHandler->truedataFurigana[randId]) showSuccess();
+    if(EX.furiganaMatches(Id, dataFurigana)) showSuccess();
     else showFailure();
   }
   else
   {
-    dataHandler->dataKanji[randId] =
-      displayKanji.text().toStdString();
+    dataKanji = displayKanji.text().toStdString();
 
-    if(dataHandler->dataKanji[randId]
-       == dataHandler->truedataKanji[randId]) showSuccess();
+    if(EX.kanjiMatches(Id, dataFurigana)) showSuccess();
     else showFailure();
   }
 }
 
 void QtKanji::ExampleWindow::continueButtonClicked()
 {
-  ExampleWindow *exampleWindow =
-    createExampleWindow(dataHandler, successes, failures);
-  this->close();
-  exampleWindow->show();
+  update();
 }
 
 void QtKanji::ExampleWindow::showSuccess()
 {
+  const auto &EX = dataHandler->examples;
+  
+  unsigned int Id = failures + successes + 1;
+
   Success       .show();
   Failure       .hide();
   continueButton.show();
@@ -121,14 +145,14 @@ void QtKanji::ExampleWindow::showSuccess()
   if(dataHandler->fromEngToJap)
   {
     displayFurigana.setText(
-      QString::fromStdString(dataHandler->truedataFurigana[randId]));
+      QString::fromStdString(EX.dataFurigana[Id-1]));
 
     displayFurigana.setStyleSheet("color: green");
   }
   else
   {
     displayKanji.setText(
-      QString::fromStdString(dataHandler->truedataKanji[randId]));
+      QString::fromStdString(EX.dataKanji[Id-1]));
 
     displayKanji.setStyleSheet("color: green");
   }
@@ -140,6 +164,10 @@ void QtKanji::ExampleWindow::showSuccess()
 
 void QtKanji::ExampleWindow::showFailure()
 {
+  const auto &EX = dataHandler->examples;
+
+  unsigned int Id = failures + successes + 1;
+
   Success       .hide();
   Failure       .show();
   continueButton.show();
@@ -147,14 +175,14 @@ void QtKanji::ExampleWindow::showFailure()
   if(dataHandler->fromEngToJap)
   {
     displayFurigana.setText(
-      QString::fromStdString(dataHandler->truedataFurigana[randId]));
+      QString::fromStdString(EX.dataFurigana[Id-1]));
  
     displayFurigana.setStyleSheet("color: red");
   }
   else
   {
     displayKanji.setText(
-      QString::fromStdString(dataHandler->truedataKanji[randId]));
+      QString::fromStdString(EX.dataKanji[Id-1]));
 
     displayKanji.setStyleSheet("color: red");
   }

@@ -1,103 +1,63 @@
 #include "flashcardwindow.h"
 #include "table.h"
-#include<iostream>
-QtKanji::FlashcardWindow::FlashcardWindow(SharedData &dataHandler_,
-			                  SharedBoxes &boxes_,
-			                  SharedTable &table_,
-			                  bool fromCardbox_,
-                                          int removeFlag_,
-                                          unsigned int successes_,
-                                          unsigned int failures_,
+
+QtKanji::FlashcardWindow::FlashcardWindow(bool randomize_,
+			                                    bool fromCardbox_,
+                                          SharedData &dataHandler_,
+			                                    SharedBoxes &boxes_,
+			                                    SharedTable &table_,
                                           QWidget *parent) :
+  randomize(randomize_),
+  fromCardbox(fromCardbox_),
   dataHandler(dataHandler_),
   boxes(boxes_),
   table(table_),
-  fromCardbox(fromCardbox_),
-  removeFlag(removeFlag_),
-  successes(successes_),
-  failures(failures_),
   QWidget(parent)
 {
-  table->flashcards.push_back( this );
-
-  auto &FC = dataHandler->flashcard;
+  if(!dataHandler->fromEngToJap)
+  {
+    table->flashcards.push_back( this );
+    flashcardWindowIndex = table->flashcards.size()-1;
+  }
  
-  QFont textfont{};
   textfont.setPointSize(20);
   textfont.setBold(false);
-  setFont(std::move(textfont));
+  setFont(textfont);
   setWindowIcon(QIcon("kanji.ico"));
-  
-  unsigned int range{};
-  if(fromCardbox) range = dataHandler->indexInCardbox.size();
-  else            range = dataHandler->upperLimit - dataHandler->lowerLimit + 1;
-
-  if(dataHandler->indexContainer.size() == range + removeFlag)
-  {
-    showResult(*this);
-    return;
-  }
-    
-  randId = dataHandler->computeRandomId(fromCardbox, removeFlag);
-
-  dataHandler->computeKanjiData(randId);
 
   setButtonLayout();
-
-  setFlashcardLayout();
-
-  if(dataHandler->fromEngToJap)
-  {
-    if(!boxes->hideKun) displayKun.clear();
-    if(!boxes->hideOn )  displayOn.clear();
-    if(!boxes->hideImi) displayImi.clear();
-  }
-  else displaySign.clear();
-
-  if(boxes->hideImi)
-  {
-    displayImi.hide();
-    Imi.hide();
-  }
-  if(boxes->hideKun)
-  {
-    displayKun.hide();
-    Kun.hide();
-  }
-  if(boxes->hideOn)
-  {
-    displayOn.hide();
-    On.hide();
-  }
-
-  setWindowTitle("QtKanji #" + QString::fromStdString(std::to_string(randId)));
+  
+  update();
 }
 
 QtKanji::FlashcardWindow::FlashcardWindow(SharedData &dataHandler_,
-			                  SharedTable &table_,
-                                          unsigned int ID,
+			                                    SharedTable &table_,
+                                          unsigned int Id,
                                           QWidget *parent) :
   dataHandler(dataHandler_),
   table(table_),
-  randId(ID),
   QWidget(parent)
 { 
-  table->flashcards.push_back( this );
+  if(!dataHandler->fromEngToJap)
+  {
+    table->flashcards.push_back( this );
+    flashcardWindowIndex = table->flashcards.size()-1;
+  }
 
-  QFont textfont{};
+  currentId = Id;
+
   textfont.setPointSize(20);
   textfont.setBold(false);
-  setFont(std::move(textfont));
+  setFont(textfont);
   setWindowIcon(QIcon("kanji.ico"));
 
-  dataHandler->computeKanjiData(randId);
+  dataHandler->computeKanjiData(Id);
 
   setFlashcardLayout();
 
-  setWindowTitle("QtKanji #" + QString::fromStdString(std::to_string(randId)));
+  setWindowTitle("QtKanji #" + QString::fromStdString(std::to_string(Id)));
 }
 
-#include<iostream>
 void QtKanji::FlashcardWindow::submitButtonClicked()
 {
   Flashcard myFlashcard{};
@@ -125,13 +85,10 @@ void QtKanji::FlashcardWindow::submitButtonClicked()
 
 void QtKanji::FlashcardWindow::continueButtonClicked()
 {
-  FlashcardWindow *flashcard = createFlashcardWindow(dataHandler,
-					             boxes,
-					             table,
-					             fromCardbox, removeFlag,
-                                                     successes, failures);
-  this->close();
-  flashcard->show();
+  continueButton.hide();
+  submitButton.show();  
+
+  update();
 }
 
 void QtKanji::FlashcardWindow::addButtonClicked()
@@ -140,16 +97,16 @@ void QtKanji::FlashcardWindow::addButtonClicked()
   addButton.hide();
     
   const auto index = std::find(std::begin(dataHandler->indexInCardbox),
-			       std::end(dataHandler->indexInCardbox),
-			       randId);
+			                         std::end(dataHandler->indexInCardbox),
+			                         currentId);
   if(index == std::end(dataHandler->indexInCardbox))
   {
-    dataHandler->indexInCardbox.push_back(randId);
+    dataHandler->indexInCardbox.push_back(currentId);
       
-    if(fromCardbox) --removeFlag;
+    if(fromCardbox) --numberOfRemoves;
 
     std::ofstream containerData{dataHandler->pathToContainerData, std::ios::app};
-    containerData << std::to_string(randId)+":";
+    containerData << std::to_string(currentId)+":";
   }
 }
 
@@ -158,17 +115,23 @@ void QtKanji::FlashcardWindow::removeButtonClicked()
   removeButton.hide();
   addButton.show();
     
-  std::ofstream containerData{dataHandler->pathToContainerData, std::ios::trunc};
-    
   const auto index = std::find(std::begin(dataHandler->indexInCardbox),
-			       std::end(dataHandler->indexInCardbox),
-			       randId);
+			                         std::end(dataHandler->indexInCardbox),
+			                         currentId);
+
+  if(index == std::end(dataHandler->indexInCardbox)) return;
+
+  std::ofstream containerData{dataHandler->pathToContainerData, std::ios::trunc};
+
   dataHandler->indexInCardbox.erase(index);
 	
-  if(fromCardbox) ++removeFlag;
+  if(fromCardbox) ++numberOfRemoves;
 
   if(dataHandler->indexInCardbox.empty()) containerData << "";
-  else containerData << std::to_string(dataHandler->indexInCardbox[randId])+":";
+  else
+  {
+    for(const auto Id : dataHandler->indexInCardbox) containerData << std::to_string(Id)+":";
+  }
 }
 
 void QtKanji::FlashcardWindow::showSuccess()
@@ -259,27 +222,24 @@ void QtKanji::FlashcardWindow::setButtonLayout()
   addButton.setFixedSize(300,50);
   connect(&addButton,
           &QPushButton::clicked,
-	  this,
-	  &FlashcardWindow::addButtonClicked);
+	        this,
+	        &FlashcardWindow::addButtonClicked);
   layout.addWidget(&addButton,4,0);
 
   removeButton.setFixedSize(300,50);
   connect(&removeButton,
           &QPushButton::clicked,
-	  this,
-	  &FlashcardWindow::removeButtonClicked);
+	        this,
+	        &FlashcardWindow::removeButtonClicked);
   layout.addWidget(&removeButton,4,0);
 
   continueButton.setFixedSize(120,50);
   connect(&continueButton,
           &QPushButton::clicked,
-	  this,
-	  &FlashcardWindow::continueButtonClicked);
+	        this,
+	        &FlashcardWindow::continueButtonClicked);
   layout.addWidget(&continueButton,3,0);
   continueButton.hide();
-
-  if(contains(dataHandler->indexInCardbox, randId))    addButton.hide();
-  else                                              removeButton.hide();
   
   setLayout(&layout);
 }
@@ -289,10 +249,10 @@ void QtKanji::FlashcardWindow::setFlashcardLayout()
   const auto &FC = dataHandler->flashcard;
   
   displaySign.setText(QString::fromStdString(FC.dataSign));
-  QFont textfont{};
-  textfont.setPointSize(50);
-  textfont.setBold(false);
-  displaySign.setFont(std::move(textfont));
+  QFont kanjiTextfont{};
+  kanjiTextfont.setPointSize(50);
+  kanjiTextfont.setBold(false);
+  displaySign.setFont(std::move(kanjiTextfont));
   displaySign.setFixedSize(100,100);
 
   QString output{""};
@@ -330,4 +290,89 @@ void QtKanji::FlashcardWindow::setFlashcardLayout()
   layout.addWidget(&On,1,4);
  
   setLayout(&layout);
+}
+
+void QtKanji::FlashcardWindow::update()
+{
+  unsigned int range{};
+  if(fromCardbox) range = dataHandler->indexInCardbox.size() + numberOfRemoves;
+  else            range = dataHandler->upperLimit - dataHandler->lowerLimit + 1;
+
+  if(successes + failures == range)
+  {
+    hideAll();
+    showResult(*this);
+    return;
+  }
+
+  if(randomize) currentId = dataHandler->computeRandomId(fromCardbox, numberOfRemoves);
+  else          
+  {
+    currentId = dataHandler->lowerLimit + successes+failures;
+    if(fromCardbox) currentId = dataHandler->indexInCardbox[currentId-1];
+  }
+
+  dataHandler->computeKanjiData(currentId);
+
+  setFlashcardLayout();
+
+  if(contains(dataHandler->indexInCardbox, currentId))
+  {   
+    addButton.hide();
+    removeButton.show();
+  }
+  else
+  {
+    addButton.show();
+    removeButton.hide();
+  }
+
+  if(dataHandler->fromEngToJap)
+  {
+    if(!boxes->hideKun) displayKun.clear();
+    if(!boxes->hideOn )  displayOn.clear();
+    if(!boxes->hideImi) displayImi.clear();
+  }
+  else displaySign.clear();
+
+  if(boxes->hideImi)
+  {
+    displayImi.hide();
+    Imi.hide();
+  }
+  if(boxes->hideKun)
+  {
+    displayKun.hide();
+    Kun.hide();
+  }
+  if(boxes->hideOn)
+  {
+    displayOn.hide();
+    On.hide();
+  }
+
+  adjustSize();
+
+  setWindowTitle("QtKanji #" + QString::fromStdString(std::to_string(currentId)));
+}
+
+void QtKanji::FlashcardWindow::hideAll()
+{
+    displaySign.hide();
+    displayImi.hide();
+    displayKun.hide();
+    displayOn.hide();
+    Sign.hide();
+    Imi.hide();
+    Kun.hide();
+    On.hide();
+    submitButton.hide();
+    addButton.hide();
+    continueButton.hide();
+    removeButton.hide();
+}
+
+QtKanji::FlashcardWindow::~FlashcardWindow()
+{
+  table->flashcards.erase(std::begin(table->flashcards)+flashcardWindowIndex);
 }

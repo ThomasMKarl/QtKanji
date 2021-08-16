@@ -17,7 +17,7 @@ QtKanji::HadamitzkyWindow::HadamitzkyWindow(QWidget *parent): QWidget(parent)
   selectedRadicals[0] = 0;
   selectedRadicals[1] = 0;
   selectedRadicals[2] = 0;
-  
+
   for(unsigned int index = 0; index < NUMBER_OF_GRAPHEMES; ++index)
   {
     graphemeButtons[index].setText( graphemeList[index] );
@@ -25,15 +25,23 @@ QtKanji::HadamitzkyWindow::HadamitzkyWindow(QWidget *parent): QWidget(parent)
     connect(&graphemeButtons[index],
 	    &QPushButton::clicked,
 	    this,
-            [=](){ graphemeButtonClicked(index+1); });
-	    layout.addWidget(&graphemeButtons[index],0,index);
+      [=](){ graphemeButtonClicked(index+1); });
+	    layout.addWidget(&graphemeButtons[index],index/9,index%9+1);
     graphemeButtons[index].setCheckable(true);
+  }
+
+  layout.addWidget(&possibleKanji,9,0);
+  possibleKanji.hide();
+
+  for(unsigned int index = 0; index < kanjiButtons.size(); ++index)
+  {
+    layout.addWidget(&kanjiButtons[index],index/9+9,index%9+1);
+    kanjiButtons[index].hide();
   }
 
   setLayout(&layout);
 }
 
-#include <iostream>
 void QtKanji::HadamitzkyWindow::graphemeButtonClicked(unsigned int graphemeIndex)
 {
   unsigned short int maxNumberOfClicks = 3;
@@ -61,16 +69,41 @@ void QtKanji::HadamitzkyWindow::graphemeButtonClicked(unsigned int graphemeIndex
     selectedRadicals[index] = 0;
   }
 
-  /*Uints kanjiIncices{};
-  
+  Uints kanjiIndices{};
   if(selectedRadicals[0] != 0) kanjiIndices = radicalKanjiMap[selectedRadicals[0]-1];  
-  std::set<Uints> kanji{kanjiIndices[0].begin(),kanjiIndices[0].end()};
+  std::vector<unsigned int> copy0{kanjiIndices.begin(),kanjiIndices.end()};
+  if(selectedRadicals[1] != 0) kanjiIndices = radicalKanjiMap[selectedRadicals[1]-1];
+  std::vector<unsigned int> copy1{kanjiIndices.begin(),kanjiIndices.end()};
+  if(selectedRadicals[2] != 0) kanjiIndices = radicalKanjiMap[selectedRadicals[2]-1];
+  std::vector<unsigned int> copy2{kanjiIndices.begin(),kanjiIndices.end()};
+  std::set<unsigned int> kanjis = overlap(copy0, copy1, copy2);
+
+
+  if(kanjis.empty()) possibleKanji.hide();
+  else               possibleKanji.show();
+
+  for(auto &button : kanjiButtons) button.hide();
+
+  for(unsigned int index = 0; index < kanjis.size(); ++index)
+  {
+    kanjiButtons[index].setText( kanjiList[index] );
+    kanjiButtons[index].setFixedSize(25,25);
+    connect(&kanjiButtons[index],
+	    &QPushButton::clicked,
+	    this,
+      [=](){ kanjiClicked(index); });
+    kanjiButtons[index].show();
+  }
   
-  if(selectedRadicals[1] != 0) kanjiString = radicalKanjiMap[selectedRadicals[1]-1];
-  std::set<Uints> copy1{kanjiIncices[1].begin(),kanjiIncices[1].end()};
-  kanji.merge(std::move(copy1));
+  setLayout(&layout);
+
+  adjustSize();
+}
+
+void QtKanji::HadamitzkyWindow::kanjiClicked(const unsigned int index)
+{
+  QClipboard *clipboard = QGuiApplication::clipboard();
+  clipboard->setText( kanjiList[index] );
   
-  if(selectedRadicals[2] != 0) kanjiString = radicalKanjiMap[selectedRadicals[2]-1];
-  std::set<Uints> copy2{kanjiIncices[2].begin(),kanjiIncices[2].end()};
-  kanji.merge(std::move(copy2));*/
+  search->setText( kanjiList[index] );
 }

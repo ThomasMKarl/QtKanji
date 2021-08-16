@@ -1,7 +1,7 @@
 #ifndef HADAMITZKYWINDOW_H
 #define HADAMITZKYWINDOW_H
 
-#include "headers.h"
+#include "helper.h"
 #include "hadamitzkydata.h"
 
 
@@ -18,11 +18,21 @@ class HadamitzkyWindow : public QWidget
   explicit HadamitzkyWindow(QWidget *parent = 0);
   
   Buttons graphemeButtons{NUMBER_OF_GRAPHEMES};
+  QLineEdit* search{};
+  QLabel possibleKanji{"possible kanji:"};
+  Buttons kanjiButtons{NUMNER_OF_HADAMITZKY_KANJI};
   QGridLayout layout{};
 
   std::vector<Uints> radicalKanjiMap{};
+
+  HadamitzkyWindow(const HadamitzkyWindow&) = delete;
+  HadamitzkyWindow& operator=(const HadamitzkyWindow&) = delete;
+  HadamitzkyWindow(HadamitzkyWindow&&) = delete;
+  HadamitzkyWindow& operator=(HadamitzkyWindow&&) = delete;
+  ~HadamitzkyWindow() = default;
   
  private slots:
+  void kanjiClicked(const unsigned int kanji);
   void graphemeButtonClicked(unsigned int graphemeIndex);
   
  private:

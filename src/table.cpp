@@ -21,8 +21,8 @@ QtKanji::Table::Table(QWidget *parent): QWidget(parent)
     connect(&kanjiButtons[index],
 	    &QPushButton::clicked,
 	    this,
-            [=](){ kanjiClicked(index); });
-	    layout.addWidget(&kanjiButtons[index],coord.row,coord.column);
+      [=](){ kanjiClicked(index); });
+	  layout.addWidget(&kanjiButtons[index],coord.row,coord.column);
   }
   
   setLayout(&layout);
@@ -34,6 +34,8 @@ void QtKanji::Table::kanjiClicked(const unsigned int index)
   clipboard->setText( kanjiList[index] );
   for(const auto & flashcard : flashcards)
     flashcard->displaySign.setText( kanjiList[index] );
+  
+  search->setText( kanjiList[index] );
 }
 
 QtKanji::Coord QtKanji::Table::getCoordinate(unsigned int index)

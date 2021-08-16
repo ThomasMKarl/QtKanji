@@ -16,20 +16,20 @@ HEADERS += \
     include/examplewindow.h \
     include/flashcardwindow.h \
     include/hadamitzkywindow.h \
-    include/functions.h \
     include/datahandler.h \
     include/table.h \
     include/mainwindow.h \
+    include/helper.h \
     include/headers.h
 
 SOURCES += \
     src/examplewindow.cpp \
     src/flashcardwindow.cpp \
     src/hadamitzkywindow.cpp \
-    src/functions.cpp \
     src/datahandler.cpp \
     src/table.cpp \
     src/mainwindow.cpp \
+    src/helper.cpp \
     src/main.cpp
     
 QMAKE_CXXFLAGS -= -O2

@@ -1,7 +1,7 @@
 #ifndef DATAHANDLER_H
 #define DATAHANDLER_H
 
-#include "headers.h"
+#include "helper.h"
 
 
 
@@ -34,18 +34,18 @@ class DataHandler
   Uints indexContainer{};
   Uints indexInCardbox{};
 
-  Strings dataFurigana{}, dataKanji{}, dataEnglish{};
-  Strings truedataFurigana{}, truedataKanji{}, truedataEnglish{};
-
+  Examples examples{};
   Flashcard flashcard{};
 
-  bool getLimits(MainWindow &mainwindow);
-  bool computeExampleData(MainWindow &mainwindow);
-  bool computeContainerData(MainWindow &mainwindow);
+  Error getLimits(MainWindow &mainwindow);
+  Error computeExampleData(MainWindow &mainwindow);
+  Error computeContainerData(MainWindow &mainwindow);
   
   void computeKanjiData(unsigned int Id);
 
   unsigned int computeRandomId(bool fromCardbox, unsigned int removeFlag);
+  unsigned int searchKanjiId(QString kanji);
+  Error printExamples();
 };
 
 };

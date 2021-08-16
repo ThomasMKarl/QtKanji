@@ -1,7 +1,7 @@
 #include "datahandler.h"
 #include "mainwindow.h"
 
-bool QtKanji::DataHandler::getLimits(MainWindow &mainwindow)
+QtKanji::Error QtKanji::DataHandler::getLimits(MainWindow &mainwindow)
 {
     lowerLimit = mainwindow.displayLowerLimit.text().toInt(); //characters become zero
     upperLimit = mainwindow.displayUpperLimit.text().toInt();
@@ -16,23 +16,21 @@ bool QtKanji::DataHandler::getLimits(MainWindow &mainwindow)
     {
       mainwindow.displayLowerLimit.setText("insert integers.");
       mainwindow.displayUpperLimit.setText("");
-      return false;
+      return QtKanji::Error::FILE_ERROR;
     }
     
-    return true;
+    return QtKanji::Error::SUCCESS;
 }
 
-bool QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
+QtKanji::Error QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
 {
-  dataFurigana.clear();
-  dataKanji.clear();
-  dataEnglish.clear();
+  examples.clear();
 
   std::ifstream exampleData{pathToExampleData};
   if(!exampleData)
   {
     mainwindow.dataFail.show();
-    return false;
+    return QtKanji::Error::FILE_ERROR;
   }
   mainwindow.dataFail.hide();
     
@@ -44,13 +42,13 @@ bool QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
        (uint)std::stoi(linedata) <= mainwindow.dataHandler->upperLimit)
     {
       std::getline(exampleData, linedata, '\n');
-      explode(", ", linedata, dataFurigana);
+      explode(", ", linedata, examples.dataFurigana);
 
       std::getline(exampleData, linedata, '\n');
-      explode(", ", linedata, dataKanji);
+      explode(", ", linedata, examples.dataKanji);
 
       std::getline(exampleData, linedata, '\n');
-      explode(", ", linedata, dataEnglish);
+      explode(", ", linedata, examples.dataEnglish);
     }
     else
     {
@@ -62,19 +60,15 @@ bool QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
     std::getline(exampleData, linedata, '\n');
     std::getline(exampleData, linedata, '\n');
   }
-  if(dataKanji.empty() || dataFurigana.empty()) return false;
-  if(dataKanji.size()  != dataFurigana.size() ) return false;
-    
-  if(mainwindow.examplesAreToRandomize())
-    shuffle(dataFurigana, dataKanji, dataEnglish);
+
+  if(!examples.areValid()) return QtKanji::Error::FILE_ERROR;
+
+  if(mainwindow.toRandomize()) examples.shuffle();
   
-  truedataFurigana = dataFurigana;
-  truedataKanji = dataKanji;
-  
-  return true;
+  return QtKanji::Error::SUCCESS;
 }
 
-bool QtKanji::DataHandler::computeContainerData(MainWindow &mainwindow)
+QtKanji::Error QtKanji::DataHandler::computeContainerData(MainWindow &mainwindow)
 {
   indexInCardbox.clear();
   
@@ -82,25 +76,27 @@ bool QtKanji::DataHandler::computeContainerData(MainWindow &mainwindow)
   if(!containerData)
   {
     mainwindow.dataFail.show();
-    return false;
+    return QtKanji::Error::FILE_ERROR;
   }
-  mainwindow.dataFail.hide();
 
   std::string linedata{};
   std::getline(containerData, linedata);
   if(linedata.empty())
   {
     mainwindow.cardboxFail.show();
-    mainwindow.dataFail.hide();
-    return false;
+    return QtKanji::Error::EMPTY_CARDBOX;
   }
-  mainwindow.cardboxFail.hide();
 
   Strings help = explode(":", std::move(linedata));
   indexInCardbox =
     convertStringsToIntegers(std::move(help));
+    
+  std::sort(std::begin(indexInCardbox), std::end(indexInCardbox));
+  
+  getSortedSubarray(indexInCardbox, lowerLimit, upperLimit);
+  if(indexInCardbox.empty()) return QtKanji::Error::NO_KANJI_WITHIN_RANGE;
 
-  return true;
+  return QtKanji::Error::SUCCESS;
 }
 
 void QtKanji::DataHandler::computeKanjiData(unsigned int ID)
@@ -109,6 +105,8 @@ void QtKanji::DataHandler::computeKanjiData(unsigned int ID)
     
   std::string linedata{};
   std::ifstream kanjiData{pathToKanjiData};
+  if(!kanjiData) return;
+
   FC.dataImiVector.clear();
   FC.dataKunVector.clear();
   FC.dataOnVector.clear();
@@ -139,6 +137,17 @@ void QtKanji::DataHandler::computeKanjiData(unsigned int ID)
 
       return;
     }
+    else
+    {
+      std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
+    }
+    std::getline(kanjiData, linedata, '\n');
+    std::getline(kanjiData, linedata, '\n');
+    std::getline(kanjiData, linedata, '\n');
   }
 }
 
@@ -175,4 +184,17 @@ unsigned int QtKanji::DataHandler::computeRandomId(bool fromCardbox, unsigned in
   indexContainer.push_back(randId);
 
   return randId;
+}
+
+unsigned int QtKanji::DataHandler::searchKanjiId(QString kanji)
+{
+  const auto index = std::find(kanjiList.begin(), kanjiList.end(), kanji);
+  if(index == kanjiList.end()) return 0;
+  
+  return std::distance(kanjiList.begin(),index)+1;
+}
+
+QtKanji::Error QtKanji::DataHandler::printExamples()
+{
+  return examples.print();
 }

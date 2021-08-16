@@ -20,14 +20,16 @@ class MainWindow : public QWidget
  public:
   static MainWindow createMainWindow(QWidget *parent = 0) {return MainWindow{parent};}
 
-  bool examplesAreToRandomize() {return randomize;}
+  bool toRandomize() const {return randomize;}
 
   QLineEdit displayLowerLimit{}, displayUpperLimit{}, search{};
   QLabel
     lowerLimit{"from:"},
     upperLimit{"to:"},
     dataFail{"file error!"},
-    cardboxFail{"no cards in box."};
+    cardboxFail{"no cards in box."},
+    searchFail{"no such kanji in DB"},
+    cardboxLimitFail{"no cards within limits"};
   QPushButton
     signButton{"train kanji"},
     cardboxButton{"cardbox"},
@@ -36,13 +38,20 @@ class MainWindow : public QWidget
     japengButton{"漢字 - ふりがな"},
     printButton{"print examples"},
     searchButton{"search"};
-  QGridLayout layout{};
   QCheckBox randomizeBox{"randomize"};
+  QGridLayout layout{};
+  QFont textfont{};
 
   HadamitzkyWindow hadamitzkyWindow{};
   SharedBoxes boxes{};
   SharedTable table{};
   SharedData dataHandler{};
+
+  MainWindow(const MainWindow&) = delete;
+  MainWindow& operator=(const MainWindow&) = delete;
+  MainWindow(MainWindow&&) = delete;
+  MainWindow& operator=(MainWindow&&) = delete;
+  ~MainWindow();
 
  private slots:
   void    signButtonClicked();
@@ -62,9 +71,8 @@ class MainWindow : public QWidget
   void addDisplaysToLayout();
   void startFlashcardWindow(bool fromCardbox);
   void startFlashcardWindow(unsigned int ID);
-  void startExampleWindow();
-  void printExamples();
-  void searchKanji();
+  void displayErrorMessage(QtKanji::Error err);
+  void hideErrors();
 
   bool randomize{false};
 };
@@ -72,6 +80,8 @@ class MainWindow : public QWidget
 template <typename W>
 void showResult(W &window)
 {
+  window.adjustSize();
+
   double ratio =
     100.0*window.successes /
     (window.failures + window.successes);
