@@ -21,7 +21,7 @@
 #include <memory>
 
 #define NUMBER_OF_KANJI 540
-#define NUMNER_OF_HADAMITZKY_KANJI 2136
+#define NUMBER_OF_HADAMITZKY_KANJI 2136
 #define NUMBER_OF_GRAPHEMES 80
 
 namespace QtKanji {

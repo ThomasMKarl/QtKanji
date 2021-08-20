@@ -2,24 +2,29 @@
 
 A kanji training tool based on Qt for Linux and Windows, now conatining 540 of the most important signs
 
-- install Qt $$\geq$$ 5
+- install Qt >= 5
 
-- type <i>qmake</i> in root folder
+- type <i>make help</i> in root folder:
 
-- type <i>make</i> in root folder
+ all       : makes build and doc
 
-- execute <i>qtkanji</i> in ../bin
+ doc       : generates documentation
+
+ build     : compiles application
+
+ clean     : removes object files and moc files
+
+ realclean : removes object files, moc files, compiled executables, documentation and Qt Makefile
+
+ help      : prints help
+
+- execute <i>qtkanji</i> in folder <i>bin</i>
 
 Database files <i>*.dat</i> must reside in the same folder in which the <i>qtkanji</i> binary is executed.
 
-Under construction: 
-- interactive list of 80 graphemes as search function
+Under construction:
 
 - print function for flashcards
-
-- information about radicals in search function according to Wolfgang Hadamitzky
-
-- sort function with respect to stroke index or Hadamiztky ID ([https://www.hadamitzky.de/](https://www.hadamitzky.de/))
 
 - examples for more than 317-460
 

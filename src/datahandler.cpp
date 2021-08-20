@@ -1,45 +1,19 @@
 #include "datahandler.h"
 #include "mainwindow.h"
 
-QtKanji::Error QtKanji::DataHandler::getLimits(MainWindow &mainwindow)
-{
-    lowerLimit = mainwindow.displayLowerLimit.text().toInt(); //characters become zero
-    upperLimit = mainwindow.displayUpperLimit.text().toInt();
-    
-    if(upperLimit > NUMBER_OF_KANJI)
-    {
-      upperLimit = NUMBER_OF_KANJI;
-      mainwindow.displayUpperLimit.setText(QString::number(NUMBER_OF_KANJI));
-    }
-    
-    if(upperLimit < lowerLimit)
-    {
-      mainwindow.displayLowerLimit.setText("insert integers.");
-      mainwindow.displayUpperLimit.setText("");
-      return QtKanji::Error::FILE_ERROR;
-    }
-    
-    return QtKanji::Error::SUCCESS;
-}
-
-QtKanji::Error QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
+QtKanji::Error QtKanji::DataHandler::computeExampleData(bool randomize)
 {
   examples.clear();
 
   std::ifstream exampleData{pathToExampleData};
-  if(!exampleData)
-  {
-    mainwindow.dataFail.show();
-    return QtKanji::Error::FILE_ERROR;
-  }
-  mainwindow.dataFail.hide();
+  if(!exampleData) return QtKanji::Error::FILE_ERROR;
     
   std::string linedata{};
   while(!exampleData.eof())
   {
     std::getline(exampleData, linedata, '\n');
-    if((uint)std::stoi(linedata) >= mainwindow.dataHandler->lowerLimit &&
-       (uint)std::stoi(linedata) <= mainwindow.dataHandler->upperLimit)
+    if((uint)std::stoi(linedata) >= lowerLimit &&
+       (uint)std::stoi(linedata) <= upperLimit)
     {
       std::getline(exampleData, linedata, '\n');
       explode(", ", linedata, examples.dataFurigana);
@@ -63,36 +37,28 @@ QtKanji::Error QtKanji::DataHandler::computeExampleData(MainWindow &mainwindow)
 
   if(!examples.areValid()) return QtKanji::Error::FILE_ERROR;
 
-  if(mainwindow.toRandomize()) examples.shuffle();
+  if(randomize) examples.shuffle();
   
   return QtKanji::Error::SUCCESS;
 }
 
-QtKanji::Error QtKanji::DataHandler::computeContainerData(MainWindow &mainwindow)
+QtKanji::Error QtKanji::DataHandler::computeContainerData()
 {
   indexInCardbox.clear();
   
   std::ifstream containerData{pathToContainerData};
-  if(!containerData)
-  {
-    mainwindow.dataFail.show();
-    return QtKanji::Error::FILE_ERROR;
-  }
+  if(!containerData) return QtKanji::Error::FILE_ERROR;
 
   std::string linedata{};
   std::getline(containerData, linedata);
-  if(linedata.empty())
-  {
-    mainwindow.cardboxFail.show();
-    return QtKanji::Error::EMPTY_CARDBOX;
-  }
+  if(linedata.empty()) return QtKanji::Error::EMPTY_CARDBOX;
 
   Strings help = explode(":", std::move(linedata));
   indexInCardbox =
     convertStringsToIntegers(std::move(help));
     
   std::sort(std::begin(indexInCardbox), std::end(indexInCardbox));
-  
+
   getSortedSubarray(indexInCardbox, lowerLimit, upperLimit);
   if(indexInCardbox.empty()) return QtKanji::Error::NO_KANJI_WITHIN_RANGE;
 

@@ -25,11 +25,9 @@ class Table : public QWidget
  public:
   static Table* createTable(QWidget *parent = 0) {return new Table{parent};}
   explicit Table(QWidget *parent = 0);
-  
-  Buttons kanjiButtons{NUMBER_OF_KANJI};
-  QGridLayout layout{};
+
   QLineEdit* search{};
-  Strings tableData{};
+  
   FlashcardWindows flashcards{};
 
   Table(const Table&) = delete;
@@ -43,6 +41,9 @@ class Table : public QWidget
 
  private:
   Coord getCoordinate(unsigned int index);
+
+  Buttons kanjiButtons{NUMBER_OF_KANJI};
+  QGridLayout layout{};
 };
 
 };

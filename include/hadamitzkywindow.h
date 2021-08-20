@@ -16,14 +16,17 @@ class HadamitzkyWindow : public QWidget
   static HadamitzkyWindow* createHadamitzkyWindow(QWidget *parent = 0)
     {return new HadamitzkyWindow{parent};}
   explicit HadamitzkyWindow(QWidget *parent = 0);
+
+  QtKanji::Error printSigns(unsigned int lowerLimit, unsigned int upperLimit) const;
   
   Buttons graphemeButtons{NUMBER_OF_GRAPHEMES};
   QLineEdit* search{};
   QLabel possibleKanji{"possible kanji:"};
-  Buttons kanjiButtons{NUMNER_OF_HADAMITZKY_KANJI};
+  Buttons kanjiButtons{NUMBER_OF_HADAMITZKY_KANJI};
   QGridLayout layout{};
 
   std::vector<Uints> radicalKanjiMap{};
+  std::vector<std::map<unsigned int, unsigned int>> radicalStrokeNumberMaps{};
 
   HadamitzkyWindow(const HadamitzkyWindow&) = delete;
   HadamitzkyWindow& operator=(const HadamitzkyWindow&) = delete;

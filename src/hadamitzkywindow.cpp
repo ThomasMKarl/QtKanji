@@ -107,3 +107,26 @@ void QtKanji::HadamitzkyWindow::kanjiClicked(const unsigned int index)
   
   search->setText( kanjiList[index] );
 }
+
+QtKanji::Error QtKanji::HadamitzkyWindow::printSigns(unsigned int lowerLimit, unsigned int upperLimit) const
+{
+  std::ofstream file{"kanji_sorted_" + std::to_string(lowerLimit) + "-" + std::to_string(upperLimit) + ".html"};
+  if(!file) return Error::FILE_ERROR;
+
+  const std::string header{"<!DOCTYPE html>\n<html>\n<head>\n<title>Sorted Kanji</title>\n<meta charset='UTF-8'>\n</head>\n\n<body>\n<h1>Sorted Kanji</h1>\n"};
+  const std::string footer{"\n</body>\n</html>"};
+  
+  file << header;
+
+  unsigned short int counter{0};
+  for(const auto &radicalStrokeNumberMap : radicalStrokeNumberMaps)
+  {
+    file << "Stroke number " << std::to_string(++counter) << "<p>";
+    for(const auto &[radicalStrokeNumber,index] : radicalStrokeNumberMap)
+      file << kanjiList[index-1].toStdString() << " ";
+
+    file << "<p>\n";
+  }
+
+  return QtKanji::Error::SUCCESS;
+}

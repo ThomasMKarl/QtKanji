@@ -2,7 +2,6 @@
 #include "datahandler.h"
 #include "hadamitzkydata.h"
 
-
 bool QtKanji::Examples::furiganaMatches(const unsigned int Id, const std::string furigana) const
 {
   if(furigana != dataFurigana[Id-1]) return false;
@@ -134,27 +133,40 @@ QtKanji::Uints QtKanji::convertStringsToIntegers(const Strings &strings)
   return integers;
 }
 
-QtKanji::Uints QtKanji::computeContainingKanjiIndices(SharedData &dataHandler, unsigned int graphemeIndex)
+QtKanji::Uints QtKanji::computeContainingKanjiIndices(unsigned int graphemeIndex, 
+                                                      std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps)
 {
-  QtKanji::Uints kanjiIndices{};  
-  for(unsigned int index = 1; index < 4; ++index)
+  DataHandler dataHandler{};
+
+  std::map<unsigned int, unsigned int> strokeMap{};
+
+  QtKanji::Uints kanjiIndices{};
+  QtKanji::Uints radicalStrokeNumbers{};
+  for(unsigned int index = 1; index <= 4; ++index)
   {
-    dataHandler->computeKanjiData(index);
+    dataHandler.computeKanjiData(index);
     QtKanji::HadamitzkyData data =
-      QtKanji::HadamitzkyData::createHadamitzkyData(dataHandler->flashcard.HID);
+      QtKanji::HadamitzkyData::createHadamitzkyData(dataHandler.flashcard.HID);
       
     if(contains(data.graphemeIndices, graphemeIndex))
       kanjiIndices.push_back(index);
+
+    strokeMap.insert({data.strokeNumber,index});
+    radicalStrokeNumbers.push_back(data.radicalStrokeNumber);
   }
   
+  radicalStrokeNumberMaps.resize(29);
+  //for(const auto & [strokeNumber,index] : strokeMap)
+    //radicalStrokeNumberMaps[strokeNumber-1].insert({1,1});
+
   return kanjiIndices;
 }
 
-std::vector<QtKanji::Uints> QtKanji::computeRadicalKanjiMap(SharedData &dataHandler)
+std::vector<QtKanji::Uints> QtKanji::computeRadicalKanjiMap(std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps)
 {
   std::vector<Uints> map{NUMBER_OF_GRAPHEMES};
   for(unsigned int index = 1; index <= NUMBER_OF_GRAPHEMES; ++index)
-    map[index-1] = QtKanji::computeContainingKanjiIndices(dataHandler, index);
+    map[index-1] = QtKanji::computeContainingKanjiIndices(index, radicalStrokeNumberMaps);
 
   return map;
 }

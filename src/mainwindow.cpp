@@ -6,9 +6,10 @@ QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 
   table = std::make_shared<Table>();
   table->show();
-  dataHandler = std::make_shared<DataHandler>();
   hadamitzkyWindow.show();
-  hadamitzkyWindow.radicalKanjiMap = computeRadicalKanjiMap(dataHandler);
+  std::vector<std::map<unsigned int, unsigned int>> radicalStrokeNumberMaps{};
+  hadamitzkyWindow.radicalKanjiMap = computeRadicalKanjiMap(radicalStrokeNumberMaps);
+  hadamitzkyWindow.radicalStrokeNumberMaps = std::move(radicalStrokeNumberMaps);
   
   textfont.setPointSize(15);
   textfont.setBold(false);
@@ -70,19 +71,26 @@ void QtKanji::MainWindow::addButtonsToLayout()
   layout.addWidget(&japengButton,1,1);
   japengButton.setCheckable(true);
 
-  printButton.setFixedSize(190,30);
-  connect(&printButton,
+  printExampleButton.setFixedSize(190,30);
+  connect(&printExampleButton,
     &QPushButton::clicked,
 	  this,
-	  &MainWindow::printButtonClicked);
-  layout.addWidget(&printButton,3,3);
+	  &MainWindow::printExampleButtonClicked);
+  layout.addWidget(&printExampleButton,3,3);
+
+  printSignButton.setFixedSize(190,30);
+  connect(&printSignButton,
+    &QPushButton::clicked,
+	  this,
+	  &MainWindow::printSignButtonClicked);
+  layout.addWidget(&printSignButton,4,3);
 
   searchButton.setFixedSize(150,30);
   connect(&searchButton,
     &QPushButton::clicked,
 	  this,
 	  &MainWindow::searchButtonClicked);
-  layout.addWidget(&searchButton,5,3);
+  layout.addWidget(&searchButton,6,2);
 }
 
 void QtKanji::MainWindow::addBoxesToLayout()
@@ -126,12 +134,12 @@ void QtKanji::MainWindow::addBoxesToLayout()
 void QtKanji::MainWindow::addDisplaysToLayout()
 {
   displayLowerLimit.setFixedSize(150,30);
-  displayLowerLimit.setText(QString::number(dataHandler->lowerLimit));
+  displayLowerLimit.setText(QString::number(1));
   layout.addWidget(&lowerLimit,2,0);
   layout.addWidget(&displayLowerLimit,2,1);
      
   displayUpperLimit.setFixedSize(150,30);
-  displayUpperLimit.setText(QString::number(dataHandler->upperLimit));
+  displayUpperLimit.setText(QString::number(NUMBER_OF_KANJI));
   layout.addWidget(&upperLimit,3,0);
   layout.addWidget(&displayUpperLimit,3,1);
 
@@ -139,7 +147,7 @@ void QtKanji::MainWindow::addDisplaysToLayout()
   QFont searchTextfont{};
   searchTextfont.setPointSize(30);
   search.setFont(std::move(searchTextfont));
-  layout.addWidget(&search,4,3);
+  layout.addWidget(&search,5,2);
 
   table->search = &search;
   hadamitzkyWindow.search = &search;
@@ -160,33 +168,53 @@ void QtKanji::MainWindow::cardboxButtonClicked()
 void QtKanji::MainWindow::exampleButtonClicked()
 {
   hideErrors();
+ 
+  unsigned int lowerLimit = displayLowerLimit.text().toInt(); //characters become zero
+  unsigned int upperLimit = displayUpperLimit.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
 
-  CHECK_ERROR(dataHandler->getLimits(*this));
+  DataHandler dataHandler{lowerLimit, upperLimit, fromEngToJap}; 
 
-  CHECK_ERROR(dataHandler->computeExampleData(*this));
+  CHECK_ERROR(dataHandler.computeExampleData(randomize));
 
   ExampleWindow *example = ExampleWindow::createExampleWindow(dataHandler);
 
   example->show();
 }
 
-void QtKanji::MainWindow::printButtonClicked()
+void QtKanji::MainWindow::printExampleButtonClicked()
 {
   hideErrors();
 
-  CHECK_ERROR(dataHandler->getLimits(*this));
+  unsigned int lowerLimit = displayLowerLimit.text().toInt(); //characters become zero
+  unsigned int upperLimit = displayUpperLimit.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
 
-  CHECK_ERROR(dataHandler->computeExampleData(*this));
+  DataHandler dataHandler{lowerLimit, upperLimit, fromEngToJap}; 
 
-  CHECK_ERROR(dataHandler->printExamples());
+  CHECK_ERROR(dataHandler.computeExampleData(randomize));
+
+  CHECK_ERROR(dataHandler.printExamples());
+}
+
+void QtKanji::MainWindow::printSignButtonClicked()
+{
+  hideErrors();
+
+  unsigned int lowerLimit = displayLowerLimit.text().toInt(); //characters become zero
+  unsigned int upperLimit = displayUpperLimit.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
+
+  CHECK_ERROR(hadamitzkyWindow.printSigns(lowerLimit, upperLimit));
 }
 
 void QtKanji::MainWindow::searchButtonClicked()
 {
   hideErrors();
   
+  DataHandler dataHandler{};
   QString kanji = search.text();
-  unsigned int Id = dataHandler->searchKanjiId(kanji);
+  unsigned int Id = dataHandler.searchKanjiId(kanji);
 
   if(Id == 0)
   {
@@ -233,7 +261,7 @@ void QtKanji::MainWindow::engjapButtonClicked()
 {
   if(engjapButton.isChecked())
   {
-    dataHandler->fromEngToJap = true;
+    fromEngToJap = true;
     japengButton.setChecked(false);
   }
   else
@@ -247,7 +275,7 @@ void QtKanji::MainWindow::japengButtonClicked()
 {
   if(japengButton.isChecked())
   {
-    dataHandler->fromEngToJap = false;
+    fromEngToJap = false;
     engjapButton.setChecked(false);
   }
   else
@@ -260,11 +288,15 @@ void QtKanji::MainWindow::japengButtonClicked()
 void QtKanji::MainWindow::startFlashcardWindow(bool fromCardbox)
 {
   hideErrors();
-
-  CHECK_ERROR(dataHandler->getLimits(*this));
-  if(fromCardbox) CHECK_ERROR(dataHandler->computeContainerData(*this));
   
-  dataHandler->indexContainer.clear();
+  unsigned int lowerLimit = displayLowerLimit.text().toInt(); //characters become zero
+  unsigned int upperLimit = displayUpperLimit.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
+
+  DataHandler dataHandler{lowerLimit, upperLimit, fromEngToJap};
+
+  if(fromCardbox) CHECK_ERROR(dataHandler.computeContainerData());
+  else dataHandler.computeContainerData();
   
   FlashcardWindow *flashcard =
     FlashcardWindow::createFlashcardWindow(randomize,
@@ -279,13 +311,27 @@ void QtKanji::MainWindow::startFlashcardWindow(unsigned int ID)
 {
   hideErrors();
   
-  dataHandler->indexContainer.clear();
-    
   FlashcardWindow *flashcard =
-    FlashcardWindow::createFlashcardWindow(dataHandler,
-				                                   table,
-				                                   ID);
+    FlashcardWindow::createFlashcardWindow(ID);
   flashcard->show();
+}
+
+QtKanji::Error QtKanji::MainWindow::checkLimits(unsigned int lowerLimit, unsigned int upperLimit)
+{
+  if(upperLimit > NUMBER_OF_KANJI)
+  {
+    upperLimit = NUMBER_OF_KANJI;
+    displayUpperLimit.setText(QString::number(NUMBER_OF_KANJI));
+  }
+    
+  if(upperLimit < lowerLimit)
+  {
+    displayLowerLimit.setText("insert integers.");
+    displayUpperLimit.setText("");
+    return QtKanji::Error::FILE_ERROR;
+  }
+  
+  return QtKanji::Error::SUCCESS;
 }
 
 void QtKanji::MainWindow::displayErrorMessage(QtKanji::Error err)

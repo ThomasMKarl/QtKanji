@@ -44,8 +44,8 @@ namespace QtKanji {
   void explode(const std::string &delimiter, const std::string &string, Strings &result);
   void shuffle(Strings &first, Strings &second, Strings &third);
   Uints convertStringsToIntegers(const Strings &strings);
-  Uints computeContainingKanjiIndices(SharedData &dataHandler, unsigned int graphemeIndex);
-  std::vector<Uints> computeRadicalKanjiMap(SharedData &dataHandler);
+  Uints computeContainingKanjiIndices(unsigned int graphemeIndex, std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps);
+  std::vector<Uints> computeRadicalKanjiMap(std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps);
 
   template<typename T>
   void getSortedSubarray(std::vector<T> &array, const size_t lowerLimit, const size_t upperLimit)
@@ -60,10 +60,10 @@ namespace QtKanji {
       {
         array[counter] = std::move(array[index]);
         ++counter;
-      }
-
-      array.resize(counter);
+      }    
     }
+    
+    array.resize(counter);
   }
 
   template<typename T>

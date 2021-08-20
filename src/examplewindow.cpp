@@ -1,6 +1,6 @@
 #include "examplewindow.h"
 
-QtKanji::ExampleWindow::ExampleWindow(SharedData &dataHandler_, QWidget *parent) :
+QtKanji::ExampleWindow::ExampleWindow(DataHandler &dataHandler_, QWidget *parent) :
   dataHandler{dataHandler_},
   QWidget(parent)
 {  
@@ -13,14 +13,14 @@ QtKanji::ExampleWindow::ExampleWindow(SharedData &dataHandler_, QWidget *parent)
 
 void QtKanji::ExampleWindow::setExampleWindowLayout()
 {
-  const auto &EX = dataHandler->examples;
+  const auto &EX = dataHandler.examples;
 
   unsigned int Id = failures + successes + 1;
 
   layout.addWidget(&Furigana, 1,0);
   layout.addWidget(&Kanji, 2,0);
   
-  if(dataHandler->fromEngToJap)
+  if(dataHandler.fromEngToJap)
   {
     layout.addWidget(&displayFurigana,1,1);
 
@@ -70,22 +70,22 @@ void QtKanji::ExampleWindow::update()
   textfont.setBold(false);
   setFont(textfont);
 
-  const auto &EX = dataHandler->examples;
+  const auto &EX = dataHandler.examples;
 
   unsigned int Id = failures + successes + 1;
 
-  unsigned int numberOfExamples = dataHandler->examples.dataFurigana.size();
+  unsigned int numberOfExamples = dataHandler.examples.dataFurigana.size();
   
   if(Id == numberOfExamples+1)
   {
-    showResult(*this);
+    showResult();
     return;
   }
 
   continueButton.hide();
   submitButton.show();
 
-  if(dataHandler->fromEngToJap) 
+  if(dataHandler.fromEngToJap) 
     Kanji2.setText(QString::fromStdString(EX.dataKanji[Id-1]));
   else 
     Furigana2.setText(QString::fromStdString(EX.dataFurigana[Id-1]));
@@ -106,12 +106,12 @@ void QtKanji::ExampleWindow::update()
 
 void QtKanji::ExampleWindow::submitButtonClicked()
 {
-  const auto &EX = dataHandler->examples;
+  const auto &EX = dataHandler.examples;
 
   unsigned int Id = failures + successes + 1;
 
   std::string dataFurigana{}, dataKanji{};
-  if(dataHandler->fromEngToJap)
+  if(dataHandler.fromEngToJap)
   {
     dataFurigana = displayFurigana.text().toStdString();
 
@@ -134,7 +134,7 @@ void QtKanji::ExampleWindow::continueButtonClicked()
 
 void QtKanji::ExampleWindow::showSuccess()
 {
-  const auto &EX = dataHandler->examples;
+  const auto &EX = dataHandler.examples;
   
   unsigned int Id = failures + successes + 1;
 
@@ -142,7 +142,7 @@ void QtKanji::ExampleWindow::showSuccess()
   Failure       .hide();
   continueButton.show();
   
-  if(dataHandler->fromEngToJap)
+  if(dataHandler.fromEngToJap)
   {
     displayFurigana.setText(
       QString::fromStdString(EX.dataFurigana[Id-1]));
@@ -164,7 +164,7 @@ void QtKanji::ExampleWindow::showSuccess()
 
 void QtKanji::ExampleWindow::showFailure()
 {
-  const auto &EX = dataHandler->examples;
+  const auto &EX = dataHandler.examples;
 
   unsigned int Id = failures + successes + 1;
 
@@ -172,7 +172,7 @@ void QtKanji::ExampleWindow::showFailure()
   Failure       .show();
   continueButton.show();
 
-  if(dataHandler->fromEngToJap)
+  if(dataHandler.fromEngToJap)
   {
     displayFurigana.setText(
       QString::fromStdString(EX.dataFurigana[Id-1]));
@@ -190,4 +190,52 @@ void QtKanji::ExampleWindow::showFailure()
   ++failures;
 
   submitButton.hide();
+}
+
+void QtKanji::ExampleWindow::showResult()
+{
+  adjustSize();
+
+  double ratio =
+    100.0*successes /
+    (failures + successes);
+  
+  Success.setText("Successes:");
+  Success2.setText(QString::number(successes));
+  Failure.setText("Failures:");
+  Failure2.setText(QString::number(failures));
+  Rate.setText("Success Rate:");
+  Rate2.setText(QString::number(ratio) + "%");
+
+
+  cards.setText("Number of cards in box: "
+                       + QString::number(dataHandler.indexInCardbox.size()));
+    
+  if(dataHandler.indexInCardbox.empty())
+    cards.setStyleSheet("color: green");
+  else
+    cards.setStyleSheet("color: red");
+
+  layout.addWidget(&Success,  0,0);
+  layout.addWidget(&Failure,  1,0);
+  layout.addWidget(&Success2, 0,1);
+  layout.addWidget(&Failure2, 1,1);
+  layout.addWidget(&Rate,     2,0);
+  layout.addWidget(&Rate2,    2,1);
+  layout.addWidget(&cards,    3,0);
+
+  Success2.setStyleSheet("color: green");
+  Failure2.setStyleSheet("color: red");
+  if(ratio >= 85)
+    Rate2.setStyleSheet("color: green" );
+  if(ratio < 85 && ratio >= 50)
+    Rate2.setStyleSheet("color: yellow");
+  if(ratio < 50 && ratio >  15)
+    Rate2.setStyleSheet("color: orange");
+  if(ratio <= 15)
+    Rate2.setStyleSheet("color: red"   );
+
+  setLayout(&layout);
+  setWindowTitle("QtKanji Result");
+  setWindowIcon(QIcon("kanji.ico"));
 }

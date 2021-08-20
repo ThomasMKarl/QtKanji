@@ -1,7 +1,7 @@
 .*
 *~
 *#
-Makefile
+Makefile_qt
 moc_*
 *.ui
 *.o
@@ -9,12 +9,14 @@ moc_*
 *.so
 *.lib
 *.dll
-bin/linux/qtkanji
-bin/windows/qtkanji.exe
-doc/*
+bin/qtkanji
+bin/qtkanji.exe
+doc/html
+doc/latex
 *.html
 object_script.qtkanji.Release
 qtkanji_plugin_import.cpp
 Makefile.Release
 kanji.pro.user
 qtkanji_resource.rc
+unknow_indices.txt
