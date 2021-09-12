@@ -1,0 +1,86 @@
+\documentclass[a4paper,headsepline=3pt,headinclude=true,12pt,oneside]{scrbook}
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=3cm,includeheadfoot]{geometry}
+\usepackage{scrlayer-scrpage}
+\usepackage{mwe}
+\usepackage[origlayout=true,automark,colors={bvm}]{URpagestyles}
+    \definecolor{UR@color@10}{HTML}{800000}
+    \definecolor{redA}{HTML}{800000}
+    \definecolor{grayA}{HTML}{9c9c9c}
+    \definecolor{grayB}{HTML}{696969}
+    \definecolor{grayC}{HTML}{404040}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{english} 
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage{xeCJK}
+\setCJKmainfont{IPAMincho}
+\setCJKsansfont{IPAGothic}
+\setCJKmonofont{IPAGothic}
+
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{csvsimple}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{multicol}
+\usepackage{caption}
+
+\usepackage{xspace}
+\usepackage{setspace}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+%Links
+\usepackage[colorlinks=true,
+            linkcolor=black,
+            urlcolor=gray,
+            citecolor=gray,
+            bookmarks=true]{hyperref}
+
+\author{Thomas Karl}
+\title{QtKanji Tables}
+\subtitle{}
+\date{\today}
+\renewcommand{\titlepagestyle}{URtitle} 
+
+\cfoot*{ }
+\ofoot*{\thepage}% the pagenumber in the center of the foot, also on plain pages
+\ihead*{ }% Name and title beneath each other in the inner part of the foot
+\ohead*{\large QtKanji Tables}
+
+\begin{document}
+\begin{onehalfspace}
+    \begin{table}[h]
+        \large
+        \centering
+        \begin{tabular}{rcccccccccccc}
+        \toprule[2pt]\\
+        \textbf{(strokes) 1}  & 一 & 丨\\
+                  \textbf{2}  & イ & ニ & 冫 & 孑 & 阝 & 力 & 又 & 匕 & 亠 & 十 & ト & イ\\
+                              & 勹 & 儿 & 厶 & 厂 & \char"FA66 & 冂\\
+                  \textbf{3}  & 氵 & 土 & 扌 & 口 & 女 & 巾 & 犭 & 弓 & 彳 & 夕 & 彡 & \char"8279\\
+                              & 宀 & 大 & 小 & 山 & 寸 & 工 & ヨ & 尸\\
+                  \textbf{4}  & 木 & 日 & 月 & 火 & ネ & 王 & 牛 & 方 & 攵 & 斤 & 心 & 戈\\
+                  \textbf{5}  & 石 & 立 & 目 & 禾 & \char"8864 & 田 & 皿 & 疒\\
+                  \textbf{6}  & 糸 & 米 & 舟 & 虫 & 耳 & \char"7AF9\\
+                  \textbf{7}  & 言 & 貝 & 車 & \char"27FB7 & 酉\\
+                  \textbf{8}  & 金 & 住 & 雨 & 門\\
+                  \textbf{9}  & 頁 & 食\\
+                  \textbf{10} & 馬\\
+                  \textbf{11} & 魚 & 鳥\\
+        \bottomrule[2pt]
+        \end{tabular}
+        \caption*{List of all 80 graphemes (without variants)}
+        \label{graphemes}
+    \end{table}
+
+    \begin{large}
+    \input{../bin/kanji_sorted_1-540.tex}
+    \end{large}
+
+\end{onehalfspace}
+\end{document}

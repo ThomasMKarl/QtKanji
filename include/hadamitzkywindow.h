@@ -2,6 +2,7 @@
 #define HADAMITZKYWINDOW_H
 
 #include "helper.h"
+#include "datahandler.h"
 #include "hadamitzkydata.h"
 
 
@@ -17,16 +18,18 @@ class HadamitzkyWindow : public QWidget
     {return new HadamitzkyWindow{parent};}
   explicit HadamitzkyWindow(QWidget *parent = 0);
 
+  void computeRadicalKanjiMap();
   QtKanji::Error printSigns(unsigned int lowerLimit, unsigned int upperLimit) const;
   
-  Buttons graphemeButtons{NUMBER_OF_GRAPHEMES};
-  QLineEdit* search{};
   QLabel possibleKanji{"possible kanji:"};
+  QLineEdit* search{};
+  QPushButton* printSignButton{};
+  Buttons graphemeButtons{NUMBER_OF_GRAPHEMES};
   Buttons kanjiButtons{NUMBER_OF_HADAMITZKY_KANJI};
+  std::array<QLabel,11> stroke{};
   QGridLayout layout{};
 
-  std::vector<Uints> radicalKanjiMap{};
-  std::vector<std::map<unsigned int, unsigned int>> radicalStrokeNumberMaps{};
+  Maps maps{};
 
   HadamitzkyWindow(const HadamitzkyWindow&) = delete;
   HadamitzkyWindow& operator=(const HadamitzkyWindow&) = delete;
@@ -42,7 +45,9 @@ class HadamitzkyWindow : public QWidget
   unsigned short int clicks{0};
   Uints selectedRadicals{3};
 };
- 
+
+bool nextRow(unsigned short int index);
+
 };
 
 #endif

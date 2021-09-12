@@ -40,12 +40,19 @@ namespace QtKanji {
     void shuffle();
   };
 
+  struct Maps
+  {
+    explicit Maps() = default;
+    std::vector<Uints> radicalKanjiMap{};
+    std::vector<std::map<unsigned int,std::unordered_set<unsigned int>>> radicalStrokeNumberMaps{};
+
+    Uints computeContainingKanjiIndices(unsigned int graphemeIndex);
+  };
+
   Strings explode(const std::string &delimiter, const std::string &string);
   void explode(const std::string &delimiter, const std::string &string, Strings &result);
   void shuffle(Strings &first, Strings &second, Strings &third);
   Uints convertStringsToIntegers(const Strings &strings);
-  Uints computeContainingKanjiIndices(unsigned int graphemeIndex, std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps);
-  std::vector<Uints> computeRadicalKanjiMap(std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps);
 
   template<typename T>
   void getSortedSubarray(std::vector<T> &array, const size_t lowerLimit, const size_t upperLimit)
@@ -102,6 +109,32 @@ namespace QtKanji {
     std::set<T> result{};
 
     bool in1{}, in2{};
+
+    if(copy0.empty() && copy1.empty() && copy2.empty()) return result;
+
+    if(copy0.empty() && copy1.empty())
+    {
+      for(const auto &index : copy2) result.insert(index);
+      return result;
+    }
+
+    if(copy0.empty())
+    {
+      for(const auto &index : copy1)
+      {
+        if(!copy2.empty())
+        {
+          if(contains(copy2,index)) in2 = true;
+          else                      in2 = false;
+        }
+        else in2 = true;
+        
+        if(in2) result.insert(index);
+      }
+
+      return result;
+    }
+
     for(const auto &index : copy0)
     {
       if(!copy1.empty())

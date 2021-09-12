@@ -19,4 +19,4 @@ qtkanji_plugin_import.cpp
 Makefile.Release
 kanji.pro.user
 qtkanji_resource.rc
-unknow_indices.txt
+unknown_indices.txt

@@ -1,6 +1,7 @@
 #include "datahandler.h"
 #include "mainwindow.h"
 
+
 QtKanji::Error QtKanji::DataHandler::computeExampleData(bool randomize)
 {
   examples.clear();
@@ -65,13 +66,13 @@ QtKanji::Error QtKanji::DataHandler::computeContainerData()
   return QtKanji::Error::SUCCESS;
 }
 
-void QtKanji::DataHandler::computeKanjiData(unsigned int ID)
+QtKanji::Error QtKanji::DataHandler::computeKanjiData(unsigned int ID)
 {
   auto &FC = this->flashcard;
     
   std::string linedata{};
   std::ifstream kanjiData{pathToKanjiData};
-  if(!kanjiData) return;
+  if(!kanjiData) return QtKanji::Error::FILE_ERROR;
 
   FC.dataImiVector.clear();
   FC.dataKunVector.clear();
@@ -101,7 +102,7 @@ void QtKanji::DataHandler::computeKanjiData(unsigned int ID)
       if(linedata.empty()) FC.dataOnVector.push_back("-none-");
       else                 FC.dataOnVector = explode(", ", std::move(linedata));
 
-      return;
+      return QtKanji::Error::SUCCESS;
     }
     else
     {
@@ -115,6 +116,8 @@ void QtKanji::DataHandler::computeKanjiData(unsigned int ID)
     std::getline(kanjiData, linedata, '\n');
     std::getline(kanjiData, linedata, '\n');
   }
+
+  return QtKanji::Error::KANJI_NOT_FOUND;
 }
 
 unsigned int QtKanji::DataHandler::computeRandomId(bool fromCardbox, unsigned int removeFlag)

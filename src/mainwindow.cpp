@@ -1,15 +1,16 @@
 #include "mainwindow.h"
 
+
 QtKanji::MainWindow::MainWindow(QWidget *parent): QWidget(parent)
 {
   move(0,0);
 
   table = std::make_shared<Table>();
   table->show();
+
+  printSignButton.setEnabled(false);
+  hadamitzkyWindow.printSignButton = &printSignButton;
   hadamitzkyWindow.show();
-  std::vector<std::map<unsigned int, unsigned int>> radicalStrokeNumberMaps{};
-  hadamitzkyWindow.radicalKanjiMap = computeRadicalKanjiMap(radicalStrokeNumberMaps);
-  hadamitzkyWindow.radicalStrokeNumberMaps = std::move(radicalStrokeNumberMaps);
   
   textfont.setPointSize(15);
   textfont.setBold(false);
@@ -35,61 +36,61 @@ void QtKanji::MainWindow::addButtonsToLayout()
 {
   signButton.setFixedSize(150,30);
   connect(&signButton,
-	  &QPushButton::clicked,
-	  this,
-	  &MainWindow::signButtonClicked);
+	        &QPushButton::clicked,
+	        this,
+	        &MainWindow::signButtonClicked);
   layout.addWidget(&signButton,4,0);
 
   cardboxButton.setFixedSize(150,30);
   connect(&cardboxButton,
-	  &QPushButton::clicked,
-	  this,
-	  &MainWindow::cardboxButtonClicked);
+	        &QPushButton::clicked,
+	        this,
+	        &MainWindow::cardboxButtonClicked);
   layout.addWidget(&cardboxButton,5,0);
 	
   exampleButton.setFixedSize(150,30);
   connect(&exampleButton,
-    &QPushButton::clicked,
-	  this,
-	  &MainWindow::exampleButtonClicked);
+          &QPushButton::clicked,
+	        this,
+	        &MainWindow::exampleButtonClicked);
   layout.addWidget(&exampleButton,4,1);
 
   engjapButton.setFixedSize(150,30);
   connect(&engjapButton,
-    &QPushButton::clicked,
-	  this,
-	  &MainWindow::engjapButtonClicked);
+          &QPushButton::clicked,
+	        this,
+	        &MainWindow::engjapButtonClicked);
   layout.addWidget(&engjapButton,1,0);
   engjapButton.setCheckable(true);
   engjapButton.setChecked(true);
   
   japengButton.setFixedSize(150,30);
   connect(&japengButton,
-    &QPushButton::clicked,
-	  this,
-	  &MainWindow::japengButtonClicked);
+          &QPushButton::clicked,
+	        this,
+	        &MainWindow::japengButtonClicked);
   layout.addWidget(&japengButton,1,1);
   japengButton.setCheckable(true);
 
   printExampleButton.setFixedSize(190,30);
   connect(&printExampleButton,
-    &QPushButton::clicked,
-	  this,
-	  &MainWindow::printExampleButtonClicked);
+          &QPushButton::clicked,
+	        this,
+	        &MainWindow::printExampleButtonClicked);
   layout.addWidget(&printExampleButton,3,3);
 
   printSignButton.setFixedSize(190,30);
   connect(&printSignButton,
-    &QPushButton::clicked,
-	  this,
-	  &MainWindow::printSignButtonClicked);
+          &QPushButton::clicked,
+	        this,
+	        &MainWindow::printSignButtonClicked);
   layout.addWidget(&printSignButton,4,3);
 
   searchButton.setFixedSize(150,30);
   connect(&searchButton,
-    &QPushButton::clicked,
-	  this,
-	  &MainWindow::searchButtonClicked);
+          &QPushButton::clicked,
+	        this,
+	        &MainWindow::searchButtonClicked);
   layout.addWidget(&searchButton,6,2);
 }
 
@@ -204,7 +205,8 @@ void QtKanji::MainWindow::printSignButtonClicked()
   unsigned int lowerLimit = displayLowerLimit.text().toInt(); //characters become zero
   unsigned int upperLimit = displayUpperLimit.text().toInt();
   CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
-
+  
+  printSignButton.setText("print kanji sorted");
   CHECK_ERROR(hadamitzkyWindow.printSigns(lowerLimit, upperLimit));
 }
 

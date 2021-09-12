@@ -10,6 +10,8 @@ class HadamitzkyData
  public:
   static HadamitzkyData createHadamitzkyData(unsigned int ID_)
     {return HadamitzkyData{ID_};};
+  static HadamitzkyData createEmptyHadamitzkyData()
+    {return HadamitzkyData{0};};
 
   bool firstGraphemeEqualsRadical{false};
   unsigned int ID{};
@@ -31,10 +33,10 @@ class HadamitzkyData
  private:
   explicit HadamitzkyData(unsigned int ID_)
   {
-    ID = ID_;
-
-    if(ID_ <= 4) 
+    if(ID_ > 0 && ID_ <= NUMBER_OF_HADAMITZKY_KANJI && !hadamitzkyStrings[ID_-1].empty()) 
     {
+      ID = ID_;
+
       std::vector<std::string> input =
         explode("+",hadamitzkyStrings[ID_-1]);
     

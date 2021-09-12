@@ -2,6 +2,7 @@
 #include "datahandler.h"
 #include "hadamitzkydata.h"
 
+
 bool QtKanji::Examples::furiganaMatches(const unsigned int Id, const std::string furigana) const
 {
   if(furigana != dataFurigana[Id-1]) return false;
@@ -78,6 +79,55 @@ void QtKanji::Examples::shuffle()
   }
 }
 
+QtKanji::Uints QtKanji::Maps::computeContainingKanjiIndices(unsigned int graphemeIndex)
+{
+  DataHandler dataHandler{};
+
+  std::unordered_set<unsigned int> old{};
+  std::map<unsigned int, std::unordered_set<unsigned int>> strokeMap{};
+
+  QtKanji::Uints kanjiIndices{};
+  QtKanji::Uints radicalStrokeNumbers{};
+  radicalStrokeNumbers.resize(NUMBER_OF_KANJI);
+  for(unsigned int index = 1; index <= NUMBER_OF_KANJI; ++index)
+  {
+    if(dataHandler.computeKanjiData(index) != Error::SUCCESS) continue;
+    if(dataHandler.flashcard.HID == 0) continue;
+
+    QtKanji::HadamitzkyData data =
+      QtKanji::HadamitzkyData::createHadamitzkyData(dataHandler.flashcard.HID);
+      
+    if(contains(data.graphemeIndices, graphemeIndex))
+      kanjiIndices.push_back(index);
+
+    if(strokeMap.count(data.strokeNumber) != 0) 
+      old = strokeMap[data.strokeNumber];
+    else
+      old.clear();
+    old.insert(index);
+
+    strokeMap.insert_or_assign(data.strokeNumber,old);
+    radicalStrokeNumbers[index-1] = data.radicalStrokeNumber;
+  }
+  
+  unsigned short int maxNumberOfStrokes = 29;
+  radicalStrokeNumberMaps.resize(maxNumberOfStrokes);
+  for(const auto & [strokeNumber,indices] : strokeMap)
+  {
+    for(const auto index : indices)
+    {
+      if(radicalStrokeNumberMaps[strokeNumber-1].count(radicalStrokeNumbers[index-1]) == 1) 
+        old = radicalStrokeNumberMaps[strokeNumber-1][radicalStrokeNumbers[index-1]];
+      else
+        old.clear();
+      old.insert(index);
+      radicalStrokeNumberMaps[strokeNumber-1].insert_or_assign(radicalStrokeNumbers[index-1],old);
+    }
+  }
+
+  return kanjiIndices;
+}
+
 
 QtKanji::Strings QtKanji::explode(const std::string &delimiter,
 			                            const std::string &string)
@@ -87,7 +137,7 @@ QtKanji::Strings QtKanji::explode(const std::string &delimiter,
   size_t start{0};
   size_t end{0};
 
-  if(string == "")
+  if(string.empty())
   {
     result.push_back("");
     return result;
@@ -109,7 +159,7 @@ void QtKanji::explode(const std::string &delimiter,
   size_t start{0};
   size_t end{0};
 
-  if(string == "")
+  if(string.empty())
   {
     result.push_back("");
     return;
@@ -131,42 +181,4 @@ QtKanji::Uints QtKanji::convertStringsToIntegers(const Strings &strings)
     integers.push_back(integer);
   }
   return integers;
-}
-
-QtKanji::Uints QtKanji::computeContainingKanjiIndices(unsigned int graphemeIndex, 
-                                                      std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps)
-{
-  DataHandler dataHandler{};
-
-  std::map<unsigned int, unsigned int> strokeMap{};
-
-  QtKanji::Uints kanjiIndices{};
-  QtKanji::Uints radicalStrokeNumbers{};
-  for(unsigned int index = 1; index <= 4; ++index)
-  {
-    dataHandler.computeKanjiData(index);
-    QtKanji::HadamitzkyData data =
-      QtKanji::HadamitzkyData::createHadamitzkyData(dataHandler.flashcard.HID);
-      
-    if(contains(data.graphemeIndices, graphemeIndex))
-      kanjiIndices.push_back(index);
-
-    strokeMap.insert({data.strokeNumber,index});
-    radicalStrokeNumbers.push_back(data.radicalStrokeNumber);
-  }
-  
-  radicalStrokeNumberMaps.resize(29);
-  //for(const auto & [strokeNumber,index] : strokeMap)
-    //radicalStrokeNumberMaps[strokeNumber-1].insert({1,1});
-
-  return kanjiIndices;
-}
-
-std::vector<QtKanji::Uints> QtKanji::computeRadicalKanjiMap(std::vector<std::map<unsigned int, unsigned int>> &radicalStrokeNumberMaps)
-{
-  std::vector<Uints> map{NUMBER_OF_GRAPHEMES};
-  for(unsigned int index = 1; index <= NUMBER_OF_GRAPHEMES; ++index)
-    map[index-1] = QtKanji::computeContainingKanjiIndices(index, radicalStrokeNumberMaps);
-
-  return map;
 }

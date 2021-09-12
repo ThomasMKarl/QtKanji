@@ -11,8 +11,6 @@ namespace QtKanji {
 
 class ExampleWindow : public QWidget
 {
-  Q_OBJECT
-
  public:
   static ExampleWindow* createExampleWindow(DataHandler &dataHandler_, QWidget *parent = 0)
     {return new ExampleWindow{dataHandler_, parent};}
@@ -38,6 +36,7 @@ class ExampleWindow : public QWidget
   void showFailure();
   void showSuccess();
   void showResult();
+  void hideAll();
 
   unsigned int successes{0};
   unsigned int failures{0};
@@ -53,6 +52,8 @@ class ExampleWindow : public QWidget
   QPushButton submitButton{"submit"}, continueButton{"continue"};
   QFont textfont{};
   QGridLayout layout{};
+
+    Q_OBJECT
 };
 
 };

@@ -1,6 +1,7 @@
 #include "flashcardwindow.h"
 #include "table.h"
 
+
 QtKanji::FlashcardWindow::FlashcardWindow(bool randomize_,
 			                                    bool fromCardbox_,
                                           DataHandler dataHandler_,
@@ -14,16 +15,17 @@ QtKanji::FlashcardWindow::FlashcardWindow(bool randomize_,
   table(table_),
   QWidget(parent)
 {
+  textfont.setPointSize(20);
+  textfont.setBold(false);
+  setFont(textfont);
+
   if(!dataHandler.fromEngToJap)
   {
     table->flashcards.push_back( this );
     flashcardWindowIndex = table->flashcards.size()-1;
   }
   else flashcardWindowIndex = -1;
- 
-  textfont.setPointSize(20);
-  textfont.setBold(false);
-  setFont(textfont);
+
   setWindowIcon(QIcon("kanji.ico"));
 
   setButtonLayout();
@@ -41,6 +43,7 @@ QtKanji::FlashcardWindow::FlashcardWindow(unsigned int Id, QWidget *parent) :
   textfont.setPointSize(20);
   textfont.setBold(false);
   setFont(textfont);
+
   setWindowIcon(QIcon("kanji.ico"));
 
   dataHandler.computeKanjiData(currentId);
@@ -146,24 +149,24 @@ void QtKanji::FlashcardWindow::showSuccess()
     for(const auto& kun : FC.dataKunVector) output += QString::fromStdString(kun) + ", ";
     output.remove(output.size()-2, 2);
     displayKun.setText(std::move(output));
-    displayKun.setStyleSheet("color: green");
+    displayKun.setStyleSheet("color: green; font-size: 30px");
     
     output = "";
     for(const auto& on  : FC.dataOnVector)  output += QString::fromStdString(on) + ", ";
     output.remove(output.size()-2, 2);
     displayOn.setText(std::move(output));
-    displayOn.setStyleSheet("color: green");
+    displayOn.setStyleSheet( "color: green; font-size: 30px");
     
     output = "";
     for(const auto& imi : FC.dataImiVector) output += QString::fromStdString(imi) + ", ";
     output.remove(output.size()-2, 2);
     displayImi.setText(std::move(output));
-    displayImi.setStyleSheet("color: green");
+    displayImi.setStyleSheet("color: green; font-size: 30px");
   }
   else
   {
     displaySign.setText(QString::fromStdString(FC.dataSign));
-    displaySign.setStyleSheet("color: green");
+    displaySign.setStyleSheet("color: green; font-size: 30px");
   }
 }
 
@@ -184,50 +187,52 @@ void QtKanji::FlashcardWindow::showFailure()
     for(const auto& kun : FC.dataKunVector) output += QString::fromStdString(kun) + ", ";
     output.remove(output.size()-2, 2);
     displayKun.setText(std::move(output));
-    displayKun.setStyleSheet("color: red");
+    displayKun.setStyleSheet("color: red; font-size: 30px");
     
     output = "";
     for(const auto& on  : FC.dataOnVector)  output += QString::fromStdString(on)  + ", ";
     output.remove(output.size()-2, 2);
     displayOn.setText(std::move(output));
-    displayOn.setStyleSheet("color: red");
+    displayOn.setStyleSheet( "color: red; font-size: 30px");
     
     output = "";
     for(const auto& imi : FC.dataImiVector) output += QString::fromStdString(imi) + ", ";
     output.remove(output.size()-2, 2);
     displayImi.setText(std::move(output));
-    displayImi.setStyleSheet("color: red");
+    displayImi.setStyleSheet("color: red; font-size: 30px");
   }
   else
   {
     displaySign.setText(QString::fromStdString(FC.dataSign));
-    displaySign.setStyleSheet("color: red");
+    displaySign.setStyleSheet("color: red; font-size: 30px");
   }
 }
 
 void QtKanji::FlashcardWindow::showResult()
 {
-  adjustSize();
+  hideAll();
 
   double ratio =
     100.0*successes /
     (failures + successes);
   
   Success.setText("Successes:");
+  Success.show();
   Success2.setText(QString::number(successes));
   Failure.setText("Failures:");
+  Failure.show();
   Failure2.setText(QString::number(failures));
   Rate.setText("Success Rate:");
   Rate2.setText(QString::number(ratio) + "%");
 
 
   cards.setText("Number of cards in box: "
-                       + QString::number(dataHandler.indexInCardbox.size()));
+                + QString::number(dataHandler.indexInCardbox.size()));
     
   if(dataHandler.indexInCardbox.empty())
-    cards.setStyleSheet("color: green");
+    cards.setStyleSheet("color: green; font-size: 30px");
   else
-    cards.setStyleSheet("color: red");
+    cards.setStyleSheet("color: red;   font-size: 30px");
 
   layout.addWidget(&Success,  0,0);
   layout.addWidget(&Failure,  1,0);
@@ -237,18 +242,21 @@ void QtKanji::FlashcardWindow::showResult()
   layout.addWidget(&Rate2,    2,1);
   layout.addWidget(&cards,    3,0);
 
-  Success2.setStyleSheet("color: green");
-  Failure2.setStyleSheet("color: red");
+  Success2.setStyleSheet("color: green;  font-size: 30px");
+  Failure2.setStyleSheet("color: red;    font-size: 30px");
   if(ratio >= 85)
-    Rate2.setStyleSheet("color: green" );
+    Rate2.setStyleSheet( "color: green;  font-size: 30px");
   if(ratio < 85 && ratio >= 50)
-    Rate2.setStyleSheet("color: yellow");
+    Rate2.setStyleSheet( "color: yellow; font-size: 30px");
   if(ratio < 50 && ratio >  15)
-    Rate2.setStyleSheet("color: orange");
+    Rate2.setStyleSheet( "color: orange; font-size: 30px");
   if(ratio <= 15)
-    Rate2.setStyleSheet("color: red"   );
+    Rate2.setStyleSheet( "color: red;    font-size: 30px");
 
   setLayout(&layout);
+
+  adjustSize();
+  
   setWindowTitle("QtKanji Result");
   setWindowIcon(QIcon("kanji.ico"));
 }
@@ -303,25 +311,28 @@ void QtKanji::FlashcardWindow::setFlashcardLayout()
   output.remove(output.size()-2, 2);
   displayKun.setText(std::move(output));
   displayKun.setFixedSize(250,50);
+  displayKun.setStyleSheet("color: black; font-size: 30px");
   
   output = "";
   for(const auto& imi : FC.dataImiVector) output += QString::fromStdString(imi) + ", ";
   output.remove(output.size()-2, 2);
   displayImi.setText(std::move(output));
   displayImi.setFixedSize(500,50);
+  displayImi.setStyleSheet("color: black; font-size: 30px");
   
   output = "";
   for(const auto& on : FC.dataOnVector  ) output += QString::fromStdString(on) + ", ";
   output.remove(output.size()-2, 2);
   displayOn.setText(std::move(output));
   displayOn.setFixedSize(250,50);
+  displayOn.setStyleSheet( "color: black; font-size: 30px");
 
   layout.addWidget(&Success,4,1);
   layout.addWidget(&Failure,4,1);
   Success.hide();
-  Success.setStyleSheet("color: green");
+  Success.setStyleSheet("color: green; font-size: 30px");
   Failure.hide();
-  Failure.setStyleSheet("color: red");
+  Failure.setStyleSheet("color: red;   font-size: 30px");
 
   layout.addWidget(&displaySign,2,1);
   layout.addWidget(&Sign,1,1);
@@ -378,7 +389,6 @@ void QtKanji::FlashcardWindow::update()
 
   if(successes + failures == range)
   {
-    hideAll();
     showResult();
     return;
   }

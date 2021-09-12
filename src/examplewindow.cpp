@@ -1,9 +1,14 @@
 #include "examplewindow.h"
 
+
 QtKanji::ExampleWindow::ExampleWindow(DataHandler &dataHandler_, QWidget *parent) :
   dataHandler{dataHandler_},
   QWidget(parent)
 {  
+  textfont.setPointSize(20);
+  textfont.setBold(false);
+  setFont(textfont);
+
   setButtonLayout();
 
   setExampleWindowLayout();
@@ -41,8 +46,8 @@ void QtKanji::ExampleWindow::setExampleWindowLayout()
  
   layout.addWidget(&Success,4,0);
   layout.addWidget(&Failure,4,0); 
-  Success.setStyleSheet("color: green");
-  Failure.setStyleSheet("color: red");
+  Success.setStyleSheet("color: green; font-size: 30px");
+  Failure.setStyleSheet("color: red;   font-size: 30px");
   
   setLayout(&layout);
 }
@@ -66,10 +71,6 @@ void QtKanji::ExampleWindow::setButtonLayout()
 
 void QtKanji::ExampleWindow::update()
 {
-  textfont.setPointSize(20);
-  textfont.setBold(false);
-  setFont(textfont);
-
   const auto &EX = dataHandler.examples;
 
   unsigned int Id = failures + successes + 1;
@@ -85,11 +86,19 @@ void QtKanji::ExampleWindow::update()
   continueButton.hide();
   submitButton.show();
 
-  if(dataHandler.fromEngToJap) 
-    Kanji2.setText(QString::fromStdString(EX.dataKanji[Id-1]));
-  else 
-    Furigana2.setText(QString::fromStdString(EX.dataFurigana[Id-1]));
 
+  if(dataHandler.fromEngToJap)
+  {
+    Kanji2.setText(QString::fromStdString(EX.dataKanji[Id-1]));
+    displayFurigana.setText("");
+    displayFurigana.setStyleSheet("color: black; font-size: 30px");
+  }
+  else
+  {
+    Furigana2.setText(QString::fromStdString(EX.dataFurigana[Id-1]));
+    displayKanji.setText("");
+    displayKanji.setStyleSheet(   "color: black; font-size: 30px");
+  }
   English2.setText(QString::fromStdString(EX.dataEnglish[Id-1]));
 
   Success.hide();
@@ -98,9 +107,9 @@ void QtKanji::ExampleWindow::update()
   adjustSize();
 
   setWindowTitle("QtKanji example #"
-		 + QString::number(Id)
-		 + " of "
-		 + QString::number(numberOfExamples));
+		             + QString::number(Id)
+		             + " of "
+		             + QString::number(numberOfExamples));
   setWindowIcon(QIcon("kanji.ico"));
 }
 
@@ -147,14 +156,14 @@ void QtKanji::ExampleWindow::showSuccess()
     displayFurigana.setText(
       QString::fromStdString(EX.dataFurigana[Id-1]));
 
-    displayFurigana.setStyleSheet("color: green");
+    displayFurigana.setStyleSheet("color: green; font-size: 30px");
   }
   else
   {
     displayKanji.setText(
       QString::fromStdString(EX.dataKanji[Id-1]));
 
-    displayKanji.setStyleSheet("color: green");
+    displayKanji.setStyleSheet(   "color: green; font-size: 30px");
   }
  
   ++successes;
@@ -177,14 +186,14 @@ void QtKanji::ExampleWindow::showFailure()
     displayFurigana.setText(
       QString::fromStdString(EX.dataFurigana[Id-1]));
  
-    displayFurigana.setStyleSheet("color: red");
+    displayFurigana.setStyleSheet("color: red; font-size: 30px");
   }
   else
   {
     displayKanji.setText(
       QString::fromStdString(EX.dataKanji[Id-1]));
 
-    displayKanji.setStyleSheet("color: red");
+    displayKanji.setStyleSheet(   "color: red; font-size: 30px");
   }
  
   ++failures;
@@ -194,27 +203,29 @@ void QtKanji::ExampleWindow::showFailure()
 
 void QtKanji::ExampleWindow::showResult()
 {
-  adjustSize();
+  hideAll();
 
   double ratio =
     100.0*successes /
     (failures + successes);
   
   Success.setText("Successes:");
+  Success.show();
   Success2.setText(QString::number(successes));
   Failure.setText("Failures:");
+  Failure.show();
   Failure2.setText(QString::number(failures));
   Rate.setText("Success Rate:");
   Rate2.setText(QString::number(ratio) + "%");
 
 
   cards.setText("Number of cards in box: "
-                       + QString::number(dataHandler.indexInCardbox.size()));
+                + QString::number(dataHandler.indexInCardbox.size()));
     
   if(dataHandler.indexInCardbox.empty())
-    cards.setStyleSheet("color: green");
+    cards.setStyleSheet("color: green; font-size: 30px");
   else
-    cards.setStyleSheet("color: red");
+    cards.setStyleSheet("color: red;   font-size: 30px");
 
   layout.addWidget(&Success,  0,0);
   layout.addWidget(&Failure,  1,0);
@@ -224,18 +235,38 @@ void QtKanji::ExampleWindow::showResult()
   layout.addWidget(&Rate2,    2,1);
   layout.addWidget(&cards,    3,0);
 
-  Success2.setStyleSheet("color: green");
-  Failure2.setStyleSheet("color: red");
+  Success2.setStyleSheet("color: green;  font-size: 30px");
+  Failure2.setStyleSheet("color: red;    font-size: 30px");
   if(ratio >= 85)
-    Rate2.setStyleSheet("color: green" );
+    Rate2.setStyleSheet( "color: green;  font-size: 30px");
   if(ratio < 85 && ratio >= 50)
-    Rate2.setStyleSheet("color: yellow");
+    Rate2.setStyleSheet( "color: yellow; font-size: 30px");
   if(ratio < 50 && ratio >  15)
-    Rate2.setStyleSheet("color: orange");
+    Rate2.setStyleSheet( "color: orange; font-size: 30px");
   if(ratio <= 15)
-    Rate2.setStyleSheet("color: red"   );
+    Rate2.setStyleSheet( "color: red;    font-size: 30px");
 
   setLayout(&layout);
+
+  adjustSize();
+
   setWindowTitle("QtKanji Result");
   setWindowIcon(QIcon("kanji.ico"));
+}
+
+void QtKanji::ExampleWindow::hideAll()
+{
+  displayFurigana.hide();
+  displayKanji.hide();
+  Furigana.hide();
+  Furigana2.hide();
+  English.hide();
+  English2.hide();
+  Kanji.hide();
+  Kanji2.hide();
+  Success.hide();
+  Failure.hide();
+  cards.hide();
+  submitButton.hide();
+  continueButton.hide();
 }

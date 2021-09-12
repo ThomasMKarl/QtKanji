@@ -1,8 +1,9 @@
 #include "table.h"
 
+
 QtKanji::Table::Table(QWidget *parent): QWidget(parent)
 {
-  move(700,0);
+  move(800,0);
     
   QFont textfont{};
   textfont.setPointSize(15);

@@ -33,4 +33,4 @@ SOURCES += \
     src/main.cpp
     
 QMAKE_CXXFLAGS -= -O2
-QMAKE_CXXFLAGS += -std=c++17 -O3 -Wall -Wextra -I include
+QMAKE_CXXFLAGS += -std=c++17 -O3 -Wall -Wextra -lgomp -I include

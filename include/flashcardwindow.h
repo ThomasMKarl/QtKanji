@@ -17,17 +17,17 @@ class FlashcardWindow : public QWidget
 
  public:
   static FlashcardWindow* createFlashcardWindow(bool randomize_,
-					                                      bool fromCardbox_,
+					        bool fromCardbox_,
                                                 DataHandler dataHandler_,
-					                                      SharedBoxes &boxes_,
-					                                      SharedTable &table_,                                             
-	                                              QWidget *parent = 0)
+					        SharedBoxes &boxes_,
+					        SharedTable &table_,                                             
+	                                        QWidget *parent = 0)
     {return new FlashcardWindow{randomize_,
-			                          fromCardbox_,
+			        fromCardbox_,
                                 std::move(dataHandler_),
-			                          boxes_,
-			                          table_,
-			                          parent};}
+			        boxes_,
+			        table_,
+			        parent};}
 
   static FlashcardWindow* createFlashcardWindow(unsigned int ID, QWidget *parent = 0)
     {return new FlashcardWindow{ID, parent};}
@@ -52,11 +52,11 @@ class FlashcardWindow : public QWidget
 
  private:
   explicit FlashcardWindow(bool randomize_,
-					                 bool fromCardbox_,
+			   bool fromCardbox_,
                            DataHandler dataHandler_,
-		                       SharedBoxes &boxes_,
-		                       SharedTable &table_,
-	                         QWidget *parent = 0);
+		           SharedBoxes &boxes_,
+		           SharedTable &table_,
+	                   QWidget *parent = 0);
 
   explicit FlashcardWindow(unsigned int ID, QWidget *parent = 0);
 

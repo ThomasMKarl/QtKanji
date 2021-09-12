@@ -46,7 +46,7 @@ class DataHandler
   Error computeExampleData(bool randomize);
   Error computeContainerData();
   
-  void computeKanjiData(unsigned int Id);
+  Error computeKanjiData(unsigned int Id);
 
   unsigned int computeRandomId(bool fromCardbox, unsigned int removeFlag);
   unsigned int searchKanjiId(QString kanji);
