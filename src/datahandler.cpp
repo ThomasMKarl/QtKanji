@@ -68,56 +68,36 @@ QtKanji::Error QtKanji::DataHandler::computeContainerData()
 
 QtKanji::Error QtKanji::DataHandler::computeKanjiData(unsigned int ID)
 {
-  auto &FC = this->flashcard;
-    
-  std::string linedata{};
-  std::ifstream kanjiData{pathToKanjiData};
-  if(!kanjiData) return QtKanji::Error::FILE_ERROR;
-
+  auto &FC = this->flashcard;  
   FC.dataImiVector.clear();
   FC.dataKunVector.clear();
   FC.dataOnVector.clear();
-  while(!kanjiData.eof())
-  {
-    std::getline(kanjiData, linedata);
-    if(linedata == std::to_string(ID))
-    {
-      FC.ID = ID;
-      
-      std::getline(kanjiData, linedata, '\n');
-      if(linedata == "") FC.HID = 0;
-      else               FC.HID = std::stoi(std::move(linedata));
-      
-      std::getline(kanjiData, linedata, '\n');
-      FC.dataSign = std::move(linedata);
 
-      std::getline(kanjiData, linedata, '\n');
-      FC.dataImiVector = explode(", ", std::move(linedata));
- 
-      std::getline(kanjiData, linedata, '\n');
-      if(linedata.empty()) FC.dataKunVector.push_back("-none-");
-      else                 FC.dataKunVector = explode(", ", std::move(linedata));
- 
-      std::getline(kanjiData, linedata, '\n');
-      if(linedata.empty()) FC.dataOnVector.push_back("-none-");
-      else                 FC.dataOnVector = explode(", ", std::move(linedata));
+  QtKanji::JSON_DB.Parse(QtKanji::kanjiDB_string.c_str());
+  assert(QtKanji::JSON_DB.IsObject());
+  assert(QtKanji::JSON_DB.HasMember("flashcard"));
+  auto &JSON = QtKanji::JSON_DB["flashcard"][ID-1];
+  
+    
+  FC.ID  = JSON[ "id"].GetUint();
+  if(FC.ID != ID) return QtKanji::Error::KANJI_NOT_FOUND;
 
-      return QtKanji::Error::SUCCESS;
-    }
-    else
-    {
-      std::getline(kanjiData, linedata, '\n');
-      std::getline(kanjiData, linedata, '\n');
-      std::getline(kanjiData, linedata, '\n');
-      std::getline(kanjiData, linedata, '\n');
-      std::getline(kanjiData, linedata, '\n');
-    }
-    std::getline(kanjiData, linedata, '\n');
-    std::getline(kanjiData, linedata, '\n');
-    std::getline(kanjiData, linedata, '\n');
-  }
+  FC.HID = JSON["hid"].GetUint();
 
-  return QtKanji::Error::KANJI_NOT_FOUND;
+  FC.dataSign = JSON["kanji"].GetString();
+
+  for(const auto& input : JSON["imi"].GetArray())
+    FC.dataImiVector.push_back(input.GetString());
+
+  for(const auto& input : JSON["kun"].GetArray())
+    FC.dataKunVector.push_back(input.GetString());
+  if(FC.dataKunVector[0].empty()) FC.dataKunVector[0] = "-none-";
+
+  for(const auto& input : JSON["on"].GetArray())
+    FC.dataOnVector.push_back(input.GetString());
+  if(FC.dataOnVector[0].empty())  FC.dataOnVector[0]  = "-none-";
+
+  return QtKanji::Error::SUCCESS;
 }
 
 unsigned int QtKanji::DataHandler::computeRandomId(bool fromCardbox, unsigned int removeFlag)

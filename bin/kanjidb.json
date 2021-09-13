@@ -1,0 +1,4328 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "QtKanji Database",
+  "description": "All kanji, examples and Hadamitzky data",
+  "type": "object",
+  "flashcard": [
+    {
+      "id": 1,
+      "hid": 1,
+      "kanji": "人",
+      "imi": ["person"],
+      "kun": ["ひと", "びと"],
+      "on": ["ジン", "ニン"]
+    },
+    {
+      "id": 2,
+      "hid": 25,
+      "kanji": "本",
+      "imi": ["main", "book"],
+      "kun": ["もと"],
+      "on": ["ホン", "-ボン", "-ポン"]
+    },
+    {
+      "id": 3,
+      "hid": 5,
+      "kanji": "日",
+      "imi": ["sun", "day"],
+      "kun": ["ひ", "-び", "-か"],
+      "on": ["ニッ-", "ニ", "ニチ", "-ジツ"]
+    },
+    {
+      "id": 4,
+      "hid": 2,
+      "kanji": "一",
+      "imi": ["one"],
+      "kun": ["ひと-つ"],
+      "on": ["イチ", "イッ-"]
+    },
+    {
+      "id": 5,
+      "hid": 3,
+      "kanji": "二",
+      "imi": ["two"],
+      "kun": ["ふた-つ"],
+      "on": ["ニ"]
+    },
+    {
+      "id": 6,
+      "hid": 4,
+      "kanji": "三",
+      "imi": ["three"],
+      "kun": ["みっ-つ"],
+      "on": ["サン"]
+    },
+    {
+      "id": 7,
+      "hid": 6,
+      "kanji": "四",
+      "imi": ["four"],
+      "kun": ["よっ-つ", "よ", "よん"],
+      "on": ["シ"]
+    },
+    {
+      "id": 8,
+      "hid": 7,
+      "kanji": "五",
+      "imi": ["five"],
+      "kun": ["いつ-つ"],
+      "on": ["ゴ"]
+    },
+    {
+      "id": 9,
+      "hid": 8,
+      "kanji": "六",
+      "imi": ["six"],
+      "kun": ["むっ-つ"],
+      "on": ["ロク", "ロッ-"]
+    },
+    {
+      "id": 10,
+      "hid": 9,
+      "kanji": "七",
+      "imi": ["seven"],
+      "kun": ["なな-つ"],
+      "on": ["シチ"]
+    },
+    {
+      "id": 11,
+      "hid": 10,
+      "kanji": "八",
+      "imi": ["eight"],
+      "kun": ["やっ-つ"],
+      "on": ["ハチ", "ハッ-"]
+    },
+    {
+      "id": 12,
+      "hid": 11,
+      "kanji": "九",
+      "imi": ["nine"],
+      "kun": ["ここの-つ"],
+      "on": ["ク", "キュウ"]
+    },
+    {
+      "id": 13,
+      "hid": 12,
+      "kanji": "十",
+      "imi": ["ten"],
+      "kun": ["とお"],
+      "on": ["ジュウ", "ジュッ-", "ジッ-"]
+    },
+    {
+      "id": 14,
+      "hid": 42,
+      "kanji": "時",
+      "imi": ["time", "o'clock"],
+      "kun": ["とき"],
+      "on": ["ジ"]
+    },
+    {
+      "id": 15,
+      "hid": 38,
+      "kanji": "分",
+      "imi": ["minute", "divide", "understand"],
+      "kun": ["わ-ける", "わ-かる"],
+      "on": ["ブン", "フン", "-ブン"]
+    },
+    {
+      "id": 16,
+      "hid": 88,
+      "kanji": "半",
+      "imi": ["half"],
+      "kun": [""],
+      "on": ["ハン"]
+    },
+    {
+      "id": 17,
+      "hid": 51,
+      "kanji": "今",
+      "imi": ["now", "present"],
+      "kun": ["いま"],
+      "on": ["コン"]
+    },
+    {
+      "id": 18,
+      "hid": 392,
+      "kanji": "何",
+      "imi": ["what"],
+      "kun": ["なん", "なに"],
+      "on": [""]
+    },
+    {
+      "id": 19,
+      "hid": 68,
+      "kanji": "行",
+      "imi": ["go", "conduct", "hold line (of text)"],
+      "kun": ["い-く", "ゆ-き", "おこな-う"],
+      "on": ["コウ", "ギョウ"]
+    },
+    {
+      "id": 20,
+      "hid": 69,
+      "kanji": "来",
+      "imi": ["come"],
+      "kun": ["く-る", "き-ます", "こ-ない"],
+      "on": ["ライ"]
+    },
+    {
+      "id": 21,
+      "hid": 109,
+      "kanji": "学",
+      "imi": ["study", "learn"],
+      "kun": ["まな-ぶ"],
+      "on": ["ガク", "カッ"]
+    },
+    {
+      "id": 22,
+      "hid": 26,
+      "kanji": "大",
+      "imi": ["big", "large"],
+      "kun": ["おお-きい"],
+      "on": ["ダイ", "タイ"]
+    },
+    {
+      "id": 23,
+      "hid": 44,
+      "kanji": "生",
+      "imi": ["be born", "be alive", "raw", "uncooked"],
+      "kun": ["う-まれる", "い-きる", "なま"],
+      "on": ["セイ", "ショウ", "-ジョウ"]
+    },
+    {
+      "id": 24,
+      "hid": 50,
+      "kanji": "先",
+      "imi": ["ahead", "previous", "point"],
+      "kun": ["さき"],
+      "on": ["セン"]
+    },
+    {
+      "id": 25,
+      "hid": 264,
+      "kanji": "友",
+      "imi": ["friend"],
+      "kun": ["とも"],
+      "on": ["ユウ"]
+    },
+    {
+      "id": 26,
+      "hid": 67,
+      "kanji": "語",
+      "imi": ["language", "word"],
+      "kun": ["かた-る"],
+      "on": ["ゴ"]
+    },
+    {
+      "id": 27,
+      "hid": 354,
+      "kanji": "英",
+      "imi": ["England", "brilliance"],
+      "kun": [""],
+      "on": ["エイ"]
+    },
+    {
+      "id": 28,
+      "hid": 19,
+      "kanji": "曜",
+      "imi": ["day of the week"],
+      "kun": [""],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 29,
+      "hid": 17,
+      "kanji": "月",
+      "imi": ["moon", "month"],
+      "kun": ["つき"],
+      "on": ["ゲツ", "ゲッ-", "-ガッ"]
+    },
+    {
+      "id": 30,
+      "hid": 20,
+      "kanji": "火",
+      "imi": ["fire"],
+      "kun": ["ひ"],
+      "on": ["カ"]
+    },
+    {
+      "id": 31,
+      "hid": 21,
+      "kanji": "水",
+      "imi": ["water"],
+      "kun": ["みず"],
+      "on": ["スイ"]
+    },
+    {
+      "id": 32,
+      "hid": 22,
+      "kanji": "木",
+      "imi": ["tree"],
+      "kun": ["き"],
+      "on": ["モク", "ボク"]
+    },
+    {
+      "id": 33,
+      "hid": 23,
+      "kanji": "金",
+      "imi": ["gold", "money"],
+      "kun": ["かね"],
+      "on": ["キン"]
+    },
+    {
+      "id": 34,
+      "hid": 24,
+      "kanji": "土",
+      "imi": ["soil"],
+      "kun": ["つち"],
+      "on": ["ド", "ト"]
+    },
+    {
+      "id": 35,
+      "hid": 92,
+      "kanji": "週",
+      "imi": ["week"],
+      "kun": [""],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 36,
+      "hid": 116,
+      "kanji": "毎",
+      "imi": ["every"],
+      "kun": [""],
+      "on": ["マイ"]
+    },
+    {
+      "id": 37,
+      "hid": 43,
+      "kanji": "間",
+      "imi": ["interval", "between", "duration space"],
+      "kun": ["あいだ", "ま"],
+      "on": ["カン"]
+    },
+    {
+      "id": 38,
+      "hid": 54,
+      "kanji": "口",
+      "imi": ["mouth"],
+      "kun": ["くち", "-ぐち"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 39,
+      "hid": 71,
+      "kanji": "東",
+      "imi": ["east"],
+      "kun": ["ひがし"],
+      "on": ["トウ"]
+    },
+    {
+      "id": 40,
+      "hid": 72,
+      "kanji": "西",
+      "imi": ["west"],
+      "kun": ["にし"],
+      "on": ["セイ", "サイ", "-ザイ"]
+    },
+    {
+      "id": 41,
+      "hid": 74,
+      "kanji": "南",
+      "imi": ["south"],
+      "kun": ["みなみ"],
+      "on": ["ナン"]
+    },
+    {
+      "id": 42,
+      "hid": 73,
+      "kanji": "北",
+      "imi": ["north"],
+      "kun": ["きた"],
+      "on": ["ホク", "-ボク", "ホッ-"]
+    },
+    {
+      "id": 43,
+      "hid": 161,
+      "kanji": "門",
+      "imi": ["gate"],
+      "kun": [""],
+      "on": ["モン"]
+    },
+    {
+      "id": 44,
+      "hid": 52,
+      "kanji": "入",
+      "imi": ["put in", "enter"],
+      "kun": ["い-れる", "はい-る"],
+      "on": ["ニュウ"]
+    },
+    {
+      "id": 45,
+      "hid": 53,
+      "kanji": "出",
+      "imi": ["take out", "submit", "come out", "go out"],
+      "kun": ["だ-す", "で-る"],
+      "on": ["シュツ", "シュッ-"]
+    },
+    {
+      "id": 46,
+      "hid": 158,
+      "kanji": "会",
+      "imi": ["meet"],
+      "kun": ["あ-う"],
+      "on": ["カイ"]
+    },
+    {
+      "id": 47,
+      "hid": 63,
+      "kanji": "見",
+      "imi": ["see", "look", "watch"],
+      "kun": ["み-る"],
+      "on": ["ケン"]
+    },
+    {
+      "id": 48,
+      "hid": 13,
+      "kanji": "円",
+      "imi": ["circle", "yen"],
+      "kun": [""],
+      "on": ["エン"]
+    },
+    {
+      "id": 49,
+      "hid": 14,
+      "kanji": "百",
+      "imi": ["hundred"],
+      "kun": [""],
+      "on": ["ヒャク", "-ビャク", "-ピャク"]
+    },
+    {
+      "id": 50,
+      "hid": 15,
+      "kanji": "千",
+      "imi": ["thousand"],
+      "kun": ["ち"],
+      "on": ["セン", "-ゼン"]
+    },
+    {
+      "id": 51,
+      "hid": 16,
+      "kanji": "万",
+      "imi": ["ten thousand"],
+      "kun": [""],
+      "on": ["マン"]
+    },
+    {
+      "id": 52,
+      "hid": 241,
+      "kanji": "買",
+      "imi": ["buy"],
+      "kun": ["か-う"],
+      "on": ["バイ"]
+    },
+    {
+      "id": 53,
+      "hid": 168,
+      "kanji": "店",
+      "imi": ["shop", "store"],
+      "kun": ["みせ"],
+      "on": ["テン"]
+    },
+    {
+      "id": 54,
+      "hid": 167,
+      "kanji": "屋",
+      "imi": ["shop", "store", "roof"],
+      "kun": ["や"],
+      "on": ["オク"]
+    },
+    {
+      "id": 55,
+      "hid": 189,
+      "kanji": "京",
+      "imi": ["capital"],
+      "kun": [""],
+      "on": ["キョウ"]
+    },
+    {
+      "id": 56,
+      "hid": 284,
+      "kanji": "駅",
+      "imi": ["train station"],
+      "kun": [""],
+      "on": ["エキ"]
+    },
+    {
+      "id": 57,
+      "hid": 133,
+      "kanji": "車",
+      "imi": ["car", "vehicle"],
+      "kun": ["くるま"],
+      "on": ["シャ"]
+    },
+    {
+      "id": 58,
+      "hid": 108,
+      "kanji": "電",
+      "imi": ["electricity"],
+      "kun": [""],
+      "on": ["デン"]
+    },
+    {
+      "id": 59,
+      "hid": 485,
+      "kanji": "止",
+      "imi": ["stop"],
+      "kun": ["と-める", "と-まる"],
+      "on": ["シ"]
+    },
+    {
+      "id": 60,
+      "hid": 27,
+      "kanji": "小",
+      "imi": ["small"],
+      "kun": ["ちい-さい", "こ"],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 61,
+      "hid": 190,
+      "kanji": "高",
+      "imi": ["high", "tall", "expensive"],
+      "kun": ["たか-い"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 62,
+      "hid": 105,
+      "kanji": "安",
+      "imi": ["safe", "inexpensive", "cheap"],
+      "kun": ["やす-い"],
+      "on": ["アン"]
+    },
+    {
+      "id": 63,
+      "hid": 174,
+      "kanji": "新",
+      "imi": ["new"],
+      "kun": ["あたら-しい"],
+      "on": ["シン"]
+    },
+    {
+      "id": 64,
+      "hid": 172,
+      "kanji": "古",
+      "imi": ["old (things)"],
+      "kun": ["ふる-い"],
+      "on": ["コ"]
+    },
+    {
+      "id": 65,
+      "hid": 79,
+      "kanji": "物",
+      "imi": ["thing", "goods"],
+      "kun": ["もの"],
+      "on": ["ブツ", "モツ"]
+    },
+    {
+      "id": 66,
+      "hid": 322,
+      "kanji": "食",
+      "imi": ["eat"],
+      "kun": ["た-べる"],
+      "on": ["ショク"]
+    },
+    {
+      "id": 67,
+      "hid": 323,
+      "kanji": "飲",
+      "imi": ["drink"],
+      "kun": ["の-む"],
+      "on": ["イン"]
+    },
+    {
+      "id": 68,
+      "hid": 325,
+      "kanji": "飯",
+      "imi": ["meal", "cooked rice"],
+      "kun": [""],
+      "on": ["ハン"]
+    },
+    {
+      "id": 69,
+      "hid": 32,
+      "kanji": "上",
+      "imi": ["above", "up", "top", "pull up", "push up", "go up", "move up", "rise"],
+      "kun": ["うえ", "あ-げる", "あ-がる", "の-ぼる"],
+      "on": ["ジョウ"]
+    },
+    {
+      "id": 70,
+      "hid": 31,
+      "kanji": "下",
+      "imi": ["below", "down", "bottom", "pull down", "push down", "go down", "move down"],
+      "kun": ["した", "さ-げる", "さ-がる", "お-りる", "くだ-る"],
+      "on": ["力", "ゲ"]
+    },
+    {
+      "id": 71,
+      "hid": 28,
+      "kanji": "中",
+      "imi": ["middle", "center", "inside", "medium (size)"],
+      "kun": ["なか"],
+      "on": ["チュウ", "-ジュウ"]
+    },
+    {
+      "id": 72,
+      "hid": 83,
+      "kanji": "外",
+      "imi": ["outside", "foreign"],
+      "kun": ["そと"],
+      "on": ["ガイ"]
+    },
+    {
+      "id": 73,
+      "hid": 47,
+      "kanji": "前",
+      "imi": ["front", "before", "previous"],
+      "kun": ["まえ"],
+      "on": ["ゼン"]
+    },
+    {
+      "id": 74,
+      "hid": 48,
+      "kanji": "後",
+      "imi": ["back", "behind", "after", "later"],
+      "kun": ["うし-ろ", "あと"],
+      "on": ["ゴ", "コウ"]
+    },
+    {
+      "id": 75,
+      "hid": 76,
+      "kanji": "右",
+      "imi": ["right (side)"],
+      "kun": ["みぎ"],
+      "on": ["ウ", "ユウ"]
+    },
+    {
+      "id": 76,
+      "hid": 75,
+      "kanji": "左",
+      "imi": ["left (side)"],
+      "kun": ["ひだり"],
+      "on": ["サ"]
+    },
+    {
+      "id": 77,
+      "hid": 49,
+      "kanji": "午",
+      "imi": ["meridiem", "noon"],
+      "kun": [""],
+      "on": ["ゴ"]
+    },
+    {
+      "id": 78,
+      "hid": 113,
+      "kanji": "父",
+      "imi": ["father"],
+      "kun": ["ちち"],
+      "on": ["フ"]
+    },
+    {
+      "id": 79,
+      "hid": 112,
+      "kanji": "母",
+      "imi": ["mother"],
+      "kun": ["はは"],
+      "on": ["ボ"]
+    },
+    {
+      "id": 80,
+      "hid": 410,
+      "kanji": "兄",
+      "imi": ["older brother"],
+      "kun": ["あに"],
+      "on": ["キョウ"]
+    },
+    {
+      "id": 81,
+      "hid": 409,
+      "kanji": "弟",
+      "imi": ["younger brother"],
+      "kun": ["おとうとう"],
+      "on": ["-ダイ"]
+    },
+    {
+      "id": 82,
+      "hid": 411,
+      "kanji": "姉",
+      "imi": ["older sister"],
+      "kun": ["あね"],
+      "on": ["シ"]
+    },
+    {
+      "id": 83,
+      "hid": 412,
+      "kanji": "妹",
+      "imi": ["younger sister"],
+      "kun": ["いもうとう"],
+      "on": ["マイ"]
+    },
+    {
+      "id": 84,
+      "hid": 101,
+      "kanji": "男",
+      "imi": ["man", "male"],
+      "kun": ["おとこ"],
+      "on": ["ダイ", "-ナン"]
+    },
+    {
+      "id": 85,
+      "hid": 102,
+      "kanji": "女",
+      "imi": ["woman", "female"],
+      "kun": ["おんな"],
+      "on": ["ジョ"]
+    },
+    {
+      "id": 86,
+      "hid": 103,
+      "kanji": "子",
+      "imi": ["child"],
+      "kun": ["こ"],
+      "on": ["シ"]
+    },
+    {
+      "id": 87,
+      "hid": 134,
+      "kanji": "気",
+      "imi": ["mind", "spirit", "air"],
+      "kun": [""],
+      "on": ["キ"]
+    },
+    {
+      "id": 88,
+      "hid": 137,
+      "kanji": "元",
+      "imi": ["source", "former"],
+      "kun": ["もと"],
+      "on": ["ゲン", "ガン"]
+    },
+    {
+      "id": 89,
+      "hid": 141,
+      "kanji": "天",
+      "imi": ["heaven", "sky"],
+      "kun": [""],
+      "on": ["テン"]
+    },
+    {
+      "id": 90,
+      "hid": 30,
+      "kanji": "雨",
+      "imi": ["rain"],
+      "kun": ["あめ"],
+      "on": ["ウ"]
+    },
+    {
+      "id": 91,
+      "hid": 60,
+      "kanji": "休",
+      "imi": ["rest", "absent"],
+      "kun": ["やす-む"],
+      "on": ["キュウ"]
+    },
+    {
+      "id": 92,
+      "hid": 34,
+      "kanji": "山",
+      "imi": ["mountain"],
+      "kun": ["やま"],
+      "on": ["サン", "-ザン"]
+    },
+    {
+      "id": 93,
+      "hid": 33,
+      "kanji": "川",
+      "imi": ["river"],
+      "kun": ["かわ", "-がわ"],
+      "on": [""]
+    },
+    {
+      "id": 94,
+      "hid": 35,
+      "kanji": "田",
+      "imi": ["rice field"],
+      "kun": ["た", "-だ"],
+      "on": [""]
+    },
+    {
+      "id": 95,
+      "hid": 117,
+      "kanji": "海",
+      "imi": ["ocean"],
+      "kun": ["うみ"],
+      "on": ["カイ"]
+    },
+    {
+      "id": 96,
+      "hid": 222,
+      "kanji": "旅",
+      "imi": ["journey", "trip"],
+      "kun": ["たび"],
+      "on": ["リョ"]
+    },
+    {
+      "id": 97,
+      "hid": 82,
+      "kanji": "名",
+      "imi": ["name"],
+      "kun": ["な"],
+      "on": ["メイ"]
+    },
+    {
+      "id": 98,
+      "hid": 110,
+      "kanji": "字",
+      "imi": ["letter", "character"],
+      "kun": [""],
+      "on": ["ジ"]
+    },
+    {
+      "id": 99,
+      "hid": 565,
+      "kanji": "漢",
+      "imi": ["China", "Han Dynasty"],
+      "kun": [""],
+      "on": ["カン"]
+    },
+    {
+      "id": 100,
+      "hid": 111,
+      "kanji": "文",
+      "imi": ["sentence", "letters", "literate"],
+      "kun": [""],
+      "on": ["ブン", "モン"]
+    },
+    {
+      "id": 101,
+      "hid": 361,
+      "kanji": "作",
+      "imi": ["make", "create"],
+      "kun": ["つく-る"],
+      "on": ["サク"]
+    },
+    {
+      "id": 102,
+      "hid": 66,
+      "kanji": "言",
+      "imi": ["say"],
+      "kun": ["いう"],
+      "on": ["ゲン", "ゴン"]
+    },
+    {
+      "id": 103,
+      "hid": 238,
+      "kanji": "話",
+      "imi": ["story", "speak", "talk"],
+      "kun": ["はなし", "はな-す"],
+      "on": ["ワ"]
+    },
+    {
+      "id": 104,
+      "hid": 244,
+      "kanji": "読",
+      "imi": ["read"],
+      "kun": ["よ-む"],
+      "on": ["ドク"]
+    },
+    {
+      "id": 105,
+      "hid": 131,
+      "kanji": "書",
+      "imi": ["write", "book"],
+      "kun": ["か-く"],
+      "on": ["ショ"]
+    },
+    {
+      "id": 106,
+      "hid": 64,
+      "kanji": "聞",
+      "imi": ["hear", "listen", "inquire", "ask"],
+      "kun": ["き-く"],
+      "on": ["ブン"]
+    },
+    {
+      "id": 107,
+      "hid": 308,
+      "kanji": "社",
+      "imi": ["company", "assembling", "shrine"],
+      "kun": [""],
+      "on": ["シャ", "-ジャ"]
+    },
+    {
+      "id": 108,
+      "hid": 165,
+      "kanji": "家",
+      "imi": ["house [suffix]", "specialist"],
+      "kun": ["いえ"],
+      "on": ["カ", "ヤ", "ケ"]
+    },
+    {
+      "id": 109,
+      "hid": 221,
+      "kanji": "族",
+      "imi": ["tribe", "clan"],
+      "kun": [""],
+      "on": ["ゾク"]
+    },
+    {
+      "id": 110,
+      "hid": 153,
+      "kanji": "所",
+      "imi": ["place"],
+      "kun": ["ところ", "-どころ"],
+      "on": ["ショ", "-ジョ"]
+    },
+    {
+      "id": 111,
+      "hid": 156,
+      "kanji": "住",
+      "imi": ["live", "reside"],
+      "kun": ["すむ"],
+      "on": ["ジュウ"]
+    },
+    {
+      "id": 112,
+      "hid": 452,
+      "kanji": "近",
+      "imi": ["near", "close"],
+      "kun": ["ちか-い"],
+      "on": ["キン"]
+    },
+    {
+      "id": 113,
+      "hid": 200,
+      "kanji": "両",
+      "imi": ["both"],
+      "kun": [""],
+      "on": ["リョウ"]
+    },
+    {
+      "id": 114,
+      "hid": 175,
+      "kanji": "親",
+      "imi": ["parent", "close (relationship)"],
+      "kun": ["おや", "した-しい"],
+      "on": ["シン"]
+    },
+    {
+      "id": 115,
+      "hid": 155,
+      "kanji": "主",
+      "imi": ["main"],
+      "kun": ["おも-な"],
+      "on": ["シュ"]
+    },
+    {
+      "id": 116,
+      "hid": 84,
+      "kanji": "内",
+      "imi": ["inside"],
+      "kun": ["うち"],
+      "on": ["ナイ"]
+    },
+    {
+      "id": 117,
+      "hid": 188,
+      "kanji": "都",
+      "imi": ["capital", "metropolis"],
+      "kun": [""],
+      "on": ["ト", "ツ"]
+    },
+    {
+      "id": 118,
+      "hid": 194,
+      "kanji": "県",
+      "imi": ["prefecture"],
+      "kun": [""],
+      "on": ["ケン"]
+    },
+    {
+      "id": 119,
+      "hid": 181,
+      "kanji": "市",
+      "imi": ["city", "market"],
+      "kun": ["いち"],
+      "on": ["シ"]
+    },
+    {
+      "id": 120,
+      "hid": 183,
+      "kanji": "区",
+      "imi": ["ward", "division"],
+      "kun": [""],
+      "on": ["ク"]
+    },
+    {
+      "id": 121,
+      "hid": 182,
+      "kanji": "町",
+      "imi": ["town"],
+      "kun": ["まち"],
+      "on": ["チョウ"]
+    },
+    {
+      "id": 122,
+      "hid": 191,
+      "kanji": "村",
+      "imi": ["village"],
+      "kun": ["むら"],
+      "on": ["ソン"]
+    },
+    {
+      "id": 123,
+      "hid": 185,
+      "kanji": "番",
+      "imi": ["order", "turn", "guard", "watch", "[suffix] No."],
+      "kun": [""],
+      "on": ["バン"]
+    },
+    {
+      "id": 124,
+      "hid": 266,
+      "kanji": "号",
+      "imi": ["[suffix] order"],
+      "kun": [""],
+      "on": ["ゴウ"]
+    },
+    {
+      "id": 125,
+      "hid": 407,
+      "kanji": "様",
+      "imi": ["[honorific suffix] Mr.", "[honorific suffix] Mrs.", "[honorific suffix] Ms."],
+      "kun": ["さま"],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 126,
+      "hid": 99,
+      "kanji": "思",
+      "imi": ["think"],
+      "kun": ["おも"],
+      "on": ["シ"]
+    },
+    {
+      "id": 127,
+      "hid": 40,
+      "kanji": "国",
+      "imi": ["country", "nation", "one`s hometown"],
+      "kun": ["くに", "-ぐに"],
+      "on": ["コワ", "-ゴク", "コッ-"]
+    },
+    {
+      "id": 128,
+      "hid": 195,
+      "kanji": "州",
+      "imi": ["state"],
+      "kun": [""],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 129,
+      "hid": 121,
+      "kanji": "立",
+      "imi": ["stand up", "establish"],
+      "kun": ["た-つ"],
+      "on": ["リツ"]
+    },
+    {
+      "id": 130,
+      "hid": 115,
+      "kanji": "校",
+      "imi": ["school"],
+      "kun": [""],
+      "on": ["コウ"]
+    },
+    {
+      "id": 131,
+      "hid": 126,
+      "kanji": "公",
+      "imi": ["public"],
+      "kun": [""],
+      "on": ["コウ"]
+    },
+    {
+      "id": 132,
+      "hid": 125,
+      "kanji": "私",
+      "imi": ["private", "I (first person pronoun)"],
+      "kun": ["わたくし", "わたし"],
+      "on": ["シ"]
+    },
+    {
+      "id": 133,
+      "hid": 118,
+      "kanji": "地",
+      "imi": ["ground"],
+      "kun": [""],
+      "on": ["チ", "ジ"]
+    },
+    {
+      "id": 134,
+      "hid": 70,
+      "kanji": "方",
+      "imi": ["direction", "person [honorific]", "how to ~"],
+      "kun": ["かた", "-がた"],
+      "on": ["ホウ", "-ポウ"]
+    },
+    {
+      "id": 135,
+      "hid": 628,
+      "kanji": "際",
+      "imi": ["encounter", "occasion"],
+      "kun": [""],
+      "on": ["サイ"]
+    },
+    {
+      "id": 136,
+      "hid": 86,
+      "kanji": "部",
+      "imi": ["division", "section", "club"],
+      "kun": [""],
+      "on": ["ブ"]
+    },
+    {
+      "id": 137,
+      "hid": 45,
+      "kanji": "年",
+      "imi": ["year", "age"],
+      "kun": ["とし"],
+      "on": ["ネン"]
+    },
+    {
+      "id": 138,
+      "hid": 468,
+      "kanji": "春",
+      "imi": ["spring"],
+      "kun": ["はる"],
+      "on": ["シュン"]
+    },
+    {
+      "id": 139,
+      "hid": 469,
+      "kanji": "夏",
+      "imi": ["summer"],
+      "kun": ["なつ"],
+      "on": ["カ"]
+    },
+    {
+      "id": 140,
+      "hid": 0,
+      "kanji": "秋",
+      "imi": ["autumn"],
+      "kun": ["あき"],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 141,
+      "hid": 467,
+      "kanji": "冬",
+      "imi": ["winter"],
+      "kun": ["ふゆ"],
+      "on": ["トウ"]
+    },
+    {
+      "id": 142,
+      "hid": 477,
+      "kanji": "朝",
+      "imi": ["morning"],
+      "kun": ["あさ"],
+      "on": ["チョウ"]
+    },
+    {
+      "id": 143,
+      "hid": 478,
+      "kanji": "昼",
+      "imi": ["midday"],
+      "kun": ["ひる"],
+      "on": ["チュウ"]
+    },
+    {
+      "id": 144,
+      "hid": 81,
+      "kanji": "夕",
+      "imi": ["early evening", "dusk"],
+      "kun": [""],
+      "on": ["エウ"]
+    },
+    {
+      "id": 145,
+      "hid": 749,
+      "kanji": "晩",
+      "imi": ["evening", "night"],
+      "kun": [""],
+      "on": ["バン"]
+    },
+    {
+      "id": 146,
+      "hid": 479,
+      "kanji": "夜",
+      "imi": ["night"],
+      "kun": ["よる", "よ"],
+      "on": ["ヤ"]
+    },
+    {
+      "id": 147,
+      "hid": 317,
+      "kanji": "帰",
+      "imi": ["return (home)", "go back (home)", "come back (home)"],
+      "kun": ["かえ-る"],
+      "on": ["キ"]
+    },
+    {
+      "id": 148,
+      "hid": 1127,
+      "kanji": "寝",
+      "imi": ["go to bed", "sleep"],
+      "kun": ["ね-る"],
+      "on": ["シン"]
+    },
+    {
+      "id": 149,
+      "hid": 374,
+      "kanji": "起",
+      "imi": ["wake (someone) up", "wake up", "get up", "occur"],
+      "kun": ["お-こす", "お-きる", "お-こる"],
+      "on": ["キ"]
+    },
+    {
+      "id": 150,
+      "hid": 668,
+      "kanji": "着",
+      "imi": ["put one (clothes)", "wear", "arrive"],
+      "kun": ["き-る", "-ぎ", "つ-く"],
+      "on": ["チャク"]
+    },
+    {
+      "id": 151,
+      "hid": 459,
+      "kanji": "待",
+      "imi": ["wait"],
+      "kun": ["ま-つ"],
+      "on": ["タイ"]
+    },
+    {
+      "id": 152,
+      "hid": 458,
+      "kanji": "持",
+      "imi": ["hold", "carry", "own"],
+      "kun": ["もつ"],
+      "on": ["ジ"]
+    },
+    {
+      "id": 153,
+      "hid": 332,
+      "kanji": "使",
+      "imi": ["use"],
+      "kun": ["つか-う"],
+      "on": ["シ"]
+    },
+    {
+      "id": 154,
+      "hid": 229,
+      "kanji": "多",
+      "imi": ["many", "much"],
+      "kun": ["おお-い"],
+      "on": ["タ"]
+    },
+    {
+      "id": 155,
+      "hid": 144,
+      "kanji": "少",
+      "imi": ["few", "little", "a few", "a little"],
+      "kun": ["すく-ない", "すこ-し"],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 156,
+      "hid": 0,
+      "kanji": "々",
+      "imi": ["[repetition symbol]"],
+      "kun": [""],
+      "on": [""]
+    },
+    {
+      "id": 157,
+      "hid": 400,
+      "kanji": "開",
+      "imi": ["open"],
+      "kun": ["あけるあくひらく"],
+      "on": ["カイ"]
+    },
+    {
+      "id": 158,
+      "hid": 401,
+      "kanji": "閉",
+      "imi": ["close", "shut"],
+      "kun": ["しめるしまるとじる"],
+      "on": ["ヘイ"]
+    },
+    {
+      "id": 159,
+      "hid": 503,
+      "kanji": "始",
+      "imi": ["begin", "start"],
+      "kun": ["はじ-める", "はじ-まる"],
+      "on": ["シ"]
+    },
+    {
+      "id": 160,
+      "hid": 466,
+      "kanji": "終",
+      "imi": ["end", "finish"],
+      "kun": ["お-わる"],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 161,
+      "hid": 761,
+      "kanji": "貸",
+      "imi": ["lend"],
+      "kun": ["か-す"],
+      "on": [""]
+    },
+    {
+      "id": 162,
+      "hid": 245,
+      "kanji": "教",
+      "imi": ["teach", "inform"],
+      "kun": ["おし-える"],
+      "on": ["キョウ"]
+    },
+    {
+      "id": 163,
+      "hid": 448,
+      "kanji": "返",
+      "imi": ["return", "give back"],
+      "kun": ["かえ-す"],
+      "on": ["ヘン"]
+    },
+    {
+      "id": 164,
+      "hid": 239,
+      "kanji": "売",
+      "imi": ["sell"],
+      "kun": ["う-る"],
+      "on": ["バイ"]
+    },
+    {
+      "id": 165,
+      "hid": 420,
+      "kanji": "去",
+      "imi": ["leave", "be gone"],
+      "kun": ["さ-る"],
+      "on": ["キョ"]
+    },
+    {
+      "id": 166,
+      "hid": 305,
+      "kanji": "末",
+      "imi": ["end"],
+      "kun": ["すえ"],
+      "on": ["マツ"]
+    },
+    {
+      "id": 167,
+      "hid": 532,
+      "kanji": "乗",
+      "imi": ["give a ride", "board", "get on"],
+      "kun": ["の-せる", "の-る"],
+      "on": ["ジョウ"]
+    },
+    {
+      "id": 168,
+      "hid": 977,
+      "kanji": "降",
+      "imi": ["descend", "get off", "(rain/snow) fall"],
+      "kun": ["お-りる", "ふ-る"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 169,
+      "hid": 150,
+      "kanji": "通",
+      "imi": ["avenue", "pass", "commute"],
+      "kun": ["とお-り", "とお-る", "かよ-う"],
+      "on": ["ツウ"]
+    },
+    {
+      "id": 170,
+      "hid": 149,
+      "kanji": "道",
+      "imi": ["road", "street", "way"],
+      "kun": ["みち"],
+      "on": ["ドウ"]
+    },
+    {
+      "id": 171,
+      "hid": 437,
+      "kanji": "歩",
+      "imi": ["walk"],
+      "kun": ["ある-く"],
+      "on": ["ホ", "ポ"]
+    },
+    {
+      "id": 172,
+      "hid": 303,
+      "kanji": "急",
+      "imi": ["hurry", "quick"],
+      "kun": ["いそ-ぐ"],
+      "on": ["キュウ"]
+    },
+    {
+      "id": 173,
+      "hid": 299,
+      "kanji": "線",
+      "imi": ["line"],
+      "kun": [""],
+      "on": ["セン"]
+    },
+    {
+      "id": 174,
+      "hid": 312,
+      "kanji": "鉄",
+      "imi": ["iron"],
+      "kun": [""],
+      "on": ["テツ"]
+    },
+    {
+      "id": 175,
+      "hid": 154,
+      "kanji": "場",
+      "imi": ["place"],
+      "kun": ["ば"],
+      "on": ["ジョウ"]
+    },
+    {
+      "id": 176,
+      "hid": 55,
+      "kanji": "目",
+      "imi": ["eye", "item", "[suffix] ordinal number"],
+      "kun": ["め"],
+      "on": ["モク"]
+    },
+    {
+      "id": 177,
+      "hid": 320,
+      "kanji": "科",
+      "imi": ["subject"],
+      "kun": [""],
+      "on": ["カ"]
+    },
+    {
+      "id": 178,
+      "hid": 166,
+      "kanji": "室",
+      "imi": ["room"],
+      "kun": [""],
+      "on": ["シツ"]
+    },
+    {
+      "id": 179,
+      "hid": 780,
+      "kanji": "借",
+      "imi": ["borrow"],
+      "kun": ["か-りる"],
+      "on": ["シャク"]
+    },
+    {
+      "id": 180,
+      "hid": 214,
+      "kanji": "知",
+      "imi": ["know"],
+      "kun": ["しる"],
+      "on": ["チ"]
+    },
+    {
+      "id": 181,
+      "hid": 217,
+      "kanji": "強",
+      "imi": ["strong"],
+      "kun": ["つよ-い"],
+      "on": ["キョウ"]
+    },
+    {
+      "id": 182,
+      "hid": 748,
+      "kanji": "勉",
+      "imi": ["endeavor"],
+      "kun": [""],
+      "on": ["ベン"]
+    },
+    {
+      "id": 183,
+      "hid": 601,
+      "kanji": "習",
+      "imi": ["learn", "practice"],
+      "kun": ["なら-う"],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 184,
+      "hid": 756,
+      "kanji": "練",
+      "imi": ["knead"],
+      "kun": [""],
+      "on": ["レン"]
+    },
+    {
+      "id": 185,
+      "hid": 80,
+      "kanji": "事",
+      "imi": ["affair", "fact"],
+      "kun": ["こと", "-こど"],
+      "on": ["ジ"]
+    },
+    {
+      "id": 186,
+      "hid": 333,
+      "kanji": "仕",
+      "imi": ["serve"],
+      "kun": [""],
+      "on": ["シ"]
+    },
+    {
+      "id": 187,
+      "hid": 104,
+      "kanji": "好",
+      "imi": ["like", "be fond of"],
+      "kun": ["す-きな", "この-む"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 188,
+      "hid": 395,
+      "kanji": "歌",
+      "imi": ["song", "sing"],
+      "kun": ["うた", "うた-う"],
+      "on": ["カ"]
+    },
+    {
+      "id": 189,
+      "hid": 347,
+      "kanji": "音",
+      "imi": ["sound", "noise", "volume"],
+      "kun": ["おと"],
+      "on": ["オン"]
+    },
+    {
+      "id": 190,
+      "hid": 359,
+      "kanji": "楽",
+      "imi": ["enjoyable", "comfort", "ease", "enjoy"],
+      "kun": ["たの-しい", "たの-しむ"],
+      "on": ["ガク", "ラク"]
+    },
+    {
+      "id": 191,
+      "hid": 367,
+      "kanji": "曲",
+      "imi": ["bend", "curve", "turn", "(a piece of) music", "tune"],
+      "kun": ["ま-げる", "ま-がる"],
+      "on": ["キョク"]
+    },
+    {
+      "id": 192,
+      "hid": 345,
+      "kanji": "絵",
+      "imi": ["painting", "drawing"],
+      "kun": ["え"],
+      "on": ["カイ"]
+    },
+    {
+      "id": 193,
+      "hid": 343,
+      "kanji": "画",
+      "imi": ["picture", "film", "stroke", "plan"],
+      "kun": [""],
+      "on": ["ガ", "カク"]
+    },
+    {
+      "id": 194,
+      "hid": 353,
+      "kanji": "映",
+      "imi": ["reflect"],
+      "kun": ["うつ-す", "うつ-る"],
+      "on": ["エイ"]
+    },
+    {
+      "id": 195,
+      "hid": 428,
+      "kanji": "真",
+      "imi": ["genuine"],
+      "kun": ["ま"],
+      "on": ["シン"]
+    },
+    {
+      "id": 196,
+      "hid": 549,
+      "kanji": "写",
+      "imi": ["copy", "reproduce"],
+      "kun": [""],
+      "on": ["シャ"]
+    },
+    {
+      "id": 197,
+      "hid": 223,
+      "kanji": "肉",
+      "imi": ["meat", "flesh"],
+      "kun": [""],
+      "on": ["ニク"]
+    },
+    {
+      "id": 198,
+      "hid": 281,
+      "kanji": "牛",
+      "imi": ["cow"],
+      "kun": ["うし"],
+      "on": ["ギュウ"]
+    },
+    {
+      "id": 199,
+      "hid": 285,
+      "kanji": "鳥",
+      "imi": ["bird"],
+      "kun": ["とり"],
+      "on": ["チョウ"]
+    },
+    {
+      "id": 200,
+      "hid": 290,
+      "kanji": "魚",
+      "imi": ["fish"],
+      "kun": ["さかな"],
+      "on": ["ギョ"]
+    },
+    {
+      "id": 201,
+      "hid": 224,
+      "kanji": "米",
+      "imi": ["rice", "America"],
+      "kun": ["こめ"],
+      "on": ["ベイ", "マイ"]
+    },
+    {
+      "id": 202,
+      "hid": 251,
+      "kanji": "茶",
+      "imi": ["tea", "brown"],
+      "kun": [""],
+      "on": ["チャ", "サ"]
+    },
+    {
+      "id": 203,
+      "hid": 143,
+      "kanji": "理",
+      "imi": ["reason", "logic"],
+      "kun": [""],
+      "on": ["リ"]
+    },
+    {
+      "id": 204,
+      "hid": 319,
+      "kanji": "料",
+      "imi": ["ingredient", "fee", "charge"],
+      "kun": [""],
+      "on": ["リョウ"]
+    },
+    {
+      "id": 205,
+      "hid": 39,
+      "kanji": "切",
+      "imi": ["cut", "earnest"],
+      "kun": ["き-る", "き-れる"],
+      "on": ["セツ"]
+    },
+    {
+      "id": 206,
+      "hid": 705,
+      "kanji": "洗",
+      "imi": ["wash"],
+      "kun": ["あら-う"],
+      "on": ["セン"]
+    },
+    {
+      "id": 207,
+      "hid": 204,
+      "kanji": "色",
+      "imi": ["color"],
+      "kun": ["いろ"],
+      "on": ["ショク", "シキ"]
+    },
+    {
+      "id": 208,
+      "hid": 399,
+      "kanji": "形",
+      "imi": ["shape", "form"],
+      "kun": ["かたち"],
+      "on": ["ケイ", "ギョウ"]
+    },
+    {
+      "id": 209,
+      "hid": 205,
+      "kanji": "白",
+      "imi": ["white"],
+      "kun": ["しろ-い"],
+      "on": ["ハク"]
+    },
+    {
+      "id": 210,
+      "hid": 206,
+      "kanji": "黒",
+      "imi": ["black"],
+      "kun": ["くろ-い"],
+      "on": ["コク"]
+    },
+    {
+      "id": 211,
+      "hid": 207,
+      "kanji": "赤",
+      "imi": ["red"],
+      "kun": ["あか-い"],
+      "on": ["セキ"]
+    },
+    {
+      "id": 212,
+      "hid": 208,
+      "kanji": "青",
+      "imi": ["blue"],
+      "kun": ["あお-い"],
+      "on": ["セイ"]
+    },
+    {
+      "id": 213,
+      "hid": 95,
+      "kanji": "長",
+      "imi": ["long", "eldest", "chief"],
+      "kun": ["なが-い"],
+      "on": ["チョウ"]
+    },
+    {
+      "id": 214,
+      "hid": 215,
+      "kanji": "短",
+      "imi": ["short"],
+      "kun": ["みじか-い"],
+      "on": ["タン"]
+    },
+    {
+      "id": 215,
+      "hid": 18,
+      "kanji": "明",
+      "imi": ["light", "bright"],
+      "kun": ["あか-るい"],
+      "on": ["メイ"]
+    },
+    {
+      "id": 216,
+      "hid": 707,
+      "kanji": "広",
+      "imi": ["wide", "spacious"],
+      "kun": ["ひろ-い"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 217,
+      "hid": 97,
+      "kanji": "心",
+      "imi": ["heart", "mind", "center", "core"],
+      "kun": ["こころ"],
+      "on": ["シン"]
+    },
+    {
+      "id": 218,
+      "hid": 57,
+      "kanji": "手",
+      "imi": ["hand"],
+      "kun": ["て"],
+      "on": ["シュ"]
+    },
+    {
+      "id": 219,
+      "hid": 180,
+      "kanji": "紙",
+      "imi": ["paper"],
+      "kun": ["かみ", "-がみ"],
+      "on": ["シ"]
+    },
+    {
+      "id": 220,
+      "hid": 237,
+      "kanji": "活",
+      "imi": ["life", "activity"],
+      "kun": [""],
+      "on": ["カツ"]
+    },
+    {
+      "id": 221,
+      "hid": 1460,
+      "kanji": "忙",
+      "imi": ["busy (schedule)"],
+      "kun": ["いそが-しい"],
+      "on": ["ボウ"]
+    },
+    {
+      "id": 222,
+      "hid": 248,
+      "kanji": "早",
+      "imi": ["early"],
+      "kun": ["はや-い"],
+      "on": ["ソウ"]
+    },
+    {
+      "id": 223,
+      "hid": 440,
+      "kanji": "伝",
+      "imi": ["transmit"],
+      "kun": ["つた-える"],
+      "on": ["デン"]
+    },
+    {
+      "id": 224,
+      "hid": 447,
+      "kanji": "送",
+      "imi": ["send", "see (someone) off"],
+      "kun": ["おく-る"],
+      "on": ["ソウ"]
+    },
+    {
+      "id": 225,
+      "hid": 445,
+      "kanji": "運",
+      "imi": ["transport", "carry"],
+      "kun": ["はこ-ぶ"],
+      "on": ["ウン"]
+    },
+    {
+      "id": 226,
+      "hid": 378,
+      "kanji": "度",
+      "imi": ["[suffix] counter for degree", "[suffix] counter for occasion", "[suffix] counter for degree"],
+      "kun": [""],
+      "on": ["ド"]
+    },
+    {
+      "id": 227,
+      "hid": 198,
+      "kanji": "同",
+      "imi": ["same"],
+      "kun": ["おな-じ"],
+      "on": ["ドウ"]
+    },
+    {
+      "id": 228,
+      "hid": 833,
+      "kanji": "違",
+      "imi": ["differ", "difference", "wrong"],
+      "kun": ["ちが-い", "ちが-う"],
+      "on": ["イ"]
+    },
+    {
+      "id": 229,
+      "hid": 275,
+      "kanji": "正",
+      "imi": ["correct", "right"],
+      "kun": ["ただ-しい"],
+      "on": ["セイ", "ショウ"]
+    },
+    {
+      "id": 230,
+      "hid": 132,
+      "kanji": "意",
+      "imi": ["intention", "meaning"],
+      "kun": [""],
+      "on": ["イ"]
+    },
+    {
+      "id": 231,
+      "hid": 307,
+      "kanji": "味",
+      "imi": ["taste"],
+      "kun": ["あじ"],
+      "on": ["ミ"]
+    },
+    {
+      "id": 232,
+      "hid": 179,
+      "kanji": "宿",
+      "imi": ["lodge"],
+      "kun": ["やど"],
+      "on": ["シュク", "-ジュク"]
+    },
+    {
+      "id": 233,
+      "hid": 355,
+      "kanji": "題",
+      "imi": ["theme", "title"],
+      "kun": [""],
+      "on": ["ダイ"]
+    },
+    {
+      "id": 234,
+      "hid": 162,
+      "kanji": "問",
+      "imi": ["question", "inquire"],
+      "kun": ["と-う"],
+      "on": ["モン"]
+    },
+    {
+      "id": 235,
+      "hid": 176,
+      "kanji": "質",
+      "imi": ["question", "quality"],
+      "kun": [""],
+      "on": ["シツ"]
+    },
+    {
+      "id": 236,
+      "hid": 160,
+      "kanji": "答",
+      "imi": ["answer", "reply"],
+      "kun": ["こたえ", "こた-える"],
+      "on": ["トウ"]
+    },
+    {
+      "id": 237,
+      "hid": 774,
+      "kanji": "留",
+      "imi": ["stay", "stop"],
+      "kun": [""],
+      "on": ["リュウ", "ル"]
+    },
+    {
+      "id": 238,
+      "hid": 612,
+      "kanji": "授",
+      "imi": ["grant", "teach"],
+      "kun": [""],
+      "on": ["ジュ"]
+    },
+    {
+      "id": 239,
+      "hid": 279,
+      "kanji": "業",
+      "imi": ["work", "business", "industry"],
+      "kun": [""],
+      "on": ["ギョウ"]
+    },
+    {
+      "id": 240,
+      "hid": 801,
+      "kanji": "卒",
+      "imi": ["graduate"],
+      "kun": [""],
+      "on": ["ソツ"]
+    },
+    {
+      "id": 241,
+      "hid": 293,
+      "kanji": "論",
+      "imi": ["argument", "theory"],
+      "kun": [""],
+      "on": ["ロン"]
+    },
+    {
+      "id": 242,
+      "hid": 535,
+      "kanji": "試",
+      "imi": ["testing", "trial", "attempt"],
+      "kun": ["こころ-みる", "ため-す"],
+      "on": ["シ"]
+    },
+    {
+      "id": 243,
+      "hid": 541,
+      "kanji": "験",
+      "imi": ["effect", "testing"],
+      "kun": [""],
+      "on": ["ケン"]
+    },
+    {
+      "id": 244,
+      "hid": 456,
+      "kanji": "期",
+      "imi": ["term", "period"],
+      "kun": [""],
+      "on": ["キ"]
+    },
+    {
+      "id": 245,
+      "hid": 630,
+      "kanji": "礼",
+      "imi": ["etiquette", "bow", "appreciation"],
+      "kun": [""],
+      "on": ["レイ"]
+    },
+    {
+      "id": 246,
+      "hid": 311,
+      "kanji": "失",
+      "imi": ["lose", "miss (an opportunity)"],
+      "kun": ["うしな-う"],
+      "on": ["シツ"]
+    },
+    {
+      "id": 247,
+      "hid": 576,
+      "kanji": "婚",
+      "imi": ["marriage"],
+      "kun": [""],
+      "on": ["コン"]
+    },
+    {
+      "id": 248,
+      "hid": 494,
+      "kanji": "結",
+      "imi": ["connect", "tie"],
+      "kun": ["むす-ぶ"],
+      "on": ["ケツ", "ケッ-"]
+    },
+    {
+      "id": 249,
+      "hid": 211,
+      "kanji": "約",
+      "imi": ["promise", "approximate"],
+      "kun": [""],
+      "on": ["ヤク"]
+    },
+    {
+      "id": 250,
+      "hid": 159,
+      "kanji": "合",
+      "imi": ["suit", "match", "combine"],
+      "kun": ["あ-う"],
+      "on": ["ゴウ", "ガッ-"]
+    },
+    {
+      "id": 251,
+      "hid": 146,
+      "kanji": "相",
+      "imi": ["mutual", "aspect"],
+      "kun": ["あい"],
+      "on": ["ソウ"]
+    },
+    {
+      "id": 252,
+      "hid": 98,
+      "kanji": "性",
+      "imi": ["sex", "gender", "one’s nature"],
+      "kun": [""],
+      "on": ["セイ"]
+    },
+    {
+      "id": 253,
+      "hid": 534,
+      "kanji": "式",
+      "imi": ["ceremony", "rite"],
+      "kun": [""],
+      "on": ["シキ"]
+    },
+    {
+      "id": 254,
+      "hid": 89,
+      "kanji": "全",
+      "imi": ["entire", "complete", "whole", "all"],
+      "kun": ["まった-く", "すべ-て"],
+      "on": ["ゼン"]
+    },
+    {
+      "id": 255,
+      "hid": 252,
+      "kanji": "世",
+      "imi": ["world", "generation"],
+      "kun": ["よ"],
+      "on": ["セ", "セイ"]
+    },
+    {
+      "id": 256,
+      "hid": 461,
+      "kanji": "界",
+      "imi": ["world", "bounds", "boundary"],
+      "kun": [""],
+      "on": ["カイ"]
+    },
+    {
+      "id": 257,
+      "hid": 624,
+      "kanji": "院",
+      "imi": ["institution"],
+      "kun": [""],
+      "on": ["イン"]
+    },
+    {
+      "id": 258,
+      "hid": 381,
+      "kanji": "病",
+      "imi": ["sick", "disease"],
+      "kun": [""],
+      "on": ["ビョウ"]
+    },
+    {
+      "id": 259,
+      "hid": 1402,
+      "kanji": "痛",
+      "imi": ["pain", "sore"],
+      "kun": ["いた-い"],
+      "on": ["ツウ"]
+    },
+    {
+      "id": 260,
+      "hid": 1403,
+      "kanji": "疲",
+      "imi": ["exhaustion", "fatigue"],
+      "kun": ["つか-れる"],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 261,
+      "hid": 61,
+      "kanji": "体",
+      "imi": ["body", "health"],
+      "kun": ["からだ"],
+      "on": ["タイ"]
+    },
+    {
+      "id": 262,
+      "hid": 276,
+      "kanji": "頭",
+      "imi": ["head", "brain"],
+      "kun": ["あたま"],
+      "on": ["ズ", "トウ"]
+    },
+    {
+      "id": 263,
+      "hid": 56,
+      "kanji": "耳",
+      "imi": ["ear"],
+      "kun": ["みみ"],
+      "on": ["ジ"]
+    },
+    {
+      "id": 264,
+      "hid": 58,
+      "kanji": "足",
+      "imi": ["foot", "leg", "be sufficient"],
+      "kun": ["あし", "た-りる"],
+      "on": ["ソク"]
+    },
+    {
+      "id": 265,
+      "hid": 100,
+      "kanji": "力",
+      "imi": ["power", "ability"],
+      "kun": ["ちから"],
+      "on": ["リョク", "リキ"]
+    },
+    {
+      "id": 266,
+      "hid": 655,
+      "kanji": "熱",
+      "imi": ["hot (things)", "fever", "heat"],
+      "kun": ["あつ-い"],
+      "on": ["ネツ", "ネッ-"]
+    },
+    {
+      "id": 267,
+      "hid": 360,
+      "kanji": "薬",
+      "imi": ["medicine"],
+      "kun": ["くすり", "-ぐすり"],
+      "on": ["ヤク"]
+    },
+    {
+      "id": 268,
+      "hid": 90,
+      "kanji": "回",
+      "imi": ["pass around", "go around", "[suffix] counter for rounds/laps"],
+      "kun": ["まわ-す", "まわ-る"],
+      "on": ["カイ"]
+    },
+    {
+      "id": 269,
+      "hid": 502,
+      "kanji": "治",
+      "imi": ["govern", "cure"],
+      "kun": ["なお-す", "なお-る"],
+      "on": ["ジ", "チ"]
+    },
+    {
+      "id": 270,
+      "hid": 492,
+      "kanji": "政",
+      "imi": ["government"],
+      "kun": [""],
+      "on": ["セイ"]
+    },
+    {
+      "id": 271,
+      "hid": 557,
+      "kanji": "経",
+      "imi": ["pass through", "manage"],
+      "kun": [""],
+      "on": ["ケイ"]
+    },
+    {
+      "id": 272,
+      "hid": 558,
+      "kanji": "済",
+      "imi": ["settle", "finish", "save"],
+      "kun": [""],
+      "on": ["サイ", "-ザイ"]
+    },
+    {
+      "id": 273,
+      "hid": 332,
+      "kanji": "史",
+      "imi": ["history"],
+      "kun": [""],
+      "on": ["シ"]
+    },
+    {
+      "id": 274,
+      "hid": 489,
+      "kanji": "歴",
+      "imi": ["passage of time"],
+      "kun": [""],
+      "on": ["レキ"]
+    },
+    {
+      "id": 275,
+      "hid": 246,
+      "kanji": "育",
+      "imi": ["raise", "bring up", "grow"],
+      "kun": ["そだ-てる", "そだ-つ"],
+      "on": ["イク"]
+    },
+    {
+      "id": 276,
+      "hid": 123,
+      "kanji": "法",
+      "imi": ["law", "rule", "method"],
+      "kun": [""],
+      "on": ["ホウ", "-ポウ"]
+    },
+    {
+      "id": 277,
+      "hid": 918,
+      "kanji": "研",
+      "imi": ["sharpen"],
+      "kun": [""],
+      "on": ["ケン"]
+    },
+    {
+      "id": 278,
+      "hid": 917,
+      "kanji": "究",
+      "imi": ["investigate"],
+      "kun": [""],
+      "on": ["キュウ"]
+    },
+    {
+      "id": 279,
+      "hid": 402,
+      "kanji": "関",
+      "imi": ["relate", "barrier"],
+      "kun": [""],
+      "on": ["カン"]
+    },
+    {
+      "id": 280,
+      "hid": 931,
+      "kanji": "係",
+      "imi": ["(work) duty", "connection"],
+      "kun": ["かかり", "かか-り"],
+      "on": ["ケイ"]
+    },
+    {
+      "id": 281,
+      "hid": 255,
+      "kanji": "花",
+      "imi": ["flower"],
+      "kun": ["はな", "-ばな"],
+      "on": ["カ"]
+    },
+    {
+      "id": 282,
+      "hid": 127,
+      "kanji": "林",
+      "imi": ["woods"],
+      "kun": ["はやし", "-ばやし"],
+      "on": ["リン"]
+    },
+    {
+      "id": 283,
+      "hid": 128,
+      "kanji": "森",
+      "imi": ["forest"],
+      "kun": ["もり"],
+      "on": ["シン"]
+    },
+    {
+      "id": 284,
+      "hid": 78,
+      "kanji": "石",
+      "imi": ["stone", "pebble", "rock"],
+      "kun": ["いし"],
+      "on": ["セキ"]
+    },
+    {
+      "id": 285,
+      "hid": 1164,
+      "kanji": "庭",
+      "imi": ["garden"],
+      "kun": ["にわ"],
+      "on": ["テイ"]
+    },
+    {
+      "id": 286,
+      "hid": 119,
+      "kanji": "池",
+      "imi": ["pond"],
+      "kun": ["いけ"],
+      "on": ["チ"]
+    },
+    {
+      "id": 287,
+      "hid": 475,
+      "kanji": "湖",
+      "imi": ["lake"],
+      "kun": ["みずうみ"],
+      "on": ["コ"]
+    },
+    {
+      "id": 288,
+      "hid": 286,
+      "kanji": "島",
+      "imi": ["island"],
+      "kun": ["しま"],
+      "on": ["トウ"]
+    },
+    {
+      "id": 289,
+      "hid": 29,
+      "kanji": "風",
+      "imi": ["wind", "[suffix] manner", "style"],
+      "kun": ["かぜ"],
+      "on": ["フウ"]
+    },
+    {
+      "id": 290,
+      "hid": 140,
+      "kanji": "空",
+      "imi": ["sky", "air", "empty"],
+      "kun": ["そら", "あ-く"],
+      "on": ["クウ"]
+    },
+    {
+      "id": 291,
+      "hid": 1271,
+      "kanji": "泳",
+      "imi": ["swim"],
+      "kun": ["およ-ぐ"],
+      "on": ["エイ"]
+    },
+    {
+      "id": 292,
+      "hid": 1040,
+      "kanji": "遊",
+      "imi": ["play (with)", "amuse oneself"],
+      "kun": ["あぞ-ぶ"],
+      "on": ["ユウ"]
+    },
+    {
+      "id": 293,
+      "hid": 454,
+      "kanji": "園",
+      "imi": ["park", "garden"],
+      "kun": [""],
+      "on": ["エン"]
+    },
+    {
+      "id": 294,
+      "hid": 327,
+      "kanji": "館",
+      "imi": ["building"],
+      "kun": [""],
+      "on": ["カン"]
+    },
+    {
+      "id": 295,
+      "hid": 41,
+      "kanji": "寺",
+      "imi": ["temple"],
+      "kun": ["てら"],
+      "on": ["ジ"]
+    },
+    {
+      "id": 296,
+      "hid": 339,
+      "kanji": "図",
+      "imi": ["diagram", "layout", "plan"],
+      "kun": [""],
+      "on": ["ズ", "ト"]
+    },
+    {
+      "id": 297,
+      "hid": 607,
+      "kanji": "橋",
+      "imi": ["bridge"],
+      "kun": ["はし", "-ばし"],
+      "on": [""]
+    },
+    {
+      "id": 298,
+      "hid": 139,
+      "kanji": "工",
+      "imi": ["construct"],
+      "kun": [""],
+      "on": ["コウ"]
+    },
+    {
+      "id": 299,
+      "hid": 114,
+      "kanji": "交",
+      "imi": ["interchange"],
+      "kun": [""],
+      "on": ["コウ"]
+    },
+    {
+      "id": 300,
+      "hid": 376,
+      "kanji": "役",
+      "imi": ["service", "duty", "role"],
+      "kun": [""],
+      "on": ["ヤク"]
+    },
+    {
+      "id": 301,
+      "hid": 680,
+      "kanji": "港",
+      "imi": ["port", "harbor"],
+      "kun": ["みなと"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 302,
+      "hid": 597,
+      "kanji": "階",
+      "imi": ["stairs", "steps", "floor", "[suffix] counter for floors"],
+      "kun": [""],
+      "on": ["カイ", "-ガイ"]
+    },
+    {
+      "id": 303,
+      "hid": 539,
+      "kanji": "飛",
+      "imi": ["fly"],
+      "kun": ["と-ぶ"],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 304,
+      "hid": 379,
+      "kanji": "渡",
+      "imi": ["hand over", "cross", "go across"],
+      "kun": ["わた-る", "わた-す"],
+      "on": ["ト"]
+    },
+    {
+      "id": 305,
+      "hid": 386,
+      "kanji": "職",
+      "imi": ["occupation"],
+      "kun": [""],
+      "on": ["ショク"]
+    },
+    {
+      "id": 306,
+      "hid": 370,
+      "kanji": "農",
+      "imi": ["agriculture"],
+      "kun": [""],
+      "on": ["ノウ"]
+    },
+    {
+      "id": 307,
+      "hid": 418,
+      "kanji": "商",
+      "imi": ["trade", "merchant"],
+      "kun": [""],
+      "on": ["ショ"]
+    },
+    {
+      "id": 308,
+      "hid": 712,
+      "kanji": "漁",
+      "imi": ["fishery"],
+      "kun": [""],
+      "on": ["ギョ", "リョウ"]
+    },
+    {
+      "id": 309,
+      "hid": 278,
+      "kanji": "産",
+      "imi": ["produce"],
+      "kun": [""],
+      "on": ["サン"]
+    },
+    {
+      "id": 310,
+      "hid": 164,
+      "kanji": "者",
+      "imi": ["person"],
+      "kun": ["もの"],
+      "on": ["シャ"]
+    },
+    {
+      "id": 311,
+      "hid": 220,
+      "kanji": "医",
+      "imi": ["medical"],
+      "kun": [""],
+      "on": ["イ"]
+    },
+    {
+      "id": 312,
+      "hid": 163,
+      "kanji": "員",
+      "imi": ["member"],
+      "kun": [""],
+      "on": ["イン"]
+    },
+    {
+      "id": 313,
+      "hid": 415,
+      "kanji": "師",
+      "imi": ["teacher", "specialist"],
+      "kun": [""],
+      "on": ["シ"]
+    },
+    {
+      "id": 314,
+      "hid": 372,
+      "kanji": "記",
+      "imi": ["written record", "inscribe"],
+      "kun": [""],
+      "on": ["キ"]
+    },
+    {
+      "id": 315,
+      "hid": 316,
+      "kanji": "婦",
+      "imi": ["woman", "lady"],
+      "kun": [""],
+      "on": ["フ"]
+    },
+    {
+      "id": 316,
+      "hid": 315,
+      "kanji": "夫",
+      "imi": ["husband"],
+      "kun": ["おっと"],
+      "on": ["フ", "フウ-"]
+    },
+    {
+      "id": 317,
+      "hid": 537,
+      "kanji": "機",
+      "imi": ["machinery", "chance"],
+      "kun": [""],
+      "on": ["キ"]
+    },
+    {
+      "id": 318,
+      "hid": 536,
+      "kanji": "器",
+      "imi": ["vessel", "receptacle", "instrument"],
+      "kun": [""],
+      "on": ["キ"]
+    },
+    {
+      "id": 319,
+      "hid": 230,
+      "kanji": "品",
+      "imi": ["goods", "article"],
+      "kun": ["しな"],
+      "on": ["ヒン"]
+    },
+    {
+      "id": 320,
+      "hid": 231,
+      "kanji": "動",
+      "imi": ["work", "run machine", "move"],
+      "kun": ["うご-かす", "うご-く"],
+      "on": ["ドウ"]
+    },
+    {
+      "id": 321,
+      "hid": 62,
+      "kanji": "自",
+      "imi": ["self"],
+      "kun": [""],
+      "on": ["ジ"]
+    },
+    {
+      "id": 322,
+      "hid": 260,
+      "kanji": "受",
+      "imi": ["receive"],
+      "kun": ["う-ける"],
+      "on": ["ジュ"]
+    },
+    {
+      "id": 323,
+      "hid": 257,
+      "kanji": "変",
+      "imi": ["change", "strange"],
+      "kun": ["か-える", "か-わる"],
+      "on": ["ヘン"]
+    },
+    {
+      "id": 324,
+      "hid": 864,
+      "kanji": "消",
+      "imi": ["put out", "turn off", "erase", "go out", "disappear"],
+      "kun": ["け-す", "き-える"],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 325,
+      "hid": 157,
+      "kanji": "信",
+      "imi": ["message", "signal", "believe", "trust"],
+      "kun": [""],
+      "on": ["シン"]
+    },
+    {
+      "id": 326,
+      "hid": 501,
+      "kanji": "台",
+      "imi": ["stand", "pedestal", "[suffix] counter for vehicles and machines"],
+      "kun": [""],
+      "on": ["ダイ", "タイ"]
+    },
+    {
+      "id": 327,
+      "hid": 169,
+      "kanji": "点",
+      "imi": ["point", "score", "dot"],
+      "kun": [""],
+      "on": ["テン"]
+    },
+    {
+      "id": 328,
+      "hid": 1211,
+      "kanji": "枚",
+      "imi": ["[suffix] counter for thin and flat things"],
+      "kun": [""],
+      "on": ["マイ"]
+    },
+    {
+      "id": 329,
+      "hid": 405,
+      "kanji": "美",
+      "imi": ["beautiful"],
+      "kun": ["うつく-しい"],
+      "on": ["ビ"]
+    },
+    {
+      "id": 330,
+      "hid": 227,
+      "kanji": "重",
+      "imi": ["heavy", "important"],
+      "kun": ["おも-い"],
+      "on": ["ジュウ"]
+    },
+    {
+      "id": 331,
+      "hid": 340,
+      "kanji": "計",
+      "imi": ["measure"],
+      "kun": ["はか-る"],
+      "on": ["ケイ"]
+    },
+    {
+      "id": 332,
+      "hid": 254,
+      "kanji": "化",
+      "imi": ["transform into", "change into", "[suffix] -ization"],
+      "kun": [""],
+      "on": ["カ"]
+    },
+    {
+      "id": 333,
+      "hid": 107,
+      "kanji": "用",
+      "imi": ["things to do", "use", "needed for"],
+      "kun": ["もち-いる"],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 334,
+      "hid": 46,
+      "kanji": "以",
+      "imi": ["point of reference"],
+      "kun": [""],
+      "on": ["イ"]
+    },
+    {
+      "id": 335,
+      "hid": 366,
+      "kanji": "対",
+      "imi": ["oppose", "face", "confront"],
+      "kun": [""],
+      "on": ["タイ"]
+    },
+    {
+      "id": 336,
+      "hid": 324,
+      "kanji": "反",
+      "imi": ["counter", "oppose", "act against"],
+      "kun": [""],
+      "on": ["ハン"]
+    },
+    {
+      "id": 337,
+      "hid": 425,
+      "kanji": "要",
+      "imi": ["need", "require", "important", "essential"],
+      "kun": ["い-る"],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 338,
+      "hid": 529,
+      "kanji": "必",
+      "imi": ["without fail", "certainly", "inevitable"],
+      "kun": ["かなら-ず"],
+      "on": ["ヒツ", "ヒッ"]
+    },
+    {
+      "id": 339,
+      "hid": 330,
+      "kanji": "便",
+      "imi": ["convenience", "mail"],
+      "kun": [""],
+      "on": ["ベン", "ビン"]
+    },
+    {
+      "id": 340,
+      "hid": 329,
+      "kanji": "利",
+      "imi": ["advantage", "benefit"],
+      "kun": [""],
+      "on": ["リ"]
+    },
+    {
+      "id": 341,
+      "hid": 243,
+      "kanji": "続",
+      "imi": ["continue"],
+      "kun": ["つづ-ける", "つづ-〈"],
+      "on": ["ゾク"]
+    },
+    {
+      "id": 342,
+      "hid": 443,
+      "kanji": "進",
+      "imi": ["advance", "progress"],
+      "kun": ["すす-む"],
+      "on": ["シン"]
+    },
+    {
+      "id": 343,
+      "hid": 357,
+      "kanji": "決",
+      "imi": ["decide"],
+      "kun": ["き-める", "き-まる"],
+      "on": ["ケツ", "ケッ-"]
+    },
+    {
+      "id": 344,
+      "hid": 442,
+      "kanji": "集",
+      "imi": ["collect", "gather"],
+      "kun": ["あつ-める", "あつ-まる"],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 345,
+      "hid": 661,
+      "kanji": "残",
+      "imi": ["leave (behind)", "keep", "remain", "stay", "be left"],
+      "kun": ["のこ-す", "のこ-る"],
+      "on": ["ザン"]
+    },
+    {
+      "id": 346,
+      "hid": 232,
+      "kanji": "働",
+      "imi": ["work", "labor"],
+      "kun": ["はたら-く"],
+      "on": ["ドウ"]
+    },
+    {
+      "id": 347,
+      "hid": 550,
+      "kanji": "考",
+      "imi": ["think", "ponder"],
+      "kun": ["かんが-える　"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 348,
+      "hid": 342,
+      "kanji": "調",
+      "imi": ["investigate", "tone", "tune"],
+      "kun": ["しら-べる"],
+      "on": ["チョウ"]
+    },
+    {
+      "id": 349,
+      "hid": 814,
+      "kanji": "選",
+      "imi": ["choose", "select"],
+      "kun": ["えら-ぶ"],
+      "on": ["セン"]
+    },
+    {
+      "id": 350,
+      "hid": 1235,
+      "kanji": "泊",
+      "imi": ["stay overnight", "lodge", "[suffix] counter for overnight stays"],
+      "kun": ["と-める", "と-まる"],
+      "on": ["ハク", "-パク"]
+    },
+    {
+      "id": 351,
+      "hid": 397,
+      "kanji": "予",
+      "imi": ["in advance", "beforehand"],
+      "kun": [""],
+      "on": ["ヨ"]
+    },
+    {
+      "id": 352,
+      "hid": 356,
+      "kanji": "定",
+      "imi": ["determine", "set fixed", "definite"],
+      "kun": ["さだ-める"],
+      "on": ["テイ"]
+    },
+    {
+      "id": 353,
+      "hid": 1300,
+      "kanji": "泣",
+      "imi": ["cry", "weep"],
+      "kun": ["な-く"],
+      "on": [""]
+    },
+    {
+      "id": 354,
+      "hid": 1299,
+      "kanji": "笑",
+      "imi": ["laugh", "smile"],
+      "kun": ["わら-う"],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 355,
+      "hid": 262,
+      "kanji": "感",
+      "imi": ["feel", "sense"],
+      "kun": [""],
+      "on": ["カン"]
+    },
+    {
+      "id": 356,
+      "hid": 1461,
+      "kanji": "忘",
+      "imi": ["forget"],
+      "kun": ["わす-れる"],
+      "on": ["ボウ"]
+    },
+    {
+      "id": 357,
+      "hid": 567,
+      "kanji": "困",
+      "imi": ["trouble"],
+      "kun": ["こま-る"],
+      "on": ["コン"]
+    },
+    {
+      "id": 358,
+      "hid": 65,
+      "kanji": "取",
+      "imi": ["get", "take"],
+      "kun": ["と-る"],
+      "on": ["シュ"]
+    },
+    {
+      "id": 359,
+      "hid": 85,
+      "kanji": "死",
+      "imi": ["die", "death"],
+      "kun": ["し-ぬ "],
+      "on": ["シ"]
+    },
+    {
+      "id": 360,
+      "hid": 585,
+      "kanji": "殺",
+      "imi": ["kill"],
+      "kun": ["ころ-す"],
+      "on": ["サツ"]
+    },
+    {
+      "id": 361,
+      "hid": 524,
+      "kanji": "配",
+      "imi": ["distribute", "concern oneself with"],
+      "kun": ["くば-る"],
+      "on": ["ハイ", "-パイ"]
+    },
+    {
+      "id": 362,
+      "hid": 304,
+      "kanji": "悪",
+      "imi": ["bad", "evil"],
+      "kun": ["わる-い"],
+      "on": ["アク", "アッ-"]
+    },
+    {
+      "id": 363,
+      "hid": 1075,
+      "kanji": "悲",
+      "imi": ["sad", "pathetic", "grieve"],
+      "kun": ["かな-しい", "かな-しむ"],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 364,
+      "hid": 554,
+      "kanji": "苦",
+      "imi": ["suffering", "hardship", "feel pain", "bitter"],
+      "kun": ["くる-しい", "くる-しむ", "にが-い"],
+      "on": ["ク"]
+    },
+    {
+      "id": 365,
+      "hid": 263,
+      "kanji": "最",
+      "imi": ["most", "[prefix] -east"],
+      "kun": ["もっと-も"],
+      "on": ["サイ"]
+    },
+    {
+      "id": 366,
+      "hid": 692,
+      "kanji": "初",
+      "imi": ["beginning", "origin", "initial", "original"],
+      "kun": ["はじ-め", "はつ"],
+      "on": ["ショ"]
+    },
+    {
+      "id": 367,
+      "hid": 94,
+      "kanji": "不",
+      "imi": ["not", "[prefix] un-", "[prefix] in-", "[prefix] non-"],
+      "kun": [""],
+      "on": ["フ", "ブ"]
+    },
+    {
+      "id": 368,
+      "hid": 93,
+      "kanji": "無",
+      "imi": ["nothing", "without", "[prefix] un-", "[prefix] in-", "[prefix] non-"],
+      "kun": ["な-い"],
+      "on": ["ム"]
+    },
+    {
+      "id": 369,
+      "hid": 265,
+      "kanji": "有",
+      "imi": ["be", "exist", "have", "possess"],
+      "kun": ["あ-る"],
+      "on": ["ユウ"]
+    },
+    {
+      "id": 370,
+      "hid": 210,
+      "kanji": "的",
+      "imi": ["target", "[suffix] turns a noun into a na-adjective"],
+      "kun": [""],
+      "on": ["テキ"]
+    },
+    {
+      "id": 371,
+      "hid": 408,
+      "kanji": "第",
+      "imi": ["[prefix] ordinal number"],
+      "kun": [""],
+      "on": ["ダイ"]
+    },
+    {
+      "id": 372,
+      "hid": 225,
+      "kanji": "数",
+      "imi": ["number", "count", "[prefix] several"],
+      "kun": ["かず", "かぞ-える"],
+      "on": ["スウ", "-ズウ"]
+    },
+    {
+      "id": 373,
+      "hid": 124,
+      "kanji": "和",
+      "imi": ["peace", "harmony", "Japan"],
+      "kun": [""],
+      "on": ["ワ"]
+    },
+    {
+      "id": 374,
+      "hid": 289,
+      "kanji": "洋",
+      "imi": ["ocean", "sea", "Western"],
+      "kun": [""],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 375,
+      "hid": 507,
+      "kanji": "非",
+      "imi": ["wrong", "mistake", "[prefix] un-", "[prefix] in-", "[prefix] non-"],
+      "kun": [""],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 376,
+      "hid": 497,
+      "kanji": "課",
+      "imi": ["section", "department", "lesson"],
+      "kun": [""],
+      "on": ["カ"]
+    },
+    {
+      "id": 377,
+      "hid": 254,
+      "kanji": "代",
+      "imi": ["era", "age", "substitute", "represent", "[suffix] charge", "fare"],
+      "kun": ["よ"],
+      "on": ["ダイ"]
+    },
+    {
+      "id": 378,
+      "hid": 762,
+      "kanji": "費",
+      "imi": ["expend", "use up", "[suffix] expense", "costs"],
+      "kun": [""],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 379,
+      "hid": 203,
+      "kanji": "実",
+      "imi": ["real", "actual", "true", "practical"],
+      "kun": ["み"],
+      "on": ["ジツ", "ジッ-"]
+    },
+    {
+      "id": 380,
+      "hid": 388,
+      "kanji": "態",
+      "imi": ["state", "condition", "form", "appearance"],
+      "kun": [""],
+      "on": ["タイ"]
+    },
+    {
+      "id": 381,
+      "hid": 298,
+      "kanji": "現",
+      "imi": ["come out", "show up", "come in sight", "present", "actual"],
+      "kun": ["あらわ-す", "あらわ-れる"],
+      "on": ["ゲン"]
+    },
+    {
+      "id": 382,
+      "hid": 272,
+      "kanji": "表",
+      "imi": ["express", "show", "chart", "the right side"],
+      "kun": ["あらわ-す", "あらわ-れる", "おもて"],
+      "on": ["ヒョウ", "-ピョウ"]
+    },
+    {
+      "id": 383,
+      "hid": 96,
+      "kanji": "発",
+      "imi": ["depart", "originate", "arise", "emit"],
+      "kun": [""],
+      "on": ["ハツ", "ハッ-", "-パツ"]
+    },
+    {
+      "id": 384,
+      "hid": 226,
+      "kanji": "類",
+      "imi": ["category", "sort", "class"],
+      "kun": [""],
+      "on": ["ルイ"]
+    },
+    {
+      "id": 385,
+      "hid": 228,
+      "kanji": "種",
+      "imi": ["seed", "variety", "kind", "type"],
+      "kun": ["たね"],
+      "on": ["シュ"]
+    },
+    {
+      "id": 386,
+      "hid": 364,
+      "kanji": "由",
+      "imi": ["reason", "cause"],
+      "kun": [""],
+      "on": ["ユウ"]
+    },
+    {
+      "id": 387,
+      "hid": 202,
+      "kanji": "平",
+      "imi": ["flat", "level", "peaceful", "calm"],
+      "kun": ["たい-らな"],
+      "on": ["ヘイ", "ビョウ"]
+    },
+    {
+      "id": 388,
+      "hid": 136,
+      "kanji": "原",
+      "imi": ["original", "primary", "field"],
+      "kun": ["はら"],
+      "on": ["ゲン"]
+    },
+    {
+      "id": 389,
+      "hid": 433,
+      "kanji": "制",
+      "imi": ["system", "organization", "control"],
+      "kun": [""],
+      "on": ["セイ"]
+    },
+    {
+      "id": 390,
+      "hid": 763,
+      "kanji": "資",
+      "imi": ["capital", "fund", "material resources"],
+      "kun": [""],
+      "on": ["シ"]
+    },
+    {
+      "id": 391,
+      "hid": 496,
+      "kanji": "果",
+      "imi": ["fruit", "result", "outcome"],
+      "kun": [""],
+      "on": ["カ"]
+    },
+    {
+      "id": 392,
+      "hid": 404,
+      "kanji": "説",
+      "imi": ["theory", "view", "story", "narrative", "explain"],
+      "kun": [""],
+      "on": ["セツ"]
+    },
+    {
+      "id": 393,
+      "hid": 267,
+      "kanji": "別",
+      "imi": ["seperate", "distinguish", "another", "different"],
+      "kun": ["わか-れる"],
+      "on": ["ベツ"]
+    },
+    {
+      "id": 394,
+      "hid": 282,
+      "kanji": "特",
+      "imi": ["special"],
+      "kun": [""],
+      "on": ["トク", "トッ-"]
+    },
+    {
+      "id": 395,
+      "hid": 698,
+      "kanji": "報",
+      "imi": ["news", "information", "report", "announce"],
+      "kun": [""],
+      "on": ["ホウ", "-ポウ"]
+    },
+    {
+      "id": 396,
+      "hid": 703,
+      "kanji": "告",
+      "imi": ["notify", "announce"],
+      "kun": ["つ-げる"],
+      "on": ["コク"]
+    },
+    {
+      "id": 397,
+      "hid": 812,
+      "kanji": "比",
+      "imi": ["compare"],
+      "kun": ["くら-べる"],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 398,
+      "hid": 725,
+      "kanji": "増",
+      "imi": ["increase"],
+      "kun": ["ふ-やす", "ふ-える", "ま-す"],
+      "on": ["ゾウ"]
+    },
+    {
+      "id": 399,
+      "hid": 722,
+      "kanji": "加",
+      "imi": ["add"],
+      "kun": ["くわ-える", "くわ-わる"],
+      "on": ["カ"]
+    },
+    {
+      "id": 400,
+      "hid": 728,
+      "kanji": "減",
+      "imi": ["reduce", "decrease"],
+      "kun": ["へ-らす", "へ-る"],
+      "on": ["ゲン"]
+    },
+    {
+      "id": 401,
+      "hid": 37,
+      "kanji": "刀",
+      "imi": ["sword"],
+      "kun": ["かたな"],
+      "on": ["トウ"]
+    },
+    {
+      "id": 402,
+      "hid": 321,
+      "kanji": "良",
+      "imi": ["good", "well"],
+      "kun": ["よ"],
+      "on": ["リョウ"]
+    },
+    {
+      "id": 403,
+      "hid": 91,
+      "kanji": "周",
+      "imi": ["go around"],
+      "kun": ["まわ"],
+      "on": ["シュウ"]
+    },
+    {
+      "id": 404,
+      "hid": 283,
+      "kanji": "馬",
+      "imi": ["horse"],
+      "kun": ["うま", "ま"],
+      "on": ["バ"]
+    },
+    {
+      "id": 405,
+      "hid": 313,
+      "kanji": "銀",
+      "imi": ["silver"],
+      "kun": [""],
+      "on": ["ギン"]
+    },
+    {
+      "id": 406,
+      "hid": 240,
+      "kanji": "貝",
+      "imi": ["shellfish"],
+      "kun": ["かい", "がい"],
+      "on": [""]
+    },
+    {
+      "id": 407,
+      "hid": 212,
+      "kanji": "弓",
+      "imi": ["bow"],
+      "kun": ["ゆみ"],
+      "on": ["キュウ"]
+    },
+    {
+      "id": 408,
+      "hid": 893,
+      "kanji": "虫",
+      "imi": ["insect"],
+      "kun": ["むし"],
+      "on": ["チュウ"]
+    },
+    {
+      "id": 409,
+      "hid": 148,
+      "kanji": "首",
+      "imi": ["neck", "head"],
+      "kun": ["くび"],
+      "on": ["シュ"]
+    },
+    {
+      "id": 410,
+      "hid": 280,
+      "kanji": "犬",
+      "imi": ["dog"],
+      "kun": ["いぬ"],
+      "on": ["ケン"]
+    },
+    {
+      "id": 411,
+      "hid": 810,
+      "kanji": "豚",
+      "imi": ["pig"],
+      "kun": ["ぶた"],
+      "on": ["トン"]
+    },
+    {
+      "id": 412,
+      "hid": 236,
+      "kanji": "野",
+      "imi": ["field"],
+      "kun": ["の"],
+      "on": ["ヤ"]
+    },
+    {
+      "id": 413,
+      "hid": 958,
+      "kanji": "菜",
+      "imi": ["vegetable"],
+      "kun": ["な"],
+      "on": ["セイ"]
+    },
+    {
+      "id": 414,
+      "hid": 306,
+      "kanji": "未",
+      "imi": ["not yet"],
+      "kun": [""],
+      "on": ["ミ"]
+    },
+    {
+      "id": 415,
+      "hid": 439,
+      "kanji": "転",
+      "imi": ["roll over"],
+      "kun": ["ころ"],
+      "on": ["テン"]
+    },
+    {
+      "id": 416,
+      "hid": 352,
+      "kanji": "央",
+      "imi": ["center"],
+      "kun": [""],
+      "on": ["オウ"]
+    },
+    {
+      "id": 417,
+      "hid": 288,
+      "kanji": "羊",
+      "imi": ["sheep"],
+      "kun": ["ひつじ"],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 418,
+      "hid": 696,
+      "kanji": "服",
+      "imi": ["clothes", "submit"],
+      "kun": [""],
+      "on": ["フク"]
+    },
+    {
+      "id": 419,
+      "hid": 214,
+      "kanji": "矢",
+      "imi": ["arrow"],
+      "kun": ["や"],
+      "on": ["シ"]
+    },
+    {
+      "id": 420,
+      "hid": 242,
+      "kanji": "糸",
+      "imi": ["thread"],
+      "kun": ["いと"],
+      "on": ["シ"]
+    },
+    {
+      "id": 421,
+      "hid": 575,
+      "kanji": "氏",
+      "imi": ["surname"],
+      "kun": ["うじ"],
+      "on": ["シ"]
+    },
+    {
+      "id": 422,
+      "hid": 600,
+      "kanji": "羽",
+      "imi": ["wing"],
+      "kun": ["はね", "は", "ば"],
+      "on": ["ウ"]
+    },
+    {
+      "id": 423,
+      "hid": 453,
+      "kanji": "遠",
+      "imi": ["far"],
+      "kun": ["とお"],
+      "on": ["エン", "オン"]
+    },
+    {
+      "id": 424,
+      "hid": 648,
+      "kanji": "暑",
+      "imi": ["hot"],
+      "kun": ["あつ"],
+      "on": ["ショ"]
+    },
+    {
+      "id": 425,
+      "hid": 464,
+      "kanji": "寒",
+      "imi": ["cold"],
+      "kun": ["さむ"],
+      "on": ["カン"]
+    },
+    {
+      "id": 426,
+      "hid": 556,
+      "kanji": "軽",
+      "imi": ["light"],
+      "kun": ["かる", "がる", "かろ"],
+      "on": ["ケイ"]
+    },
+    {
+      "id": 427,
+      "hid": 570,
+      "kanji": "低",
+      "imi": ["low"],
+      "kun": ["ひく"],
+      "on": ["テイ"]
+    },
+    {
+      "id": 428,
+      "hid": 218,
+      "kanji": "弱",
+      "imi": ["weak"],
+      "kun": ["よわ"],
+      "on": ["ジャク"]
+    },
+    {
+      "id": 429,
+      "hid": 348,
+      "kanji": "暗",
+      "imi": ["dark"],
+      "kun": ["くら"],
+      "on": ["アン"]
+    },
+    {
+      "id": 430,
+      "hid": 639,
+      "kanji": "太",
+      "imi": ["thick"],
+      "kun": ["ふと"],
+      "on": ["タイ", "タ"]
+    },
+    {
+      "id": 431,
+      "hid": 988,
+      "kanji": "豆",
+      "imi": ["bean"],
+      "kun": ["まめ"],
+      "on": ["トウ", "ズ"]
+    },
+    {
+      "id": 432,
+      "hid": 138,
+      "kanji": "光",
+      "imi": ["light"],
+      "kun": ["ひかり", "ひか"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 433,
+      "hid": 1021,
+      "kanji": "押",
+      "imi": ["push"],
+      "kun": ["お"],
+      "on": ["オウ"]
+    },
+    {
+      "id": 434,
+      "hid": 216,
+      "kanji": "引",
+      "imi": ["pull"],
+      "kun": ["ひ", "び"],
+      "on": ["イン"]
+    },
+    {
+      "id": 435,
+      "hid": 581,
+      "kanji": "士",
+      "imi": ["warrior", "samurai"],
+      "kun": [""],
+      "on": ["シ"]
+    },
+    {
+      "id": 436,
+      "hid": 326,
+      "kanji": "官",
+      "imi": ["government official"],
+      "kun": [""],
+      "on": ["カン"]
+    },
+    {
+      "id": 437,
+      "hid": 778,
+      "kanji": "昔",
+      "imi": ["long ago"],
+      "kun": ["むかし"],
+      "on": ["セキ", "シャク", "ジャク"]
+    },
+    {
+      "id": 438,
+      "hid": 177,
+      "kanji": "民",
+      "imi": ["people"],
+      "kun": ["たみ"],
+      "on": ["ミン"]
+    },
+    {
+      "id": 439,
+      "hid": 358,
+      "kanji": "注",
+      "imi": ["pour"],
+      "kun": ["そそ"],
+      "on": ["チュウ"]
+    },
+    {
+      "id": 440,
+      "hid": 277,
+      "kanji": "顔",
+      "imi": ["face"],
+      "kun": ["かお", "がお"],
+      "on": ["ガン"]
+    },
+    {
+      "id": 441,
+      "hid": 759,
+      "kanji": "声",
+      "imi": ["voice"],
+      "kun": ["こえ", "こわ"],
+      "on": ["セイ", "ショク"]
+    },
+    {
+      "id": 442,
+      "hid": 129,
+      "kanji": "竹",
+      "imi": ["bamboo"],
+      "kun": ["たけ"],
+      "on": ["チク"]
+    },
+    {
+      "id": 443,
+      "hid": 152,
+      "kanji": "戸",
+      "imi": ["door"],
+      "kun": ["と", "ど"],
+      "on": ["コ"]
+    },
+    {
+      "id": 444,
+      "hid": 505,
+      "kanji": "堂",
+      "imi": ["hall"],
+      "kun": [""],
+      "on": ["ドウ"]
+    },
+    {
+      "id": 445,
+      "hid": 913,
+      "kanji": "建",
+      "imi": ["build"],
+      "kun": ["た", "だ"],
+      "on": ["ケン", "コン"]
+    },
+    {
+      "id": 446,
+      "hid": 654,
+      "kanji": "丸",
+      "imi": ["round"],
+      "kun": ["ガン"],
+      "on": ["まる"]
+    },
+    {
+      "id": 447,
+      "hid": 851,
+      "kanji": "冷",
+      "imi": ["freeze"],
+      "kun": ["つめ", "ひ", "さ"],
+      "on": ["レイ"]
+    },
+    {
+      "id": 448,
+      "hid": 1591,
+      "kanji": "甘",
+      "imi": ["sweet"],
+      "kun": ["あま"],
+      "on": ["カン"]
+    },
+    {
+      "id": 449,
+      "hid": 706,
+      "kanji": "汚",
+      "imi": ["dirty"],
+      "kun": ["きたな", "よご", "けが"],
+      "on": ["オ"]
+    },
+    {
+      "id": 450,
+      "hid": 1103,
+      "kanji": "卵",
+      "imi": ["egg"],
+      "kun": ["ラン"],
+      "on": ["たまご"]
+    },
+    {
+      "id": 451,
+      "hid": 1148,
+      "kanji": "皿",
+      "imi": ["plate"],
+      "kun": ["さら", "ざら"],
+      "on": [""]
+    },
+    {
+      "id": 452,
+      "hid": 526,
+      "kanji": "酒",
+      "imi": ["alcohol"],
+      "kun": ["さけ", "さか", "ざか", "ざけ"],
+      "on": ["シュ"]
+    },
+    {
+      "id": 453,
+      "hid": 1152,
+      "kanji": "塩",
+      "imi": ["salt"],
+      "kun": ["しお"],
+      "on": ["エン"]
+    },
+    {
+      "id": 454,
+      "hid": 192,
+      "kanji": "付",
+      "imi": ["attach"],
+      "kun": ["つ", "づ"],
+      "on": ["フ"]
+    },
+    {
+      "id": 455,
+      "hid": 1088,
+      "kanji": "片",
+      "imi": ["one side"],
+      "kun": ["かた"],
+      "on": ["ヘン"]
+    },
+    {
+      "id": 456,
+      "hid": 942,
+      "kanji": "焼",
+      "imi": ["burn"],
+      "kun": ["や"],
+      "on": ["ショク"]
+    },
+    {
+      "id": 457,
+      "hid": 1004,
+      "kanji": "固",
+      "imi": ["hard"],
+      "kun": ["かた"],
+      "on": ["コ"]
+    },
+    {
+      "id": 458,
+      "hid": 1005,
+      "kanji": "個",
+      "imi": ["individual"],
+      "kun": [""],
+      "on": ["コ"]
+    },
+    {
+      "id": 459,
+      "hid": 1703,
+      "kanji": "怒",
+      "imi": ["anger"],
+      "kun": ["おこ", "いか"],
+      "on": ["ど"]
+    },
+    {
+      "id": 460,
+      "hid": 697,
+      "kanji": "幸",
+      "imi": ["happy"],
+      "kun": ["しあわ", "さいわ", "さち"],
+      "on": ["コウ"]
+    },
+    {
+      "id": 461,
+      "hid": 1805,
+      "kanji": "恥",
+      "imi": ["shame"],
+      "kun": ["は", "はじ"],
+      "on": ["チ"]
+    },
+    {
+      "id": 462,
+      "hid": 1584,
+      "kanji": "辛",
+      "imi": ["painful", "spicy"],
+      "kun": ["から"],
+      "on": ["シン"]
+    },
+    {
+      "id": 463,
+      "hid": 867,
+      "kanji": "眠",
+      "imi": ["sleep"],
+      "kun": ["ねむ"],
+      "on": ["ミン"]
+    },
+    {
+      "id": 464,
+      "hid": 588,
+      "kanji": "念",
+      "imi": ["thought"],
+      "kun": [""],
+      "on": ["ネン"]
+    },
+    {
+      "id": 465,
+      "hid": 209,
+      "kanji": "情",
+      "imi": ["feeling"],
+      "kun": ["なさ"],
+      "on": ["ジョウ", "ゼイ", "セイ"]
+    },
+    {
+      "id": 466,
+      "hid": 615,
+      "kanji": "覚",
+      "imi": ["memorize"],
+      "kun": ["おぼ", "さ", "ざ"],
+      "on": ["カク"]
+    },
+    {
+      "id": 467,
+      "hid": 436,
+      "kanji": "徒",
+      "imi": ["follower"],
+      "kun": [""],
+      "on": ["ト"]
+    },
+    {
+      "id": 468,
+      "hid": 939,
+      "kanji": "復",
+      "imi": ["repeat"],
+      "kun": [""],
+      "on": ["フク", "フッ", "プク"]
+    },
+    {
+      "id": 469,
+      "hid": 596,
+      "kanji": "皆",
+      "imi": ["everyone"],
+      "kun": ["みな"],
+      "on": ["カイ"]
+    },
+    {
+      "id": 470,
+      "hid": 1010,
+      "kanji": "彼",
+      "imi": ["he"],
+      "kun": ["かれ", "かの"],
+      "on": ["ヒ"]
+    },
+    {
+      "id": 471,
+      "hid": 393,
+      "kanji": "荷",
+      "imi": ["baggage"],
+      "kun": ["に"],
+      "on": ["ヵ"]
+    },
+    {
+      "id": 472,
+      "hid": 1029,
+      "kanji": "届",
+      "imi": ["deliver"],
+      "kun": ["とど"],
+      "on": [""]
+    },
+    {
+      "id": 473,
+      "hid": 591,
+      "kanji": "払",
+      "imi": ["pay"],
+      "kun": ["はら"],
+      "on": ["フツ", "フッ"]
+    },
+    {
+      "id": 474,
+      "hid": 1664,
+      "kanji": "濯",
+      "imi": ["wash"],
+      "kun": [""],
+      "on": ["タク"]
+    },
+    {
+      "id": 475,
+      "hid": 1661,
+      "kanji": "踊",
+      "imi": ["dance"],
+      "kun": ["おど"],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 476,
+      "hid": 178,
+      "kanji": "宅",
+      "imi": ["house"],
+      "kun": [""],
+      "on": ["タク"]
+    },
+    {
+      "id": 477,
+      "hid": 627,
+      "kanji": "祭",
+      "imi": ["festival"],
+      "kun": ["まつ"],
+      "on": ["サイ"]
+    },
+    {
+      "id": 478,
+      "hid": 301,
+      "kanji": "戦",
+      "imi": ["war"],
+      "kun": ["たたか", "いくさ"],
+      "on": ["セン"]
+    },
+    {
+      "id": 479,
+      "hid": 302,
+      "kanji": "争",
+      "imi": ["conflict"],
+      "kun": ["あらそ"],
+      "on": ["ソウ"]
+    },
+    {
+      "id": 480,
+      "hid": 678,
+      "kanji": "律",
+      "imi": ["regulation"],
+      "kun": [""],
+      "on": ["リツ", "リチ"]
+    },
+    {
+      "id": 481,
+      "hid": 291,
+      "kanji": "義",
+      "imi": ["righteousness"],
+      "kun": [""],
+      "on": ["ギ"]
+    },
+    {
+      "id": 482,
+      "hid": 292,
+      "kanji": "議",
+      "imi": ["discussion"],
+      "kun": [""],
+      "on": ["ギ"]
+    },
+    {
+      "id": 483,
+      "hid": 504,
+      "kanji": "党",
+      "imi": ["(political) party"],
+      "kun": [""],
+      "on": ["トウ"]
+    },
+    {
+      "id": 484,
+      "hid": 1267,
+      "kanji": "涼",
+      "imi": ["cool"],
+      "kun": ["すず"],
+      "on": ["リョウ"]
+    },
+    {
+      "id": 485,
+      "hid": 645,
+      "kanji": "暖",
+      "imi": ["warm"],
+      "kun": ["あたた"],
+      "on": ["タン"]
+    },
+    {
+      "id": 486,
+      "hid": 674,
+      "kanji": "静",
+      "imi": ["quiet"],
+      "kun": ["しず"],
+      "on": ["セイ", "ジョウ"]
+    },
+    {
+      "id": 487,
+      "hid": 790,
+      "kanji": "込",
+      "imi": ["crowded"],
+      "kun": ["こ", "ご"],
+      "on": [""]
+    },
+    {
+      "id": 488,
+      "hid": 446,
+      "kanji": "連",
+      "imi": ["link"],
+      "kun": ["つ", "つら"],
+      "on": ["レン"]
+    },
+    {
+      "id": 489,
+      "hid": 711,
+      "kanji": "窓",
+      "imi": ["window", "counter"],
+      "kun": ["まど"],
+      "on": ["ソウ"]
+    },
+    {
+      "id": 490,
+      "hid": 619,
+      "kanji": "側",
+      "imi": ["side"],
+      "kun": ["がわ", "かわ"],
+      "on": ["ソク"]
+    },
+    {
+      "id": 491,
+      "hid": 253,
+      "kanji": "葉",
+      "imi": ["leaf"],
+      "kun": ["は", "ば"],
+      "on": ["ヨウ"]
+    },
+    {
+      "id": 492,
+      "hid": 872,
+      "kanji": "景",
+      "imi": ["view"],
+      "kun": [""],
+      "on": ["ケイ"]
+    },
+    {
+      "id": 493,
+      "hid": 1194,
+      "kanji": "吉",
+      "imi": ["good luck"],
+      "kun": [""],
+      "on": ["キチ", "キツ", "キッ"]
+    },
+    {
+      "id": 494,
+      "hid": 196,
+      "kanji": "共",
+      "imi": ["together"],
+      "kun": ["とも"],
+      "on": ["キョク"]
+    },
+    {
+      "id": 495,
+      "hid": 197,
+      "kanji": "供",
+      "imi": ["offer"],
+      "kun": ["ども", "そな", "とも"],
+      "on": ["キョク", "ク"]
+    },
+    {
+      "id": 496,
+      "hid": 553,
+      "kanji": "若",
+      "imi": ["young"],
+      "kun": ["わか", "も"],
+      "on": ["ジャク", "ニャク"]
+    },
+    {
+      "id": 497,
+      "hid": 552,
+      "kanji": "老",
+      "imi": ["old age"],
+      "kun": ["お", "ふ"],
+      "on": ["ソウ"]
+    },
+    {
+      "id": 498,
+      "hid": 1308,
+      "kanji": "息",
+      "imi": ["breath"],
+      "kun": ["いき"],
+      "on": ["ソク"]
+    },
+    {
+      "id": 499,
+      "hid": 1876,
+      "kanji": "娘",
+      "imi": ["daughter"],
+      "kun": ["むすめ"],
+      "on": [""]
+    },
+    {
+      "id": 500,
+      "hid": 484,
+      "kanji": "奥",
+      "imi": ["back"],
+      "kun": ["おく"],
+      "on": ["オウ"]
+    },
+    {
+      "id": 501,
+      "hid": 637,
+      "kanji": "将",
+      "imi": ["command"],
+      "kun": [""],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 502,
+      "hid": 632,
+      "kanji": "祖",
+      "imi": ["ancestor"],
+      "kun": [""],
+      "on": ["ソ", "ゾ"]
+    },
+    {
+      "id": 503,
+      "hid": 462,
+      "kanji": "招",
+      "imi": ["invite"],
+      "kun": ["まね"],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 504,
+      "hid": 487,
+      "kanji": "歳",
+      "imi": ["age"],
+      "kun": [""],
+      "on": ["サイ", "ザイ", "セイ"]
+    },
+    {
+      "id": 505,
+      "hid": 1213,
+      "kanji": "冊",
+      "imi": ["[suffix] counter for books"],
+      "kun": [""],
+      "on": ["サツ", "サッ", "ザク", "サク"]
+    },
+    {
+      "id": 506,
+      "hid": 383,
+      "kanji": "億",
+      "imi": ["hundred million"],
+      "kun": [""],
+      "on": ["オク"]
+    },
+    {
+      "id": 507,
+      "hid": 363,
+      "kanji": "段",
+      "imi": ["stair"],
+      "kun": [""],
+      "on": ["ダン"]
+    },
+    {
+      "id": 508,
+      "hid": 87,
+      "kanji": "倍",
+      "imi": ["double"],
+      "kun": [""],
+      "on": ["バイ"]
+    },
+    {
+      "id": 509,
+      "hid": 385,
+      "kanji": "次",
+      "imi": ["next"],
+      "kun": ["つぎ", "つ"],
+      "on": ["ジ", "シ"]
+    },
+    {
+      "id": 510,
+      "hid": 120,
+      "kanji": "他",
+      "imi": ["other"],
+      "kun": [""],
+      "on": ["タ"]
+    },
+    {
+      "id": 511,
+      "hid": 518,
+      "kanji": "勝",
+      "imi": ["win"],
+      "kun": ["か", "かっ", "まさ"],
+      "on": ["ショウ"]
+    },
+    {
+      "id": 512,
+      "hid": 519,
+      "kanji": "負",
+      "imi": ["defeat"],
+      "kun": ["ま", "お"],
+      "on": ["ブ", "フ"]
+    },
+    {
+      "id": 513,
+      "hid": 758,
+      "kanji": "賛",
+      "imi": ["praise"],
+      "kun": [""],
+      "on": ["サン"]
+    },
+    {
+      "id": 514,
+      "hid": 261,
+      "kanji": "成",
+      "imi": ["accomplish"],
+      "kun": ["な"],
+      "on": ["セイ", "ジョウ"]
+    },
+    {
+      "id": 515,
+      "hid": 755,
+      "kanji": "絶",
+      "imi": ["discontinue"],
+      "kun": ["た"],
+      "on": ["ゼッ", "ゼツ"]
+    },
+    {
+      "id": 516,
+      "hid": 701,
+      "kanji": "辞",
+      "imi": ["word", "resign"],
+      "kun": ["や"],
+      "on": ["ジ"]
+    },
+    {
+      "id": 517,
+      "hid": 1060,
+      "kanji": "投",
+      "imi": ["throw"],
+      "kun": ["な"],
+      "on": ["トウ"]
+    },
+    {
+      "id": 518,
+      "hid": 510,
+      "kanji": "束",
+      "imi": ["bundle"],
+      "kun": ["たば"],
+      "on": ["ソク"]
+    },
+    {
+      "id": 519,
+      "hid": 499,
+      "kanji": "守",
+      "imi": ["protect"],
+      "kun": ["まも", "もり"],
+      "on": ["ス", "シュ"]
+    },
+    {
+      "id": 520,
+      "hid": 419,
+      "kanji": "過",
+      "imi": ["pass"],
+      "kun": ["す", "おやま"],
+      "on": ["カ"]
+    },
+    {
+      "id": 521,
+      "hid": 830,
+      "kanji": "夢",
+      "imi": ["dream"],
+      "kun": ["ゆめ"],
+      "on": ["ム"]
+    },
+    {
+      "id": 522,
+      "hid": 511,
+      "kanji": "速",
+      "imi": ["quick"],
+      "kun": ["はや", "すみ"],
+      "on": ["ソク"]
+    },
+    {
+      "id": 523,
+      "hid": 715,
+      "kanji": "遅",
+      "imi": ["late"],
+      "kun": ["おそ", "おく"],
+      "on": ["チ"]
+    },
+    {
+      "id": 524,
+      "hid": 609,
+      "kanji": "駐",
+      "imi": ["stay"],
+      "kun": [""],
+      "on": ["チュウ"]
+    },
+    {
+      "id": 525,
+      "hid": 377,
+      "kanji": "船",
+      "imi": ["ship"],
+      "kun": ["ふね", "ふな"],
+      "on": ["セン"]
+    },
+    {
+      "id": 526,
+      "hid": 800,
+      "kanji": "座",
+      "imi": ["sit"],
+      "kun": ["すわ"],
+      "on": ["ザ"]
+    },
+    {
+      "id": 527,
+      "hid": 380,
+      "kanji": "席",
+      "imi": ["seat"],
+      "kun": ["セキ"],
+      "on": [""]
+    },
+    {
+      "id": 528,
+      "hid": 657,
+      "kanji": "陸",
+      "imi": ["land"],
+      "kun": ["リク"],
+      "on": [""]
+    },
+    {
+      "id": 529,
+      "hid": 310,
+      "kanji": "神",
+      "imi": ["god"],
+      "kun": ["かみ", "こう", "かん"],
+      "on": ["ジン", "シン"]
+    },
+    {
+      "id": 530,
+      "hid": 309,
+      "kanji": "申",
+      "imi": ["tell"],
+      "kun": ["もう"],
+      "on": ["シン"]
+    },
+    {
+      "id": 531,
+      "hid": 634,
+      "kanji": "査",
+      "imi": ["inspect"],
+      "kun": [""],
+      "on": ["サ"]
+    },
+    {
+      "id": 532,
+      "hid": 603,
+      "kanji": "談",
+      "imi": ["talk"],
+      "kun": [""],
+      "on": ["ダン"]
+    },
+    {
+      "id": 533,
+      "hid": 294,
+      "kanji": "王",
+      "imi": ["king"],
+      "kun": [""],
+      "on": ["オウ"]
+    },
+    {
+      "id": 534,
+      "hid": 106,
+      "kanji": "案",
+      "imi": ["plan"],
+      "kun": [""],
+      "on": ["アン"]
+    },
+    {
+      "id": 535,
+      "hid": 807,
+      "kanji": "君",
+      "imi": ["lord", "you"],
+      "kun": ["きみ"],
+      "on": ["クン"]
+    },
+    {
+      "id": 536,
+      "hid": 455,
+      "kanji": "達",
+      "imi": ["reach"],
+      "kun": [""],
+      "on": ["タツ", "タッ"]
+    },
+    {
+      "id": 537,
+      "hid": 743,
+      "kanji": "星",
+      "imi": ["star"],
+      "kun": ["ほし", "ぼし"],
+      "on": ["セイ", "ジョウ", "ショウ"]
+    },
+    {
+      "id": 538,
+      "hid": 979,
+      "kanji": "雪",
+      "imi": ["snow"],
+      "kun": ["ゆき"],
+      "on": ["セツ"]
+    },
+    {
+      "id": 539,
+      "hid": 429,
+      "kanji": "直",
+      "imi": ["fix", "direct"],
+      "kun": ["なお", "ただ"],
+      "on": ["ジキ", "チョク"]
+    },
+    {
+      "id": 540,
+      "hid": 543,
+      "kanji": "危",
+      "imi": ["dangerous"],
+      "kun": ["あぶ", "あや"],
+      "on": ["キ"]
+    }
+  ]
+}

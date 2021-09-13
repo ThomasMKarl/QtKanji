@@ -152,8 +152,8 @@ QtKanji::Error QtKanji::HadamitzkyWindow::printSigns(unsigned int lowerLimit, un
     {
       htmlFile << "<h3>Stroke number " << std::to_string(strokeNumber) << "</h3>";
       htmlFile << "<table style=''>\n<tr><th align='left'>Kanji</th><th align='left'>global index</th><th align='left'>Had. index</th><th align='left'>radical string</th></tr>\n";
-      texFile << "\\subsection*{Stroke number " << std::to_string(strokeNumber) << "}\n";
-      texFile << "  \\begin{longtable}[l]{llll}\n    \\bfseries Kanji & \\bfseries global index & \\bfseries Had. index & \\bfseries radical string\\\\\\hline\\endhead\n";
+      texFile << "\\section{stroke number " << std::to_string(strokeNumber) << "}\n";
+      texFile << "  \\begin{longtable}[c]{llll}\n    \\bfseries Kanji & \\bfseries global index & \\bfseries Had. index & \\bfseries radical string\\\\\\hline\\endhead\n";
     }
 
     strokeNumber++;

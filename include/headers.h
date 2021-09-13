@@ -22,6 +22,8 @@
 #include <memory>
 #include <future>
 
+#include <rapidjson/document.h>
+
 #define NUMBER_OF_KANJI 540
 #define NUMBER_OF_HADAMITZKY_KANJI 2141
 #define NUMBER_OF_GRAPHEMES 80
@@ -30,6 +32,11 @@ namespace QtKanji {
 
   using Strings = std::vector<std::string>;
   using Uints = std::vector<unsigned int>;
+
+  static std::ifstream kanjiDB{"kanjidb.json"};
+  static std::string kanjiDB_string = std::string{ std::istreambuf_iterator<char>(kanjiDB), std::istreambuf_iterator<char>() };
+  static rapidjson::Document JSON_DB{};
+  
 
   static const std::array<QString,NUMBER_OF_KANJI> kanjiList{
     "人","本","日","一","二","三","四","五","六","七","八","九","十","時","分","半","今","何","行","来","学","大","生","先","友","語","英","曜",
@@ -206,7 +213,7 @@ namespace QtKanji {
     //701-800
     "5b8.4+16+54,24,12+e","","3d4.18+2+24,22,2+e","","3a6.12+6+21,14,1+e",
     "3a3.5+6+21,14,1+e","3q2.1+9+18,17+e","","","",
-    "","3a11.1+6+21,79+e","","","2q9.17+11+19,46,40+e",
+    "3m8.7+12+33,51,16+e","3a11.1+6+21,79+e","","","2q9.17+11+19,46,40+e",
     "","","","","",
     "","2g3.1+6+8,24+e","","","3b11.3+7+22,58,42+e",
     "","","3a9.37+6+21,52,24+e","","",

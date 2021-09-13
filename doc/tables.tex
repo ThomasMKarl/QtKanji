@@ -1,4 +1,4 @@
-\documentclass[a4paper,headsepline=3pt,headinclude=true,12pt,oneside]{scrbook}
+\documentclass[a4paper,headsepline=3pt,headinclude=true,12pt,oneside]{scrartcl}
 \usepackage[left=2cm,right=2cm,top=1cm,bottom=3cm,includeheadfoot]{geometry}
 \usepackage{scrlayer-scrpage}
 \usepackage{mwe}
@@ -54,6 +54,9 @@
 
 \begin{document}
 \begin{onehalfspace}
+    \tableofcontents
+    
+    \section{Graphemes}
     \begin{table}[h]
         \large
         \centering
@@ -74,12 +77,12 @@
                   \textbf{11} & 魚 & 鳥\\
         \bottomrule[2pt]
         \end{tabular}
-        \caption*{List of all 80 graphemes (without variants)}
+        \caption{List of all 80 graphemes (without variants)}
         \label{graphemes}
     \end{table}
 
     \begin{large}
-    \input{../bin/kanji_sorted_1-540.tex}
+    \input{bin/kanji_sorted_1-540.tex}
     \end{large}
 
 \end{onehalfspace}
