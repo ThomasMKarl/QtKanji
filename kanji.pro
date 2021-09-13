@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 6): QT += widgets
 
 TARGET = bin/qtkanji
 TEMPLATE = app
-RC_ICONS = kanji.ico
+RC_ICONS = bin/kanji.ico
 
 HEADERS += \
     include/examplewindow.h \
@@ -33,4 +33,4 @@ SOURCES += \
     src/main.cpp
     
 QMAKE_CXXFLAGS -= -O2
-QMAKE_CXXFLAGS += -std=c++17 -O3 -Wall -Wextra -lgomp -I include
+QMAKE_CXXFLAGS += -std=c++17 -O3 -Wall -Wextra -lgomp -I include -I E:\Programme\rapidjson\include

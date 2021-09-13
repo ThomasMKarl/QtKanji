@@ -1,39 +1,41 @@
-CXX=
-MPICXX=
-CXXFLAGS=
-INCLUDE_DIR=
+DOXYGEN=doxygen
+TEX=xelatex
+MAKE=make
+QMAKE=qmake
+#MAKE=E:\Programme\MinGW\bin\make.exe
+#QMAKE=E:\Programme\Qt\Static\5.12.10\bin\qmake.exe
 
 ## all       : makes build and doc
 all:
-	make build
-	make doc
+	$(MAKE) build
+	$(MAKE) doc
 
 .PHONY : doc
 ## doc       : generates html documentation
 doc:
-	doxygen doc/Doxyfile
+	$(DOXYGEN) doc/Doxyfile
 
 .PHONY : tex
 ## tex       : generates latex documentation
 tex: doc
-	xelatex doc/tables.tex
-	xelatex doc/tables.tex
+	$(TEX) doc/tables.tex
+	$(TEX) doc/tables.tex
 	mv *.pdf doc/
 
 ## build     : compiles application
 build:
-	qmake -o Makefile_qt
-	make  -f Makefile_qt
+	$(QMAKE) -o Makefile_qt
+	$(MAKE)  -f Makefile_qt
 
 ## clean     : removes object, moc and tex meta files
 clean:
-	make  -f Makefile_qt clean
+	$(MAKE)  -f Makefile_qt clean
 	rm -f *.out *.log *.aux *.toc *.tex.bak
 	rm -f .qmake.stash
 
 ## realclean : removes object files, moc files, tex meta files, compiled executables, documentation and Qt makefile
 realclean:
-	make clean
+	$(MAKE) clean
 	rm -f bin/qtkanji* doc/latex doc/html Makefile_qt
 
 
