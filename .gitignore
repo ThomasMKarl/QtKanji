@@ -20,3 +20,5 @@ Makefile.Release
 kanji.pro.user
 qtkanji_resource.rc
 unknown_indices.txt
+bin/kanjidb.dat
+bin/examples.dat
