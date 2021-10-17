@@ -1,0 +1,3187 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "QtKanji Database",
+  "description": "contains examples",
+ "type": "object",  "examples": [
+    {
+      "id": 1,
+      "furigana": ["ひと", "アメリカじん", "オーストラリアじん"],
+      "kanji": ["人", "アメリカ人", "オーストラリア"],
+      "imi": ["person", "American (person)", "Australian (person)"]
+    },
+    {
+      "id": 2,
+      "furigana": ["ほん"],
+      "kanji": ["本"],
+      "imi": ["book"]
+    },
+    {
+      "id": 3,
+      "furigana": ["ひ", "にほん", "にっぽん", "にほんじん"],
+      "kanji": ["日", "日本", "日本", "日本人"],
+      "imi": ["sun/day", "Japan (spoken)", "Japan (literature)", "Japanese (person)"]
+    },
+    {
+      "id": 14,
+      "furigana": ["よじ", "しちじ", "くじ"],
+      "kanji": ["四時", "七時", "九時"],
+      "imi": ["four o'clock", "seven o'clock", "nine o'clock"]
+    },
+    {
+      "id": 15,
+      "furigana": ["よんぶん", "じゅっぷん", "ごふん"],
+      "kanji": ["四分", "十分", "五分"],
+      "imi": ["four minutes", "ten minutes", "five minutes"]
+    },
+    {
+      "id": 16,
+      "furigana": ["はちじはん", "はんぶん"],
+      "kanji": ["八時半", "半分"],
+      "imi": ["eight thirty", "half"]
+    },
+    {
+      "id": 17,
+      "furigana": ["いま", "こんばん", "きょう"],
+      "kanji": ["今", "今ばん", "今日"],
+      "imi": ["now", "this evening", "today"]
+    },
+    {
+      "id": 18,
+      "furigana": ["これはなんのほんですか。", "なんじですか。"],
+      "kanji": ["これは何の本ですか。", "何時ですか。"],
+      "imi": ["What is this book about?", "What time is it?人"]
+    },
+    {
+      "id": 19,
+      "furigana": ["タイへいきます。", "とうきょうゆき", "ぎんこう"],
+      "kanji": ["タイへ行きます。", "とうきょう行き", "ぎん行"],
+      "imi": ["I am going to Thailand.", "bound for Tokyo", "bank"]
+    },
+    {
+      "id": 20,
+      "furigana": ["なんじにきましたか。"],
+      "kanji": ["何時にきましたか。"],
+      "imi": ["What time did you come?"]
+    },
+    {
+      "id": 21,
+      "furigana": ["がっこう", "ぶんがく"],
+      "kanji": ["学こう", "ぶん学"],
+      "imi": ["school", "literature"]
+    },
+    {
+      "id": 22,
+      "furigana": ["だいがく", "わせだだいがく", "おおきい"],
+      "kanji": ["大学", "わせだ大学", "大きい"],
+      "imi": ["university/college", "Waseda University", "big"]
+    },
+    {
+      "id": 23,
+      "furigana": ["がくせい", "だいがくせい", "りゅうがくせい"],
+      "kanji": ["学生", "大学生", "りゅう学生"],
+      "imi": ["student", "university student", "student studying abroad"]
+    },
+    {
+      "id": 24,
+      "furigana": ["せんせい"],
+      "kanji": ["先生"],
+      "imi": ["teacher"]
+    },
+    {
+      "id": 25,
+      "furigana": ["ともだち"],
+      "kanji": ["友だち"],
+      "imi": ["friend"]
+    },
+    {
+      "id": 26,
+      "furigana": ["にほんご", "これはなにごですか。"],
+      "kanji": ["日本語", "これは何語ですか。"],
+      "imi": ["Japanese (language)", "What language is this?"]
+    },
+    {
+      "id": 27,
+      "furigana": ["えいご"],
+      "kanji": ["英語"],
+      "imi": ["English (language)"]
+    },
+    {
+      "id": 28,
+      "furigana": ["にちようび", "きょうはなんようびですか。"],
+      "kanji": ["日曜日", "今日は何曜日ですか。"],
+      "imi": ["Sunday", "What day (of the week) is today"]
+    },
+    {
+      "id": 29,
+      "furigana": ["つき", "げつようび"],
+      "kanji": ["月", "月曜日"],
+      "imi": ["moon", "Monday"]
+    },
+    {
+      "id": 30,
+      "furigana": ["ひ", "かようび"],
+      "kanji": ["火", "火曜日"],
+      "imi": ["fire", "Tuesday"]
+    },
+    {
+      "id": 31,
+      "furigana": ["みず", "すいようび"],
+      "kanji": ["水", "水曜日"],
+      "imi": ["water", "Wednesday"]
+    },
+    {
+      "id": 32,
+      "furigana": ["りんごのき", "もくようび"],
+      "kanji": ["りんごの木", "木曜日"],
+      "imi": ["apple tree", "Thursday"]
+    },
+    {
+      "id": 33,
+      "furigana": ["おかね", "きんようび", "しょうがくきん"],
+      "kanji": ["お金", "金曜日", "奨学金"],
+      "imi": ["money", "Friday", "scholarship"]
+    },
+    {
+      "id": 34,
+      "furigana": ["どようび"],
+      "kanji": ["土曜日"],
+      "imi": ["Saturday"]
+    },
+    {
+      "id": 35,
+      "furigana": ["こんしゅう", "せんしゅう", "らいしゅう"],
+      "kanji": ["今週", "先週", "来週"],
+      "imi": ["this week", "last week", "next week"]
+    },
+    {
+      "id": 36,
+      "furigana": ["まいにち", "まいしゅう", "まいあさ"],
+      "kanji": ["毎日", "毎週", "毎あさ"],
+      "imi": ["every day", "every week", "every morning"]
+    },
+    {
+      "id": 37,
+      "furigana": ["2じかん", "なんじかんべんきょうしましたか。", "AとBのあいだ"],
+      "kanji": ["2時間", "何時間べんきょうしましたか。", "AとBのあいだ"],
+      "imi": ["two hours", "How many hours did you study?", "between A and B"]
+    },
+    {
+      "id": 38,
+      "furigana": ["くち", "かいさつぐち"],
+      "kanji": ["口", "かいさつ口"],
+      "imi": ["mouth", "ticket gate at a train station"]
+    },
+    {
+      "id": 39,
+      "furigana": ["ひがしぐち", "ひがしにほん", "とうきょう"],
+      "kanji": ["東口", "東日本", "東きょう"],
+      "imi": ["east exit", "eastern exit", "Tokyo"]
+    },
+    {
+      "id": 40,
+      "furigana": ["にしぐち", "にしにほん", "とうざいせん"],
+      "kanji": ["西口", "西日本", "東西せん"],
+      "imi": ["west exit", "western Japan", "Tozai line "]
+    },
+    {
+      "id": 41,
+      "furigana": ["みなみぐち", "みなみアメリカ", "とうなんアジア"],
+      "kanji": ["南口", "南アメリカ", "東南アジア"],
+      "imi": ["south exit", "South America", "Southeast Asia"]
+    },
+    {
+      "id": 42,
+      "furigana": ["きたぐち", "きたアメリカ", "とうほく", "なんぼくせん"],
+      "kanji": ["北口", "北アメリカ", "東北", "南北せん"],
+      "imi": ["north exit", "North America", "Tohoku", "Namboku line"]
+    },
+    {
+      "id": 43,
+      "furigana": ["にしもん", "せいもん"],
+      "kanji": ["西門", "せい門"],
+      "imi": ["west gate", "main gate"]
+    },
+    {
+      "id": 44,
+      "furigana": ["おふろにはいりました。", "いりぐち"],
+      "kanji": ["おふろに入りました。", "入口"],
+      "imi": ["I took a bath.", "entrance"]
+    },
+    {
+      "id": 45,
+      "furigana": ["レポ－トをだしました。", "きのうでかけました。", "でぐち"],
+      "kanji": ["レポ－トを出しました。", "きのう出かけました。", "出口"],
+      "imi": ["I submitted a report.", "I went out yesterday.", "exit"]
+    },
+    {
+      "id": 46,
+      "furigana": ["どこであいましょうか。", "てんらんかい"],
+      "kanji": ["どこで会いましょうか。", "でんらん会"],
+      "imi": ["Where shall we meet?", "exhibition"]
+    },
+    {
+      "id": 47,
+      "furigana": ["せんしゅうえいがをみました。"],
+      "kanji": ["先週えいがを見ました。"],
+      "imi": ["I saw a movie last week."]
+    },
+    {
+      "id": 48,
+      "furigana": ["じゅうえん"],
+      "kanji": ["十円"],
+      "imi": ["ten yen"]
+    },
+    {
+      "id": 49,
+      "furigana": ["ひゃくえん", "さんびゃく", "ろっぴゃく"],
+      "kanji": ["百円", "三百", "六百"],
+      "imi": ["one hundred yen", "three hundred", "six hundred"]
+    },
+    {
+      "id": 50,
+      "furigana": ["せんえん", "さんぜん", "はっせん"],
+      "kanji": ["千円", "三円", "八千"],
+      "imi": ["one thousand yen", "three thousand", "eight thousand"]
+    },
+    {
+      "id": 51,
+      "furigana": ["いちまんえん", "じゅうまん", "ひゃくまんドル"],
+      "kanji": ["一万円", "十万", "百万ドル"],
+      "imi": ["ten thousand yen", "hundred thousand", "one million dollars"]
+    },
+    {
+      "id": 52,
+      "furigana": ["ほんをかいました。", "かいもの"],
+      "kanji": ["本を買いました。", "買いもの"],
+      "imi": ["I bought a book.", "shopping"]
+    },
+    {
+      "id": 53,
+      "furigana": ["みせ", "きっさてん", "ばいてん"],
+      "kanji": ["店", "きっさ店", "ばい店"],
+      "imi": ["shop", "coffee shop", "concession stand"]
+    },
+    {
+      "id": 54,
+      "furigana": ["ほんや", "はなや", "くつや"],
+      "kanji": ["本屋", "はな屋", "くつ屋"],
+      "imi": ["bookstore", "florist", "shoe store"]
+    },
+    {
+      "id": 55,
+      "furigana": ["とうきょう", "きょうと"],
+      "kanji": ["東京", "京と"],
+      "imi": ["Tokyo", "Kyoto"]
+    },
+    {
+      "id": 56,
+      "furigana": ["とうきょうえき", "えきいん"],
+      "kanji": ["東京駅", "駅いん"],
+      "imi": ["Tokyo Station", "station employee"]
+    },
+    {
+      "id": 57,
+      "furigana": ["くるまで10ぶんです。", "じてんしゃ"],
+      "kanji": ["車で10分です。", "じてん車"],
+      "imi": ["It is ten minutes by car.", "bicycle"]
+    },
+    {
+      "id": 58,
+      "furigana": ["でんしゃ", "でんわ", "でんき"],
+      "kanji": ["電車", "電わ", "電き"],
+      "imi": ["(electric) train/streetcar", "telephone", "electricity/light"]
+    },
+    {
+      "id": 59,
+      "furigana": ["このでんしゃはよこはまにとまりますか。"],
+      "kanji": ["この電車はよこはまに止まりますか。"],
+      "imi": ["Does this train stop at Yokohama?"]
+    },
+    {
+      "id": 60,
+      "furigana": ["ちいさいえき", "しゅうがくせい"],
+      "kanji": ["小さい駅", "小学生"],
+      "imi": ["small station", "elementary school student"]
+    },
+    {
+      "id": 61,
+      "furigana": ["たかいほん", "こうこう", "こうこうせい"],
+      "kanji": ["高い本", "高こう", "高こう生"],
+      "imi": ["expensive book", "high school", "high school student"]
+    },
+    {
+      "id": 62,
+      "furigana": ["やすいテ－プ"],
+      "kanji": ["安いテ－プ"],
+      "imi": ["inexpensive tape"]
+    },
+    {
+      "id": 63,
+      "furigana": ["あたらしいみせ", "しんぶん", "しんしゃ"],
+      "kanji": ["新しい", "店新ぶん", "新車"],
+      "imi": ["new store", "newspaper", "new car"]
+    },
+    {
+      "id": 64,
+      "furigana": ["ふるいテレビ", "ふるほんや", "ちゅうこしゃ"],
+      "kanji": ["古いテレビ", "古本屋", "ちゅう古車"],
+      "imi": ["old television set", "secondhand bookstore", "used car"]
+    },
+    {
+      "id": 65,
+      "furigana": ["ふるいもの", "かいもの", "どうぶつえん"],
+      "kanji": ["古い物", "買い物", "どう物えん"],
+      "imi": ["old things", "shopping", "zoo"]
+    },
+    {
+      "id": 66,
+      "furigana": ["おひるをたべましたか。", "たべもの", "しょくじ", "しょくどう"],
+      "kanji": ["おひろを食べましたか。", "食べ物", "食じ", "食どう"],
+      "imi": ["Did you have lunch?", "food", "meal", "cafeteria/dining room"]
+    },
+    {
+      "id": 67,
+      "furigana": ["みずをのみました。", "のみもの"],
+      "kanji": ["水を飲みました。", "飲み物"],
+      "imi": ["I drank some water.", "beverage"]
+    },
+    {
+      "id": 68,
+      "furigana": ["ごはんあさ", "ごはん"],
+      "kanji": ["ご飯あさ", "ご飯"],
+      "imi": ["cooked rice/meal", "breakfast"]
+    },
+    {
+      "id": 69,
+      "furigana": ["テ－ブルのうえ", "すいじょうスキ－", "おくじょう"],
+      "kanji": ["テ－ブルの上", "水上スキ－", "屋上"],
+      "imi": ["on the table", "waterskiing", "rooftop"]
+    },
+    {
+      "id": 70,
+      "furigana": ["テ－ブルのした", "ちか1かい", "ちかてつ"],
+      "kanji": ["テ－ブルの下", "ち下1かい", "ち下てつ"],
+      "imi": ["under the table", "first floor basement", "subway"]
+    },
+    {
+      "id": 71,
+      "furigana": ["くるまのなか", "ちゅうごく", "ちゅうがっこう", "ちゅうがくせい"],
+      "kanji": ["車の中", "中ごく", "中学こう", "中学生"],
+      "imi": ["inside a car", "China", "junior high school", "junior high student"]
+    },
+    {
+      "id": 72,
+      "furigana": ["そと", "がいこく", "がいこくご"],
+      "kanji": ["外", "外こく", "外こく語"],
+      "imi": ["outside", "foreign country", "foreign language"]
+    },
+    {
+      "id": 73,
+      "furigana": ["えぎのまえ", "なまえ"],
+      "kanji": ["駅の前", "な前"],
+      "imi": ["front of the station", "name"]
+    },
+    {
+      "id": 74,
+      "furigana": ["たかにしさんのうしろ"],
+      "kanji": ["中西さんの後ろ"],
+      "imi": ["behind Mr. Nakanishi"]
+    },
+    {
+      "id": 75,
+      "furigana": ["にしもとさんのみぎ", "みぎて"],
+      "kanji": ["西本さんの右", "右て"],
+      "imi": ["Mr. Nishimoto's right", "right hand"]
+    },
+    {
+      "id": 76,
+      "furigana": ["たかぎさんのひだり", "ひだりて"],
+      "kanji": ["高木さんの左", "左て"],
+      "imi": ["Mr. Takagi's left", "left hand"]
+    },
+    {
+      "id": 77,
+      "furigana": ["ごぜん9じ", "ごご4じはん", "ごぜんちゅう", "ごご"],
+      "kanji": ["午前9時", "午後4時半", "午前中", "午後"],
+      "imi": ["9:00 a.m.", "4:30 p.m.", "in the morning", "afternoon"]
+    },
+    {
+      "id": 78,
+      "furigana": ["ちち", "そふ", "おとうさん"],
+      "kanji": ["父", "そ父", "お父さん"],
+      "imi": ["(one's own) father", "(one's own) grandfather", "father"]
+    },
+    {
+      "id": 79,
+      "furigana": ["はは", "そば", "おかあさん"],
+      "kanji": ["母", "そ母", "お母さん"],
+      "imi": ["(one's own) mother", "(one's own) grandmother", "mother"]
+    },
+    {
+      "id": 80,
+      "furigana": ["あに", "したのあに", "おにいさん"],
+      "kanji": ["兄", "下の兄", "お兄さん"],
+      "imi": ["(one's own) older brother", "youngest of one's own older brothers", "older brother"]
+    },
+    {
+      "id": 81,
+      "furigana": ["おとうと", "きょうだい"],
+      "kanji": ["弟", "兄弟"],
+      "imi": ["(one's own) younger brother", "brothers/sisters/siblings"]
+    },
+    {
+      "id": 82,
+      "furigana": ["あね", "おねえさん"],
+      "kanji": ["姉", "お姉さん"],
+      "imi": ["(one's own) older sister", "older sister"]
+    },
+    {
+      "id": 83,
+      "furigana": ["いもうと", "うえのいもうと"],
+      "kanji": ["妹", "上の妹"],
+      "imi": ["(one's own) younger sister", "oldest of one's own younger sisters"]
+    },
+    {
+      "id": 84,
+      "furigana": ["おとこのひと", "おとこのせんせい"],
+      "kanji": ["男の人", "男の先生"],
+      "imi": ["man", "male teacher"]
+    },
+    {
+      "id": 85,
+      "furigana": ["おんなのひと", "おんなのせんせい"],
+      "kanji": ["女の人", "女の先生"],
+      "imi": ["women", "female teacher"]
+    },
+    {
+      "id": 86,
+      "furigana": ["こども", "おとこのこ", "おんなのこ", "だんしがくせい", "じょしがくせい", "じょしだい"],
+      "kanji": ["子ども", "男の子", "女の子", "男子学生", "女子学生", "女子大"],
+      "imi": ["child", "boy", "girl", "male student", "female student", "women's college"]
+    },
+    {
+      "id": 87,
+      "furigana": ["でんき"],
+      "kanji": ["電気"],
+      "imi": ["electricity/light"]
+    },
+    {
+      "id": 88,
+      "furigana": ["げんきなこども"],
+      "kanji": ["元気な子供"],
+      "imi": ["healthy child/active child"]
+    },
+    {
+      "id": 89,
+      "furigana": ["てんき"],
+      "kanji": ["天気"],
+      "imi": ["weather"]
+    },
+    {
+      "id": 90,
+      "furigana": ["あめ", "おおあめ"],
+      "kanji": ["雨", "大雨"],
+      "imi": ["rain", "heavy rain"]
+    },
+    {
+      "id": 91,
+      "furigana": ["10ぶんやすみましょう。", "やすみ", "きゅうこう"],
+      "kanji": ["10分休みましょう。", "休み", "休こう"],
+      "imi": ["Let's rest for ten minutes.", "holiday/break/absence", "cancellation of a class"]
+    },
+    {
+      "id": 92,
+      "furigana": ["やま", "ふじさん", "かざん"],
+      "kanji": ["山", "ふじ山", "火山"],
+      "imi": ["mountain", "Mt. Fuji", "volcano"]
+    },
+    {
+      "id": 93,
+      "furigana": ["かわ", "ナイルがわ"],
+      "kanji": ["川", "ナイル川"],
+      "imi": ["river", "Nile river"]
+    },
+    {
+      "id": 94,
+      "furigana": ["たんぼ"],
+      "kanji": ["田んぼ"],
+      "imi": ["rice field"]
+    },
+    {
+      "id": 95,
+      "furigana": ["うみ", "にほんかい", "かいがい"],
+      "kanji": ["海", "日本海", "海外"],
+      "imi": ["ocean", "Sea of Japan", "abroad/overseas"]
+    },
+    {
+      "id": 96,
+      "furigana": ["やすみにりょこうします。", "海外旅行"],
+      "kanji": ["休みに旅行します。", "海外旅行"],
+      "imi": ["I am going on a trip on my days off.", "trip abroad"]
+    },
+    {
+      "id": 97,
+      "furigana": ["なまえ", "めいし", "ゆうめいなホテル"],
+      "kanji": ["名前", "名し", "ゆう名なホテル"],
+      "imi": ["name", "business/calling card", "famous hotel"]
+    },
+    {
+      "id": 98,
+      "furigana": ["きれいなじ", "ロ－マじ"],
+      "kanji": ["きれいな字", "ロ－マ字"],
+      "imi": ["nice handwriting", "Roman letters"]
+    },
+    {
+      "id": 99,
+      "furigana": ["かんじ"],
+      "kanji": ["漢字"],
+      "imi": ["kanji"]
+    },
+    {
+      "id": 100,
+      "furigana": ["ぶん", "ぶんがく", "もじ"],
+      "kanji": ["文", "文学", "文字"],
+      "imi": ["sentence", "literature", "letters/characters"]
+    },
+    {
+      "id": 101,
+      "furigana": ["ぶんをつくってください。", "さくぶん"],
+      "kanji": ["文を作ってください。", "作文"],
+      "imi": ["Please comppose a sentence.", "composition/essay"]
+    },
+    {
+      "id": 102,
+      "furigana": ["かかりのひとにいいました。", "げんごがく"],
+      "kanji": ["かかりの人に言いました。", "言語学"],
+      "imi": ["I told the person in charge.", "linguistics"]
+    },
+    {
+      "id": 103,
+      "furigana": ["ともだちとはなしました。", "でんわ", "かいわ"],
+      "kanji": ["友だちと話しました。", "電話", "会話"],
+      "imi": ["I spoke with my friend.", "telephone", "conversation"]
+    },
+    {
+      "id": 104,
+      "furigana": ["15ページをよんでください。", "よみもの"],
+      "kanji": ["15ページを読んでください。", "読み物"],
+      "imi": ["Please read page 15.", "reading material"]
+    },
+    {
+      "id": 105,
+      "furigana": ["かんじでかいてください。", "じしょ", "きょうかしょ"],
+      "kanji": ["漢字で書いてください。", "じ書", "きょうか書"],
+      "imi": ["Please write it in kanji.", "dictionary", "textbook"]
+    },
+    {
+      "id": 106,
+      "furigana": ["ラジオをききます。", "ははにききました。", "しんぶん"],
+      "kanji": ["ラジオを聞きます。", "母に聞きました。", "新聞"],
+      "imi": ["I listen to the radio.", "I asked my mother.", "newspaper"]
+    },
+    {
+      "id": 107,
+      "furigana": ["かいしゃ", "りょこうしゃ", "しゃかい", "じんじゃ"],
+      "kanji": ["会社", "旅行社", "社会", "じん社"],
+      "imi": ["company/corporation", "travel agency", "society", "Shinto shrine"]
+    },
+    {
+      "id": 108,
+      "furigana": ["いえ", "おんがくか", "さっか"],
+      "kanji": ["家", "おんがく家", "作家"],
+      "imi": ["house", "musician", "novelist/writer"]
+    },
+    {
+      "id": 109,
+      "furigana": ["かぞく"],
+      "kanji": ["家族"],
+      "imi": ["family"]
+    },
+    {
+      "id": 110,
+      "furigana": ["しずかなところ", "だいどころ", "ばしょ", "じむしょ"],
+      "kanji": ["しずかな所", "だい所", "ば所", "じむ所"],
+      "imi": ["quiet place", "kitchen", "location/place", "office"]
+    },
+    {
+      "id": 111,
+      "furigana": ["とうきょうにすんでいます。", "じゅうしょ"],
+      "kanji": ["東京に住んでいます。", "住所"],
+      "imi": ["I live in Tokyo", "address"]
+    },
+    {
+      "id": 112,
+      "furigana": ["えきからちかいです。", "だいがくのちかくのみせ", "さいきん", "きんじょ"],
+      "kanji": ["駅から近いです。", "大学の近くの店", "さい近", "近所"],
+      "imi": ["It is near the station.", "a store near the university", "recently", "neighborhood"]
+    },
+    {
+      "id": 113,
+      "furigana": ["りょうほう"],
+      "kanji": ["両ほう"],
+      "imi": ["both"]
+    },
+    {
+      "id": 114,
+      "furigana": ["ちちおや", "ははおや", "りょうしん"],
+      "kanji": ["父親", "母親", "両親"],
+      "imi": ["male parent/father", "female parent/mother", "parents"]
+    },
+    {
+      "id": 115,
+      "furigana": ["しゅじん", "みせのしゅじん"],
+      "kanji": ["主人", "店の主人"],
+      "imi": ["(one's own) husband", "proprietor/head of the store"]
+    },
+    {
+      "id": 116,
+      "furigana": ["かない", "しゃない", "てんない", "あんないじょ"],
+      "kanji": ["家内", "車内", "店内", "あん内所"],
+      "imi": ["(one's own) wife", "inside a car/inside a train", "inside a store", "information center"]
+    },
+    {
+      "id": 117,
+      "furigana": ["とうきょうと", "きょうと", "とない"],
+      "kanji": ["東京都", "京都", "都内"],
+      "imi": ["Tokyo Metropolis", "Kyoto", "within Tokyo"]
+    },
+    {
+      "id": 118,
+      "furigana": ["ちばけん", "やまぐちけん"],
+      "kanji": ["千ば県", "山口県"],
+      "imi": ["Chiba prefecture", "Yamaguchi prefecture"]
+    },
+    {
+      "id": 119,
+      "furigana": ["ニューヨークし", "とし", "しがいでんわ", "しないでんわ"],
+      "kanji": ["ニューヨーク市", "都市", "市外電話", "市内電話"],
+      "imi": ["New York city", "(large) cities", "(domestic) long-distance call", "local call"]
+    },
+    {
+      "id": 120,
+      "furigana": ["しんじゅくく"],
+      "kanji": ["新じゅく区"],
+      "imi": ["Shinjuku ward"]
+    },
+    {
+      "id": 121,
+      "furigana": ["ふるいまち", "おおてまちゆ", "うらくちょう"],
+      "kanji": ["古い町", "大て町", "ゆうらく町"],
+      "imi": ["old town", "Otemachi", "Yurakucho"]
+    },
+    {
+      "id": 122,
+      "furigana": ["むら"],
+      "kanji": ["村"],
+      "imi": ["village"]
+    },
+    {
+      "id": 123,
+      "furigana": ["5ばん", "3ばんせん", "ばんぐみ"],
+      "kanji": ["5番", "3番せん", "番ぐみ"],
+      "imi": ["No. 5", "track No. 3", "TV program/radio program"]
+    },
+    {
+      "id": 124,
+      "furigana": ["ばんごう", "でんわばんごう", "がくせいばんごう", "ゆうびんばんごう"],
+      "kanji": ["番号", "電話番号", "学生番号", "ゆうびん番号"],
+      "imi": ["number", "telephone number", "student ID number", "zip code/postal code"]
+    },
+    {
+      "id": 125,
+      "furigana": ["むらたともここさま"],
+      "kanji": ["村田友子様"],
+      "imi": ["Ms. Murata Tomoko"]
+    },
+    {
+      "id": 126,
+      "furigana": ["なかむらさんはくるとおもいます。"],
+      "kanji": ["中村さんは来ると思います。"],
+      "imi": ["I think that Mr. Nakamura will come."]
+    },
+    {
+      "id": 127,
+      "furigana": ["アジアのくに", "かんこう", "えいこく", "ちゅうごく"],
+      "kanji": ["アジアの国", "かん国", "英国", "中国"],
+      "imi": ["Asian country", "South Korea", "United Kingdom", "China"]
+    },
+    {
+      "id": 128,
+      "furigana": ["インディアナしゅう", "きゅうしゅう"],
+      "kanji": ["インディアナ州", "九州"],
+      "imi": ["state of Indiana", "Kyushu"]
+    },
+    {
+      "id": 129,
+      "furigana": ["こくりつだいがく", "しゅうりつだいがく", "けんりつこうこう", "しりつだいがく"],
+      "kanji": ["国立大学", "州立大学", "県立高校", "市立大学"],
+      "imi": ["national university", "state university", "prefectural high school", "municipal university"]
+    },
+    {
+      "id": 130,
+      "furigana": ["がっこう", "しょうがっこう", "とりつこうこう", "ロングビーチこう"],
+      "kanji": ["学校", "小学校", "都立高校", "ロングビーチ校"],
+      "imi": ["school", "primary school", "municipal high school", "Long Beach campus"]
+    },
+    {
+      "id": 131,
+      "furigana": ["こうえん", "こうりつちゅうがっこう"],
+      "kanji": ["公えん", "公立中学校"],
+      "imi": ["park", "public junior high school"]
+    },
+    {
+      "id": 132,
+      "furigana": ["わたしのいえ", "しりつだいがく"],
+      "kanji": ["私の家", "私立大学"],
+      "imi": ["my house", "private university"]
+    },
+    {
+      "id": 133,
+      "furigana": ["ちかてつ", "ちず", "じしん", "とち"],
+      "kanji": ["地下てつ", "地ず", "地しん", "土地"],
+      "imi": ["subway", "map", "earthquake", "land"]
+    },
+    {
+      "id": 134,
+      "furigana": ["あのかた", "ゆうがた", "ちゅうごくちほう", "ひがしのほう", "ほうげん"],
+      "kanji": ["あの方", "ゆう方", "中国地方", "東の方", "方言"],
+      "imi": ["that person", "early evening", "Chugoku region", "toward the east", "(regional) dialect"]
+    },
+    {
+      "id": 135,
+      "furigana": ["こくさいかんけい", "こくさいかいぎ", "こくさいでんわ"],
+      "kanji": ["国際かんけい", "国際会ぎ", "国際電話"],
+      "imi": ["international relations", "international conference", "international call"]
+    },
+    {
+      "id": 136,
+      "furigana": ["ぶんがくぶ", "こくさいぶ", "テニス部", "へや"],
+      "kanji": ["文学部", "国際部", "テニス部", "部屋"],
+      "imi": ["school of literature", "International Division", "tennis club", "room"]
+    },
+    {
+      "id": 137,
+      "furigana": ["とし", "らいねん", "3ねんせい", "1975ねん", "ことし"],
+      "kanji": ["年", "来年", "3年生", "1975年", "今年"],
+      "imi": ["year/one's age", "next year", "third year student", "the year 1975", "this year"]
+    },
+    {
+      "id": 138,
+      "furigana": ["はる", "はるやすみ"],
+      "kanji": ["春", "春休み"],
+      "imi": ["spring", "spring vacation"]
+    },
+    {
+      "id": 139,
+      "furigana": ["なつ", "なつやすみ"],
+      "kanji": ["夏", "夏休み"],
+      "imi": ["summer", "summer vacation"]
+    },
+    {
+      "id": 140,
+      "furigana": ["あき"],
+      "kanji": ["秋"],
+      "imi": ["autumn"]
+    },
+    {
+      "id": 141,
+      "furigana": ["ふゆ", "ふゆやすみ"],
+      "kanji": ["冬", "冬休み"],
+      "imi": ["winter", "winter vacation"]
+    },
+    {
+      "id": 142,
+      "furigana": ["あさ", "まいあさ", "あさごはん", "けさ"],
+      "kanji": ["朝", "毎朝", "朝ご飯", "今朝"],
+      "imi": ["morning", "every morning", "breakfast", "this morning"]
+    },
+    {
+      "id": 143,
+      "furigana": ["ひるま", "おひる", "ひるごはん", "ひるやすみ"],
+      "kanji": ["昼間", "お昼", "昼ご飯", "昼休み"],
+      "imi": ["daytime", "noon/lunch", "lunch", "lunch break"]
+    },
+    {
+      "id": 144,
+      "furigana": ["ゆうがた", "ゆうごはん"],
+      "kanji": ["夕方", "夕ご飯"],
+      "imi": ["early evening", "supper/the evening meal"]
+    },
+    {
+      "id": 145,
+      "furigana": ["こんばん", "ばんごはん"],
+      "kanji": ["今晩", "晩ご飯"],
+      "imi": ["this evening", "supper/the evening meal"]
+    },
+    {
+      "id": 146,
+      "furigana": ["よる", "よなか", "こんや"],
+      "kanji": ["夜", "夜中", "今夜"],
+      "imi": ["night", "middle of the night", "tonight"]
+    },
+    {
+      "id": 147,
+      "furigana": ["うちへかえる", "かえり", "きこくする"],
+      "kanji": ["うちへ帰る", "帰り", "帰国する"],
+      "imi": ["return home", "return/on the way home/on the way back", "return to one's home country"]
+    },
+    {
+      "id": 148,
+      "furigana": ["10じにねる", "ひるねをする", "ねぼうする"],
+      "kanji": ["10時に寝る", "昼寝をする", "寝ぼうする"],
+      "imi": ["go to sleep/bed at ten o'clock", "take a nap", "wake up late/oversleep"]
+    },
+    {
+      "id": 149,
+      "furigana": ["6じにおこしてください。", "8じにおきる"],
+      "kanji": ["6時に起こしてください。", "8時に起きる"],
+      "imi": ["Please wake me up at six o'clock.", "get up/wake up at eight o'clock"]
+    },
+    {
+      "id": 150,
+      "furigana": ["きものをきる", "うわぎ", "とうきょうえきにつく"],
+      "kanji": ["着物を着る", "上着", "東京に着く"],
+      "imi": ["put on a kimono", "jacket", "arrive at Tokyo Station"]
+    },
+    {
+      "id": 151,
+      "furigana": ["ともだちをまつ", "まってください。"],
+      "kanji": ["友だちを待つ", "待ってください。"],
+      "imi": ["wait for a friend", "Please wait."]
+    },
+    {
+      "id": 152,
+      "furigana": ["くるまをもっていうる", "ほんをもっていく", "ほんをもってくる", "かねもち"],
+      "kanji": ["車を持っている", "本を持っていく", "ほんを持ってくる", "金持ち"],
+      "imi": ["own a car", "take a book", "bring a book", "wealthy person"]
+    },
+    {
+      "id": 153,
+      "furigana": ["パソコンをつかう", "たいしかん"],
+      "kanji": ["パソコンを使う", "大使かん"],
+      "imi": ["use a Personal Computer", "embassy"]
+    },
+    {
+      "id": 154,
+      "furigana": ["くるまがおおい"],
+      "kanji": ["車が多い"],
+      "imi": ["there are many cars"]
+    },
+    {
+      "id": 155,
+      "furigana": ["ひとがすくない", "すこしもっている"],
+      "kanji": ["人が少ない", "少し持っている"],
+      "imi": ["there are few people", "have a few/have a little"]
+    },
+    {
+      "id": 156,
+      "furigana": ["しょうしょうおまちください。", "ひとびと", "くにぐに"],
+      "kanji": ["少々お待ちください。", "人少", "国々"],
+      "imi": ["Just a moment please.", "people", "countries"]
+    },
+    {
+      "id": 157,
+      "furigana": ["まどをあける", "かいてんする"],
+      "kanji": ["まどを開ける", "開店する"],
+      "imi": ["open a window", "open a store"]
+    },
+    {
+      "id": 158,
+      "furigana": ["まどをしめる", "ほんをとじる", "へいてんする"],
+      "kanji": ["まどを閉める", "本を閉じる", "閉店する"],
+      "imi": ["close a window", "close a book", "close a store"]
+    },
+    {
+      "id": 159,
+      "furigana": ["しょうくじをはじめる", "がっこうがはじまる"],
+      "kanji": ["食じを始める", "学校が始まる"],
+      "imi": ["start a meal", "school starts"]
+    },
+    {
+      "id": 160,
+      "furigana": ["がおわる", "しゅうでん", "しゅうてん"],
+      "kanji": ["が終わる", "終電", "終てん"],
+      "imi": ["party ends", "last train of the day", "last stop (train/bus lines)"]
+    },
+    {
+      "id": 161,
+      "furigana": ["かさをかす", "かしだし"],
+      "kanji": ["かさを貸す", "貸し出し"],
+      "imi": ["lend an umbrella", "rental service/loan out"]
+    },
+    {
+      "id": 162,
+      "furigana": ["えいごをおしえる", "でんわばんごうをおしえてください。", "きょうしつ", "きょうし"],
+      "kanji": ["英語を教える", "電話番号を教えてください。", "教しつ", "教し"],
+      "imi": ["teach English", "Please tell me the phone number.", "classroom", "teacher/instructor"]
+    },
+    {
+      "id": 163,
+      "furigana": ["ほんをかえす", "へんじ"],
+      "kanji": ["本を返す", "返じ"],
+      "imi": ["return a book", "reply"]
+    },
+    {
+      "id": 164,
+      "furigana": ["くるまをうる", "うりば", "ばいてん"],
+      "kanji": ["車を売る", "売りば", "売店"],
+      "imi": ["sell a car", "sales counter/place of sale", "concession stand"]
+    },
+    {
+      "id": 165,
+      "furigana": ["きょねん"],
+      "kanji": ["去年"],
+      "imi": ["last year"]
+    },
+    {
+      "id": 166,
+      "furigana": ["こんげつのすえ", "しゅうまつ", "ねんまつ"],
+      "kanji": ["今月の末", "週末", "年末"],
+      "imi": ["end of this month", "weekend", "year-end"]
+    },
+    {
+      "id": 167,
+      "furigana": ["でんしゃにのる", "のりかえる", "のりもの", "じょうきゃく"],
+      "kanji": ["電車に乗る", "乗りかえる", "乗り物", "乗きゃく"],
+      "imi": ["board a train", "transfer (transportation lines)", "vehicle/conveyance", "passenger"]
+    },
+    {
+      "id": 168,
+      "furigana": ["でんしゃをおりる", "あめがふる"],
+      "kanji": ["電車をおりる", "雨が降る"],
+      "imi": ["get off a train", "it rains"]
+    },
+    {
+      "id": 169,
+      "furigana": ["とおり", "がっこうにかよう", "つうがくする", "つうきんする"],
+      "kanji": ["通り", "学校に通う", "通学する", "通きんする"],
+      "imi": ["avenue", "commute to school", "commute to school", "commute to work"]
+    },
+    {
+      "id": 170,
+      "furigana": ["みち", "ほっかいどう", "けんどう", "さどう", "どうぐ"],
+      "kanji": ["道", "北海道", "けん道", "さ道", "道ど"],
+      "imi": ["road/street", "Hokkaido", "kendo", "Japanese tea ceremony", "tool"]
+    },
+    {
+      "id": 171,
+      "furigana": ["あるいてかよう", "ほどう", "さんぽする"],
+      "kanji": ["歩いて通う", "歩道", "さん歩する"],
+      "imi": ["commute on foot", "sidewalk", "take a walk"]
+    },
+    {
+      "id": 172,
+      "furigana": ["いそいでいく", "きゅうこう", "とっきゅう"],
+      "kanji": ["急いで行く", "急行", "とっ急"],
+      "imi": ["go in a hurry", "express (train/bus)", "special express (train/bus)"]
+    },
+    {
+      "id": 173,
+      "furigana": ["3ばんせん", "やまのてせん", "しんかんせん", "ないせん"],
+      "kanji": ["3番線", "山のて線", "新かん線", "内戦"],
+      "imi": ["track No. 3", "Yamanote line", "bullet train", "extension (telephone)"]
+    },
+    {
+      "id": 174,
+      "furigana": ["ちかてつ", "てつどう", "してつ"],
+      "kanji": ["地下鉄", "鉄道", "私鉄"],
+      "imi": ["subway", "railway/railroad", "private railway"]
+    },
+    {
+      "id": 175,
+      "furigana": ["ばしょ", "きっぷうりば", "こくりつげきじょう", "こうじょう", "こうば", "スキーじょう"],
+      "kanji": ["場所", "きっぷ売り場", "国立げき場", "こう場", "こう場", "スキー場"],
+      "imi": ["place", "ticket office", "National Theater", "factory (on vers.)", "factory (kun vers.)", "ski area"]
+    },
+    {
+      "id": 176,
+      "furigana": ["め", "5ばんめ", "ふたりめ", "めうえのひと"],
+      "kanji": ["目", "5番目", "2人目", "目上の人"],
+      "imi": ["eye", "the fifth", "the second person", "a person of superior standing"]
+    },
+    {
+      "id": 177,
+      "furigana": ["きょうかしょ", "かがく", "かもく"],
+      "kanji": ["教科書", "科学", "科目"],
+      "imi": ["textbook", "science", "(academic) subject"]
+    },
+    {
+      "id": 178,
+      "furigana": ["きょうしつ", "としょしつ", "しつない"],
+      "kanji": ["教室", "と書室", "室内"],
+      "imi": ["classroom", "library (room)", "inside a room"]
+    },
+    {
+      "id": 179,
+      "furigana": ["ほんをかりる"],
+      "kanji": ["本を借りる"],
+      "imi": ["borrow a book"]
+    },
+    {
+      "id": 180,
+      "furigana": ["じゅうしょをしっている", "しりあい", "しらないひと"],
+      "kanji": ["住所を知っている", "知りあい", "知らない人"],
+      "imi": ["know the address", "acquaintance", "stranger"]
+    },
+    {
+      "id": 181,
+      "furigana": ["つよいチーム", "あめがつよくふる"],
+      "kanji": ["強いチーム", "雨が強く振る"],
+      "imi": ["strong team", "it rains hard"]
+    },
+    {
+      "id": 182,
+      "furigana": ["スペインごをべんきょうする"],
+      "kanji": ["スペイン語を勉強する"],
+      "imi": ["study spanish"]
+    },
+    {
+      "id": 183,
+      "furigana": ["ピアノをならう", "ふくしゅうする"],
+      "kanji": ["ピアノを習う", "ふく習する"],
+      "imi": ["learn to play the piano", "review (a lesson)"]
+    },
+    {
+      "id": 184,
+      "furigana": ["れんしゅうする"],
+      "kanji": ["練習する"],
+      "imi": ["practice"]
+    },
+    {
+      "id": 185,
+      "furigana": ["しょくじする", "じむしょ", "かじ", "こうじ"],
+      "kanji": ["食事する", "事む所", "火事", "こう事"],
+      "imi": ["dine", "office", "(destructive) fire", "construction work"]
+    },
+    {
+      "id": 186,
+      "furigana": ["しごと"],
+      "kanji": ["仕事"],
+      "imi": ["work/job"]
+    },
+    {
+      "id": 187,
+      "furigana": ["すきなたべもの", "わたしははるがすきです。"],
+      "kanji": ["好きな食べ物", "私は春が好きです。"],
+      "imi": ["favorite food", "I like spring."]
+    },
+    {
+      "id": 188,
+      "furigana": ["うたをうたう", "かしゅ", "こっか"],
+      "kanji": ["歌を歌う", "歌しゅ", "国家"],
+      "imi": ["sing a song", "singer", "national anthem"]
+    },
+    {
+      "id": 189,
+      "furigana": ["エンジンのおと", "おんよみ", "はつおん"],
+      "kanji": ["エンジンの音", "音読み", "はつ音"],
+      "imi": ["noise of engines", "'on' reading", "pronunciation"]
+    },
+    {
+      "id": 190,
+      "furigana": ["たのしいはなし", "スポーツをたのしむ", "おんがく", "らくなしごと"],
+      "kanji": ["楽しい話", "スポーツを楽しむ", "音楽", "楽な仕事"],
+      "imi": ["enjoyable story", "enjoy reports", "music", "easy job"]
+    },
+    {
+      "id": 191,
+      "furigana": ["いいきょく", "さっきょくする", "さっきょくか"],
+      "kanji": ["いい曲", "作曲する", "作曲家"],
+      "imi": ["nice piece of music", "compose music", "(musical) composer"]
+    },
+    {
+      "id": 192,
+      "furigana": ["ピカソのえ", "えはがき", "あぶらえ", "えほん"],
+      "kanji": ["ピカソの絵", "絵はがき", "あぶら絵", "絵本"],
+      "imi": ["Picasso's painting", "picture postcard", "oil painting", "picture book"]
+    },
+    {
+      "id": 193,
+      "furigana": ["がか", "かんじのかくすう", "けいかく"],
+      "kanji": ["画家", "漢字の画すう", "けい画"],
+      "imi": ["painter (artist)", "number of strokes in a kanji character", "plan"]
+    },
+    {
+      "id": 194,
+      "furigana": ["えいが"],
+      "kanji": ["映画"],
+      "imi": ["movie"]
+    },
+    {
+      "id": 195,
+      "furigana": ["まつしろ", "まなつ"],
+      "kanji": ["真つしろ", "真夏"],
+      "imi": ["pure white", "midsummer"]
+    },
+    {
+      "id": 196,
+      "furigana": ["しゃしん"],
+      "kanji": ["写真"],
+      "imi": ["photograph"]
+    },
+    {
+      "id": 197,
+      "furigana": ["にく", "ぶたにく", "にくや"],
+      "kanji": ["肉", "ぶた肉", "肉や"],
+      "imi": ["meat", "pork", "butcher shop"]
+    },
+    {
+      "id": 198,
+      "furigana": ["うし", "ぎゅうにく", "ぎゅうにゅう", "ぎゅうどん"],
+      "kanji": ["牛", "牛肉", "牛にゅう", "牛どん"],
+      "imi": ["cow", "beef", "(cow's) milk", "beef bowl"]
+    },
+    {
+      "id": 199,
+      "furigana": ["とり", "ことり"],
+      "kanji": ["鳥", "小鳥"],
+      "imi": ["bird", "small bird"]
+    },
+    {
+      "id": 200,
+      "furigana": ["さかな", "さかなや", "きんぎょ"],
+      "kanji": ["魚", "魚屋", "金魚"],
+      "imi": ["fish", "fish shop", "gold fish"]
+    },
+    {
+      "id": 201,
+      "furigana": ["こめ", "こめや", "べいこく", "ちゅうなんべい", "にちべい"],
+      "kanji": ["米", "米屋", "米国", "中南米", "日米"],
+      "imi": ["uncooked rice", "rice store", "USA", "Central and South America", "Japan-US"]
+    },
+    {
+      "id": 202,
+      "furigana": ["いほんちゃ", "こうちゃ", "きっさてん", "さどう"],
+      "kanji": ["日本茶", "こう茶", "きっ茶店", "茶道"],
+      "imi": ["Japanese (green) tea", "(black) tea", "coffee shop", "Japanese tea ceremony"]
+    },
+    {
+      "id": 203,
+      "furigana": ["ぶつりがく", "ちり"],
+      "kanji": ["物理学", "地理"],
+      "imi": ["physics", "geography"]
+    },
+    {
+      "id": 204,
+      "furigana": ["りょうりする", "ざいりょう", "きゅうりょう", "じゅぎょうりょう", "サービスりょう"],
+      "kanji": ["料理する", "ざい料", "きゅう料", "じゅぎょう料", "サービス料"],
+      "imi": ["cook", "ingredient/material", "salary", "tuition", "service charge"]
+    },
+    {
+      "id": 205,
+      "furigana": ["にくをきる", "きって", "たいせつなもの", "しんせつなひと"],
+      "kanji": ["肉を切る", "切て", "大切な物", "親切な人"],
+      "imi": ["cut meat/slice meat", "(postage) stamp", "valuable things", "kind person"]
+    },
+    {
+      "id": 206,
+      "furigana": ["てをあらう", "せんたくする"],
+      "kanji": ["てを洗う", "洗たくする"],
+      "imi": ["wash hands", "wash clothes/launder"]
+    },
+    {
+      "id": 207,
+      "furigana": ["いろ", "ちゃいろ", "ちゃいろいめ", "オレンジいろのかさ"],
+      "kanji": ["色", "茶色", "茶色い目", "オレンジ色のかさ"],
+      "imi": ["color", "brown", "brown eyes", "orange umbrella"]
+    },
+    {
+      "id": 208,
+      "furigana": ["かたち", "せいほうけい", "にんぎょう"],
+      "kanji": ["形", "せい方形", "人形"],
+      "imi": ["shape/form", "square", "doll"]
+    },
+    {
+      "id": 209,
+      "furigana": ["しろ", "しろいゆき", "はくちょう"],
+      "kanji": ["白", "白いゆき", "白鳥"],
+      "imi": ["white", "white snow", "swan"]
+    },
+    {
+      "id": 210,
+      "furigana": ["くろ", "くろいセーター", "こくばん", "しろくろしゃしん"],
+      "kanji": ["黒", "黒いセーター", "黒ばん", "白黒写真"],
+      "imi": ["black", "black pullover sweater", "blackboard", "black-and-white photo"]
+    },
+    {
+      "id": 211,
+      "furigana": ["あか", "あかいはな", "あかちゃん"],
+      "kanji": ["赤", "赤いはな", "赤ちゃん"],
+      "imi": ["red", "red flower", "baby"]
+    },
+    {
+      "id": 212,
+      "furigana": ["あお", "あおいうみ", "せいねん"],
+      "kanji": ["青", "青い海", "青年"],
+      "imi": ["blue", "blue ocean", "young man/youth"]
+    },
+    {
+      "id": 213,
+      "furigana": ["ながいコート", "ちょうほうけい", "ぶちょう", "しゃちょう"],
+      "kanji": ["長いコート", "長方形", "部長", "社長"],
+      "imi": ["long coat", "rectangle", "department head", "president of a company"]
+    },
+    {
+      "id": 214,
+      "furigana": ["みじかいスカート", "たんだい"],
+      "kanji": ["短いスカート", "短大"],
+      "imi": ["short skirt", "junior college"]
+    },
+    {
+      "id": 215,
+      "furigana": ["あかるいへや", "せつめいする", "あした"],
+      "kanji": ["明るい部屋", "せつ明する", "明日"],
+      "imi": ["bright room", "explain", "tomorrow"]
+    },
+    {
+      "id": 216,
+      "furigana": ["ひろいきょうしつ", "ひろしまし", "こうこく"],
+      "kanji": ["広い教室", "広しま市", "広こく"],
+      "imi": ["big classroom/spacious classroom", "Hiroshima city", "advertisement"]
+    },
+    {
+      "id": 217,
+      "furigana": ["こころ", "あんしんする", "しんぱいする", "しんりがく", "ちゅうしん"],
+      "kanji": ["心", "安心する", "心ぱいする", "心理学", "中心"],
+      "imi": ["heart/mind", "feel relieved", "be worried", "psychology", "center"]
+    },
+    {
+      "id": 218,
+      "furigana": ["りょうて", "おてあらい", "かしゅ", "じょうずな", "へたな"],
+      "kanji": ["両手", "お手洗い", "歌手", "上手な", "下手な"],
+      "imi": ["both hands", "toilet/restroom", "singer", "skillful", "unskillful"]
+    },
+    {
+      "id": 219,
+      "furigana": ["かみ", "てがみ", "ワープロようし"],
+      "kanji": ["紙", "手紙", "ワープロよう紙"],
+      "imi": ["paper", "letter", "paper for a word processor"]
+    },
+    {
+      "id": 220,
+      "furigana": ["せいかつ", "クラブかつどう"],
+      "kanji": ["生活", "クラブ活どう"],
+      "imi": ["life/living", "extracurricular activities"]
+    },
+    {
+      "id": 221,
+      "furigana": ["あしたはいそがしい"],
+      "kanji": ["あしたは忙しい"],
+      "imi": ["I am busy tomorrow"]
+    },
+    {
+      "id": 222,
+      "furigana": ["はやい", "はやくおきる"],
+      "kanji": ["早い", "早く起きる"],
+      "imi": ["early", "wake up early/get up early"]
+    },
+    {
+      "id": 223,
+      "furigana": ["でんごん", "てつだう"],
+      "kanji": ["伝言", "手伝う"],
+      "imi": ["message", "help/assist/lend a hand"]
+    },
+    {
+      "id": 224,
+      "furigana": ["ファクスをおくる", "そうべつかい", "そうりょう"],
+      "kanji": ["ファクスを送る", "送べつ会", "送料"],
+      "imi": ["send a fax", "farewell party", "delivery charges/postage"]
+    },
+    {
+      "id": 225,
+      "furigana": ["にもつをはこぶ", "うんてんする", "うんてんしゅ"],
+      "kanji": ["に物を運ぶ", "運てんする", "運てん手"],
+      "imi": ["transport baggage", "drive", "driver/cahuffeur"]
+    },
+    {
+      "id": 226,
+      "furigana": ["もういちど", "3どめ", "30ど"],
+      "kanji": ["もう一度", "3度目", "30度"],
+      "imi": ["once more", "third time", "thirty degrees"]
+    },
+    {
+      "id": 227,
+      "furigana": ["おなじいろ", "どうりょう"],
+      "kanji": ["同じ色", "同りょう"],
+      "imi": ["same color", "colleague"]
+    },
+    {
+      "id": 228,
+      "furigana": ["AはBとちがう", "まちがい"],
+      "kanji": ["AはBと違い", "間違い"],
+      "imi": ["A is different from B", "mistake"]
+    },
+    {
+      "id": 229,
+      "furigana": ["ただしいはつおん", "しょうがつ", "せいもん", "たいしょう12ねん"],
+      "kanji": ["正しいはつ音", "正月", "正門", "大正12年"],
+      "imi": ["correct pronunciation", "New Year's Day", "main gate/front gate", "the 12th year of Taisho (1923)"]
+    },
+    {
+      "id": 230,
+      "furigana": ["いけん"],
+      "kanji": ["意見"],
+      "imi": ["opinion"]
+    },
+    {
+      "id": 231,
+      "furigana": ["あじ", "いみ", "しゅみ"],
+      "kanji": ["味", "意味", "しゅ味"],
+      "imi": ["taste", "meaning", "hobby"]
+    },
+    {
+      "id": 232,
+      "furigana": ["しんじゅく", "がっしうく"],
+      "kanji": ["新宿", "がっ宿"],
+      "imi": ["Shinjuku", "off-campus training session"]
+    },
+    {
+      "id": 233,
+      "furigana": ["しゅくだい", "さくぶんのだい"],
+      "kanji": ["宿題", "作文の題"],
+      "imi": ["homework", "essay title"]
+    },
+    {
+      "id": 234,
+      "furigana": ["テストのもんだい", "もんだいがある", "けいざいもんだい"],
+      "kanji": ["テストの問題", "問題がある", "けいざい問題"],
+      "imi": ["test problems", "there's a problem", "economic issue"]
+    },
+    {
+      "id": 235,
+      "furigana": ["しつもんする"],
+      "kanji": ["質問する"],
+      "imi": ["ask a question"]
+    },
+    {
+      "id": 236,
+      "furigana": ["ただしいこたえ", "しつもんにこたえる"],
+      "kanji": ["正しい答", "質問に答える"],
+      "imi": ["correct answer", "answer a question"]
+    },
+    {
+      "id": 237,
+      "furigana": ["にほんにりゅうがくする", "りゅうがくせい", "るすばんでんわ"],
+      "kanji": ["日本に留学する", "留学生", "留す番電話"],
+      "imi": ["study abroad in Japan", "student studying abroad", "answering machine"]
+    },
+    {
+      "id": 238,
+      "furigana": ["きょうじゅ"],
+      "kanji": ["教授"],
+      "imi": ["professor"]
+    },
+    {
+      "id": 239,
+      "furigana": ["じゅぎょう", "じゅぎょうりょう", "サービスぎょう"],
+      "kanji": ["授業", "授業料", "サービス業"],
+      "imi": ["class", "tuition", "service industry"]
+    },
+    {
+      "id": 240,
+      "furigana": ["だいがくをそつぎょうする", "そつぎょうせい"],
+      "kanji": ["大学を卒業する", "卒業生"],
+      "imi": ["graduate from university", "a graduate"]
+    },
+    {
+      "id": 241,
+      "furigana": ["ろんぶん", "そつぎょうろんぶん", "そつろん"],
+      "kanji": ["論文", "卒業論文", "卒論"],
+      "imi": ["thesis (paper)", "graduation thesis", "graduation thesis"]
+    },
+    {
+      "id": 242,
+      "furigana": ["しあい"],
+      "kanji": ["試あい"],
+      "imi": ["match/game/tournament"]
+    },
+    {
+      "id": 243,
+      "furigana": ["しけん", "にゅうがくしけん"],
+      "kanji": ["試験", "入学試験"],
+      "imi": ["examination", "entrance examination"]
+    },
+    {
+      "id": 244,
+      "furigana": ["こんがっき", "きまつしけん", "きかん"],
+      "kanji": ["今学期", "期末試験", "期間"],
+      "imi": ["this (academic) term/this semester", "final examination", "period"]
+    },
+    {
+      "id": 245,
+      "furigana": ["おれいをいう"],
+      "kanji": ["お礼を言う"],
+      "imi": ["express one's appreciation"]
+    },
+    {
+      "id": 246,
+      "furigana": ["しつれいします", "しつれいなしつもん", "しつぎょう"],
+      "kanji": ["失礼します", "失礼な質問", "失業"],
+      "imi": ["excuse me", "rude question", "unemployment"]
+    },
+    {
+      "id": 247,
+      "furigana": ["しんこんりょこう"],
+      "kanji": ["新婚旅行"],
+      "imi": ["honeymoon"]
+    },
+    {
+      "id": 248,
+      "furigana": ["ひもをむすぶ", "けっこんする", "れんあいけっこん", "けつろん"],
+      "kanji": ["ひもを結ぶ", "結婚する", "れんあい結婚", "結論"],
+      "imi": ["tie string", "get married", "love marriage", "conclusion"]
+    },
+    {
+      "id": 249,
+      "furigana": ["こんやくする", "やくそく", "こんやくしゃ", "やく5パーセント"],
+      "kanji": ["婚約する", "約束", "婚約者", "約5パーセント"],
+      "imi": ["be engaged (to be married)", "promise", "fiance", "approximately five percent"]
+    },
+    {
+      "id": 250,
+      "furigana": ["みあいけっこん", "まにあう", "つきあう", "つごう"],
+      "kanji": ["見合い結婚", "間に合う", "つき合う", "都合"],
+      "imi": ["arranged marriage", "be in time", "associate", "(personal) convenience"]
+    },
+    {
+      "id": 251,
+      "furigana": ["あいて", "ともだちにそうだんする"],
+      "kanji": ["相手", "友だちに相だんする"],
+      "imi": ["partner/opponent/the other party", "consult with a friend"]
+    },
+    {
+      "id": 252,
+      "furigana": ["じょせい", "だんせい"],
+      "kanji": ["女性", "男性"],
+      "imi": ["woman", "man"]
+    },
+    {
+      "id": 253,
+      "furigana": ["けっこんしき", "そつぎょうしき", "にゅうがくしき"],
+      "kanji": ["結婚式", "卒業式", "入学式"],
+      "imi": ["wedding ceremony", "commencement/graduation ceremony", "(school) entrance ceremony"]
+    },
+    {
+      "id": 254,
+      "furigana": ["ぜんぶ", "ぜんこく", "ぜんべいオープンテニス", "あんぜんなばしょう"],
+      "kanji": ["全部", "全国", "全米オープンテニス", "安全な場所"],
+      "imi": ["all", "whole country", "US Open Tennis Tournament", "safe place"]
+    },
+    {
+      "id": 255,
+      "furigana": ["せわになる", "にっけい3世", "にじゅういっせいき"],
+      "kanji": ["世話になる", "日けい3世", "21世き"],
+      "imi": ["be obliged for assistance", "third generation Japanese descendant", "the 21st century"]
+    },
+    {
+      "id": 256,
+      "furigana": ["せかい", "げいのうかい", "スポーツかい"],
+      "kanji": ["世界", "げいのう界", "スポーツ界"],
+      "imi": ["world", "the world of show business", "the world of sports"]
+    },
+    {
+      "id": 257,
+      "furigana": ["だいがくいん", "にゅういんする", "たいいんする"],
+      "kanji": ["大学院", "入院する", "たい院する"],
+      "imi": ["graduate school", "be hospitalized", "be discharged from a hospital"]
+    },
+    {
+      "id": 258,
+      "furigana": ["びょうき", "びょういん"],
+      "kanji": ["病気", "病院"],
+      "imi": ["illness", "hospital"]
+    },
+    {
+      "id": 259,
+      "furigana": ["てがいたい"],
+      "kanji": ["手が痛い"],
+      "imi": ["one's hand hurts"]
+    },
+    {
+      "id": 260,
+      "furigana": ["つかれている"],
+      "kanji": ["疲れている"],
+      "imi": ["be tired"]
+    },
+    {
+      "id": 261,
+      "furigana": ["からだ"],
+      "kanji": ["体"],
+      "imi": ["body"]
+    },
+    {
+      "id": 262,
+      "furigana": ["あたま", "ずつうがする"],
+      "kanji": ["頭", "頭痛がする"],
+      "imi": ["head", "have a headache"]
+    },
+    {
+      "id": 263,
+      "furigana": ["みみ"],
+      "kanji": ["耳"],
+      "imi": ["ear"]
+    },
+    {
+      "id": 264,
+      "furigana": ["あしがながい", "りょうあし", "じかんがたりない"],
+      "kanji": ["足が長い", "両足", "時間が足りない"],
+      "imi": ["have long legs", "both legs/both feet", "lack enough time"]
+    },
+    {
+      "id": 265,
+      "furigana": ["ちから", "たいりょく", "けいざいりょく"],
+      "kanji": ["力", "体力", "けいざい力"],
+      "imi": ["power/strength", "physical strength", "economic power"]
+    },
+    {
+      "id": 266,
+      "furigana": ["あついスープ", "ねつがある", "ねつっぽい"],
+      "kanji": ["熱いスープ", "熱がある", "熱っぽい"],
+      "imi": ["hot soup", "have a fever", "feverish"]
+    },
+    {
+      "id": 267,
+      "furigana": ["くすり", "くすりや", "めぐすり"],
+      "kanji": ["薬", "薬屋", "目薬"],
+      "imi": ["medicine", "pharmacy", "eye medicine"]
+    },
+    {
+      "id": 268,
+      "furigana": ["いっかい", "かい(すうけん)"],
+      "kanji": ["1かい", "回(数券)"],
+      "imi": ["once", "(bus) coupon tickets/(train) coupon tickets"]
+    },
+    {
+      "id": 269,
+      "furigana": ["びょうきがなおる", "めいじ30ねん"],
+      "kanji": ["病気が治る", "明治30年"],
+      "imi": ["be cured of disease", "the 30th year of Meiji (1897)"]
+    },
+    {
+      "id": 270,
+      "furigana": ["せいじ", "せいじがく", "せいじか"],
+      "kanji": ["政治", "政治学", "政治家"],
+      "imi": ["politics", "political science", "politician"]
+    },
+    {
+      "id": 271,
+      "furigana": ["けいけんする", "かいしゃをけいえいする"],
+      "kanji": ["経験する", "会社を経えいする"],
+      "imi": ["experience", "manage a company"]
+    },
+    {
+      "id": 272,
+      "furigana": ["けいざい", "けいざいがく"],
+      "kanji": ["経済", "経済学"],
+      "imi": ["economy", "economics"]
+    },
+    {
+      "id": 273,
+      "furigana": ["せかいし", "アジアし", "せいじし"],
+      "kanji": ["世界史", "アジア史", "政治史"],
+      "imi": ["world history", "Asian history", "political history"]
+    },
+    {
+      "id": 274,
+      "furigana": ["れきし", "りれきしょ"],
+      "kanji": ["歴史", "り歴書"],
+      "imi": ["history", "curriculum vitae/resume"]
+    },
+    {
+      "id": 275,
+      "furigana": ["こどもをそだてる", "こどもがそだつ", "きょういく", "たいいく"],
+      "kanji": ["子どもを育てる", "子どもが育つ", "教育", "体育"],
+      "imi": ["raise a child", "child grows", "education", "physical education"]
+    },
+    {
+      "id": 276,
+      "furigana": ["ほうりつ", "ほうがくぶ", "こくさいほう", "けんぽう", "ほうほう"],
+      "kanji": ["法りつ", "法学部", "国際法", "けん法", "方法"],
+      "imi": ["law", "school of law", "international law", "constitution", "method"]
+    },
+    {
+      "id": 277,
+      "furigana": ["けんしゅうする", "かいがいけんしゅう"],
+      "kanji": ["研しゅうする", "海外研しゅう"],
+      "imi": ["study (on the job)/train (on the job)", "study abroad/training abroad"]
+    },
+    {
+      "id": 278,
+      "furigana": ["けんきゅうする", "アジアけんきゅう", "けんきゅうしつ"],
+      "kanji": ["研究する", "アジア研究", "研究室"],
+      "imi": ["conduct research", "Asian Studies", "professor's office/(university faculty) office"]
+    },
+    {
+      "id": 279,
+      "furigana": ["かんさい", "かんとう"],
+      "kanji": ["関西", "関東"],
+      "imi": ["Kansai (region)", "Kanto (region)"]
+    },
+    {
+      "id": 280,
+      "furigana": ["かかりのひと", "かんけい", "こくさいかんけい"],
+      "kanji": ["係の人", "関係", "国際関係"],
+      "imi": ["person in charge", "relationship", "international relations"]
+    },
+    {
+      "id": 281,
+      "furigana": ["はな", "いけばな", "かふん"],
+      "kanji": ["花", "生け花", "花ふん"],
+      "imi": ["flower", "flower arrangement", "pollen"]
+    },
+    {
+      "id": 282,
+      "furigana": ["はやし", "りんぎょう", "まつばやし"],
+      "kanji": ["林", "林業", "まつ林"],
+      "imi": ["woods", "forestry", "pine forest/pine woods"]
+    },
+    {
+      "id": 283,
+      "furigana": ["もり", "しんりん"],
+      "kanji": ["森", "森林"],
+      "imi": ["forest", "forest/woodlands"]
+    },
+    {
+      "id": 284,
+      "furigana": ["いし", "せきゆ", "せきたん"],
+      "kanji": ["石", "石ゆ", "石たん"],
+      "imi": ["stone", "petroleum", "coal"]
+    },
+    {
+      "id": 285,
+      "furigana": ["にわ", "かてい", "かていきょうし"],
+      "kanji": ["庭", "家庭", "家庭教し"],
+      "imi": ["garden", "home/family", "private tutor"]
+    },
+    {
+      "id": 286,
+      "furigana": ["いけ", "でんち"],
+      "kanji": ["池", "電池"],
+      "imi": ["pond", "(dry cell) battery"]
+    },
+    {
+      "id": 287,
+      "furigana": ["みずうみ", "ミシガンこ", "びわこ"],
+      "kanji": ["湖", "ミシガン湖", "びわ湖"],
+      "imi": ["lake", "Lake Michigan", "Lake Biwa"]
+    },
+    {
+      "id": 288,
+      "furigana": ["しま", "ひろしまけん", "バリとう", "はんとう"],
+      "kanji": ["島", "広島県", "バリ島", "半島"],
+      "imi": ["island", "Hiroshima prefecture", "the island of Bali", "peninsula"]
+    },
+    {
+      "id": 289,
+      "furigana": ["かぜがつよい", "たいふう", "ふうけい", "メキシコふうのりょうり"],
+      "kanji": ["風が強い", "たい風", "風けい", "メキシコ風の料理"],
+      "imi": ["windy", "typhoon", "scenery", "Mexican-style cooking"]
+    },
+    {
+      "id": 290,
+      "furigana": ["そら", "あきかん", "くうき"],
+      "kanji": ["空", "空きかん", "空気"],
+      "imi": ["sky", "empty can", "air"]
+    },
+    {
+      "id": 291,
+      "furigana": ["プールでおよぐ", "すいえい"],
+      "kanji": ["プールで泳ぐ", "水泳"],
+      "imi": ["swim in a pool", "swimming"]
+    },
+    {
+      "id": 292,
+      "furigana": ["ともだちとあそぶ", "あそび", "ゆうえんち"],
+      "kanji": ["友だちと遊ぶ", "遊び", "遊えん地"],
+      "imi": ["play with a friend", "play", "amusement park (middle kanji as hir.)"]
+    },
+    {
+      "id": 293,
+      "furigana": ["こうえん", "どうぶつえん", "ゆうえんち"],
+      "kanji": ["公園", "どう物園", "遊園地"],
+      "imi": ["park", "zoo", "amusement park (with middle kanji)"]
+    },
+    {
+      "id": 294,
+      "furigana": ["えいがかん", "りょかん", "たいいくかん", "たいしかん"],
+      "kanji": ["映画館", "旅館", "体育館", "大使館"],
+      "imi": ["movie theater", "Japanese inn", "gymnasium", "embassy"]
+    },
+    {
+      "id": 295,
+      "furigana": ["おてら", "とうだいじ"],
+      "kanji": ["お寺", "東大寺"],
+      "imi": ["(Buddhist) temple", "Todaiji Temple"]
+    },
+    {
+      "id": 296,
+      "furigana": ["ず", "ちず", "としょかん"],
+      "kanji": ["図", "地図", "図書館"],
+      "imi": ["diagram/illustration", "map", "library (building)"]
+    },
+    {
+      "id": 297,
+      "furigana": ["はし", "にほんばし", "ほどうきょう"],
+      "kanji": ["橋", "日本橋", "歩道橋"],
+      "imi": ["bridge", "Nihombashi", "pedestrian overpass"]
+    },
+    {
+      "id": 298,
+      "furigana": ["こうじょう", "こうば", "りこうがくぶ", "こうぎょう"],
+      "kanji": ["工場", "工場", "理工学部", "工業"],
+      "imi": ["facory (on vers.)", "factory (kun vers.)", "school of science and engineering", "(engineering/manufacturing) industry"]
+    },
+    {
+      "id": 299,
+      "furigana": ["こうばん", "こうさてん", "こうつうじこ", "がいこう"],
+      "kanji": ["交番", "交さてん", "交通事こ", "外交"],
+      "imi": ["police box", "intersection", "traffic accident", "diplomacy"]
+    },
+    {
+      "id": 300,
+      "furigana": ["くやくしょ", "やくにたつ"],
+      "kanji": ["区役所", "役に立つ"],
+      "imi": ["ward office", "be useful"]
+    },
+    {
+      "id": 301,
+      "furigana": ["みなと", "くうこう"],
+      "kanji": ["港", "空港"],
+      "imi": ["port", "airport"]
+    },
+    {
+      "id": 302,
+      "furigana": ["かいだん", "したのかい", "2かい", "3がい"],
+      "kanji": ["階だん", "下の階", "2階", "3階"],
+      "imi": ["staircase/stairs", "lower floor", "second floor/upstairs", "third floor"]
+    },
+    {
+      "id": 303,
+      "furigana": ["そらをとぶ", "ひこうき"],
+      "kanji": ["空を飛ぶ", "飛行き"],
+      "imi": ["fly through the air", "airplane"]
+    },
+    {
+      "id": 304,
+      "furigana": ["これをやまもとさんにわたしてください。", "はしをわたる"],
+      "kanji": ["これを山本さんに渡してください。", "橋を渡る"],
+      "imi": ["Please hand this to Ms. Yamamoto.", "cross a bridge"]
+    },
+    {
+      "id": 305,
+      "furigana": ["しょくぎょう", "しゅうしょくする"],
+      "kanji": ["職業", "しゅう職する"],
+      "imi": ["occupation", "obtain a full-time job (with a firm)"]
+    },
+    {
+      "id": 306,
+      "furigana": ["のうぎょう", "のうか", "のうそん"],
+      "kanji": ["農業", "農家", "農村"],
+      "imi": ["agriculture", "farmhouse/farming family", "farm village"]
+    },
+    {
+      "id": 307,
+      "furigana": ["しょうぎょう", "しょうてん"],
+      "kanji": ["商業", "商店"],
+      "imi": ["commerce", "shop/store"]
+    },
+    {
+      "id": 308,
+      "furigana": ["ぎょぎょう"],
+      "kanji": ["漁業"],
+      "imi": ["fishing industry"]
+    },
+    {
+      "id": 309,
+      "furigana": ["さんぎょう", "せいさんする", "のうさんぶつ"],
+      "kanji": ["産業", "生産する", "農産物"],
+      "imi": ["industry", "produce/manufacture", "agricultural products"]
+    },
+    {
+      "id": 310,
+      "furigana": ["わかもの", "がくしゃ", "かがくしゃ"],
+      "kanji": ["わか者", "学者", "科学者"],
+      "imi": ["the young", "scholar", "scientist"]
+    },
+    {
+      "id": 311,
+      "furigana": ["いしゃ", "いがく"],
+      "kanji": ["医者", "医学"],
+      "imi": ["physician", "medical science"]
+    },
+    {
+      "id": 312,
+      "furigana": ["かいしゃいん", "えきいん", "ぎんこういん", "てんいん", "こうむいん"],
+      "kanji": ["会社員", "駅員", "ぎん行員", "店員", "公む員"],
+      "imi": ["company employee", "station employee", "bank employee", "store clerk", "government employee"]
+    },
+    {
+      "id": 313,
+      "furigana": ["きょうし", "りょうし"],
+      "kanji": ["教師", "漁師"],
+      "imi": ["instructor/teacher", "fisherman"]
+    },
+    {
+      "id": 314,
+      "furigana": ["しんぶんきしゃ", "きじ", "にっき", "きにゅうする"],
+      "kanji": ["新聞記者", "記事", "日記", "記入する"],
+      "imi": ["newspaper journalist", "(newspaper/magazine) article", "diary", "write (in)"]
+    },
+    {
+      "id": 315,
+      "furigana": ["しゅふ", "かんごふ", "ふじん"],
+      "kanji": ["主婦", "かんご婦", "婦人"],
+      "imi": ["housewife", "nurse", "adult woman"]
+    },
+    {
+      "id": 316,
+      "furigana": ["おっと", "ふうふ", "だいとうりょうふじん"],
+      "kanji": ["夫", "夫婦", "大とうりょう夫人"],
+      "imi": ["husband", "husband and wife", "president's wife"]
+    },
+    {
+      "id": 317,
+      "furigana": ["きかい", "ひこうき", "コピーき", "きかい"],
+      "kanji": ["機械", "飛行機", "コピー機", "機会"],
+      "imi": ["machine", "airplane", "copy machine", "opportunity"]
+    },
+    {
+      "id": 318,
+      "furigana": ["がっき", "しょっき"],
+      "kanji": ["楽器", "食器"],
+      "imi": ["musical instrument", "tableware"]
+    },
+    {
+      "id": 319,
+      "furigana": ["しょくりょうひん", "ぶひん"],
+      "kanji": ["食料品", "部品"],
+      "imi": ["food", "mechanical parts"]
+    },
+    {
+      "id": 320,
+      "furigana": ["コピーきがうごく", "どうぶつ", "クラブかつどう", "うんどう"],
+      "kanji": ["コピー機が動く", "動物", "クラブ活動", "運動"],
+      "imi": ["copy machine works", "animal", "extracurricular activities", "movement"]
+    },
+    {
+      "id": 321,
+      "furigana": ["じぶんで", "じどうしゃ", "じどうドア", "じどうはんばいき", "じゆう"],
+      "kanji": ["自分で", "自動車", "自動ドア", "自動販売機", "自由"],
+      "imi": ["by oneself", "automobile", "automatic door", "vending machine", "freedom"]
+    },
+    {
+      "id": 322,
+      "furigana": ["しけんをうける", "うけつけ", "じゅわき"],
+      "kanji": ["試験を受ける", "受付", "受話器"],
+      "imi": ["take an examination", "reception desk", "telephone receiver"]
+    },
+    {
+      "id": 323,
+      "furigana": ["けいかくをかえる", "けいかくがかわる", "へんなおと", "たいへんなしごと"],
+      "kanji": ["計画を変える", "計画が変わる", "変な音", "大変な仕事"],
+      "imi": ["change plans", "plan changes", "strange sound", "hard job"]
+    },
+    {
+      "id": 324,
+      "furigana": ["ひをけす", "ひがきえる", "けしゴム"],
+      "kanji": ["火を消す", "火が消える", "消しゴム"],
+      "imi": ["put out a fire", "fire goes out", "(rubber) eraser"]
+    },
+    {
+      "id": 325,
+      "furigana": ["しんごう", "じゅしんする", "じしんがある", "かみをしんじる"],
+      "kanji": ["信号", "受信する", "自信がある", "かみを信じる"],
+      "imi": ["traffic light", "receive a transmission", "have confidence", "believe in god"]
+    },
+    {
+      "id": 326,
+      "furigana": ["だいどころ", "くるまが3だいある", "たいふう"],
+      "kanji": ["台所", "車が3台ある", "台風"],
+      "imi": ["kitchen", "there are three cars", "typhoon"]
+    },
+    {
+      "id": 327,
+      "furigana": ["100てん", "こうさてん", "しゅうてん"],
+      "kanji": ["100点", "交さ点", "終点"],
+      "imi": ["100 points", "intersection", "last stop"]
+    },
+    {
+      "id": 328,
+      "furigana": ["きってを10まいかう"],
+      "kanji": ["切手を10枚買う"],
+      "imi": ["buy ten stamps"]
+    },
+    {
+      "id": 329,
+      "furigana": ["うつくしいけしき", "びじゅつ", "びじゅつかん", "びよういん"],
+      "kanji": ["美しいけ色", "美じゅつ", "美じゅつ館", "美よう院"],
+      "imi": ["beautiful scenery", "fine arts", "art museum", "beauty salon"]
+    },
+    {
+      "id": 330,
+      "furigana": ["おもいにもつ", "たいじゅ"],
+      "kanji": ["重いに物", "体重"],
+      "imi": ["heavy baggage", "one's weight"]
+    },
+    {
+      "id": 331,
+      "furigana": ["ねつをはかる", "とけい", "たいおんけい", "けいかく", "ごうけい"],
+      "kanji": ["熱を計る", "時計", "体おん計", "計画", "合計"],
+      "imi": ["take one's temperature", "clock", "(clinical) thermometer", "a plan", "total"]
+    },
+    {
+      "id": 332,
+      "furigana": ["へんかする", "かがく", "ぶんか", "としか"],
+      "kanji": ["変化する", "化学", "文化", "都市化"],
+      "imi": ["alter", "chemistry", "culture", "urbanization"]
+    },
+    {
+      "id": 333,
+      "furigana": ["ようじ", "のうぎょうよう", "じょせいよう", "スポーツようひん"],
+      "kanji": ["用事", "農業用", "女性用", "スポーツ用品"],
+      "imi": ["things to do", "for agriculture use", "for women", "sporting goods"]
+    },
+    {
+      "id": 334,
+      "furigana": ["ふたりいじょう", "1,000えんいか", "いっしゅうかんいない", "しゅうまついがい"],
+      "kanji": ["２人以上", "1,000円以下", "1週間以内", "週末以外"],
+      "imi": ["two people or more", "¥1,000 or less", "within a week", "except on weekends"]
+    },
+    {
+      "id": 335,
+      "furigana": ["2たい3", "にほんたいちゅうごくのしあい", "~にたいして"],
+      "kanji": ["2対3", "日本対中国の試合", "~に対して"],
+      "imi": ["(score of) 2 to 3", "Japan vs. China match", "toward (someone)"]
+    },
+    {
+      "id": 336,
+      "furigana": ["ちちのかんがえにはんたいする", "はんたいうんどう", "はんたいいけん"],
+      "kanji": ["父の考えに反対する", "反対運動", "反対意見"],
+      "imi": ["oppose my father's idea", "opposition movement", "opposing opinion"]
+    },
+    {
+      "id": 337,
+      "furigana": ["おかねがいる", "じゅうようなもんたい"],
+      "kanji": ["お金が要る", "重要な問題"],
+      "imi": ["need money", "serious issue"]
+    },
+    {
+      "id": 338,
+      "furigana": ["かならずでんきをけしてくたさい。", "ひつようなもの", "ひっしにべんきょうする"],
+      "kanji": ["必ず電気を消してくたさい。", "必要な物", "必しに勉強する"],
+      "imi": ["Please be sure to turn off the lights.", "necessary things", "study very hard"]
+    },
+    {
+      "id": 339,
+      "furigana": ["ゆうびんきょく", "こうくうびん", "ふべんなばしょ"],
+      "kanji": ["ゆう便きょく", "こう空便", "ふ便な場所"],
+      "imi": ["post office", "airmail", "inconvenient place"]
+    },
+    {
+      "id": 340,
+      "furigana": ["べんりなきかい", "エレベーターをりようする"],
+      "kanji": ["便利な機かい", "エレベーターを利用する"],
+      "imi": ["convenient machine", "use an elevator"]
+    },
+    {
+      "id": 341,
+      "furigana": ["べんきょうをつづける", "あつさがつづく"],
+      "kanji": ["勉強を続ける", "暑さが続く"],
+      "imi": ["continue with one's studies", "hot weather continues"]
+    },
+    {
+      "id": 342,
+      "furigana": ["だいがくいんにすすむ", "しんがくする", "かがくがしんぽする"],
+      "kanji": ["大学院に進む", "進学する", "科学が進歩する"],
+      "imi": ["go onto graduate school", "advance to the next higher school", "science advances"]
+    },
+    {
+      "id": 343,
+      "furigana": ["じかんをきめる", "しゅうしょくさきがまる"],
+      "kanji": ["時間を決める", "就職先が決まる"],
+      "imi": ["decide on the time", "place of employment is decided"]
+    },
+    {
+      "id": 344,
+      "furigana": ["きってをあつめる", "がくせいがあつまる", "あつまり", "しゅうごうばしょ"],
+      "kanji": ["切手を集める", "学生が集まる", "集まり", "集合場所"],
+      "imi": ["collect stamps", "students gather", "gathering", "meeting place"]
+    },
+    {
+      "id": 345,
+      "furigana": ["ごはんをのこす", "しごとがのこる", "ざんぬんなけっか", "ざんぎょうする"],
+      "kanji": ["ご飯を残る", "仕事が残る", "残念な結果", "残業する"],
+      "imi": ["leave a meal unfinished", "work is unfinished", "regrettable result", "work overtime"]
+    },
+    {
+      "id": 346,
+      "furigana": ["こうじょうではたらく", "ろうどうじかん", "ろうどうくみあい"],
+      "kanji": ["工場で働く", "労働時間", "労働組合"],
+      "imi": ["work at a factory", "working hours", "labor union"]
+    },
+    {
+      "id": 347,
+      "furigana": ["よくかんがえる", "かんがえ", "いいかんがえ"],
+      "kanji": ["よく考え", "考え", "いい考え"],
+      "imi": ["think hard", "opinion", "good idea"]
+    },
+    {
+      "id": 348,
+      "furigana": ["いみをしらべる", "ちょうさする", "ちょうし"],
+      "kanji": ["意味を調べる", "調査する", "調子"],
+      "imi": ["look up the meaning", "investigation", "condition"]
+    },
+    {
+      "id": 349,
+      "furigana": ["じしょをえらぶ", "せんしゅ", "せんきょ"],
+      "kanji": ["じ書を選ぶ", "選手", "選きょ"],
+      "imi": ["choose a dictionary", "athlete", "election"]
+    },
+    {
+      "id": 350,
+      "furigana": ["りょかんいとまる", "２はく３かのりょこう", "１はく２まんえんのホテル"],
+      "kanji": ["旅館に泊まる", "2泊3目の旅行", "1泊2万円のホテル"],
+      "imi": ["stay at a japanese inn", "trip of three days and two nights", "¥20,000-a-night hotel"]
+    },
+    {
+      "id": 351,
+      "furigana": ["よやくする", "よしゅうする", "てんきよほう"],
+      "kanji": ["予約する", "予習する", "天気予ほう"],
+      "imi": ["make a reservation", "prepare for classes", "weather forecast"]
+    },
+    {
+      "id": 352,
+      "furigana": ["よてい", "ていしょく", "ていき", "けっていする"],
+      "kanji": ["予定", "定食", "定期", "決定する"],
+      "imi": ["schedule", "set menu", "commuter pass", "decide"]
+    },
+    {
+      "id": 353,
+      "furigana": ["こどもがなく"],
+      "kanji": ["子どもが泣く"],
+      "imi": ["child cries"]
+    },
+    {
+      "id": 354,
+      "furigana": ["おおきなこえでわらう"],
+      "kanji": ["大きなこえで笑う"],
+      "imi": ["laugh loudly"]
+    },
+    {
+      "id": 355,
+      "furigana": ["かんじる", "かんじ", "かんしゃする"],
+      "kanji": ["感じる", "感じ", "感しゃする"],
+      "imi": ["feel", "feeling", "be grateful"]
+    },
+    {
+      "id": 356,
+      "furigana": ["しゅくだいをわすれる", "わすれもの"],
+      "kanji": ["宿題を忘れる", "忘れ物"],
+      "imi": ["forget one's homework", "something forgotten and left behind"]
+    },
+    {
+      "id": 357,
+      "furigana": ["わからなくて、こまっている。"],
+      "kanji": ["わからなくて、困っている。"],
+      "imi": ["I'm in a bind because I don't know."]
+    },
+    {
+      "id": 358,
+      "furigana": ["めんぎょをとる", "しおをとってください。"],
+      "kanji": ["めんぎょを取る", "しおを取ってください。"],
+      "imi": ["obtain a license", "Please pass the salt."]
+    },
+    {
+      "id": 359,
+      "furigana": ["いぬがしぬ", "きゅうし"],
+      "kanji": ["いぬが死ぬ", "急死"],
+      "imi": ["dog dies", "sudden death"]
+    },
+    {
+      "id": 360,
+      "furigana": ["ゴキブリをころす", "じさつする", "さつじんじけん"],
+      "kanji": ["ゴキブリを殺す", "自殺する", "殺人事けん"],
+      "imi": ["kill a cockroach", "commit suicide", "murder case"]
+    },
+    {
+      "id": 361,
+      "furigana": ["プリントをくばる", "しんぱいする"],
+      "kanji": ["プリントを配る", "心配する"],
+      "imi": ["distribute handouts", "worry"]
+    },
+    {
+      "id": 362,
+      "furigana": ["ちょうしがわるい", "さいあく", "びょうきがあっかする"],
+      "kanji": ["調子が悪い", "さい悪", "病気が悪化する"],
+      "imi": ["condition is bad", "the worst", "illness becomes worse"]
+    },
+    {
+      "id": 363,
+      "furigana": ["かなしいはなし", "ひげき"],
+      "kanji": ["悲しい話", "悲げき"],
+      "imi": ["sad story", "tragedy"]
+    },
+    {
+      "id": 364,
+      "furigana": ["くるしいせいかつ", "むねがくるしい", "にがいくすり", "りょうりがにがてだ"],
+      "kanji": ["苦しい生活", "むねが苦しい", "苦い薬", "料理が苦手だ"],
+      "imi": ["financially strained living", "have pain in one's chest", "bitter medicine", "cooking is my weak point"]
+    },
+    {
+      "id": 365,
+      "furigana": ["もっともふるいてら", "さいきん", "さいこう", "さいごに"],
+      "kanji": ["最も古い寺", "最近", "最高", "最後に"],
+      "imi": ["oldest temple", "recently", "the highest", "finally"]
+    },
+    {
+      "id": 366,
+      "furigana": ["さいしょ", "はじめ", "はじめて", "はつゆうしょう"],
+      "kanji": ["最初", "初め", "初めて", "初ゆうしょう"],
+      "imi": ["the first", "the beginning", "for the first time", "the first victory"]
+    },
+    {
+      "id": 367,
+      "furigana": ["ふべんなところ", "ふしんせつなひと", "うんどうぶそく"],
+      "kanji": ["不便な所", "不親切な人", "運動不足"],
+      "imi": ["inconvenient place", "unkind person", "lack of exercise"]
+    },
+    {
+      "id": 368,
+      "furigana": ["むりなけいかく", "むりょう"],
+      "kanji": ["無理な計画", "無料"],
+      "imi": ["unreasonably difficult plan", "free (of charge)"]
+    },
+    {
+      "id": 369,
+      "furigana": ["ゆうめいなかしゅ", "ゆりょう "],
+      "kanji": ["有名な歌手", "有料"],
+      "imi": ["famous singer", "not free"]
+    },
+    {
+      "id": 370,
+      "furigana": ["もくてき", "せいじてきなもんだい", "せかいてきにゆうめいなえ"],
+      "kanji": ["目的", "政治的な問題", "世界的に有名な絵"],
+      "imi": ["purpose", "political issue", "world-famous painting"]
+    },
+    {
+      "id": 371,
+      "furigana": ["だいいちにちめ", "だい15かいオリンピックたいかい", "だい2どよう"],
+      "kanji": ["第1日目", "第15回オリンピック大会", "第2土曜"],
+      "imi": ["the first day", "the 15th Olympic Games", "the second saturday of the month"]
+    },
+    {
+      "id": 372,
+      "furigana": ["かずをかぞえる", "すうじ", "すうがく", "にんずう", "すうねん"],
+      "kanji": ["数を数える", "数字", "数学", "人数", "数年"],
+      "imi": ["count numbers", "numeral", "mathematics", "number of people", "several years"]
+    },
+    {
+      "id": 373,
+      "furigana": ["えいわじてん", "わしょく", "わふく", "しょうわ２０ねん"],
+      "kanji": ["英和じてん", "和食", "和ふく", "しょう和２０年"],
+      "imi": ["English-Japanese dictionary", "Japanese food", "kimono", "the 20th year of Showa (1945)"]
+    },
+    {
+      "id": 374,
+      "furigana": ["たいせいよう", "とうようとせいよう", "ようしょく", "ようふく"],
+      "kanji": ["大西洋", "東洋と西洋", "洋食", "洋ふく"],
+      "imi": ["Atlantic Ocean", "the East and the West", "Western food", "Western clothes"]
+    },
+    {
+      "id": 375,
+      "furigana": ["ひかがくてきなかんがえ", "ひじょうぐち"],
+      "kanji": ["非科学的な考え", "非じょう口"],
+      "imi": ["unscientific view", "emergency exit"]
+    },
+    {
+      "id": 376,
+      "furigana": ["じんじか", "かちょう", "だい３２か", "つぎのか"],
+      "kanji": ["人事課", "課長", "第３２課", "つぎの課"],
+      "imi": ["personnel section", "section chief", "Lesson 32", "next lesson"]
+    },
+    {
+      "id": 377,
+      "furigana": ["タクシーだい", "バイトだい", "じだい", "きんだい"],
+      "kanji": ["タクシー代", "バイト代", "時代", "近代"],
+      "imi": ["taxi fare", "wages from a part-time job", "era", "the modern age"]
+    },
+    {
+      "id": 378,
+      "furigana": ["ひよう", "がくひ", "しょうくひ", "せいかつひ", "こうつうひ"],
+      "kanji": ["費用", "学費", "食費", "生活費", "交通費"],
+      "imi": ["expenses", "school expenses", "food expenses", "living expenses", "transportation expenses"]
+    },
+    {
+      "id": 379,
+      "furigana": ["じっけん", "じじつ", "じつようてきなほん"],
+      "kanji": ["実験", "事実", "実用的な本"],
+      "imi": ["experiment", "fact", "practical book"]
+    },
+    {
+      "id": 380,
+      "furigana": ["じょうたい", "じったい", "たいど"],
+      "kanji": ["じょう態", "実態", "態度"],
+      "imi": ["condition", "actual condition", "attitude"]
+    },
+    {
+      "id": 381,
+      "furigana": ["げんだい", "げんざい", "げんじつ", "げんきん"],
+      "kanji": ["現代", "現ざい", "現実", "現金"],
+      "imi": ["the present age", "the present time", "reality", "cash"]
+    },
+    {
+      "id": 382,
+      "furigana": ["ひょう", "ひょうげん", "くにのだいひょう"],
+      "kanji": ["表", "表現", "国の代表"],
+      "imi": ["chart", "expression", "representative of a country"]
+    },
+    {
+      "id": 383,
+      "furigana": ["はつおん", "しゅっぱつする", "はっぴょうする", "はつばいする"],
+      "kanji": ["発音", "出発する", "発表する", "発売する"],
+      "imi": ["pronunciation", "depart", "announce", "put on sale"]
+    },
+    {
+      "id": 384,
+      "furigana": ["じんるい", "じんるいがく", "しょるい"],
+      "kanji": ["人類", "人類学", "書類"],
+      "imi": ["mankind", "anthropology", "documents"]
+    },
+    {
+      "id": 385,
+      "furigana": ["スイカのたね", "しゅるい", "じんしゅもんだい"],
+      "kanji": ["スイカの種", "種類", "人種問題"],
+      "imi": ["watermelon seeds", "kind", "racial issue"]
+    },
+    {
+      "id": 386,
+      "furigana": ["りゆう", "じゆう", "じゆうにかく", "からだがふじゆうなひと"],
+      "kanji": ["理由", "自由", "自由に書く", "体が不自由な人"],
+      "imi": ["reason", "freedom", "write freely", "physically handicapped person"]
+    },
+    {
+      "id": 387,
+      "furigana": ["へいわなじだい", "たいへいよう", "へいきん", "へいせい6ねん"],
+      "kanji": ["平和な時代", "たい平洋", "平きん", "平せい6年"],
+      "imi": ["peaceful age", "Pacific Ocean", "average", "the 6th year of Heisei (1994)"]
+    },
+    {
+      "id": 388,
+      "furigana": ["げんいん", "げんしりょく", "げんしりょくはつでんしょ", "げんぱつ"],
+      "kanji": ["原いん", "原子力", "原子力発電所", "原発"],
+      "imi": ["cause", "atomic energy", "nuclear power plant", "nuclear power plant"]
+    },
+    {
+      "id": 389,
+      "furigana": ["せいど", "しゅうきゅうふつかせい", "せいふく"],
+      "kanji": ["制度", "週休2日制", "制ふく"],
+      "imi": ["system", "five-day work week", "uniform"]
+    },
+    {
+      "id": 390,
+      "furigana": ["しりょう", "しほん", "しほんしゅぎ"],
+      "kanji": ["資料", "資本", "資本主ぎ"],
+      "imi": ["material (for research)", "funds", "capitalism"]
+    },
+    {
+      "id": 391,
+      "furigana": ["けっか", "くだもの"],
+      "kanji": ["結果", "果物"],
+      "imi": ["result", "fruit*"]
+    },
+    {
+      "id": 392,
+      "furigana": ["せつめいする", "しょうせつ"],
+      "kanji": ["説明する", "小説"],
+      "imi": ["explain", "novel"]
+    },
+    {
+      "id": 393,
+      "furigana": ["えきでわかれる", "べつのきかい", "べつにいそがしくない", "さべつ"],
+      "kanji": ["駅で別れる", "別の機会", "別に忙しくない", "さ別"],
+      "imi": ["part at the station", "another occasion", "not particularly busy", "discrimination"]
+    },
+    {
+      "id": 394,
+      "furigana": ["とくべつなりゆう", "とっきゅう", "とくにえいががすきです。"],
+      "kanji": ["特別なりゆう", "特急", "特に映画が好きです。"],
+      "imi": ["special reason", "special express", "I especially like movies."]
+    },
+    {
+      "id": 395,
+      "furigana": ["てんきよほう", "じょうほう", "でんぽう"],
+      "kanji": ["天気予報", "じょう報", "電報"],
+      "imi": ["weather forecast", "information", "telegram"]
+    },
+    {
+      "id": 396,
+      "furigana": ["ほうこくする", "こうこく"],
+      "kanji": ["報告する", "広告"],
+      "imi": ["report (to someone)", "advertisement"]
+    },
+    {
+      "id": 397,
+      "furigana": ["AとBをくらべる", "ひかくする"],
+      "kanji": ["AとBを比べる", "比かくする"],
+      "imi": ["compare A to B", "compare"]
+    },
+    {
+      "id": 398,
+      "furigana": ["こうえんをふやす", "くるまがふえる"],
+      "kanji": ["公園を増やす", "車が増える"],
+      "imi": ["increase the number of parks", "the number of cars increases"]
+    },
+    {
+      "id": 399,
+      "furigana": ["みずをくわえる", "じんこうがぞうかする", "さんかする"],
+      "kanji": ["水を加える", "人口が増加する", "さん加する"],
+      "imi": ["add (cold) water", "population increases", "participate"]
+    },
+    {
+      "id": 400,
+      "furigana": ["しごとをへらす", "こどものかずがへる", "がくせいすうがげんしょうする"],
+      "kanji": ["仕事を減らす", "子どもの数が減る", "学生数が減少する"],
+      "imi": ["decrease the amount of work", "the number of children decreases", "the number of students decreases "]
+    },
+    {
+      "id": 401,
+      "furigana": ["かたな", "にほんとう", "たんとう"],
+      "kanji": ["刀", "日本刀", "短刀"],
+      "imi": ["sword", "Japanese sword", "dagger"]
+    },
+    {
+      "id": 402,
+      "furigana": ["よい", "りょうしん", "ふりょう", "ならけん"],
+      "kanji": ["良い", "良心", "不良", "奈良県"],
+      "imi": ["good", "conscience", "delinquent", "Nara Prefecture*"]
+    },
+    {
+      "id": 403,
+      "furigana": ["まわり", "しゅうへん", "しゅうき", "せかいいっしゅう", "いっしゅうねん"],
+      "kanji": ["周り", "周辺", "周期", "世界一周", "一周年"],
+      "imi": ["surrounding", "surrounding", "cycle", "around the world", "one-year anniversary"]
+    },
+    {
+      "id": 404,
+      "furigana": ["うま", "こうま", "うまごや", "ばしゃ", "じょうば", "けいば", "ばか"],
+      "kanji": ["馬", "子馬", "馬小屋", "馬車", "乗馬", "競馬", "馬鹿"],
+      "imi": ["horse", "pony", "stable", "horse-drawn carriage", "horseback riding", "horse racing", "fool"]
+    },
+    {
+      "id": 405,
+      "furigana": ["ぎんこう", "ぎん", "すいぎん", "ぎんいろ", "ぎんが"],
+      "kanji": ["銀行", "銀", "水銀", "銀色", "銀河"],
+      "imi": ["bank", "silver", "mercury", "silver (colored)", "galaxy"]
+    },
+    {
+      "id": 406,
+      "furigana": ["かい", "かいがら", "まきがい", "かいざいく"],
+      "kanji": ["貝", "貝殻", "巻き貝", "貝細工"],
+      "imi": ["shellfish", "shell", "spiral shell", "shell work"]
+    },
+    {
+      "id": 407,
+      "furigana": ["ゆみ", "ゆみや", "きゅうどう"],
+      "kanji": ["弓", "弓矢", "弓道"],
+      "imi": ["bow", "bow and arrow", "kyudo (Japanese archery) "]
+    },
+    {
+      "id": 408,
+      "furigana": ["むし", "むしば", "よわむし", "こんちゅう"],
+      "kanji": ["虫", "虫歯", "弱虫", "昆虫"],
+      "imi": ["insect", "decayed tooth", "weakling", "insect"]
+    },
+    {
+      "id": 409,
+      "furigana": ["くび", "くびになる", "てくび", "しゅしょう", "しゅと", "しゅい", "ぶしゅ"],
+      "kanji": ["首", "首になる", "手首", "首相", "首都", "首位", "部首"],
+      "imi": ["neck", "get fired", "wrist", "prime minister", "capital", "top position", "radical (of kanji)"]
+    },
+    {
+      "id": 410,
+      "furigana": ["いぬ", "こいぬ", "ばんけん", "もうどうけん", "けんえんのなか", "りょうけん", "きょうけんびょう"],
+      "kanji": ["犬", "子犬", "番犬", "盲導犬", "犬猿の仲", "猟犬", "狂犬病"],
+      "imi": ["dog", "puppy", "watchdog", "seeing-eye dog", "dislike each other", "hunting dog", "rabies"]
+    },
+    {
+      "id": 411,
+      "furigana": ["ぶた", "ぶたにく", "こぶた", "とんカツ"],
+      "kanji": ["豚", "豚肉", "子豚", "豚カツ"],
+      "imi": ["pig", "pork", "piglet", "pork cutlet"]
+    },
+    {
+      "id": 412,
+      "furigana": ["やさい", "ながの", "おのさん", "やきゅう", "ぶんや", "やとう", "のはら"],
+      "kanji": ["野菜", "長野", "小野さん", "野球", "分野", "野党", "野原"],
+      "imi": ["vegetable", "Nagano", "Mr./Ms. Ono", "baseball", "realm", "opposition party", "field"]
+    },
+    {
+      "id": 413,
+      "furigana": ["やさい", "さいえん", "なのはな", "はくさい", "さんさい", "さいしょくしゅぎ"],
+      "kanji": ["野菜", "菜園", "菜の花", "白菜", "山菜", "菜食主義"],
+      "imi": ["vegetable", "vegetable garden", "rape blossom", "Chinese cabbage", "edible wild plants", "vegetarianism"]
+    },
+    {
+      "id": 414,
+      "furigana": ["みらい", "みまん", "みこん", "みてい", "みせいねん", "みじゅく", "みめい"],
+      "kanji": ["未来", "未満", "未婚", "未定", "未成年", "未熟", "未明"],
+      "imi": ["future", "below", "unmarried", "not yet determined", "under age", "immaturity", "before dawn"]
+    },
+    {
+      "id": 415,
+      "furigana": ["じてんしゃ", "うんてん", "うんてんしゅ", "ころぶ", "ころがる", "かいてんずし", "てんしょく", "てんこう"],
+      "kanji": ["自転車", "運転", "運転手", "転ぶ", "転がる", "回転ずし", "転職", "転校"],
+      "imi": ["bicycle", "driving", "driver", "tumble", "roll", "conveyor-belt sushi bar", "changing jobs", "changing schools"]
+    },
+    {
+      "id": 416,
+      "furigana": ["ちゅうおう", "ちゅうおうせん", "ちゅうおうしゅうけん"],
+      "kanji": ["中央", "中央線", "中央集権"],
+      "imi": ["center", "the Chuo Line", "centralization of government"]
+    },
+    {
+      "id": 417,
+      "furigana": ["ひつじ", "こひつじ", "ようもう", "やぎ"],
+      "kanji": ["羊", "小羊", "羊毛", "山羊"],
+      "imi": ["sheep", "lamb", "wool", "*goat"]
+    },
+    {
+      "id": 418,
+      "furigana": ["ふく", "ようふく", "わふく", "ふくそう", "こくふくする", "せいふく", "もふく", "せいふく"],
+      "kanji": ["服", "洋服", "和服", "服装", "克服する", "制服", "喪服", "征服"],
+      "imi": ["clothes", "Western clothes", "Japanese clothes", "costume", "overcome", "uniform", "mourning dress", "conquest"]
+    },
+    {
+      "id": 419,
+      "furigana": ["や", "やじるし", "むりやり"],
+      "kanji": ["矢", "矢印", "無理矢理"],
+      "imi": ["arrow", "arrow mark", "forcibly"]
+    },
+    {
+      "id": 420,
+      "furigana": ["いと", "けいと", "つりいと", "ばっし"],
+      "kanji": ["糸", "毛糸", "釣り糸", "抜糸"],
+      "imi": ["thread", "woolen yarn", "fishing line", "removing stitches"]
+    },
+    {
+      "id": 421,
+      "furigana": ["しめい", "かれし", "おおのし", "せっし", "かし", "うじがみ"],
+      "kanji": ["氏名", "彼氏", "大野氏", "摂氏", "華氏", "氏神"],
+      "imi": ["full name", "boyfriend", "Mr./Ms. Ohno", "centigrade", "Fahrenheit", "guardian god"]
+    },
+    {
+      "id": 422,
+      "furigana": ["はね", "はね", "いちわ", "せんば", "うもう"],
+      "kanji": ["羽", "羽根", "一羽", "千羽", "羽毛"],
+      "imi": ["wing", "wing", "*one bird", "one thousand birds", "feather"]
+    },
+    {
+      "id": 423,
+      "furigana": ["とおい", "とおく", "えんりょする", "えんそく", "ぼうえんきょう", "えいえんの", "えんぽう"],
+      "kanji": ["遠い", "遠く", "遠慮する", "遠足", "望遠鏡", "永遠の", "遠方"],
+      "imi": ["far", "far place", "be reserved", "one-day excursion", "telescope", "eternal", "distant place"]
+    },
+    {
+      "id": 424,
+      "furigana": ["あつい", "むしあつい", "しょちゅうみまい", "ざんしょ", "ひしょち"],
+      "kanji": ["暑い", "蒸し暑い", "暑中見舞い", "残暑", "避暑地"],
+      "imi": ["hot", "humid", "summertime greeting card", "late summer heat", "summer resort"]
+    },
+    {
+      "id": 425,
+      "furigana": ["さむい", "さむけ", "かんき", "かんたい", "かんぷう"],
+      "kanji": ["寒い", "寒気", "寒気", "寒帯", "寒風"],
+      "imi": ["cold", "chill", "the cold", "frigid zone", "cold wind"]
+    },
+    {
+      "id": 426,
+      "furigana": ["かるい", "てがるな", "きがるに", "けいじどうしゃ", "かろやかに", "けいそつな", "けいべつ"],
+      "kanji": ["軽い", "手軽な", "気軽に", "軽自動車", "軽やかに", "軽率な", "軽蔑"],
+      "imi": ["light", "simple and handy", "light-heartedly", "compact car", "airy", "hasty", "contempt"]
+    },
+    {
+      "id": 427,
+      "furigana": ["ひくい", "さいてい", "ていか", "ていおん", "ていきあつ", "こうてい"],
+      "kanji": ["低い", "最低", "低下", "低温", "低気圧", "高低"],
+      "imi": ["low", "the lowest", "decline", "low temperature", "low air pressure", "high and low"]
+    },
+    {
+      "id": 428,
+      "furigana": ["よわい", "じゃくてん", "よわる", "びょうじゃく", "じゃくにくきょうしょく", "よわき"],
+      "kanji": ["弱い", "弱点", "弱る", "病弱", "弱肉強食", "弱気"],
+      "imi": ["weak", "weakness", "to weaken", "physically weak", "law of the jungle", "weakness"]
+    },
+    {
+      "id": 429,
+      "furigana": ["くらい", "まっくら", "あんきする", "あんさつ", "あんしょうばんごう"],
+      "kanji": ["暗い", "真っ暗", "暗記する", "暗殺", "暗証番号"],
+      "imi": ["dark", "complete darkness", "learn by heart", "assassination", "personal identification number"]
+    },
+    {
+      "id": 430,
+      "furigana": ["ふとい", "ふとる", "たいよう", "たいこ", "こうたいし", "たいへいよう", "まるた"],
+      "kanji": ["太い", "太る", "太陽", "太鼓", "皇太子", "太平洋", "丸太"],
+      "imi": ["thick", "gain weight", "sun", "Japanese drum", "crown prince", "Pacific", "log"]
+    },
+    {
+      "id": 431,
+      "furigana": ["まめ", "とうふ", "コーヒーまめ", "えだまめ", "だいず", "とうにゅう", "なっとう"],
+      "kanji": ["豆", "豆腐", "コーヒー豆", "枝豆", "大豆", "豆乳", "納豆"],
+      "imi": ["bean", "tofu", "coffee bean", "green soybean", "soybean", "soybean milk", "fermented bean"]
+    },
+    {
+      "id": 432,
+      "furigana": ["ひかり", "ひかる", "かんこう", "にっこう", "こうせん", "こうけい", "こうねつひ"],
+      "kanji": ["光", "光る", "観光", "日光", "光線", "光景", "光熱費"],
+      "imi": ["light", "shine", "sightseeing", "sunshine", "ray", "sight", "heating and lighting expenses"]
+    },
+    {
+      "id": 433,
+      "furigana": ["おす", "おしいれ", "おさえる", "おしだす", "おうしゅうする"],
+      "kanji": ["押す", "押し入れ", "押さえる", "押し出す", "押収する"],
+      "imi": ["push", "closet", "hold", "push out", "seize"]
+    },
+    {
+      "id": 434,
+      "furigana": ["ひく", "ひきだし", "ひきだす", "ひっこす", "ひきわけ", "わりびき", "いんよう", "いんりょく"],
+      "kanji": ["引く", "引き出し", "引き出す", "引っ越す", "引き分け", "割り引き", "引用", "引力"],
+      "imi": ["pull", "drawer", "withdraw", "move out", "drawn match", "discount", "citation", "gravity"]
+    },
+    {
+      "id": 435,
+      "furigana": ["ぶし", "はくし", "はかせ", "しゅうし", "べんごし", "しんし", "しょうぼうし", "かいけいし", "ぜいりし"],
+      "kanji": ["武士", "博士", "博士", "修士", "弁護士", "紳士", "消防士", "会計士", "税理士"],
+      "imi": ["warrior", "doctor", "*doctor", "master (degree)", "lawyer", "gentlemen", "firefighter", "accountant", "tax accountant"]
+    },
+    {
+      "id": 436,
+      "furigana": ["ちょうかん", "がいこうかん", "けいかん", "さいばんかん", "かんちょう", "かんりょう", "きかん"],
+      "kanji": ["長官", "外交官", "警官", "裁判官", "官庁", "官僚", "器官"],
+      "imi": ["director general", "diplomat", "police officer", "judge", "government office", "government official", "organ "]
+    },
+    {
+      "id": 437,
+      "furigana": ["むかし", "むかしばなし", "おおむかし", "せきじつ", "むかしむかし", "こんじゃく"],
+      "kanji": ["昔", "昔話", "大昔", "昔日", "昔々", "今昔"],
+      "imi": ["old times", "old tale", "ancient times", "old days", "once upon a time", "changing times"]
+    },
+    {
+      "id": 438,
+      "furigana": ["しみん", "こくみん", "じゅうみん", "みんしゅしゅぎ", "みんぞく", "なんみん", "たみ", "みんかん"],
+      "kanji": ["市民", "国民", "住民", "民主主義", "民族", "難民", "民", "民間"],
+      "imi": ["citizen", "nation", "resident", "democracy", "ethnic group", "refugee", "people", "civilian"]
+    },
+    {
+      "id": 439,
+      "furigana": ["ちゅういする", "ちゅうもんする", "ちゅうしゃ", "ちゅうもく", "はっちゅうする", "ふちゅうい", "そそぐ"],
+      "kanji": ["注意する", "注文する", "注射", "注目", "発注する", "不注意", "注ぐ"],
+      "imi": ["watch out", "order", "injection", "attention", "place an order", "carelessness", "pour"]
+    },
+    {
+      "id": 440,
+      "furigana": ["かお", "えがお", "せんがん", "かおつき", "にがおえ"],
+      "kanji": ["顔", "笑顔", "洗顔", "顔つき", "似顔絵"],
+      "imi": ["face", "smile", "washing one's face", "look on one's face", "portrait"]
+    },
+    {
+      "id": 441,
+      "furigana": ["こえ", "おんせいがく", "こえがわり", "ぎせいご", "せいがく", "せいゆう", "こわいろ"],
+      "kanji": ["声", "音声学", "声変わり", "擬声語", "声楽", "声優", "声色"],
+      "imi": ["voice", "phonetics", "change of one's voice", "onomatopoeia", "vocal music", "voice actor", "tone of voice"]
+    },
+    {
+      "id": 442,
+      "furigana": ["たけ", "たけのこ", "ちくりん"],
+      "kanji": ["竹", "竹の子", "竹林"],
+      "imi": ["bamboo", "bamboo shoot", "bamboo grove"]
+    },
+    {
+      "id": 443,
+      "furigana": ["と", "とだな", "いど", "とじまり", "あみど", "えどじだい", "こせき"],
+      "kanji": ["戸", "戸棚", "井戸", "戸締まり", "網戸", "江戸時代", "戸籍"],
+      "imi": ["door", "cupboard", "well", "locking up", "screen door", "Edo period", "family register"]
+    },
+    {
+      "id": 444,
+      "furigana": ["しょくどう", "こうどう", "どうどうと", "こうかいどう", "こっかいぎじどう"],
+      "kanji": ["食堂", "講堂", "堂々と", "公会堂", "国会議事堂"],
+      "imi": ["cafeteria", "lecture hall", "in a dignified manner", "public hall", "Diet building"]
+    },
+    {
+      "id": 445,
+      "furigana": ["たてる", "たてもの", "たつ", "けんせつ", "けんちく", "にかいだて", "けんこく", "こんりゅう"],
+      "kanji": ["建てる", "建物", "建つ", "建設", "建築", "二階建て", "建国", "建立"],
+      "imi": ["build", "building", "be built", "construction", "architecture", "two-story", "founding a nation", "building (temples etc.)"]
+    },
+    {
+      "id": 446,
+      "furigana": ["まるい", "まる", "まるめる", "だんがん"],
+      "kanji": ["丸い", "丸", "丸める", "弾丸"],
+      "imi": ["round", "circle", "curl", "bullet"]
+    },
+    {
+      "id": 447,
+      "furigana": ["つめたい", "ひえる", "ひやす", "さます", "れいぞうこ", "れいぼう", "れいとうする", "れいせいな"],
+      "kanji": ["冷たい", "冷える", "冷やす", "冷ます", "冷蔵庫", "冷房", "冷凍する", "冷静な"],
+      "imi": ["cold", "become cold", "chill", "cool", "refrigerator", "air conditioner", "freeze", "calm"]
+    },
+    {
+      "id": 448,
+      "furigana": ["あまい", "あまやかす", "あまえる", "かんみりょう"],
+      "kanji": ["甘い", "甘やかす", "甘える", "甘味料"],
+      "imi": ["sweet", "spoil", "behave like a spoiled child", "sweetener"]
+    },
+    {
+      "id": 449,
+      "furigana": ["きたない", "よごれる", "よごす", "おせん", "よごれ", "おしょく", "けがれる"],
+      "kanji": ["汚い", "汚れる", "汚す", "汚染", "汚れ", "汚職", "汚れる"],
+      "imi": ["dirty", "become dirty", "make something dirty", "pollution", "dirt", "corruption", "become dirty"]
+    },
+    {
+      "id": 450,
+      "furigana": ["たまご", "らんおう", "らんぱく", "たまごやき"],
+      "kanji": ["卵", "卵黄", "卵白", "卵焼き"],
+      "imi": ["egg", "yolk", "egg white", "fried egg"]
+    },
+    {
+      "id": 451,
+      "furigana": ["おさら", "はいざら", "かみざら", "おおざら", "こざら", "さらあらい"],
+      "kanji": ["(お)皿", "灰皿", "紙皿", "大皿", "小皿", "皿洗い"],
+      "imi": ["dish", "ashtray", "paper plate", "big plate", "small plate", "dishwashing"]
+    },
+    {
+      "id": 452,
+      "furigana": ["おさけ", "さかや", "にほんしゅ", "いんしゅうんてん", "ようしゅ", "いざかや", "じざけ"],
+      "kanji": ["(お)酒", "酒屋", "日本酒", "飲酒運転", "洋酒", "居酒屋", "地酒"],
+      "imi": ["alcohol", "liquor store", "jap. sake", "drunk driving", "Western liquor", "Japanese-style pub", "locally brewed sake "]
+    },
+    {
+      "id": 453,
+      "furigana": ["しお", "しおからい", "しょくえん", "えんぶん", "しおみず"],
+      "kanji": ["塩", "塩辛い", "食塩", "塩分", "塩水"],
+      "imi": ["salt", "salty", "table salt", "salt content", "salt water"]
+    },
+    {
+      "id": 454,
+      "furigana": ["つきあう", "つける", "つく", "ひづけ", "ひづけ", "うけつけ", "うけつけ", "きふ", "ふろく"],
+      "kanji": ["付き合う", "付ける", "付く", "日付", "日付け", "受付", "受け付け", "寄付", "付録"],
+      "imi": ["date", "attach", "stick", "*date", "date", "*reception", "reception", "donation", "appendix"]
+    },
+    {
+      "id": 455,
+      "furigana": ["かたづける", "かたみち", "かたほう", "かたて", "かたこと", "かたよる", "はへん"],
+      "kanji": ["片付ける", "片道", "片方", "片手", "片言", "片寄る", "破片"],
+      "imi": ["tidy up", "one way", "one of a pair", "one hand", "prattle", "be one-sided", "fragment"]
+    },
+    {
+      "id": 456,
+      "furigana": ["やく", "やける", "ゆうやけ", "ひやけ", "やきとり", "やきにく", "ねんしょう"],
+      "kanji": ["焼く", "焼ける", "夕焼け", "日焼け", "焼き鳥", "焼肉", "燃焼"],
+      "imi": ["burn", "be burned", "sunset", "sun-tanning", "grilled chicken", "grilled meat", "combustion"]
+    },
+    {
+      "id": 457,
+      "furigana": ["かたい", "かたまる", "こたい", "こてい", "がんこな", "こゆうの"],
+      "kanji": ["固い", "固まる", "固体", "固定", "頑固な", "固有の"],
+      "imi": ["hard", "harden", "solid", "fix", "stubborn", "peculiar"]
+    },
+    {
+      "id": 458,
+      "furigana": ["いっこ", "こじん", "こじんしゅぎ", "こてん", "こせい", "こすう", "こしつ"],
+      "kanji": ["一個", "個人", "個人主義", "個展", "個性", "個数", "個室"],
+      "imi": ["one (small thing)", "individual", "individualism", "personal exhibition", "personality", "number of things", "private room"]
+    },
+    {
+      "id": 459,
+      "furigana": ["おこる", "いかり", "どなる"],
+      "kanji": ["怒る", "怒り", "怒鳴る"],
+      "imi": ["be angry", "anger", "shout"]
+    },
+    {
+      "id": 460,
+      "furigana": ["しあわせな", "ふこう", "こううん", "さいわい", "こうふくな", "さち"],
+      "kanji": ["幸せな", "不幸", "幸運", "幸い", "幸福な", "幸"],
+      "imi": ["happy", "misfortune", "good fortune", "fortunately", "happy", "happiness"]
+    },
+    {
+      "id": 461,
+      "furigana": ["はずかしい", "はじ", "はずかしがる", "はじる", "はじしらず", "しゅうちしん"],
+      "kanji": ["恥ずかしい", "恥", "恥ずかしがる", "恥じる", "恥知らず", "羞恥心"],
+      "imi": ["be embarrassed", "shame", "be shy", "be ashamed", "shameless person", "sense of shame"]
+    },
+    {
+      "id": 462,
+      "furigana": ["からい", "しおからい", "こうしんりょう", "しんぼう", "からし", "つらい"],
+      "kanji": ["辛い", "塩辛い", "香辛料", "辛抱", "辛子", "辛い"],
+      "imi": ["spicy", "salty", "spice", "patience", "mustard", "painful/arduous"]
+    },
+    {
+      "id": 463,
+      "furigana": ["ねむい", "ねむたい", "ねむる", "すいみん", "いねむり", "とうみん", "さいみんじゅつ"],
+      "kanji": ["眠い", "眠たい", "眠る", "睡眠", "居眠り", "冬眠", "催眠術"],
+      "imi": ["sleepy", "sleepy", "sleep", "sleeping", "dozing", "hibernation", "hypnotism"]
+    },
+    {
+      "id": 464,
+      "furigana": ["ざんねんな", "きねん", "きねんび", "しんねん", "ねんがん", "むねん", "がいねん", "だんねんする"],
+      "kanji": ["残念な", "記念", "記念日", "信念", "念願", "無念", "概念", "断念する"],
+      "imi": ["regrettable", "remembrance", "memorial day", "belief", "long-cherished wish", "regret/mortification", "concept", "give up"]
+    },
+    {
+      "id": 465,
+      "furigana": ["かんじょう", "くじょう", "じじょう", "ゆうじょう", "ひょうじょう", "じょうほう", "なさけ", "ふぜい"],
+      "kanji": ["感情", "苦情", "事情", "友情", "表情", "情報", "情け", "風情"],
+      "imi": ["emotion", "complaint", "circumstances", "friendship", "facial expression", "information", "mercy", "elegance/taste"]
+    },
+    {
+      "id": 466,
+      "furigana": ["おぼえる", "かんかく", "めがさめる", "じかくする", "みかく", "しかく", "めざましどけい"],
+      "kanji": ["覚える", "感覚", "目が覚める", "自覚する", "味覚", "視覚", "目覚まし時計"],
+      "imi": ["memorize", "sense", "wake", "realize", "sense of taste", "sense of sight", "alarm clock"]
+    },
+    {
+      "id": 467,
+      "furigana": ["せいと", "とほで", "イスラムきょうと", "キリストきょうと"],
+      "kanji": ["生徒", "徒歩で", "イスラム教徒", "キリスト教徒"],
+      "imi": ["pupil", "on foot", "Muslim", "Christian"]
+    },
+    {
+      "id": 468,
+      "furigana": ["ふくしゅう", "かいふく", "おうふく", "ふっきゅう", "ふっこう", "ふっかつ", "はんぷく"],
+      "kanji": ["復習", "回復", "往復", "復旧", "復興", "復活", "反復"],
+      "imi": ["review", "recovery", "lap/both ways", "retrieval", "rebuilding", "revival", "repetition"]
+    },
+    {
+      "id": 469,
+      "furigana": ["みなさん", "みな", "かいきん", "かいもく", "かいむ"],
+      "kanji": ["皆さん", "皆", "皆勤", "皆目", "皆無"],
+      "imi": ["everybody", "all", "full attendance", "not at all", "nothing"]
+    },
+    {
+      "id": 470,
+      "furigana": ["かれ", "かれら", "かのじょ", "かれし", "ひがん"],
+      "kanji": ["彼", "彼ら", "彼女", "彼氏", "彼岸"],
+      "imi": ["he/boyfriend", "they", "she/girlfriend", "boyfriend", "equinoctial week"]
+    },
+    {
+      "id": 471,
+      "furigana": ["にもつ", "にづくり", "おもに", "にゅうか", "しゅっか"],
+      "kanji": ["荷物", "荷造り", "重荷", "入荷", "出荷"],
+      "imi": ["baggage", "packing", "burden", "arrival of goods", "shipping of goods"]
+    },
+    {
+      "id": 472,
+      "furigana": ["とどける", "とどく", "こんいんとどけ", "けっせきとどけ", "とどけでる"],
+      "kanji": ["届ける", "届く", "婚姻届", "欠席届", "届け出る"],
+      "imi": ["deliver", "be delivered", "registration of marriage", "registration of absence", "report"]
+    },
+    {
+      "id": 473,
+      "furigana": ["はらう", "しはらい", "はらいもどす", "はらいこむ", "ふっしょくする"],
+      "kanji": ["払う", "支払い", "払い戻す", "払い込む", "払拭する"],
+      "imi": ["pay", "payment", "refund", "pay in", "sweep away"]
+    },
+    {
+      "id": 474,
+      "furigana": ["せんたくする", "せんたくもの", "せんたくき"],
+      "kanji": ["洗濯する", "洗濯物", "洗濯機"],
+      "imi": ["do laundry", "laundry", "washing machine"]
+    },
+    {
+      "id": 475,
+      "furigana": ["おどる", "おどり", "にほんぶよう", "ぼんおどり"],
+      "kanji": ["踊る", "踊り", "日本舞踊", "盆踊り"],
+      "imi": ["dance", "dance", "Japanese dance", "Bon dance"]
+    },
+    {
+      "id": 476,
+      "furigana": ["おたく", "きたく", "じたく", "じゅうたく", "たくはいびん", "しゃたく"],
+      "kanji": ["お宅", "帰宅", "自宅", "住宅", "宅配便", "社宅"],
+      "imi": ["somebody's house (polite)", "returning home", "one's own house", "house", "home delivery service", "company housing"]
+    },
+    {
+      "id": 477,
+      "furigana": ["まつり", "まつり", "さいじつ", "がくえんさい", "なつまつり", "まつる"],
+      "kanji": ["祭り", "祭", "祭日", "学園祭", "夏祭り", "祭る"],
+      "imi": ["festival (vers. with hir.)", "festival (kanji only)", "national holiday", "school festival", "summer festival", "enshrine"]
+    },
+    {
+      "id": 478,
+      "furigana": ["たたかう", "せんそう", "たたかい", "さくせん", "れいせん", "はんせん", "ちょうせん", "いくさ"],
+      "kanji": ["戦う", "戦争", "戦い", "作戦", "冷戦", "反戦", "挑戦", "戦"],
+      "imi": ["fight", "war", "fight", "strategy", "cold war", "antiwar", "challenge", "war"]
+    },
+    {
+      "id": 479,
+      "furigana": ["あらそう", "きょうそうする", "あらそい", "ろんそう"],
+      "kanji": ["争う", "競争する", "争い", "論争"],
+      "imi": ["fight/quarrel", "compete", "conflict", "controversy"]
+    },
+    {
+      "id": 480,
+      "furigana": ["ほうりつ", "きりつ", "かいりつ", "いちりつに", "じりつしんけい", "りちぎな"],
+      "kanji": ["法律", "規律", "戒律", "一律に", "自律神経", "律儀な"],
+      "imi": ["law", "discipline", "commandment", "uniformly", "autonomic nerve", "conscientious"]
+    },
+    {
+      "id": 481,
+      "furigana": ["しゅぎ", "みんしゅしゅぎ", "しゃかいしゅぎ", "こうぎ", "ぎむ", "ぎり", "せいぎ", "ていぎ"],
+      "kanji": ["主義", "民主主義", "社会主義", "講義", "義務", "義理", "正義", "定義"],
+      "imi": ["principle/-ism", "democracy", "socialism", "lecture", "duty", "obligation", "justice", "definition"]
+    },
+    {
+      "id": 482,
+      "furigana": ["かいぎ", "こっかいぎいん", "ふしぎな", "ぎかい", "ぎろんする", "ぎだい"],
+      "kanji": ["会議", "国会議員", "不思議な", "議会", "議論する", "議題"],
+      "imi": ["conference/meeting", "Member of Congress", "mysterious", "the Diet", "discuss", "topic for discussion"]
+    },
+    {
+      "id": 483,
+      "furigana": ["せいとう", "よとう", "やとう", "とうしゅ"],
+      "kanji": ["政党", "与党", "野党", "党首"],
+      "imi": ["political party", "ruling party", "opposition party", "head of a party"]
+    },
+    {
+      "id": 484,
+      "furigana": ["すずしい", "すずむ", "せいりょういんりょうすい", "ゆうすずみ"],
+      "kanji": ["涼しい", "涼む", "清涼飲料水", "夕涼み"],
+      "imi": ["cool", "keep oneself cool", "soft drink", "cooling oneself in the evening"]
+    },
+    {
+      "id": 485,
+      "furigana": ["あたたかい", "あたためる", "あたたまる", "だんぼう", "おんだんな", "だんとう"],
+      "kanji": ["暖かい", "暖める", "暖まる", "暖房", "温暖な", "暖冬"],
+      "imi": ["warm", "warm", "become warm", "heating", "warm", "mild winter"]
+    },
+    {
+      "id": 486,
+      "furigana": ["しずかな", "しずまる", "れいせいな", "あんせい", "れいようする", "じょうみゃく"],
+      "kanji": ["静かな", "静まる", "冷静な", "安静", "静養する", "静脈"],
+      "imi": ["quiet", "become quiet", "calm", "lie quietly in bed", "rest", "vein"]
+    },
+    {
+      "id": 487,
+      "furigana": ["こむ", "ひとごみ", "もうしこむ", "とびこむ", "ぜいこみ", "わりこむ", "おもいこむ"],
+      "kanji": ["込む", "人込み", "申し込む", "飛び込む", "税込み", "割り込む", "思い込む"],
+      "imi": ["get crowded", "crowd", "apply", "jump in", "including tax", "cut into (a line)", "assume"]
+    },
+    {
+      "id": 488,
+      "furigana": ["つれていく", "れんぞく", "れんらくする", "かんれん", "れんきゅう", "つらなる", "こくさいれんごう", "こくれん"],
+      "kanji": ["連れて行く", "連続", "連絡する", "関連", "連休", "連なる", "国際連合", "国連"],
+      "imi": ["take someone", "continuity", "contact", "relation", "consecutive holidays", "line up", "United Nations", "United Nations"]
+    },
+    {
+      "id": 489,
+      "furigana": ["まど", "まどぐち", "どうそうかい", "まどがわのせき"],
+      "kanji": ["窓", "窓口", "同窓会", "窓側の席"],
+      "imi": ["window", "window/counter in a public office", "class reunion", "window seat"]
+    },
+    {
+      "id": 490,
+      "furigana": ["みぎがわ", "りょうがわ", "むこうがわ", "そくめん", "はんたいがわ", "そとがわ", "うちがわ"],
+      "kanji": ["右側", "両側", "向こう側", "側面", "反対側", "外側", "内側"],
+      "imi": ["right side", "both sides", "other side", "side", "opposite side", "outside/exterior", "inside/interior"]
+    },
+    {
+      "id": 491,
+      "furigana": ["は", "ことば", "はがき", "こうよう", "もみじ", "おちば"],
+      "kanji": ["葉", "言葉", "葉書", "紅葉", "紅葉", "落ち葉"],
+      "imi": ["leaf", "word/language", "postcard", "colored leaves", "maple leaves", "fallen leaves"]
+    },
+    {
+      "id": 492,
+      "furigana": ["けしき", "けいき", "ふけいき", "ふうけい", "やけい", "はいけい", "こうけい", "けいひん"],
+      "kanji": ["景色", "景気", "不景気", "風景", "夜景", "背景", "光景", "景品"],
+      "imi": ["scenery", "business conditions", "recession", "scenery", "night view", "background", "sight", "free gift/prize"]
+    },
+    {
+      "id": 493,
+      "furigana": ["きち", "だいきち", "きちじつ", "ふきつな", "きっぽう", "きっきょう", "よしださん"],
+      "kanji": ["吉", "大吉", "吉日", "不吉な", "吉報", "吉凶", "吉田さん"],
+      "imi": ["good fortune", "very good luck", "lucky day", "unlucky", "welcome news", "good or ill luck", "Mr. Yoshida/Ms. Yoshida"]
+    },
+    {
+      "id": 494,
+      "furigana": ["ともに", "きょうつう", "こうきょう", "きょうかんする", "きょうさんしゅぎ", "きょうがく", "きょうどう"],
+      "kanji": ["共に", "共通", "公共", "共感する", "共産主義", "共学", "共同"],
+      "imi": ["together", "in common", "public", "sympathize", "communism", "coeducation", "partnership"]
+    },
+    {
+      "id": 495,
+      "furigana": ["こども", "そなえる", "きょうきゅうする", "ていきょう", "しきょうひん", "おともする", "くよう"],
+      "kanji": ["子供", "供える", "供給する", "提供", "試供品", "お供する", "供養"],
+      "imi": ["child", "offer something to a spirit", "supply", "offer", "sample", "accompany", "memorial service"]
+    },
+    {
+      "id": 496,
+      "furigana": ["わかい", "わかもの", "わかわかしい", "もしくは", "じゃくはい", "ろうにゃくなんにょ"],
+      "kanji": ["若い", "若者", "若々しい", "若しくは", "じゃくはい", "老若男女"],
+      "imi": ["young", "young people", "youthful", "or", "young and inexperienced person", "men and woman of all ages"]
+    },
+    {
+      "id": 497,
+      "furigana": ["ろうじん", "おいる", "ふける", "ろうか", "ろうがん"],
+      "kanji": ["老人", "老いる", "老ける", "老化", "老眼"],
+      "imi": ["old people", "grow old", "grow old", "aging", "farsightedness due to old age"]
+    },
+    {
+      "id": 498,
+      "furigana": ["いき", "むすこ", "きゅうそく", "いきをする", "しょうそく", "ためいき", "いきぎれ", "いきぬき"],
+      "kanji": ["息", "息子", "休息", "息をする", "消息", "ため息", "息切れ", "息抜き"],
+      "imi": ["breath", "son", "rest", "breathe", "whereabouts/news", "sigh", "out of breath", "relaxation"]
+    },
+    {
+      "id": 499,
+      "furigana": ["むすめ", "ひとりむすめ", "むすめむこ"],
+      "kanji": ["娘", "一人娘", "娘婿"],
+      "imi": ["daughter", "only daughter", "son-in-law"]
+    },
+    {
+      "id": 500,
+      "furigana": ["おく", "おくさん", "おくば", "おくゆかしい", "おくゆき"],
+      "kanji": ["奥", "奥さん", "奥歯", "奥ゆかしい", "奥行き"],
+      "imi": ["inmost/back", "someone's wife", "back tooth", "modest/elegant", "depth of a space"]
+    },
+    {
+      "id": 501,
+      "furigana": ["しょうらい", "しょうぎ", "しょうぐん", "しゅしょう"],
+      "kanji": ["将来", "将棋", "将軍", "主将"],
+      "imi": ["future", "shogi", "shogun", "captain of a team"]
+    },
+    {
+      "id": 502,
+      "furigana": ["そふ", "そぼ", "そせん", "そこく", "せんぞ", "そふぼ", "がんそ", "きょうそ"],
+      "kanji": ["祖父", "祖母", "祖先", "祖国", "先祖", "祖父母", "元祖", "教祖"],
+      "imi": ["grandfather", "grandmother", "ancestor", "motherland", "ancestor", "grandparents", "originator", "founder of a religion"]
+    },
+    {
+      "id": 503,
+      "furigana": ["しょうたいする", "まねく", "まねき", "しょうたいじょう"],
+      "kanji": ["招待する", "招く", "招き", "招待状"],
+      "imi": ["invite", "invite", "invitation", "invitation card"]
+    },
+    {
+      "id": 504,
+      "furigana": ["ごさい", "はたち", "にじゅっさい", "ばんざい", "おせいぼ", "さいげつ", "さいにゅう", "さいしゅつ"],
+      "kanji": ["五歳", "二十歳", "二十歳", "万歳", "お歳暮", "歳月", "歳入", "歳出"],
+      "imi": ["five years old", "20 years old (irregular)", "20 years old (regular)", "banzai", "year-end gift", "years", "revenue", "expenditure"]
+    },
+    {
+      "id": 505,
+      "furigana": ["いっさつ", "しょうさっし", "べっさつ", "たんざく", "さっすう"],
+      "kanji": ["一冊", "小冊子", "別冊", "短冊", "冊数"],
+      "imi": ["one book", "booklet", "separate volume", "strip of fancy paper", "number of books"]
+    },
+    {
+      "id": 506,
+      "furigana": ["いちおく", "じゅうおく", "おくほんちょうじゃ"],
+      "kanji": ["一億", "十億", "億万長者"],
+      "imi": ["one hundred million", "one billion", "billionaire"]
+    },
+    {
+      "id": 507,
+      "furigana": ["かいだん", "いちだん", "いちだんと", "だんかい", "しゅだん", "ねだん", "ふだん"],
+      "kanji": ["階段", "一段", "一段と", "段階", "手段", "値段", "普段"],
+      "imi": ["stairs", "one step", "still more", "stage", "means", "price", "usually"]
+    },
+    {
+      "id": 508,
+      "furigana": ["さんばい", "ばいすう", "ばいりつ", "ばいぞうする", "ひといちばい"],
+      "kanji": ["三倍", "倍数", "倍率", "倍増する", "人一倍"],
+      "imi": ["three times", "multiple number", "magnification", "double", "more than others"]
+    },
+    {
+      "id": 509,
+      "furigana": ["つぎ", "つぎつぎ", "もくじ", "しだいに", "ついで", "じじょ", "じなん", "じかい"],
+      "kanji": ["次", "次々", "目次", "次第に", "次いで", "次女", "次男", "次回"],
+      "imi": ["next", "one after another", "table of contents", "gradually", "secondly", "second daughter", "second son", "next time"]
+    },
+    {
+      "id": 510,
+      "furigana": ["そのた", "そのほか", "たの", "ほかの", "たにん", "たどうし"],
+      "kanji": ["その他", "その他", "他の", "他の", "他人", "他動詞"],
+      "imi": ["others (regular)", "others (irregular)", "another (regular)/other (regular)", "another (irregular)/other (irregular)", "stranger", "transitive verbs"]
+    },
+    {
+      "id": 511,
+      "furigana": ["かつ", "しょうぶ", "かってに", "いっしょう", "ゆうしょうする", "けっしょう", "まさる"],
+      "kanji": ["勝つ", "勝負", "勝手に", "一勝", "優勝する", "決勝", "勝る"],
+      "imi": ["win", "victory or defeat", "arbitrarily", "one win", "win a victory", "final match", "surpass"]
+    },
+    {
+      "id": 512,
+      "furigana": ["まける", "しょうぶ", "かちまけ", "ふたん", "せおう", "ふしょう", "ほうふ", "まかす"],
+      "kanji": ["負ける", "勝負", "勝ち負け", "負担", "背負う", "負傷", "抱負", "負かす"],
+      "imi": ["lose", "victory or defeat", "victory or defeat", "burden", "shoulder", "wound", "aspiration/ambition", "defeat"]
+    },
+    {
+      "id": 513,
+      "furigana": ["さんせいする", "しょうさんする", "さんぴ", "ぜっさん"],
+      "kanji": ["賛成する", "賞賛する", "賛否", "絶賛"],
+      "imi": ["agree", "praise", "approval or disapproval", "great admiration"]
+    },
+    {
+      "id": 514,
+      "furigana": ["せいちょう", "せいじん", "なる", "せいせき", "かんせい", "せいこう", "じょうじゅする"],
+      "kanji": ["成長", "成人", "成る", "成績", "完成", "成功", "成就する"],
+      "imi": ["growth", "adult", "become/consist of", "grade", "completion", "success", "fulfill"]
+    },
+    {
+      "id": 515,
+      "furigana": ["ぜったいに", "ぜつめつ", "たえず", "きぜつする", "ぜつぼう", "たえる"],
+      "kanji": ["絶対に", "絶滅", "絶えず", "気絶する", "絶望", "絶える"],
+      "imi": ["definitely", "extinction", "continually", "faint", "despair", "die out"]
+    },
+    {
+      "id": 516,
+      "furigana": ["じしょ", "やめる", "じてん", "じしょくする", "じたいする", "おせじ", "じひょう"],
+      "kanji": ["辞書", "辞める", "辞典", "辞職する", "辞退する", "お世辞", "辞表"],
+      "imi": ["dictionary", "resign", "dictionary", "resign", "decline", "flattery", "letter of resignation"]
+    },
+    {
+      "id": 517,
+      "furigana": ["なげる", "とうひょうする", "とうしょ", "とうし", "とうしゅ"],
+      "kanji": ["投げる", "投票する", "投書", "投資", "投手"],
+      "imi": ["throw", "vote", "letter from a reader", "investment", "pitcher"]
+    },
+    {
+      "id": 518,
+      "furigana": ["やくそく", "はなたば", "たば", "たばねる", "そくばく"],
+      "kanji": ["約束", "花束", "束", "束ねる", "束縛"],
+      "imi": ["promise", "bouquet", "bundle", "bind", "restraint"]
+    },
+    {
+      "id": 519,
+      "furigana": ["るす", "るすばんでんわ", "まもる", "ほしゅてき", "こもりうた", "おまもり", "しゅえい"],
+      "kanji": ["留守", "留守番電話", "守る", "保守的", "子守歌", "お守り", "守衛"],
+      "imi": ["absence from home", "answering machine", "protect", "conservative", "lullaby", "good-luck charm", "guard"]
+    },
+    {
+      "id": 520,
+      "furigana": ["かこ", "すぎる", "さんじすぎ", "すごす", "かはんすう", "とおりすぎる", "あやまち"],
+      "kanji": ["過去", "過ぎる", "三時過ぎ", "過ごす", "過半数", "通り過ぎる", "過ち"],
+      "imi": ["past", "pass", "a few minutes past three o'clock", "spend (time)", "majority", "pass by", "fault"]
+    },
+    {
+      "id": 521,
+      "furigana": ["ゆめ", "むちゅう", "あくむ", "はつゆめ", "むがむしゅう"],
+      "kanji": ["夢", "夢中", "悪夢", "初夢", "無我夢中"],
+      "imi": ["dream", "absorbed", "bad dream", "the first dream of the year", "forgetting oneself"]
+    },
+    {
+      "id": 522,
+      "furigana": ["はやい", "さっそく", "そくたつ", "かいそくでんしゃ", "こうそくどうろ", "じそく", "すみやかな"],
+      "kanji": ["速い", "早速", "速達", "快速電車", "高速道路", "時速", "速やかな"],
+      "imi": ["fast", "at once", "express mail", "rapid train", "highway", "per hour (speed)", "speedy"]
+    },
+    {
+      "id": 523,
+      "furigana": ["おそい", "おくれる", "ちこくする", "のりおくれる", "おくれ"],
+      "kanji": ["遅い", "遅れる", "遅刻する", "乗り遅れる", "遅れ"],
+      "imi": ["late/slow", "be late", "be late", "miss (transportation)", "delay"]
+    },
+    {
+      "id": 524,
+      "furigana": ["ちゅうしゃする", "ちゅうしゃじょう", "ちゅうにちたいし"],
+      "kanji": ["駐車する", "駐車場", "駐日大使"],
+      "imi": ["park", "parking area", "ambassador to Japan"]
+    },
+    {
+      "id": 525,
+      "furigana": ["ふね", "ふなびん", "ふうせん", "ぞうせん", "きゃくせん", "かもつせん", "せんちょう", "ふなたび"],
+      "kanji": ["船", "船便", "風船", "造船", "客船", "貨物船", "船長", "船旅"],
+      "imi": ["ship", "surface mail", "balloon", "shipbuilding", "passenger ship", "cargo ship", "captain", "voyage"]
+    },
+    {
+      "id": 526,
+      "furigana": ["すわる", "こうざ", "ざせき", "ざぶとん", "ざだんかい", "ざしき"],
+      "kanji": ["座る", "口座", "座席", "座布団", "座談会", "座敷"],
+      "imi": ["sit", "bank account", "seat", "Japanese-style cushion", "round-table talk", "Japanese-style room"]
+    },
+    {
+      "id": 527,
+      "furigana": ["せき", "しゅっせき", "くうせき", "けっせき", "きゃくせき", "ちゃくせきする"],
+      "kanji": ["席", "出席", "空席", "欠席", "客席", "着席する"],
+      "imi": ["seat", "attendance", "empty seat", "absence", "passenger/audience seats", "be seated"]
+    },
+    {
+      "id": 528,
+      "furigana": ["たいりく", "りく", "ちゃくりく", "じょうりく", "りくぐん", "りくじょう"],
+      "kanji": ["大陸", "陸", "着陸", "上陸", "陸軍", "陸上"],
+      "imi": ["continent", "land", "landing", "going ashore", "army", "track and field"]
+    },
+    {
+      "id": 529,
+      "furigana": ["かみ", "かみさま", "じんじゃ", "しんけい", "せいしん", "しんわ", "しんとう", "こうべ"],
+      "kanji": ["神", "神様", "神社", "神経", "精神", "神話", "神道", "神戸"],
+      "imi": ["god", "god", "shrine", "nerve", "mind", "myth", "Shinto", "Kobe"]
+    },
+    {
+      "id": 530,
+      "furigana": ["もうす", "もうしあげる", "もうしこむ", "もうしわけない", "しんせいしょ", "もうしでる"],
+      "kanji": ["申す", "申し上げる", "申し込む", "申し訳ない", "しんせいしょ", "もうしでる"],
+      "imi": ["tell/my name is...", "I humbly tell you", "apply", "I am sorry", "application form", "offer"]
+    },
+    {
+      "id": 531,
+      "furigana": ["ちょうさ", "けんさ", "じゅんさ", "そうさ", "しんさ"],
+      "kanji": ["調査", "検査", "巡査", "捜査", "審査"],
+      "imi": ["investigation", "inspection", "police officer", "police investigation", "screening"]
+    },
+    {
+      "id": 532,
+      "furigana": ["そうだんする", "じょうだん", "かいだん", "ざだんかい", "こんだんかい", "ざつだん", "たいだん"],
+      "kanji": ["相談する", "冗談", "会談", "座談会", "懇談会", "雑談", "対談"],
+      "imi": ["consult", "joke", "talk/conference", "round-table talk", "round-table talk", "chat", "interview"]
+    },
+    {
+      "id": 533,
+      "furigana": ["おう", "こくおう", "おうさま", "じょおう", "おうじょ", "おうじ", "おうこく"],
+      "kanji": ["王", "国王", "王様", "女王", "王女", "王子", "王国"],
+      "imi": ["king", "king of a country", "king", "queen", "princess", "prince", "kingdom"]
+    },
+    {
+      "id": 534,
+      "furigana": ["あんないする", "あん", "あんがい", "とうあんようし", "ていあん", "あんのじょう", "めいあん"],
+      "kanji": ["案内する", "案", "案外", "答案用紙", "提案", "案の定", "名案"],
+      "imi": ["guide", "plan", "unexpectedly", "answer sheet", "proposal", "as expected", "good idea"]
+    },
+    {
+      "id": 535,
+      "furigana": ["やまもとくん", "きみ", "くんしゅ"],
+      "kanji": ["山本君", "君", "君主"],
+      "imi": ["Mr. Yamamoto", "you", "ruler"]
+    },
+    {
+      "id": 536,
+      "furigana": ["ともだち", "わたしたち", "そくたつ", "じょうたつする", "はいたつ", "たつする", "はったつする", "たつじん"],
+      "kanji": ["友達", "私達", "速達", "上達する", "配達", "達する", "発達する", "達人"],
+      "imi": ["friend", "we", "express mail", "improve", "delivery", "reach", "develop", "expert"]
+    },
+    {
+      "id": 537,
+      "furigana": ["ほし", "えいせい", "せいざ", "ほしうらない", "かせい", "わくせい", "ながれぼし", "みょうじょう"],
+      "kanji": ["星", "衛星", "星座", "星占い", "火星", "惑星", "流れ星", "明星"],
+      "imi": ["star", "satellite", "constellation", "horoscope", "Mars", "planet", "shooting star", "Venus"]
+    },
+    {
+      "id": 538,
+      "furigana": ["ゆき", "おおゆき", "ゆきだるま", "しんせつ", "こうせつ", "なだれ", "ふぶき"],
+      "kanji": ["雪", "大雪", "雪だるま", "新雪", "降雪", "雪崩", "吹雪"],
+      "imi": ["snow", "heavy snow", "snowman", "fresh snow", "snowfall", "avalanche", "snowstorm"]
+    },
+    {
+      "id": 539,
+      "furigana": ["なおす", "なおる", "しょうじきな", "みなおす", "ちょくせつ", "ちょくせん", "すなおな", "ただちに"],
+      "kanji": ["直す", "直る", "正直な", "見直す", "直接", "直線", "素直な", "直ちに"],
+      "imi": ["correct/fix", "be fixed", "honest", "take another look", "direct", "straight line", "docile", "immediately"]
+    },
+    {
+      "id": 540,
+      "furigana": ["あぶない", "きけん", "あやうい", "きがい", "きき", "きとく"],
+      "kanji": ["危ない", "危険", "危うい", "危害", "危機", "危篤"],
+      "imi": ["dangerous", "danger", "dangerous", "harm/injury", "crisis", "critical condition"]
+    }
+  ]
+}

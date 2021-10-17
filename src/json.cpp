@@ -1,5 +1,6 @@
 #include<string>
 #include<vector>
+#include<iostream>
 #include<fstream>
 
 
@@ -27,17 +28,29 @@ Strings explode(const std::string &delimiter, const std::string &string)
   return result;
 }
 
-int main()
+int writeFlashcards(const std::string &path)
 {
-  std::string linedata{};
-  std::ifstream kanjiData{"bin/kanjidb.dat"};
-  std::ofstream out{"bin/kanjidb.json"};
+  std::ifstream kanjiData{path+"./kanjidb.dat"};
+  if(!kanjiData)
+  {
+    std::cerr << "Error: " << path+"./kanjidb.dat not found!\n";
+    return EXIT_FAILURE;
+  }
+  
+  std::ofstream out{path+"./examples.json"};
+  if(!out)
+  {
+    std::cerr << "Error: could not write " << path+"./examples.json!\n";
+    return EXIT_FAILURE;
+  }
 
   Strings dataImiVector{}, dataKunVector{}, dataOnVector{};
-  std::string dataSign{};
+  std::string dataSign{}, linedata{};
   unsigned int ID{}, HID{};
 
-  out << "{\n  \"flashcard\": [\n";
+  out << "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"title\": \"QtKanji Database\",\n  \"description\": \"contains flashcards\",\n  \"type\": \"object\",\n";
+
+  out << "  \"flashcard\": [\n";
   
   while(!kanjiData.eof())
   {
@@ -51,8 +64,8 @@ int main()
       ID = std::stoi(linedata);
 
       std::getline(kanjiData, linedata, '\n');
-      if(linedata == "") HID = 0;
-      else               HID = std::stoi(std::move(linedata));
+      if(linedata.empty()) HID = 0;
+      else                 HID = std::stoi(std::move(linedata));
       
       std::getline(kanjiData, linedata, '\n');
       dataSign = std::move(linedata);
@@ -68,9 +81,9 @@ int main()
       if(linedata.empty()) dataOnVector.push_back("");
       else                 dataOnVector = explode(", ", std::move(linedata));
       
-    std::getline(kanjiData, linedata, '\n');
-    std::getline(kanjiData, linedata, '\n');
-    std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
+      std::getline(kanjiData, linedata, '\n');
 
     out << "      \"id\": "  << ID  << ",\n";
     out << "      \"hid\": " << HID << ",\n";
@@ -100,8 +113,121 @@ int main()
     out << std::move(help);
     out << "]\n";
 
-    out << "    },\n";
+    if(ID == 540) out << "    }\n  ]";
+    else          out << "    },\n";
+  }
+
+  out << "\n}";
+  
+  return EXIT_SUCCESS;
+}
+
+int writeExamples(const std::string &path)
+{
+  std::ifstream examplesData{path+"./examples.dat"};
+  if(!examplesData)
+  {
+    std::cerr << "Error: " << path+"./examples.dat not found!\n";
+    return EXIT_FAILURE;
+  }
+  std::ofstream out{path+"./examples.json"};
+  if(!out)
+  {
+    std::cerr << "Error: could not write " << path+"./examples.json!\n";
+    return EXIT_FAILURE;
+  }
+
+  Strings dataFuriganaVector{}, dataKanjiVector{}, dataImiVector{};
+  std::string linedata{};
+  unsigned int ID{};
+
+  out << "{\n  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\n  \"title\": \"QtKanji Database\",\n  \"description\": \"contains examples\",\n \"type\": \"object\",";
+  out << "  \"examples\": [\n";
+
+  while(!examplesData.eof())
+  {
+    dataFuriganaVector.clear();
+    dataKanjiVector.clear();
+    dataImiVector.clear();
+    
+    out << "    {\n";
+
+      std::getline(examplesData, linedata);
+      ID = std::stoi(linedata);
+
+      std::getline(examplesData, linedata, '\n');
+      dataFuriganaVector = explode(", ", std::move(linedata));
+ 
+      std::getline(examplesData, linedata, '\n');
+      dataKanjiVector   = explode(", ", std::move(linedata));
+ 
+      std::getline(examplesData, linedata, '\n');
+      dataImiVector     = explode(", ", std::move(linedata));
+ 
+      std::getline(examplesData, linedata, '\n');
+      std::getline(examplesData, linedata, '\n');
+      std::getline(examplesData, linedata, '\n');
+
+      if(dataFuriganaVector.size() != dataKanjiVector.size() || dataKanjiVector.size() != dataImiVector.size())
+      {
+	std::cerr << "Error at example " << ID << "\n";
+	return EXIT_FAILURE;
+      }
+      
+    out << "      \"id\": "  << ID  << ",\n";
+ 
+    std::string help{};
+    out << "      \"furigana\": [";
+    for(const auto &o : dataFuriganaVector)
+      help += "\"" + o + "\", ";
+    help.erase(help.end()-2,help.end());
+    out << std::move(help);
+    out << "],\n";
+
+    help.clear();
+    out << "      \"kanji\": [";
+    for(const auto &o : dataKanjiVector)
+      help += "\"" + o + "\", ";
+    help.erase(help.end()-2,help.end());
+    out << std::move(help);
+    out << "],\n";
+
+    help.clear();
+    out << "      \"imi\": [";
+    for(const auto &o : dataImiVector )
+      help += "\"" + o + "\", ";
+    help.erase(help.end()-2,help.end());
+    out << std::move(help);
+    out << "]\n";
+
+    if(ID == 540) out << "    }\n  ]";
+    else          out << "    },\n";
   }
   
-  out << "  ]\n}";
+  out << "\n}";
+
+  return EXIT_SUCCESS;
+}
+
+int convertAsciiToJson(const std::string &path)
+{
+  int err = writeFlashcards(path);
+  if(err != EXIT_SUCCESS) return err;
+  
+  return writeExamples(path);
+}
+
+
+int main(int argc, char** argv)
+{
+  std::string linedata{};
+  std::string path{""};
+  if(argc == 2) path = argv[1];
+  if(argc > 2)
+  {
+    std::cerr << "Usage: " << argv[0] << " <folder>" << "\n";
+    return EXIT_FAILURE;
+  }
+
+  return convertAsciiToJson(path);
 }

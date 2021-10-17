@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "QtKanji Database",
-  "description": "All kanji, examples and Hadamitzky data",
+  "description": "contains flashcards",
   "type": "object",
   "flashcard": [
     {
