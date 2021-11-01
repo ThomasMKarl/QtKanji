@@ -9,40 +9,42 @@
 #include "hadamitzkywindow.h"
 #include "table.h"
 
+namespace QtKanji
+{
 
-
-namespace QtKanji {
-  
 class MainWindow : public QWidget
 {
   Q_OBJECT
 
- public:
-  static MainWindow createMainWindow(QWidget *parent = 0) {return MainWindow{parent};}
+public:
+  static MainWindow createMainWindow(QWidget *parent = 0)
+  {
+    return MainWindow{parent};
+  }
 
   HadamitzkyWindow hadamitzkyWindow{};
   SharedBoxes boxes{};
   SharedTable table{};
 
-  MainWindow(const MainWindow&) = delete;
-  MainWindow& operator=(const MainWindow&) = delete;
-  MainWindow(MainWindow&&) = delete;
-  MainWindow& operator=(MainWindow&&) = delete;
+  MainWindow(const MainWindow &) = delete;
+  MainWindow &operator=(const MainWindow &) = delete;
+  MainWindow(MainWindow &&) = delete;
+  MainWindow &operator=(MainWindow &&) = delete;
   ~MainWindow();
 
- private slots:
-  void         signButtonClicked();
-  void      cardboxButtonClicked();
-  void      exampleButtonClicked();
-  void       engjapButtonClicked();
-  void       japengButtonClicked();
+private slots:
+  void signButtonClicked();
+  void cardboxButtonClicked();
+  void exampleButtonClicked();
+  void engjapButtonClicked();
+  void japengButtonClicked();
   void printExampleButtonClicked();
-  void    printSignButtonClicked();
-  void       searchButtonClicked();
-  void                boxChecked();
-  void          randomizeChecked();
+  void printSignButtonClicked();
+  void searchButtonClicked();
+  void boxChecked();
+  void randomizeChecked();
 
- private:
+private:
   explicit MainWindow(QWidget *parent = 0);
 
   void addButtonsToLayout();
@@ -58,28 +60,16 @@ class MainWindow : public QWidget
   bool fromEngToJap{true};
 
   QLineEdit displayLowerLimit{}, displayUpperLimit{}, search{};
-  QLabel
-    lowerLimit{"from:"},
-    upperLimit{"to:"},
-    dataFail{"file error!"},
-    cardboxFail{"no cards in box."},
-    searchFail{"no such kanji in DB"},
-    cardboxLimitFail{"no cards within limits"};
-  QPushButton
-    signButton{"train kanji"},
-    cardboxButton{"cardbox"},
-    exampleButton{"train words"},
-    engjapButton{"ふりがな - 漢字"},
-    japengButton{"漢字 - ふりがな"},
-    printExampleButton{"print examples"},
-    printSignButton{"print kanji sorted"},
-    searchButton{"search"};
+  QLabel lowerLimit{"from:"}, upperLimit{"to:"}, dataFail{"file error!"}, cardboxFail{"no cards in box."},
+      searchFail{"no such kanji in DB"}, cardboxLimitFail{"no cards within limits"};
+  QPushButton signButton{"train kanji"}, cardboxButton{"cardbox"}, exampleButton{"train words"},
+      engjapButton{"ふりがな - 漢字"}, japengButton{"漢字 - ふりがな"}, printExampleButton{"print examples"},
+      printSignButton{"print kanji sorted"}, searchButton{"search"};
   QCheckBox randomizeBox{"randomize"};
   QGridLayout layout{};
   QFont textfont{};
 };
 
-};
+}; // namespace QtKanji
 
 #endif
-

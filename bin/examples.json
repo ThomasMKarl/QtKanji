@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "QtKanji Database",
   "description": "contains examples",
- "type": "object",  "examples": [
+  "type": "object",  "examples": [
     {
       "id": 1,
       "furigana": ["ひと", "アメリカじん", "オーストラリアじん"],

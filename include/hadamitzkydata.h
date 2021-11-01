@@ -1,17 +1,20 @@
 #ifndef GRAPHEME_H
 #define GRAPHEME_H
 
-
-
-namespace QtKanji {
+namespace QtKanji
+{
 
 class HadamitzkyData
 {
- public:
+public:
   static HadamitzkyData createHadamitzkyData(unsigned int ID_)
-    {return HadamitzkyData{ID_};};
+  {
+    return HadamitzkyData{ID_};
+  };
   static HadamitzkyData createEmptyHadamitzkyData()
-    {return HadamitzkyData{0};};
+  {
+    return HadamitzkyData{0};
+  };
 
   bool firstGraphemeEqualsRadical{false};
   unsigned int ID{};
@@ -24,50 +27,50 @@ class HadamitzkyData
   std::vector<QString> getGraphemes()
   {
     std::vector<QString> graphemes{};
-    for(unsigned short int index : graphemeIndices)
-      graphemes.push_back(graphemeList[index-1]);
+    for (unsigned short int index : graphemeIndices)
+      graphemes.push_back(graphemeList[index - 1]);
 
     return graphemes;
   }
 
- private:
+private:
   explicit HadamitzkyData(unsigned int ID_)
   {
-    if(ID_ > 0 && ID_ <= NUMBER_OF_HADAMITZKY_KANJI && !hadamitzkyStrings[ID_-1].empty()) 
+    if (ID_ > 0 && ID_ <= NUMBER_OF_HADAMITZKY_KANJI && !hadamitzkyStrings[ID_ - 1].empty())
     {
       ID = ID_;
 
-      std::vector<std::string> input =
-        explode("+",hadamitzkyStrings[ID_-1]);
-    
+      std::vector<std::string> input = explode("+", hadamitzkyStrings[ID_ - 1]);
+
       radicalString = std::move(input[0]);
 
-      if(std::isdigit(radicalString[1]))
+      if (std::isdigit(radicalString[1]))
       {
-        radicalStrokeNumber = std::stoi(radicalString.substr(0,2));
-        if(std::isdigit(radicalString[4]))
-          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(3,2));
+        radicalStrokeNumber = std::stoi(radicalString.substr(0, 2));
+        if (std::isdigit(radicalString[4]))
+          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(3, 2));
         else
-          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(3,1));
+          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(3, 1));
       }
       else
       {
-        radicalStrokeNumber = std::stoi(radicalString.substr(0,1));
-        if(std::isdigit(radicalString[3])) 
-          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(2,2));
+        radicalStrokeNumber = std::stoi(radicalString.substr(0, 1));
+        if (std::isdigit(radicalString[3]))
+          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(2, 2));
         else
-          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(2,1));
+          strokeNumber = radicalStrokeNumber + std::stoi(radicalString.substr(2, 1));
       }
 
       boxId = std::stoi(std::move(input[1]));
 
-      graphemeIndices = convertStringsToIntegers( explode(",",input[2]) );
+      graphemeIndices = convertStringsToIntegers(explode(",", input[2]));
 
-      if(std::move(input[3]) == "e") firstGraphemeEqualsRadical = true;
+      if (std::move(input[3]) == "e")
+        firstGraphemeEqualsRadical = true;
     }
   }
-};  
-  
 };
+
+}; // namespace QtKanji
 
 #endif

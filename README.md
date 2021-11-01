@@ -2,7 +2,7 @@
 
 A kanji training tool based on Qt for Linux and Windows, now conatining 540 of the most important signs
 
-##Dependencies
+## Dependencies
 
 pre-built binaries are available at releases
 
@@ -14,7 +14,7 @@ pre-built binaries are available at releases
 
 - (optional) xelatex for LaTeX tables
 
-##Compile
+## Compile
 
 - install Gnu Make with a C++17 compliant compiler
 
@@ -46,16 +46,14 @@ the last one needs <i>sed</i> in the path variable
 
 - if needed, copy the qtkanji binary to bin/
 
-##Useage
+## Useage
 
 - execute <i>qtkanji</i> in folder <i>bin</i>
 
 Database files <i>*.dat</i> / <i>*.json</i> must reside in the same folder in which the <i>qtkanji</i> binary is executed.
 
-##Under construction
+## Under construction
 
 - print function for flashcards
-
-- examples for more than 317-460
 
 - cardbox function for examples

@@ -1,5 +1,7 @@
 DOXYGEN=doxygen
 TEX=xelatex
+CXX=g++
+FLAGS=-O3 -Wall -Wextra -g
 MAKE=make
 QMAKE=qmake
 #MAKE=E:\Programme\MinGW\bin\make.exe
@@ -9,6 +11,7 @@ QMAKE=qmake
 all:
 	$(MAKE) build
 	$(MAKE) doc
+	$(MAKE) json
 
 .PHONY : doc
 ## doc       : generates html documentation
@@ -27,6 +30,14 @@ build:
 	$(QMAKE) -o Makefile_qt
 	$(MAKE)  -f Makefile_qt
 
+## json      : compiles json converter
+json:
+	$(CXX) $(FLAGS) src/json.cpp -o bin/json_converter
+
+## json      : converts ascii files to json
+convert_json: json
+	bin/json_converter bin
+
 ## clean     : removes object, moc and tex meta files
 clean:
 	$(MAKE)  -f Makefile_qt clean
@@ -43,3 +54,4 @@ realclean:
 ## help      : prints help
 help : Makefile
 	@sed -n 's/^##//p' $<
+# DO NOT DELETE

@@ -33,4 +33,4 @@ SOURCES += \
     src/main.cpp
     
 QMAKE_CXXFLAGS -= -O2
-QMAKE_CXXFLAGS += -std=c++17 -O3 -Wall -Wextra -lgomp -I include -I E:\Programme\rapidjson\include
+QMAKE_CXXFLAGS += -std=c++17 -O3 -Wall -Wextra -lgomp -g -I include -I E:\Programme\rapidjson\include

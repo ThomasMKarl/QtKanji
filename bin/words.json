@@ -1,0 +1,4572 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "QtKanji Vocabulary",
+  "description": "contains vocabulary from Minna no Nihingo lections 1-50, 51 may be extended",
+ "type": "object",  "vocabulary": [
+  {
+    "lection": 1,
+    "words": [
+    {
+      "furigana": ["わたし"],
+      "kanji": ["私"],
+      "imi": ["I", "me"]
+    },
+    {
+      "furigana": ["あなた"],
+      "kanji": [""],
+      "imi": ["you"]
+    },
+    {
+      "furigana": ["あのひと"],
+      "kanji": ["あの人"],
+      "imi": ["he", "she", "that person"]
+    },
+    {
+      "furigana": ["あのかた"],
+      "kanji": ["あの方"],
+      "imi": ["he", "she", "that person (polite)"]
+    },
+    {
+      "furigana": ["-さん"],
+      "kanji": [""],
+      "imi": ["[suffix] Mr.", "Ms.", "Mrs."]
+    },
+    {
+      "furigana": ["-ちゃん"],
+      "kanji": [""],
+      "imi": ["[suffix] [instead of -さん for children]"]
+    },
+    {
+      "furigana": ["-じん"],
+      "kanji": ["-人"],
+      "imi": ["[suffix] [for nationality]"]
+    },
+    {
+      "furigana": ["せんせい"],
+      "kanji": ["先生"],
+      "imi": ["teacher", "instructor (not self)"]
+    },
+    {
+      "furigana": ["きょうし"],
+      "kanji": ["教師"],
+      "imi": ["teacher", "instructer (self)"]
+    },
+    {
+      "furigana": ["がくせい"],
+      "kanji": ["学生"],
+      "imi": ["student"]
+    },
+    {
+      "furigana": ["かいしゃいん"],
+      "kanji": ["会社員"],
+      "imi": ["employee"]
+    },
+    {
+      "furigana": ["しゃいん"],
+      "kanji": ["社員"],
+      "imi": ["employee of a company"]
+    },
+    {
+      "furigana": ["ぎんこういん"],
+      "kanji": ["銀行員"],
+      "imi": ["bank employee"]
+    },
+    {
+      "furigana": ["いしゃ"],
+      "kanji": ["医者"],
+      "imi": ["doctor (medicine)"]
+    },
+    {
+      "furigana": ["けんきゅうしゃ"],
+      "kanji": ["研究者"],
+      "imi": ["researcher"]
+    },
+    {
+      "furigana": ["だいがく"],
+      "kanji": ["大学"],
+      "imi": ["university"]
+    },
+    {
+      "furigana": ["びょういん"],
+      "kanji": ["病院"],
+      "imi": ["hospital"]
+    },
+    {
+      "furigana": ["だれ"],
+      "kanji": [""],
+      "imi": ["who"]
+    },
+    {
+      "furigana": ["どなた"],
+      "kanji": [""],
+      "imi": ["who (polite)"]
+    },
+    {
+      "furigana": ["-さい"],
+      "kanji": ["-歳"],
+      "imi": ["-years old"]
+    },
+    {
+      "furigana": ["なんさい"],
+      "kanji": ["何歳"],
+      "imi": ["how old"]
+    },
+    {
+      "furigana": ["おいくつ"],
+      "kanji": [""],
+      "imi": ["how old (polite)"]
+    },
+    {
+      "furigana": ["はい"],
+      "kanji": [""],
+      "imi": ["yes"]
+    },
+    {
+      "furigana": ["いいえ"],
+      "kanji": [""],
+      "imi": ["no"]
+    }    
+]  
+},
+  {
+    "lection": 2,
+    "words": [
+    {
+      "furigana": ["これ"],
+      "kanji": [""],
+      "imi": ["this", "these (things speaker)"]
+    },
+    {
+      "furigana": ["それ"],
+      "kanji": [""],
+      "imi": ["this", "these (things partner)"]
+    },
+    {
+      "furigana": ["あれ"],
+      "kanji": [""],
+      "imi": ["that", "those (things away)"]
+    },
+    {
+      "furigana": ["この-"],
+      "kanji": [""],
+      "imi": ["this", "these (here)"]
+    },
+    {
+      "furigana": ["その-"],
+      "kanji": [""],
+      "imi": ["this", "these (there)"]
+    },
+    {
+      "furigana": ["あの-"],
+      "kanji": [""],
+      "imi": ["that", "those (over there)"]
+    },
+    {
+      "furigana": ["ほん"],
+      "kanji": ["本"],
+      "imi": ["book"]
+    },
+    {
+      "furigana": ["じしょ"],
+      "kanji": ["辞書"],
+      "imi": ["dictionary"]
+    },
+    {
+      "furigana": ["ざっし"],
+      "kanji": ["雑誌"],
+      "imi": ["magazine"]
+    },
+    {
+      "furigana": ["しんぶん"],
+      "kanji": ["新聞"],
+      "imi": ["newspaper"]
+    },
+    {
+      "furigana": ["ノート"],
+      "kanji": [""],
+      "imi": ["note"]
+    },
+    {
+      "furigana": ["てちょう"],
+      "kanji": ["手帳"],
+      "imi": ["notebook"]
+    },
+    {
+      "furigana": ["めいし"],
+      "kanji": ["名刺"],
+      "imi": ["business card"]
+    },
+    {
+      "furigana": ["カード"],
+      "kanji": [""],
+      "imi": ["card"]
+    },
+    {
+      "furigana": ["えんぴつ"],
+      "kanji": ["鉛筆"],
+      "imi": ["pencil"]
+    },
+    {
+      "furigana": ["ボールぺん"],
+      "kanji": [""],
+      "imi": ["pen"]
+    },
+    {
+      "furigana": ["シャープペンシル"],
+      "kanji": [""],
+      "imi": ["mechanical pencil"]
+    },
+    {
+      "furigana": ["かぎ"],
+      "kanji": [""],
+      "imi": ["key"]
+    },
+    {
+      "furigana": ["とけい"],
+      "kanji": ["時計"],
+      "imi": ["clock"]
+    },
+    {
+      "furigana": ["かさ"],
+      "kanji": ["傘"],
+      "imi": ["umbrella"]
+    },
+    {
+      "furigana": ["かばん"],
+      "kanji": [""],
+      "imi": ["bag"]
+    },
+    {
+      "furigana": ["テレル"],
+      "kanji": [""],
+      "imi": ["TV"]
+    },
+    {
+      "furigana": ["ラジオ"],
+      "kanji": [""],
+      "imi": ["radio"]
+    },
+    {
+      "furigana": ["カメラ"],
+      "kanji": [""],
+      "imi": ["camera"]
+    },
+    {
+      "furigana": ["コンピューター"],
+      "kanji": [""],
+      "imi": ["computer"]
+    },
+    {
+      "furigana": ["くるま"],
+      "kanji": ["車"],
+      "imi": ["car"]
+    },
+    {
+      "furigana": ["つくえ"],
+      "kanji": ["机"],
+      "imi": ["desk"]
+    },
+    {
+      "furigana": ["いす"],
+      "kanji": [""],
+      "imi": ["chair"]
+    },
+    {
+      "furigana": ["チョコレート"],
+      "kanji": [""],
+      "imi": ["chocolate"]
+    },
+    {
+      "furigana": ["コーヒー"],
+      "kanji": [""],
+      "imi": ["coffee"]
+    },
+    {
+      "furigana": ["おみやげ"],
+      "kanji": ["お土産"],
+      "imi": ["souvenir"]
+    },
+    {
+      "furigana": ["えいご"],
+      "kanji": ["英語"],
+      "imi": ["English"]
+    },
+    {
+      "furigana": ["にほんご"],
+      "kanji": ["日本語"],
+      "imi": ["Japanese"]
+    },
+    {
+      "furigana": ["-ご"],
+      "kanji": ["-語"],
+      "imi": ["[suffix] language"]
+    },
+    {
+      "furigana": ["なん"],
+      "kanji": ["何"],
+      "imi": ["what"]
+    },
+    {
+      "furigana": ["そう"],
+      "kanji": [""],
+      "imi": ["so"]
+    }    
+]  
+},
+  {
+    "lection": 3,
+    "words": [
+    {
+      "furigana": ["ここ"],
+      "kanji": [""],
+      "imi": ["here (around speaker)"]
+    },
+    {
+      "furigana": ["そこ"],
+      "kanji": [""],
+      "imi": ["there (around partner)"]
+    },
+    {
+      "furigana": ["あそこ"],
+      "kanji": [""],
+      "imi": ["there (away)"]
+    },
+    {
+      "furigana": ["どこ"],
+      "kanji": [""],
+      "imi": ["where", "where to"]
+    },
+    {
+      "furigana": ["こちら"],
+      "kanji": [""],
+      "imi": ["here (around speaker,polite)"]
+    },
+    {
+      "furigana": ["そちら"],
+      "kanji": [""],
+      "imi": ["there (around partner", "polite)"]
+    },
+    {
+      "furigana": ["あちら"],
+      "kanji": [""],
+      "imi": ["there (away", "polite)"]
+    },
+    {
+      "furigana": ["どちら"],
+      "kanji": [""],
+      "imi": ["where", "where to (polite)"]
+    },
+    {
+      "furigana": ["きょうしつ"],
+      "kanji": ["教室"],
+      "imi": ["classroom"]
+    },
+    {
+      "furigana": ["しょくどう"],
+      "kanji": ["食堂"],
+      "imi": ["dining room", "canteen"]
+    },
+    {
+      "furigana": ["じむしょ"],
+      "kanji": ["事務所"],
+      "imi": ["office"]
+    },
+    {
+      "furigana": ["かいぎしつ"],
+      "kanji": ["会議室"],
+      "imi": ["conference room"]
+    },
+    {
+      "furigana": ["うけつけ"],
+      "kanji": ["受付"],
+      "imi": ["reception"]
+    },
+    {
+      "furigana": ["ロビー"],
+      "kanji": [""],
+      "imi": ["lobby"]
+    },
+    {
+      "furigana": ["へや"],
+      "kanji": ["部屋"],
+      "imi": ["room"]
+    },
+    {
+      "furigana": ["トイレ"],
+      "kanji": [""],
+      "imi": ["toilet"]
+    },
+    {
+      "furigana": ["おてあらい"],
+      "kanji": ["お手洗い"],
+      "imi": ["WC"]
+    },
+    {
+      "furigana": ["かいだん"],
+      "kanji": ["階段"],
+      "imi": ["stairs"]
+    },
+    {
+      "furigana": ["エレベーター"],
+      "kanji": [""],
+      "imi": ["elevator"]
+    },
+    {
+      "furigana": ["エスカレーター"],
+      "kanji": [""],
+      "imi": ["escalator"]
+    },
+    {
+      "furigana": ["じどうはんばいき"],
+      "kanji": ["自動販売機"],
+      "imi": ["vending machine"]
+    },
+    {
+      "furigana": ["でんわ"],
+      "kanji": ["電話"],
+      "imi": ["phone", "phone call"]
+    },
+    {
+      "furigana": ["おくに"],
+      "kanji": ["お国"],
+      "imi": ["[your] nation"]
+    },
+    {
+      "furigana": ["かいしゃ"],
+      "kanji": ["会社"],
+      "imi": ["company"]
+    },
+    {
+      "furigana": ["うち"],
+      "kanji": [""],
+      "imi": ["house"]
+    },
+    {
+      "furigana": ["くつ"],
+      "kanji": ["靴"],
+      "imi": ["shoes"]
+    },
+    {
+      "furigana": ["ネクタイ"],
+      "kanji": [""],
+      "imi": ["necktie"]
+    },
+    {
+      "furigana": ["ワイン"],
+      "kanji": [""],
+      "imi": ["wine"]
+    },
+    {
+      "furigana": ["うりば"],
+      "kanji": ["売り場"],
+      "imi": ["department (store)"]
+    },
+    {
+      "furigana": ["ちか"],
+      "kanji": ["地下"],
+      "imi": ["basement"]
+    },
+    {
+      "furigana": ["-かい　(-がい)"],
+      "kanji": ["-階"],
+      "imi": ["[suffix] floor"]
+    },
+    {
+      "furigana": ["なんがい"],
+      "kanji": ["何階"],
+      "imi": ["what floor"]
+    },
+    {
+      "furigana": ["-えん"],
+      "kanji": ["-円"],
+      "imi": ["-yen"]
+    },
+    {
+      "furigana": ["いくら"],
+      "kanji": [""],
+      "imi": ["how much (money)"]
+    },
+    {
+      "furigana": ["ひゃく"],
+      "kanji": ["百"],
+      "imi": ["hundred"]
+    },
+    {
+      "furigana": ["せん"],
+      "kanji": ["千"],
+      "imi": ["thousand"]
+    },
+    {
+      "furigana": ["まん"],
+      "kanji": ["万"],
+      "imi": ["ten thousand"]
+    }    
+]  
+},
+  {
+    "lection": 4,
+    "words": [
+    {
+      "furigana": ["おきます"],
+      "kanji": ["起きます"],
+      "imi": ["to get up"]
+    },
+    {
+      "furigana": ["ねます"],
+      "kanji": ["寝ます"],
+      "imi": ["to sleep", "to go to bed"]
+    },
+    {
+      "furigana": ["はたらきます"],
+      "kanji": ["働きます"],
+      "imi": ["to work"]
+    },
+    {
+      "furigana": ["やすみます"],
+      "kanji": ["休みます"],
+      "imi": ["to make break", "to go on vacation", "to take time off", "to relax"]
+    },
+    {
+      "furigana": ["べんきょうします"],
+      "kanji": ["勉強します"],
+      "imi": ["to study", "to learn"]
+    },
+    {
+      "furigana": ["おわります"],
+      "kanji": ["終わります"],
+      "imi": ["to end"]
+    },
+    {
+      "furigana": ["デパート"],
+      "kanji": [""],
+      "imi": ["department store"]
+    },
+    {
+      "furigana": ["ぎんこう"],
+      "kanji": ["銀行"],
+      "imi": ["bank"]
+    },
+    {
+      "furigana": ["ゆうびんきょく"],
+      "kanji": ["郵便局"],
+      "imi": ["post office"]
+    },
+    {
+      "furigana": ["としょかん"],
+      "kanji": ["図書館"],
+      "imi": ["library"]
+    },
+    {
+      "furigana": ["びじゅつかん"],
+      "kanji": ["美術館"],
+      "imi": ["museum of art"]
+    },
+    {
+      "furigana": ["いま"],
+      "kanji": ["今"],
+      "imi": ["now"]
+    },
+    {
+      "furigana": ["-じ"],
+      "kanji": ["-時"],
+      "imi": ["-o'clock"]
+    },
+    {
+      "furigana": ["-ふん　(-ぷん)　"],
+      "kanji": ["-分"],
+      "imi": ["-minute(s)"]
+    },
+    {
+      "furigana": ["はん"],
+      "kanji": ["半"],
+      "imi": ["half"]
+    },
+    {
+      "furigana": ["なんじ"],
+      "kanji": ["何時"],
+      "imi": ["what time"]
+    },
+    {
+      "furigana": ["なんぷん"],
+      "kanji": ["何分"],
+      "imi": ["what minute"]
+    },
+    {
+      "furigana": ["ごぜん"],
+      "kanji": ["午前"],
+      "imi": ["in the late morning", "in the morning"]
+    },
+    {
+      "furigana": ["ごご"],
+      "kanji": ["午後"],
+      "imi": ["at noon"]
+    },
+    {
+      "furigana": ["あさ"],
+      "kanji": ["朝"],
+      "imi": ["morning"]
+    },
+    {
+      "furigana": ["ひる"],
+      "kanji": ["昼"],
+      "imi": ["noon"]
+    },
+    {
+      "furigana": ["ばん"],
+      "kanji": ["晩"],
+      "imi": ["evening"]
+    },
+    {
+      "furigana": ["よる"],
+      "kanji": ["夜"],
+      "imi": ["night"]
+    },
+    {
+      "furigana": ["おととい"],
+      "kanji": [""],
+      "imi": ["the day before yesterday"]
+    },
+    {
+      "furigana": ["きのう"],
+      "kanji": [""],
+      "imi": ["yesterday"]
+    },
+    {
+      "furigana": ["きょう"],
+      "kanji": [""],
+      "imi": ["today"]
+    },
+    {
+      "furigana": ["あした"],
+      "kanji": [""],
+      "imi": ["tomorrow"]
+    },
+    {
+      "furigana": ["あさって"],
+      "kanji": [""],
+      "imi": ["the day after tomorrow"]
+    },
+    {
+      "furigana": ["けさ"],
+      "kanji": [""],
+      "imi": ["this morning"]
+    },
+    {
+      "furigana": ["こんばん"],
+      "kanji": ["今晩"],
+      "imi": ["this evening"]
+    },
+    {
+      "furigana": ["やすみ"],
+      "kanji": ["休み"],
+      "imi": ["break", "day off", "holiday", "rest day"]
+    },
+    {
+      "furigana": ["ひるやすみ"],
+      "kanji": ["昼休み"],
+      "imi": ["lunch break"]
+    },
+    {
+      "furigana": ["しけん"],
+      "kanji": ["試験"],
+      "imi": ["exam"]
+    },
+    {
+      "furigana": ["かいぎ"],
+      "kanji": ["会議"],
+      "imi": ["conference"]
+    },
+    {
+      "furigana": ["かいぎをします"],
+      "kanji": ["会議をします"],
+      "imi": ["to have a conference"]
+    },
+    {
+      "furigana": ["えいが"],
+      "kanji": ["映画"],
+      "imi": ["movie"]
+    },
+    {
+      "furigana": ["まいあさ"],
+      "kanji": ["毎朝"],
+      "imi": ["every morning"]
+    },
+    {
+      "furigana": ["まいばん"],
+      "kanji": ["毎晩"],
+      "imi": ["every evening"]
+    },
+    {
+      "furigana": ["まいにち"],
+      "kanji": ["毎日"],
+      "imi": ["every day"]
+    },
+    {
+      "furigana": ["げつようび"],
+      "kanji": ["月曜日"],
+      "imi": ["monday"]
+    },
+    {
+      "furigana": ["かようび"],
+      "kanji": ["火曜日"],
+      "imi": ["tuesday"]
+    },
+    {
+      "furigana": ["すいようび"],
+      "kanji": ["水曜日"],
+      "imi": ["wednesday"]
+    },
+    {
+      "furigana": ["もくようび"],
+      "kanji": ["木曜日"],
+      "imi": ["thursday"]
+    },
+    {
+      "furigana": ["きんようび"],
+      "kanji": ["金曜日"],
+      "imi": ["friday"]
+    },
+    {
+      "furigana": ["どようび"],
+      "kanji": ["土曜日"],
+      "imi": ["saturday"]
+    },
+    {
+      "furigana": ["にちようび"],
+      "kanji": ["日曜日"],
+      "imi": ["sunday"]
+    },
+    {
+      "furigana": ["なんようび"],
+      "kanji": ["何曜日"],
+      "imi": ["what day of the week"]
+    },
+    {
+      "furigana": ["-から"],
+      "kanji": [""],
+      "imi": ["from-"]
+    },
+    {
+      "furigana": ["-まで"],
+      "kanji": [""],
+      "imi": ["to-"]
+    },
+    {
+      "furigana": ["-と-"],
+      "kanji": [""],
+      "imi": ["and (nouns)"]
+    }    
+]  
+},
+  {
+    "lection": 5,
+    "words": [
+    {
+      "furigana": ["いきます"],
+      "kanji": ["行きます"],
+      "imi": ["to go", "to drive", "to fly"]
+    },
+    {
+      "furigana": ["きます"],
+      "kanji": ["来ます"],
+      "imi": ["to come"]
+    },
+    {
+      "furigana": ["かえります"],
+      "kanji": ["帰ります"],
+      "imi": ["to go home", "to go back"]
+    },
+    {
+      "furigana": ["がっこう"],
+      "kanji": ["学校"],
+      "imi": ["school"]
+    },
+    {
+      "furigana": ["スーパー"],
+      "kanji": [""],
+      "imi": ["supermarket"]
+    },
+    {
+      "furigana": ["えき"],
+      "kanji": ["駅"],
+      "imi": ["train station"]
+    },
+    {
+      "furigana": ["ひこうき"],
+      "kanji": ["飛行機"],
+      "imi": ["airplane"]
+    },
+    {
+      "furigana": ["ふね"],
+      "kanji": ["船"],
+      "imi": ["ship"]
+    },
+    {
+      "furigana": ["でんしゃ"],
+      "kanji": ["電車"],
+      "imi": ["train"]
+    },
+    {
+      "furigana": ["ちかてつ"],
+      "kanji": ["地下鉄"],
+      "imi": ["subway"]
+    },
+    {
+      "furigana": ["しんかんせん"],
+      "kanji": ["新幹線"],
+      "imi": ["Shinkansen", "express train"]
+    },
+    {
+      "furigana": ["バス"],
+      "kanji": [""],
+      "imi": ["bus"]
+    },
+    {
+      "furigana": ["タクシー"],
+      "kanji": [""],
+      "imi": ["taxi"]
+    },
+    {
+      "furigana": ["じてんしゃ"],
+      "kanji": ["自転車"],
+      "imi": ["bicycle"]
+    },
+    {
+      "furigana": ["あるいて"],
+      "kanji": ["歩いて"],
+      "imi": ["on foot"]
+    },
+    {
+      "furigana": ["ひと"],
+      "kanji": ["人"],
+      "imi": ["person", "human", "people"]
+    },
+    {
+      "furigana": ["ともだち"],
+      "kanji": ["友達"],
+      "imi": ["friend"]
+    },
+    {
+      "furigana": ["かれ"],
+      "kanji": ["彼"],
+      "imi": ["he", "(boy)friend"]
+    },
+    {
+      "furigana": ["かのじょ"],
+      "kanji": ["彼女"],
+      "imi": ["she", "(girl)friend"]
+    },
+    {
+      "furigana": ["かぞく"],
+      "kanji": ["家族"],
+      "imi": ["family"]
+    },
+    {
+      "furigana": ["ひとりで"],
+      "kanji": ["一人で"],
+      "imi": ["alone"]
+    },
+    {
+      "furigana": ["せんしゅう"],
+      "kanji": ["先週"],
+      "imi": ["last week"]
+    },
+    {
+      "furigana": ["こんしゅう"],
+      "kanji": ["今週"],
+      "imi": ["this week"]
+    },
+    {
+      "furigana": ["らいしゅう"],
+      "kanji": ["来週"],
+      "imi": ["next week"]
+    },
+    {
+      "furigana": ["せんげつ"],
+      "kanji": ["先月"],
+      "imi": ["last month"]
+    },
+    {
+      "furigana": ["こんげつ"],
+      "kanji": ["今月"],
+      "imi": ["this month"]
+    },
+    {
+      "furigana": ["らいげつ"],
+      "kanji": ["来月"],
+      "imi": ["next month"]
+    },
+    {
+      "furigana": ["きょねん"],
+      "kanji": ["去年"],
+      "imi": ["last year"]
+    },
+    {
+      "furigana": ["ことし"],
+      "kanji": [""],
+      "imi": ["this year"]
+    },
+    {
+      "furigana": ["らいねん"],
+      "kanji": ["来年"],
+      "imi": ["next year"]
+    },
+    {
+      "furigana": ["-ねん"],
+      "kanji": ["-年"],
+      "imi": ["in the year-"]
+    },
+    {
+      "furigana": ["なんねん"],
+      "kanji": ["何年"],
+      "imi": ["what year"]
+    },
+    {
+      "furigana": ["-がつ"],
+      "kanji": ["-月"],
+      "imi": ["[suffix] month"]
+    },
+    {
+      "furigana": ["なんがつ"],
+      "kanji": ["何月"],
+      "imi": ["what month"]
+    },
+    {
+      "furigana": ["ついたち"],
+      "kanji": ["一日"],
+      "imi": ["first day of the month", "one day"]
+    },
+    {
+      "furigana": ["ふつか"],
+      "kanji": ["二日"],
+      "imi": ["second day of the month", "two days"]
+    },
+    {
+      "furigana": ["みっか"],
+      "kanji": ["三日"],
+      "imi": ["third day of the month", "three days"]
+    },
+    {
+      "furigana": ["よっか"],
+      "kanji": ["四日"],
+      "imi": ["fourth day of the month", "four days"]
+    },
+    {
+      "furigana": ["いつか"],
+      "kanji": ["五日"],
+      "imi": ["fifth day of the month", "five days"]
+    },
+    {
+      "furigana": ["むいか"],
+      "kanji": ["六日"],
+      "imi": ["sixth day of the month", "six days"]
+    },
+    {
+      "furigana": ["なのか"],
+      "kanji": ["七日"],
+      "imi": ["seventh day of the month", "seven days"]
+    },
+    {
+      "furigana": ["ようか"],
+      "kanji": ["八日"],
+      "imi": ["eighth day of the month", "eight days"]
+    },
+    {
+      "furigana": ["ここのか"],
+      "kanji": ["九日"],
+      "imi": ["ninth day of the month", "nine days"]
+    },
+    {
+      "furigana": ["とおか"],
+      "kanji": ["十日"],
+      "imi": ["tenth day of the month", "ten days"]
+    },
+    {
+      "furigana": ["じゅうよっか"],
+      "kanji": ["十四日"],
+      "imi": ["14th day of the month", "14 days"]
+    },
+    {
+      "furigana": ["はつか"],
+      "kanji": ["二十日"],
+      "imi": ["20th day of the month", "20 days"]
+    },
+    {
+      "furigana": ["にじゅうよっか"],
+      "kanji": ["二十四日"],
+      "imi": ["24th day of the month", "24 days"]
+    },
+    {
+      "furigana": ["-にち"],
+      "kanji": ["-日"],
+      "imi": ["the -th day of the month", "-days"]
+    },
+    {
+      "furigana": ["なんにち"],
+      "kanji": ["何日"],
+      "imi": ["what day", "how many days"]
+    },
+    {
+      "furigana": ["いつ"],
+      "kanji": [""],
+      "imi": ["when"]
+    },
+    {
+      "furigana": ["たんじょうび"],
+      "kanji": ["誕生日"],
+      "imi": ["birthday"]
+    }    
+]  
+},
+  {
+    "lection": 6,
+    "words": [
+    {
+      "furigana": ["たべます"],
+      "kanji": ["食べます"],
+      "imi": ["to eat"]
+    },
+    {
+      "furigana": ["のみます"],
+      "kanji": ["飲みます"],
+      "imi": ["to drink"]
+    },
+    {
+      "furigana": ["すいます"],
+      "kanji": ["吸います"],
+      "imi": ["to smoke"]
+    },
+    {
+      "furigana": ["たばこをすいます"],
+      "kanji": ["タバコを吸います"],
+      "imi": ["to smoke cigarettes"]
+    },
+    {
+      "furigana": ["みます"],
+      "kanji": ["見ます"],
+      "imi": ["to see"]
+    },
+    {
+      "furigana": ["ききます"],
+      "kanji": ["聞きます"],
+      "imi": ["to hear"]
+    },
+    {
+      "furigana": ["よみます"],
+      "kanji": ["読みます"],
+      "imi": ["to read"]
+    },
+    {
+      "furigana": ["かきます"],
+      "kanji": ["書きます"],
+      "imi": ["to write", "to draw"]
+    },
+    {
+      "furigana": ["かいます"],
+      "kanji": ["買います"],
+      "imi": ["to buy"]
+    },
+    {
+      "furigana": ["とります"],
+      "kanji": ["撮ります"],
+      "imi": ["to make"]
+    },
+    {
+      "furigana": ["しゃしんをとｒますか"],
+      "kanji": ["写真を撮ります"],
+      "imi": ["to photograph"]
+    },
+    {
+      "furigana": ["します"],
+      "kanji": [""],
+      "imi": ["to do", "to make"]
+    },
+    {
+      "furigana": ["あいます"],
+      "kanji": ["会います"],
+      "imi": ["to meet"]
+    },
+    {
+      "furigana": ["ともだちにあいます"],
+      "kanji": ["友達に会います"],
+      "imi": ["to meet friends"]
+    },
+    {
+      "furigana": ["ごはん"],
+      "kanji": [""],
+      "imi": ["food", "cooked rice"]
+    },
+    {
+      "furigana": ["あさごはん"],
+      "kanji": ["朝ごはん"],
+      "imi": ["breakfast"]
+    },
+    {
+      "furigana": ["ひるごはん"],
+      "kanji": ["昼ごはん"],
+      "imi": ["lunch"]
+    },
+    {
+      "furigana": ["ばんごはん"],
+      "kanji": ["晩ごはん"],
+      "imi": ["dinner"]
+    },
+    {
+      "furigana": ["パン"],
+      "kanji": [""],
+      "imi": ["bread"]
+    },
+    {
+      "furigana": ["たまご"],
+      "kanji": ["卵"],
+      "imi": ["egg"]
+    },
+    {
+      "furigana": ["にく"],
+      "kanji": ["肉"],
+      "imi": ["processed meat"]
+    },
+    {
+      "furigana": ["さかな"],
+      "kanji": ["魚"],
+      "imi": ["fish"]
+    },
+    {
+      "furigana": ["やさい"],
+      "kanji": ["野菜"],
+      "imi": ["vegetable"]
+    },
+    {
+      "furigana": ["くだもの"],
+      "kanji": ["果物"],
+      "imi": ["fruit"]
+    },
+    {
+      "furigana": ["みず"],
+      "kanji": ["水"],
+      "imi": ["water"]
+    },
+    {
+      "furigana": ["おちゃ"],
+      "kanji": ["お茶"],
+      "imi": ["tea", "green tea"]
+    },
+    {
+      "furigana": ["こうちゃ"],
+      "kanji": ["紅茶"],
+      "imi": ["black tea"]
+    },
+    {
+      "furigana": ["ミルク", "ぎゅうにゅう"],
+      "kanji": ["牛乳"],
+      "imi": ["milk"]
+    },
+    {
+      "furigana": ["ジュース"],
+      "kanji": [""],
+      "imi": ["juice"]
+    },
+    {
+      "furigana": ["ビール"],
+      "kanji": [""],
+      "imi": ["beer"]
+    },
+    {
+      "furigana": ["おさけ"],
+      "kanji": ["お酒"],
+      "imi": ["alcohol", "rice wine"]
+    },
+    {
+      "furigana": ["タバコ"],
+      "kanji": [""],
+      "imi": ["cigarettes"]
+    },
+    {
+      "furigana": ["てがみ"],
+      "kanji": ["手紙"],
+      "imi": ["mail"]
+    },
+    {
+      "furigana": ["レポート"],
+      "kanji": [""],
+      "imi": ["report", "homework assignment"]
+    },
+    {
+      "furigana": ["しゃしん"],
+      "kanji": ["写真"],
+      "imi": ["photograph"]
+    },
+    {
+      "furigana": ["ビデオ"],
+      "kanji": [""],
+      "imi": ["video", "video recorder"]
+    },
+    {
+      "furigana": ["みせ"],
+      "kanji": ["店"],
+      "imi": ["store"]
+    },
+    {
+      "furigana": ["にわ"],
+      "kanji": ["庭"],
+      "imi": ["garden"]
+    },
+    {
+      "furigana": ["しゅくだい"],
+      "kanji": ["宿題"],
+      "imi": ["homework"]
+    },
+    {
+      "furigana": ["しゅくだうをします"],
+      "kanji": ["宿題をします"],
+      "imi": ["to do homework"]
+    },
+    {
+      "furigana": ["テニス"],
+      "kanji": [""],
+      "imi": ["tennis"]
+    },
+    {
+      "furigana": ["テニスをします"],
+      "kanji": [""],
+      "imi": ["to play tennis"]
+    },
+    {
+      "furigana": ["サッカー"],
+      "kanji": [""],
+      "imi": ["soccer"]
+    },
+    {
+      "furigana": ["サッカーをします"],
+      "kanji": [""],
+      "imi": ["to play soccer"]
+    },
+    {
+      "furigana": ["おはなみ"],
+      "kanji": ["お花見"],
+      "imi": ["cherry blossom show"]
+    },
+    {
+      "furigana": ["おはなみをします"],
+      "kanji": ["お花見をします"],
+      "imi": ["to watch cherry blossoms"]
+    },
+    {
+      "furigana": ["なに"],
+      "kanji": ["何"],
+      "imi": ["what"]
+    },
+    {
+      "furigana": ["いっしょに"],
+      "kanji": [""],
+      "imi": ["together"]
+    },
+    {
+      "furigana": ["ちょっと"],
+      "kanji": [""],
+      "imi": ["a bit", "a little"]
+    },
+    {
+      "furigana": ["いつも"],
+      "kanji": [""],
+      "imi": ["always"]
+    },
+    {
+      "furigana": ["ときどき"],
+      "kanji": ["時々"],
+      "imi": ["sometimes"]
+    },
+    {
+      "furigana": ["それから"],
+      "kanji": [""],
+      "imi": ["thereafter", "then", "after", "afterwards", "after that"]
+    },
+    {
+      "furigana": ["ええ"],
+      "kanji": [""],
+      "imi": ["yes"]
+    },
+    {
+      "furigana": ["いいですね。"],
+      "kanji": [""],
+      "imi": ["This sounds good.", "Good idea.", "This is good."]
+    },
+    {
+      "furigana": ["わかりました。"],
+      "kanji": [""],
+      "imi": ["I have understood.", "Understood."]
+    }    
+]  
+},
+  {
+    "lection": 7,
+    "words": [
+    {
+      "furigana": ["きります"],
+      "kanji": ["切ります"],
+      "imi": ["to cut"]
+    },
+    {
+      "furigana": ["おくります"],
+      "kanji": ["送ります"],
+      "imi": ["to send"]
+    },
+    {
+      "furigana": ["あげます"],
+      "kanji": [""],
+      "imi": ["to give"]
+    },
+    {
+      "furigana": ["もらいます"],
+      "kanji": [""],
+      "imi": ["to get"]
+    },
+    {
+      "furigana": ["かします"],
+      "kanji": ["貸します"],
+      "imi": ["to lend"]
+    },
+    {
+      "furigana": ["かります"],
+      "kanji": ["借ります"],
+      "imi": ["to borrow"]
+    },
+    {
+      "furigana": ["おしえます"],
+      "kanji": ["教えます"],
+      "imi": ["to teach"]
+    },
+    {
+      "furigana": ["ならいます"],
+      "kanji": ["習います"],
+      "imi": ["to learn"]
+    },
+    {
+      "furigana": ["でんわをかけます"],
+      "kanji": ["電話をかけます"],
+      "imi": ["to call"]
+    },
+    {
+      "furigana": ["て"],
+      "kanji": ["手"],
+      "imi": ["hand", "arm"]
+    },
+    {
+      "furigana": ["はし"],
+      "kanji": [""],
+      "imi": ["chopstick"]
+    },
+    {
+      "furigana": ["スプーン"],
+      "kanji": [""],
+      "imi": ["spoon"]
+    },
+    {
+      "furigana": ["ナイフ"],
+      "kanji": [""],
+      "imi": ["knife"]
+    },
+    {
+      "furigana": ["フォーク"],
+      "kanji": [""],
+      "imi": ["fork"]
+    },
+    {
+      "furigana": ["はさみ"],
+      "kanji": [""],
+      "imi": ["scissor"]
+    },
+    {
+      "furigana": ["パソコン"],
+      "kanji": [""],
+      "imi": ["PC"]
+    },
+    {
+      "furigana": ["ケータイ"],
+      "kanji": [""],
+      "imi": ["mobile phone"]
+    },
+    {
+      "furigana": ["メール"],
+      "kanji": [""],
+      "imi": ["email"]
+    },
+    {
+      "furigana": ["ねんがじょう"],
+      "kanji": ["年賀状"],
+      "imi": ["new year card"]
+    },
+    {
+      "furigana": ["パンチ"],
+      "kanji": [""],
+      "imi": ["punch"]
+    },
+    {
+      "furigana": ["オッチキス"],
+      "kanji": [""],
+      "imi": ["stapler"]
+    },
+    {
+      "furigana": ["セルテープ"],
+      "kanji": [""],
+      "imi": ["tape"]
+    },
+    {
+      "furigana": ["けしゴム"],
+      "kanji": ["消しゴム"],
+      "imi": ["eraser"]
+    },
+    {
+      "furigana": ["かみ"],
+      "kanji": ["紙"],
+      "imi": ["paper"]
+    },
+    {
+      "furigana": ["はな"],
+      "kanji": ["花"],
+      "imi": ["flower", "blossom"]
+    },
+    {
+      "furigana": ["シャツ"],
+      "kanji": [""],
+      "imi": ["shirt"]
+    },
+    {
+      "furigana": ["プレゼント"],
+      "kanji": [""],
+      "imi": ["present"]
+    },
+    {
+      "furigana": ["にもつ"],
+      "kanji": ["荷物"],
+      "imi": ["package"]
+    },
+    {
+      "furigana": ["おかね"],
+      "kanji": ["お金"],
+      "imi": ["money"]
+    },
+    {
+      "furigana": ["きっぷ"],
+      "kanji": ["切符"],
+      "imi": ["ticket"]
+    },
+    {
+      "furigana": ["クリスマス"],
+      "kanji": [""],
+      "imi": ["christmas"]
+    },
+    {
+      "furigana": ["ちち"],
+      "kanji": ["父"],
+      "imi": ["my father"]
+    },
+    {
+      "furigana": ["はは"],
+      "kanji": ["母"],
+      "imi": ["my mother"]
+    },
+    {
+      "furigana": ["おとうさん"],
+      "kanji": ["お父さん"],
+      "imi": ["someone's father"]
+    },
+    {
+      "furigana": ["おかあさん"],
+      "kanji": ["お母さん"],
+      "imi": ["someone's mother"]
+    },
+    {
+      "furigana": ["もう"],
+      "kanji": [""],
+      "imi": ["already"]
+    },
+    {
+      "furigana": ["まだ"],
+      "kanji": [""],
+      "imi": ["yet", "not yet"]
+    },
+    {
+      "furigana": ["これから"],
+      "kanji": [""],
+      "imi": ["now", "from now on", "immediately"]
+    }    
+]  
+},
+  {
+    "lection": 8,
+    "words": [
+    {
+      "furigana": ["ハンサムな"],
+      "kanji": [""],
+      "imi": ["handsome"]
+    },
+    {
+      "furigana": ["きれいな"],
+      "kanji": [""],
+      "imi": ["beautiful", "clean"]
+    },
+    {
+      "furigana": ["しずかな"],
+      "kanji": ["静かな"],
+      "imi": ["silent"]
+    },
+    {
+      "furigana": ["にぎやかな"],
+      "kanji": [""],
+      "imi": ["living"]
+    },
+    {
+      "furigana": ["ゆうめいな"],
+      "kanji": ["有名な"],
+      "imi": ["famous"]
+    },
+    {
+      "furigana": ["しんせつな"],
+      "kanji": ["親切な"],
+      "imi": ["friendly", "nice"]
+    },
+    {
+      "furigana": ["げんきな"],
+      "kanji": ["元気な"],
+      "imi": ["lively", "healthy"]
+    },
+    {
+      "furigana": ["ひまな"],
+      "kanji": ["暇な"],
+      "imi": ["free"]
+    },
+    {
+      "furigana": ["べんりな"],
+      "kanji": ["便利な"],
+      "imi": ["handy"]
+    },
+    {
+      "furigana": ["すてきな"],
+      "kanji": [""],
+      "imi": ["wonderful"]
+    },
+    {
+      "furigana": ["おおきい"],
+      "kanji": ["大きい"],
+      "imi": ["big", "large"]
+    },
+    {
+      "furigana": ["ちいさい"],
+      "kanji": ["小さい"],
+      "imi": ["small"]
+    },
+    {
+      "furigana": ["あたらしい"],
+      "kanji": ["新しい"],
+      "imi": ["new", "fresh"]
+    },
+    {
+      "furigana": ["ふるい"],
+      "kanji": ["古い"],
+      "imi": ["old (for things)"]
+    },
+    {
+      "furigana": ["いい", "よい"],
+      "kanji": [""],
+      "imi": ["good"]
+    },
+    {
+      "furigana": ["わるい"],
+      "kanji": ["悪い"],
+      "imi": ["bad"]
+    },
+    {
+      "furigana": ["あつい"],
+      "kanji": ["熱い", "暑い"],
+      "imi": ["hot"]
+    },
+    {
+      "furigana": ["さむい"],
+      "kanji": ["寒い"],
+      "imi": ["cold (air)"]
+    },
+    {
+      "furigana": ["つめたい"],
+      "kanji": ["冷たい"],
+      "imi": ["cold (fluids)"]
+    },
+    {
+      "furigana": ["むずかしい"],
+      "kanji": ["難しい"],
+      "imi": ["difficult"]
+    },
+    {
+      "furigana": ["やさしい"],
+      "kanji": ["易しい"],
+      "imi": ["easy"]
+    },
+    {
+      "furigana": ["たかい"],
+      "kanji": ["高い"],
+      "imi": ["expensive", "high"]
+    },
+    {
+      "furigana": ["やすい"],
+      "kanji": ["安い"],
+      "imi": ["cheap"]
+    },
+    {
+      "furigana": ["ひくい"],
+      "kanji": ["低い"],
+      "imi": ["low"]
+    },
+    {
+      "furigana": ["おもしろい"],
+      "kanji": [""],
+      "imi": ["interesting", "funny"]
+    },
+    {
+      "furigana": ["おいしい"],
+      "kanji": [""],
+      "imi": ["yummy", "delicious"]
+    },
+    {
+      "furigana": ["いそがしい"],
+      "kanji": ["忙しい"],
+      "imi": ["busy"]
+    },
+    {
+      "furigana": ["たのしい"],
+      "kanji": ["楽しい"],
+      "imi": ["amusing"]
+    },
+    {
+      "furigana": ["しろい"],
+      "kanji": ["白い"],
+      "imi": ["white"]
+    },
+    {
+      "furigana": ["くろい"],
+      "kanji": ["黒い"],
+      "imi": ["black"]
+    },
+    {
+      "furigana": ["あかい"],
+      "kanji": ["赤い"],
+      "imi": ["red"]
+    },
+    {
+      "furigana": ["あおい"],
+      "kanji": ["青い"],
+      "imi": ["blue"]
+    },
+    {
+      "furigana": ["さくら"],
+      "kanji": ["桜"],
+      "imi": ["cherry blossom", "cherry tree"]
+    },
+    {
+      "furigana": ["やま"],
+      "kanji": ["山"],
+      "imi": ["mountain"]
+    },
+    {
+      "furigana": ["まち"],
+      "kanji": ["町"],
+      "imi": ["city"]
+    },
+    {
+      "furigana": ["たべもの"],
+      "kanji": ["食べ物"],
+      "imi": ["food"]
+    },
+    {
+      "furigana": ["ところ"],
+      "kanji": ["所"],
+      "imi": ["place"]
+    },
+    {
+      "furigana": ["りょう"],
+      "kanji": ["寮"],
+      "imi": ["dorimtory"]
+    },
+    {
+      "furigana": ["レストラン"],
+      "kanji": [""],
+      "imi": ["restaurant"]
+    },
+    {
+      "furigana": ["せいかつ"],
+      "kanji": ["生活"],
+      "imi": ["daily live"]
+    },
+    {
+      "furigana": ["しごと"],
+      "kanji": ["仕事"],
+      "imi": ["work"]
+    },
+    {
+      "furigana": ["おしごと"],
+      "kanji": ["お仕事"],
+      "imi": ["your work"]
+    },
+    {
+      "furigana": ["おしごとをする"],
+      "kanji": ["お仕事をする"],
+      "imi": ["to work"]
+    },
+    {
+      "furigana": ["どう"],
+      "kanji": [""],
+      "imi": ["how"]
+    },
+    {
+      "furigana": ["どんな~"],
+      "kanji": [""],
+      "imi": ["what kind of ~"]
+    },
+    {
+      "furigana": ["とても"],
+      "kanji": [""],
+      "imi": ["very"]
+    },
+    {
+      "furigana": ["あまり"],
+      "kanji": [""],
+      "imi": ["not so (neg.)", "not very (neg.)"]
+    },
+    {
+      "furigana": ["そして"],
+      "kanji": [""],
+      "imi": ["and (conjunction)"]
+    },
+    {
+      "furigana": ["~が、~"],
+      "kanji": [""],
+      "imi": ["~", "but ~"]
+    }    
+]  
+},
+  {
+    "lection": 9,
+    "words": [
+    {
+      "furigana": ["わかりました"],
+      "kanji": [""],
+      "imi": ["to understand"]
+    },
+    {
+      "furigana": ["あります"],
+      "kanji": [""],
+      "imi": ["to own"]
+    },
+    {
+      "furigana": ["すきな"],
+      "kanji": ["好きな"],
+      "imi": ["like"]
+    },
+    {
+      "furigana": ["きらいな"],
+      "kanji": ["嫌いな"],
+      "imi": ["hate"]
+    },
+    {
+      "furigana": ["じょうずな"],
+      "kanji": ["上手な"],
+      "imi": ["skillfully"]
+    },
+    {
+      "furigana": ["へたな"],
+      "kanji": ["下手な"],
+      "imi": ["clumsy"]
+    },
+    {
+      "furigana": ["のみもの"],
+      "kanji": ["飲み物"],
+      "imi": ["beverage"]
+    },
+    {
+      "furigana": ["りょうり"],
+      "kanji": ["料理"],
+      "imi": ["food", "cooking"]
+    },
+    {
+      "furigana": ["りょうりをします"],
+      "kanji": ["料理をします"],
+      "imi": ["to cook"]
+    },
+    {
+      "furigana": ["スポーツ"],
+      "kanji": [""],
+      "imi": ["sport"]
+    },
+    {
+      "furigana": ["スポーツをします"],
+      "kanji": [""],
+      "imi": ["to make sport"]
+    },
+    {
+      "furigana": ["やきゅう"],
+      "kanji": ["野球"],
+      "imi": ["baseball"]
+    },
+    {
+      "furigana": ["やきゅうをします"],
+      "kanji": ["野球をします"],
+      "imi": ["to play baseball"]
+    },
+    {
+      "furigana": ["ダンス"],
+      "kanji": [""],
+      "imi": ["dance"]
+    },
+    {
+      "furigana": ["ダンスをします"],
+      "kanji": [""],
+      "imi": ["to dance"]
+    },
+    {
+      "furigana": ["りょこう"],
+      "kanji": ["旅行"],
+      "imi": ["trip"]
+    },
+    {
+      "furigana": ["りょこうをします"],
+      "kanji": ["旅行をします"],
+      "imi": ["to travel"]
+    },
+    {
+      "furigana": ["おんがく"],
+      "kanji": ["音楽"],
+      "imi": ["music"]
+    },
+    {
+      "furigana": ["うた"],
+      "kanji": ["歌"],
+      "imi": ["song"]
+    },
+    {
+      "furigana": ["クラシック"],
+      "kanji": [""],
+      "imi": ["classic music"]
+    },
+    {
+      "furigana": ["ジャズ"],
+      "kanji": [""],
+      "imi": ["jazz"]
+    },
+    {
+      "furigana": ["コンサート"],
+      "kanji": [""],
+      "imi": ["concert"]
+    },
+    {
+      "furigana": ["カラオケ"],
+      "kanji": [""],
+      "imi": ["karaoke"]
+    },
+    {
+      "furigana": ["かぶき"],
+      "kanji": ["歌舞伎"],
+      "imi": ["kabuki"]
+    },
+    {
+      "furigana": ["え"],
+      "kanji": ["絵"],
+      "imi": ["painting", "picture"]
+    },
+    {
+      "furigana": ["じ"],
+      "kanji": ["字"],
+      "imi": ["sign"]
+    },
+    {
+      "furigana": ["かんじ"],
+      "kanji": ["漢字"],
+      "imi": ["kanji"]
+    },
+    {
+      "furigana": ["ひらがな"],
+      "kanji": [""],
+      "imi": ["hiragana"]
+    },
+    {
+      "furigana": ["かたかな"],
+      "kanji": [""],
+      "imi": ["katakana"]
+    },
+    {
+      "furigana": ["ローマジ"],
+      "kanji": [""],
+      "imi": ["latin script"]
+    },
+    {
+      "furigana": ["こまかいおかね"],
+      "kanji": [""],
+      "imi": ["loose change"]
+    },
+    {
+      "furigana": ["チケット"],
+      "kanji": [""],
+      "imi": ["ticket"]
+    },
+    {
+      "furigana": ["じかん"],
+      "kanji": ["時間"],
+      "imi": ["time"]
+    },
+    {
+      "furigana": ["ようじ"],
+      "kanji": ["用事"],
+      "imi": ["matter", "issue"]
+    },
+    {
+      "furigana": ["やくそく"],
+      "kanji": ["約束"],
+      "imi": ["promise", "appointment"]
+    },
+    {
+      "furigana": ["やくそくをします"],
+      "kanji": ["約束をします"],
+      "imi": ["to make a promise", "to make an appointment"]
+    },
+    {
+      "furigana": ["アルバイト"],
+      "kanji": [""],
+      "imi": ["part-time job"]
+    },
+    {
+      "furigana": ["アルバイトをします"],
+      "kanji": [""],
+      "imi": ["to have a part-time job"]
+    },
+    {
+      "furigana": ["ごしゅじん"],
+      "kanji": ["ご主人"],
+      "imi": ["someone's husband"]
+    },
+    {
+      "furigana": ["おっと", "しゅじん"],
+      "kanji": ["夫", "主人"],
+      "imi": ["my husband"]
+    },
+    {
+      "furigana": ["おくさん"],
+      "kanji": ["奥さん"],
+      "imi": ["someone's wife"]
+    },
+    {
+      "furigana": ["つま", "かない"],
+      "kanji": ["妻", "家内"],
+      "imi": ["my wife"]
+    },
+    {
+      "furigana": ["こども"],
+      "kanji": ["子ども"],
+      "imi": ["child"]
+    },
+    {
+      "furigana": ["よく"],
+      "kanji": [""],
+      "imi": ["well"]
+    },
+    {
+      "furigana": ["だいたい"],
+      "kanji": [""],
+      "imi": ["mostly", "approximately"]
+    },
+    {
+      "furigana": ["たくさん"],
+      "kanji": [""],
+      "imi": ["many"]
+    },
+    {
+      "furigana": ["すこし"],
+      "kanji": ["少し"],
+      "imi": ["a little", "a bit"]
+    },
+    {
+      "furigana": ["ぜんぜん"],
+      "kanji": ["全然"],
+      "imi": ["never (neg.)"]
+    },
+    {
+      "furigana": ["はやく"],
+      "kanji": ["早く", "速く"],
+      "imi": ["early", "fast"]
+    },
+    {
+      "furigana": ["~から"],
+      "kanji": [""],
+      "imi": ["because ~"]
+    },
+    {
+      "furigana": ["どして"],
+      "kanji": [""],
+      "imi": ["why"]
+    }    
+]  
+},
+  {
+    "lection": 10,
+    "words": [
+    {
+      "furigana": ["あります"],
+      "kanji": [""],
+      "imi": ["to be (things)", "to exist (things)", "there is ~ (things)"]
+    },
+    {
+      "furigana": ["います"],
+      "kanji": [""],
+      "imi": ["to be", "to exist (people)", "there is ~ (people)"]
+    },
+    {
+      "furigana": ["いろいろな"],
+      "kanji": [""],
+      "imi": ["different"]
+    },
+    {
+      "furigana": ["おとこのひと"],
+      "kanji": ["男の人"],
+      "imi": ["man"]
+    },
+    {
+      "furigana": ["おんなのひと"],
+      "kanji": ["女の人"],
+      "imi": ["woman"]
+    },
+    {
+      "furigana": ["おとこのこ"],
+      "kanji": ["男の子"],
+      "imi": ["boy"]
+    },
+    {
+      "furigana": ["おんなのこ"],
+      "kanji": ["女の子"],
+      "imi": ["girl"]
+    },
+    {
+      "furigana": ["いぬ"],
+      "kanji": ["犬"],
+      "imi": ["dog"]
+    },
+    {
+      "furigana": ["ねこ"],
+      "kanji": ["猫"],
+      "imi": ["cat"]
+    },
+    {
+      "furigana": ["パンダ"],
+      "kanji": [""],
+      "imi": ["panda"]
+    },
+    {
+      "furigana": ["ぞお"],
+      "kanji": [""],
+      "imi": ["elephant"]
+    },
+    {
+      "furigana": ["き"],
+      "kanji": ["木"],
+      "imi": ["tree"]
+    },
+    {
+      "furigana": ["もの"],
+      "kanji": ["物"],
+      "imi": ["thing", "object"]
+    },
+    {
+      "furigana": ["でんち"],
+      "kanji": ["電池"],
+      "imi": ["battery"]
+    },
+    {
+      "furigana": ["はこ"],
+      "kanji": ["箱"],
+      "imi": ["box", "chest", "crate"]
+    },
+    {
+      "furigana": ["スイッチ"],
+      "kanji": [""],
+      "imi": ["switch"]
+    },
+    {
+      "furigana": ["れいぞうこ"],
+      "kanji": [""],
+      "imi": ["refrigerator"]
+    },
+    {
+      "furigana": ["テーブル"],
+      "kanji": [""],
+      "imi": ["table"]
+    },
+    {
+      "furigana": ["ベッド"],
+      "kanji": [""],
+      "imi": ["bed"]
+    },
+    {
+      "furigana": ["たな"],
+      "kanji": ["棚"],
+      "imi": ["shelf"]
+    },
+    {
+      "furigana": ["ドア"],
+      "kanji": [""],
+      "imi": ["door"]
+    },
+    {
+      "furigana": ["まど"],
+      "kanji": ["窓"],
+      "imi": ["window"]
+    },
+    {
+      "furigana": ["ポスト"],
+      "kanji": [""],
+      "imi": ["letter box"]
+    },
+    {
+      "furigana": ["ビル"],
+      "kanji": [""],
+      "imi": ["building"]
+    },
+    {
+      "furigana": ["コンビに"],
+      "kanji": [""],
+      "imi": ["convenience store"]
+    },
+    {
+      "furigana": ["こうえん"],
+      "kanji": ["公園"],
+      "imi": ["park"]
+    },
+    {
+      "furigana": ["きっさてん"],
+      "kanji": ["喫茶店"],
+      "imi": ["coffee shop"]
+    },
+    {
+      "furigana": ["~や"],
+      "kanji": ["~屋"],
+      "imi": ["~ store", "~ shop"]
+    },
+    {
+      "furigana": ["のりば"],
+      "kanji": ["乗り場"],
+      "imi": ["bus stop", "train stop"]
+    },
+    {
+      "furigana": ["けん"],
+      "kanji": ["県"],
+      "imi": ["prefecture"]
+    },
+    {
+      "furigana": ["うえ"],
+      "kanji": ["上"],
+      "imi": ["upon", "over", "above"]
+    },
+    {
+      "furigana": ["した"],
+      "kanji": ["下"],
+      "imi": ["below", "under"]
+    },
+    {
+      "furigana": ["まえ"],
+      "kanji": ["前"],
+      "imi": ["in front of"]
+    },
+    {
+      "furigana": ["うしろ"],
+      "kanji": [""],
+      "imi": ["behind"]
+    },
+    {
+      "furigana": ["みぎ"],
+      "kanji": ["右"],
+      "imi": ["right"]
+    },
+    {
+      "furigana": ["ひだり"],
+      "kanji": ["左"],
+      "imi": ["left"]
+    },
+    {
+      "furigana": ["なか"],
+      "kanji": ["中"],
+      "imi": ["inside"]
+    },
+    {
+      "furigana": ["そと"],
+      "kanji": ["外"],
+      "imi": ["outside"]
+    },
+    {
+      "furigana": ["となり"],
+      "kanji": ["隣"],
+      "imi": ["next"]
+    },
+    {
+      "furigana": ["ちかく"],
+      "kanji": ["近く"],
+      "imi": ["near"]
+    },
+    {
+      "furigana": ["あいだ"],
+      "kanji": ["間"],
+      "imi": ["between"]
+    },
+    {
+      "furigana": ["~や~"],
+      "kanji": [""],
+      "imi": ["~", "~"]
+    },
+    {
+      "furigana": ["~や~など"],
+      "kanji": [""],
+      "imi": ["~", "~ and so on"]
+    }    
+]  
+},
+  {
+    "lection": 11,
+    "words": [
+    {
+      "furigana": ["います"],
+      "kanji": [""],
+      "imi": ["there is", "to be", "to stay"]
+    },
+    {
+      "furigana": ["こどもがいます"],
+      "kanji": ["子どもがいます"],
+      "imi": ["to have a child"]
+    },
+    {
+      "furigana": ["にほんにいます"],
+      "kanji": ["日本にいます"],
+      "imi": ["to be in Japan"]
+    },
+    {
+      "furigana": ["かかります"],
+      "kanji": [""],
+      "imi": ["to last"]
+    },
+    {
+      "furigana": ["やすみます"],
+      "kanji": ["休みます"],
+      "imi": ["to take time off", "to miss"]
+    },
+    {
+      "furigana": ["かいしゃをやすみます"],
+      "kanji": ["会社を休みます"],
+      "imi": ["to miss at work"]
+    },
+    {
+      "furigana": ["ひとつ"],
+      "kanji": ["一つ"],
+      "imi": ["one (count things)"]
+    },
+    {
+      "furigana": ["ふたつ"],
+      "kanji": ["二つ"],
+      "imi": ["two (count things)"]
+    },
+    {
+      "furigana": ["みっつ"],
+      "kanji": ["三つ"],
+      "imi": ["three (count things)"]
+    },
+    {
+      "furigana": ["よっつ"],
+      "kanji": ["四つ"],
+      "imi": ["four (count things)"]
+    },
+    {
+      "furigana": ["いつつ"],
+      "kanji": ["五つ"],
+      "imi": ["five (count things)"]
+    },
+    {
+      "furigana": ["むっつ"],
+      "kanji": ["六つ"],
+      "imi": ["six (count things)"]
+    },
+    {
+      "furigana": ["ななつ"],
+      "kanji": ["七つ"],
+      "imi": ["seven (count things)"]
+    },
+    {
+      "furigana": ["やっつ"],
+      "kanji": ["八つ"],
+      "imi": ["eight (count things)"]
+    },
+    {
+      "furigana": ["ここのつ"],
+      "kanji": ["九つ"],
+      "imi": ["nine (count things)"]
+    },
+    {
+      "furigana": ["とお"],
+      "kanji": ["十"],
+      "imi": ["ten (count things)"]
+    },
+    {
+      "furigana": ["いくつ"],
+      "kanji": [""],
+      "imi": ["how much", "how many"]
+    },
+    {
+      "furigana": ["ひとり"],
+      "kanji": ["一人"],
+      "imi": ["one person"]
+    },
+    {
+      "furigana": ["ふたり"],
+      "kanji": ["二人"],
+      "imi": ["two people"]
+    },
+    {
+      "furigana": ["-にん"],
+      "kanji": ["-人"],
+      "imi": ["- people"]
+    },
+    {
+      "furigana": ["-だい"],
+      "kanji": ["-台"],
+      "imi": ["(counter for machinery)"]
+    },
+    {
+      "furigana": ["-まい"],
+      "kanji": ["-枚"],
+      "imi": ["(counter for thin and flat things)"]
+    },
+    {
+      "furigana": ["-かい"],
+      "kanji": ["-回"],
+      "imi": ["- time"]
+    },
+    {
+      "furigana": ["りんご"],
+      "kanji": [""],
+      "imi": ["apple"]
+    },
+    {
+      "furigana": ["みかん"],
+      "kanji": [""],
+      "imi": ["tangerine"]
+    },
+    {
+      "furigana": ["サンドイッチ"],
+      "kanji": [""],
+      "imi": ["sandwich"]
+    },
+    {
+      "furigana": ["カレー"],
+      "kanji": [""],
+      "imi": ["curry"]
+    },
+    {
+      "furigana": ["カレーライス"],
+      "kanji": [""],
+      "imi": ["curry rice"]
+    },
+    {
+      "furigana": ["アイスクリーム"],
+      "kanji": [""],
+      "imi": ["ice cream"]
+    },
+    {
+      "furigana": ["きって"],
+      "kanji": ["切手"],
+      "imi": ["stamp"]
+    },
+    {
+      "furigana": ["はがき"],
+      "kanji": [""],
+      "imi": ["postcard"]
+    },
+    {
+      "furigana": ["ふうとう"],
+      "kanji": ["封筒"],
+      "imi": ["envelope"]
+    },
+    {
+      "furigana": ["りょうしん"],
+      "kanji": ["両親"],
+      "imi": ["parents"]
+    },
+    {
+      "furigana": ["きょうだい"],
+      "kanji": ["兄弟"],
+      "imi": ["siblings"]
+    },
+    {
+      "furigana": ["あに"],
+      "kanji": ["兄"],
+      "imi": ["my older brother"]
+    },
+    {
+      "furigana": ["おにいさん"],
+      "kanji": ["お兄さん"],
+      "imi": ["someone's older brother"]
+    },
+    {
+      "furigana": ["あね"],
+      "kanji": ["姉"],
+      "imi": ["my older sister"]
+    },
+    {
+      "furigana": ["おねえさん"],
+      "kanji": ["お姉さん"],
+      "imi": ["someone's older sister"]
+    },
+    {
+      "furigana": ["おとうとさん"],
+      "kanji": ["弟"],
+      "imi": ["my younger brother"]
+    },
+    {
+      "furigana": ["おとうとさん"],
+      "kanji": ["弟さん"],
+      "imi": ["someone's younger brother"]
+    },
+    {
+      "furigana": ["いもうと"],
+      "kanji": ["妹"],
+      "imi": ["my younger sister"]
+    },
+    {
+      "furigana": ["いもうとさん"],
+      "kanji": ["妹さん"],
+      "imi": ["someone's younger sister"]
+    },
+    {
+      "furigana": ["がいこく"],
+      "kanji": ["外国"],
+      "imi": ["foreign country"]
+    },
+    {
+      "furigana": ["りゅうがくせい"],
+      "kanji": ["留学生"],
+      "imi": ["foreign student", "exchange student"]
+    },
+    {
+      "furigana": ["クラス"],
+      "kanji": [""],
+      "imi": ["class"]
+    },
+    {
+      "furigana": ["-じかん"],
+      "kanji": ["-時間"],
+      "imi": ["- hours"]
+    },
+    {
+      "furigana": ["-しゅうかん"],
+      "kanji": ["-習慣"],
+      "imi": ["- weeks"]
+    },
+    {
+      "furigana": ["-かげつ"],
+      "kanji": ["-か月"],
+      "imi": ["- months"]
+    },
+    {
+      "furigana": ["-ねん"],
+      "kanji": ["-年"],
+      "imi": ["- years"]
+    },
+    {
+      "furigana": ["~ぐらい"],
+      "kanji": [""],
+      "imi": ["approximately ~"]
+    },
+    {
+      "furigana": ["どのくらい"],
+      "kanji": [""],
+      "imi": ["how long"]
+    },
+    {
+      "furigana": ["ぜんぶで"],
+      "kanji": ["全部で"],
+      "imi": ["overall", "all together"]
+    },
+    {
+      "furigana": ["みんな"],
+      "kanji": [""],
+      "imi": ["all"]
+    },
+    {
+      "furigana": ["~だけ"],
+      "kanji": [""],
+      "imi": ["only ~"]
+    }    
+]  
+},
+  {
+    "lection": 12,
+    "words": [
+    {
+      "furigana": ["かんたんな"],
+      "kanji": ["簡単な"],
+      "imi": ["easy"]
+    },
+    {
+      "furigana": ["ちかい"],
+      "kanji": ["近い"],
+      "imi": ["near"]
+    },
+    {
+      "furigana": ["とおい"],
+      "kanji": ["遠い"],
+      "imi": ["far", "away"]
+    },
+    {
+      "furigana": ["はやい"],
+      "kanji": ["速い", "早い"],
+      "imi": ["fast", "early"]
+    },
+    {
+      "furigana": ["おそい"],
+      "kanji": ["遅い"],
+      "imi": ["late", "slow"]
+    },
+    {
+      "furigana": ["おおい"],
+      "kanji": ["多い"],
+      "imi": ["many"]
+    },
+    {
+      "furigana": ["ひとがおおい"],
+      "kanji": ["人が多い"],
+      "imi": ["many people"]
+    },
+    {
+      "furigana": ["すくない"],
+      "kanji": ["少ない"],
+      "imi": ["few"]
+    },
+    {
+      "furigana": ["ひとがすくない"],
+      "kanji": ["人が少ない"],
+      "imi": ["few people"]
+    },
+    {
+      "furigana": ["あたたかい"],
+      "kanji": ["暖かい温かい"],
+      "imi": ["warm"]
+    },
+    {
+      "furigana": ["すずしい"],
+      "kanji": ["涼しい"],
+      "imi": ["cool"]
+    },
+    {
+      "furigana": ["あまい"],
+      "kanji": ["甘い"],
+      "imi": ["sweet"]
+    },
+    {
+      "furigana": ["からい"],
+      "kanji": ["辛い"],
+      "imi": ["hot (spicy)"]
+    },
+    {
+      "furigana": ["おもい"],
+      "kanji": ["重い"],
+      "imi": ["heavy"]
+    },
+    {
+      "furigana": ["かるい"],
+      "kanji": ["軽い"],
+      "imi": ["light"]
+    },
+    {
+      "furigana": ["いい"],
+      "kanji": [""],
+      "imi": ["prefer (out of two things)"]
+    },
+    {
+      "furigana": ["コーヒーがいい"],
+      "kanji": [""],
+      "imi": ["prefer coffee"]
+    },
+    {
+      "furigana": ["きせつ"],
+      "kanji": ["季節"],
+      "imi": ["season"]
+    },
+    {
+      "furigana": ["はる"],
+      "kanji": ["春"],
+      "imi": ["spring"]
+    },
+    {
+      "furigana": ["なつ"],
+      "kanji": ["夏"],
+      "imi": ["summer"]
+    },
+    {
+      "furigana": ["あき"],
+      "kanji": ["秋"],
+      "imi": ["autumn"]
+    },
+    {
+      "furigana": ["ふゆ"],
+      "kanji": ["冬"],
+      "imi": ["winter"]
+    },
+    {
+      "furigana": ["てんき"],
+      "kanji": ["天気"],
+      "imi": ["weather"]
+    },
+    {
+      "furigana": ["あめ"],
+      "kanji": ["雨"],
+      "imi": ["rain"]
+    },
+    {
+      "furigana": ["ゆき"],
+      "kanji": ["雪"],
+      "imi": ["snow"]
+    },
+    {
+      "furigana": ["くもり"],
+      "kanji": ["曇り"],
+      "imi": ["cloudy weather"]
+    },
+    {
+      "furigana": ["ホテル"],
+      "kanji": [""],
+      "imi": ["hotel"]
+    },
+    {
+      "furigana": ["くうこう"],
+      "kanji": ["空港"],
+      "imi": ["airport"]
+    },
+    {
+      "furigana": ["うみ"],
+      "kanji": ["海"],
+      "imi": ["sea"]
+    },
+    {
+      "furigana": ["せかい"],
+      "kanji": ["世界"],
+      "imi": ["world"]
+    },
+    {
+      "furigana": ["パーティー"],
+      "kanji": [""],
+      "imi": ["party"]
+    },
+    {
+      "furigana": ["パーティーをします"],
+      "kanji": [""],
+      "imi": ["to party"]
+    },
+    {
+      "furigana": ["おまつり"],
+      "kanji": ["お祭り"],
+      "imi": ["festival"]
+    },
+    {
+      "furigana": ["すきやき"],
+      "kanji": ["すき焼き"],
+      "imi": ["sukiyaki"]
+    },
+    {
+      "furigana": ["さしみ"],
+      "kanji": ["刺身"],
+      "imi": ["sashimi"]
+    },
+    {
+      "furigana": ["おすし"],
+      "kanji": [""],
+      "imi": ["sushi"]
+    },
+    {
+      "furigana": ["てんぷら"],
+      "kanji": [""],
+      "imi": ["tenpura"]
+    },
+    {
+      "furigana": ["ぶたにう"],
+      "kanji": ["豚肉"],
+      "imi": ["pork"]
+    },
+    {
+      "furigana": ["とりにく"],
+      "kanji": ["鶏肉"],
+      "imi": ["chicken meat"]
+    },
+    {
+      "furigana": ["ぎゅうにく"],
+      "kanji": ["牛肉"],
+      "imi": ["beef"]
+    },
+    {
+      "furigana": ["レモン"],
+      "kanji": [""],
+      "imi": ["lemon"]
+    },
+    {
+      "furigana": ["いけばな"],
+      "kanji": ["生け花"],
+      "imi": ["ikebana"]
+    },
+    {
+      "furigana": ["いけばなをします"],
+      "kanji": ["生け花をします"],
+      "imi": ["to make ikebana"]
+    },
+    {
+      "furigana": ["もみじ"],
+      "kanji": ["紅葉"],
+      "imi": ["maple", "red maple leafs in autumn"]
+    },
+    {
+      "furigana": ["どちら"],
+      "kanji": [""],
+      "imi": ["what (out of two)", "which (out of two)"]
+    },
+    {
+      "furigana": ["どちらも"],
+      "kanji": [""],
+      "imi": ["both"]
+    },
+    {
+      "furigana": ["いちばん"],
+      "kanji": [""],
+      "imi": ["the most"]
+    },
+    {
+      "furigana": ["ずっと"],
+      "kanji": [""],
+      "imi": ["by far"]
+    },
+    {
+      "furigana": ["はじめて"],
+      "kanji": ["初めて"],
+      "imi": ["for the first time"]
+    }    
+]  
+},
+  {
+    "lection": 13,
+    "words": [
+    {
+      "furigana": ["あそびます"],
+      "kanji": ["遊びます"],
+      "imi": ["to play", "to amuse"]
+    },
+    {
+      "furigana": ["およぎます"],
+      "kanji": ["泳ぎます"],
+      "imi": ["to swim"]
+    },
+    {
+      "furigana": ["むかえます"],
+      "kanji": ["迎えます"],
+      "imi": ["to greet", "to pick up"]
+    },
+    {
+      "furigana": ["つかれます"],
+      "kanji": ["疲れます"],
+      "imi": ["to fatigue"]
+    },
+    {
+      "furigana": ["つかれました"],
+      "kanji": ["疲れました"],
+      "imi": ["exhausted"]
+    },
+    {
+      "furigana": ["けっこんします"],
+      "kanji": ["結婚します"],
+      "imi": ["to marry"]
+    },
+    {
+      "furigana": ["かいものします"],
+      "kanji": ["買い物します"],
+      "imi": ["to shop"]
+    },
+    {
+      "furigana": ["しょくじします"],
+      "kanji": ["食事します"],
+      "imi": ["to dine"]
+    },
+    {
+      "furigana": ["さんぽします"],
+      "kanji": ["散歩します"],
+      "imi": ["to stroll"]
+    },
+    {
+      "furigana": ["こうえんをさんぽします"],
+      "kanji": ["公園を散歩します"],
+      "imi": ["to stroll in the park"]
+    },
+    {
+      "furigana": ["たいへんな"],
+      "kanji": ["大変な"],
+      "imi": ["exhausting", "hard"]
+    },
+    {
+      "furigana": ["ほしい"],
+      "kanji": ["欲しい"],
+      "imi": ["to want to have", "to wish"]
+    },
+    {
+      "furigana": ["ひろい"],
+      "kanji": ["広い"],
+      "imi": ["wide", "great", "spacious"]
+    },
+    {
+      "furigana": ["せまい"],
+      "kanji": ["狭い"],
+      "imi": ["narrow", "tight", "small"]
+    },
+    {
+      "furigana": ["プールー"],
+      "kanji": [""],
+      "imi": ["pool"]
+    },
+    {
+      "furigana": ["かわ"],
+      "kanji": ["川"],
+      "imi": ["river"]
+    },
+    {
+      "furigana": ["びじゅつ"],
+      "kanji": ["美術"],
+      "imi": ["art"]
+    },
+    {
+      "furigana": ["つり"],
+      "kanji": ["釣り"],
+      "imi": ["fishing"]
+    },
+    {
+      "furigana": ["つりをします"],
+      "kanji": ["釣りをします"],
+      "imi": ["to fish"]
+    },
+    {
+      "furigana": ["スーキー"],
+      "kanji": [""],
+      "imi": ["skiing"]
+    },
+    {
+      "furigana": ["スーキーをします"],
+      "kanji": [""],
+      "imi": ["to ski"]
+    },
+    {
+      "furigana": ["しゅうまつ"],
+      "kanji": ["週末"],
+      "imi": ["weekend"]
+    },
+    {
+      "furigana": ["おしょうがつ"],
+      "kanji": ["お正月"],
+      "imi": ["new year"]
+    },
+    {
+      "furigana": ["ごろ"],
+      "kanji": [""],
+      "imi": ["approximately (time)"]
+    },
+    {
+      "furigana": ["なにか"],
+      "kanji": ["何か"],
+      "imi": ["something"]
+    },
+    {
+      "furigana": ["どこか"],
+      "kanji": [""],
+      "imi": ["somewhere"]
+    }    
+]  
+},
+  {
+    "lection": 14,
+    "words": [
+    {
+      "furigana": ["つけます２"],
+      "kanji": [""],
+      "imi": ["to turn on 2"]
+    },
+    {
+      "furigana": ["けします１"],
+      "kanji": ["消します１"],
+      "imi": ["to turn off 1"]
+    },
+    {
+      "furigana": ["あけます２"],
+      "kanji": ["開けます２"],
+      "imi": ["to open 2"]
+    },
+    {
+      "furigana": ["しめます２"],
+      "kanji": ["閉めます２"],
+      "imi": ["to close 2"]
+    },
+    {
+      "furigana": ["いそぎます１"],
+      "kanji": ["急ぎます１"],
+      "imi": ["to hurry 1"]
+    },
+    {
+      "furigana": ["まちます１"],
+      "kanji": ["待ちます１"],
+      "imi": ["to wait 1"]
+    },
+    {
+      "furigana": ["もちます１"],
+      "kanji": ["持ちます１"],
+      "imi": ["to hold 1", "to carry 1", "to own 1", "to have 1"]
+    },
+    {
+      "furigana": ["とります１"],
+      "kanji": ["取ります１"],
+      "imi": ["to take 1", "to give smbd. smth. 1"]
+    },
+    {
+      "furigana": ["てつだいます１"],
+      "kanji": ["手伝います１"],
+      "imi": ["to help (with a task) 1"]
+    },
+    {
+      "furigana": ["よびます１"],
+      "kanji": ["呼びます１"],
+      "imi": ["to call 1"]
+    },
+    {
+      "furigana": ["はなします１"],
+      "kanji": ["話します１"],
+      "imi": ["to speak 1", "to talk 1", "to tell 1"]
+    },
+    {
+      "furigana": ["つかいます１"],
+      "kanji": ["使います１"],
+      "imi": ["to use 1"]
+    },
+    {
+      "furigana": ["とめます２"],
+      "kanji": ["止めます２"],
+      "imi": ["to stop 2", "to park 2"]
+    },
+    {
+      "furigana": ["みせます２"],
+      "kanji": ["見せます２"],
+      "imi": ["to show 2"]
+    },
+    {
+      "furigana": ["おしえます２"],
+      "kanji": ["教えます２"],
+      "imi": ["to explain 2", "to inform 2"]
+    },
+    {
+      "furigana": ["じゅうしょをおしえます２"],
+      "kanji": ["住所を教えます２"],
+      "imi": ["to give an address 2"]
+    },
+    {
+      "furigana": ["すわります１"],
+      "kanji": ["座ります１"],
+      "imi": ["to sit 1"]
+    },
+    {
+      "furigana": ["たちます１"],
+      "kanji": ["立ちます１"],
+      "imi": ["to stand up 1"]
+    },
+    {
+      "furigana": ["はいります１"],
+      "kanji": ["入ります１"],
+      "imi": ["to go in 1", "to enter 1"]
+    },
+    {
+      "furigana": ["きっさてんにはいります１"],
+      "kanji": ["喫茶店に入ります１"],
+      "imi": ["to enter a coffee shop 1"]
+    },
+    {
+      "furigana": ["でます２"],
+      "kanji": ["出ます２"],
+      "imi": ["to go out 2", "to leave 2"]
+    },
+    {
+      "furigana": ["きっさてんをでます２"],
+      "kanji": ["喫茶店を出ます２"],
+      "imi": ["to leave a coffee shop 2"]
+    },
+    {
+      "furigana": ["ふります１"],
+      "kanji": ["降ります１"],
+      "imi": ["to fall 1"]
+    },
+    {
+      "furigana": ["あめがふります１"],
+      "kanji": ["雨が降ります１"],
+      "imi": ["to rain 1"]
+    },
+    {
+      "furigana": ["コピーします３"],
+      "kanji": [""],
+      "imi": ["to copy (with copier) 3"]
+    },
+    {
+      "furigana": ["でんき"],
+      "kanji": ["電気"],
+      "imi": ["light", "electricity"]
+    },
+    {
+      "furigana": ["エアコン"],
+      "kanji": [""],
+      "imi": ["air conditioner"]
+    },
+    {
+      "furigana": ["パスポと"],
+      "kanji": [""],
+      "imi": ["passport"]
+    },
+    {
+      "furigana": ["なまえ"],
+      "kanji": ["名前"],
+      "imi": ["name"]
+    },
+    {
+      "furigana": ["じゅうしょ"],
+      "kanji": ["住所"],
+      "imi": ["address"]
+    },
+    {
+      "furigana": ["ちず"],
+      "kanji": ["地図"],
+      "imi": ["map", "plan"]
+    },
+    {
+      "furigana": ["しお"],
+      "kanji": ["塩"],
+      "imi": ["salt"]
+    },
+    {
+      "furigana": ["さとう"],
+      "kanji": ["砂糖"],
+      "imi": ["sugar"]
+    },
+    {
+      "furigana": ["もんだい"],
+      "kanji": ["問題"],
+      "imi": ["problem", "question"]
+    },
+    {
+      "furigana": ["こたえ"],
+      "kanji": ["答え"],
+      "imi": ["answer"]
+    },
+    {
+      "furigana": ["よみかた"],
+      "kanji": ["読み方"],
+      "imi": ["reading"]
+    },
+    {
+      "furigana": ["~かた"],
+      "kanji": ["~方"],
+      "imi": ["the way to do ~"]
+    },
+    {
+      "furigana": ["まっすぐ"],
+      "kanji": [""],
+      "imi": ["straight forward"]
+    },
+    {
+      "furigana": ["ゆっくり"],
+      "kanji": [""],
+      "imi": ["slow", "unhurried"]
+    },
+    {
+      "furigana": ["すぐ"],
+      "kanji": [""],
+      "imi": ["immediately", "now"]
+    },
+    {
+      "furigana": ["また"],
+      "kanji": [""],
+      "imi": ["again"]
+    },
+    {
+      "furigana": ["あとで"],
+      "kanji": [""],
+      "imi": ["later"]
+    },
+    {
+      "furigana": ["もうすこし"],
+      "kanji": ["もう少し"],
+      "imi": ["a bit more", "a little more"]
+    },
+    {
+      "furigana": ["もう~"],
+      "kanji": [""],
+      "imi": ["another ~"]
+    }    
+]  
+},
+  {
+    "lection": 15,
+    "words": [
+    {
+      "furigana": ["おきます１"],
+      "kanji": ["置きます１"],
+      "imi": ["to put 1"]
+    },
+    {
+      "furigana": ["つくります１"],
+      "kanji": ["作ります１", "造ります１"],
+      "imi": ["to produce 1", "to make 1", "to build 1"]
+    },
+    {
+      "furigana": ["うります１"],
+      "kanji": ["売ります１"],
+      "imi": ["to sell 1"]
+    },
+    {
+      "furigana": ["しります１"],
+      "kanji": ["知ります１"],
+      "imi": ["to find out", "to learn 1"]
+    },
+    {
+      "furigana": ["すみます１"],
+      "kanji": ["住みます１"],
+      "imi": ["to reside (future) 1"]
+    },
+    {
+      "furigana": ["けんきゅうします３"],
+      "kanji": ["研究します３"],
+      "imi": ["to research 3"]
+    },
+    {
+      "furigana": ["しりょう"],
+      "kanji": ["資料"],
+      "imi": ["material", "data"]
+    },
+    {
+      "furigana": ["カタログ"],
+      "kanji": [""],
+      "imi": ["catalogue"]
+    },
+    {
+      "furigana": ["じこくひょう"],
+      "kanji": ["時刻表"],
+      "imi": ["timetable", "schedule"]
+    },
+    {
+      "furigana": ["ふく"],
+      "kanji": ["服"],
+      "imi": ["clothes"]
+    },
+    {
+      "furigana": ["せいひん"],
+      "kanji": ["製品"],
+      "imi": ["product"]
+    },
+    {
+      "furigana": ["ソフト"],
+      "kanji": [""],
+      "imi": ["software"]
+    },
+    {
+      "furigana": ["でんしじしょ"],
+      "kanji": ["電子時書"],
+      "imi": ["electronic dictionary"]
+    },
+    {
+      "furigana": ["けいざい"],
+      "kanji": ["経済"],
+      "imi": ["economy"]
+    },
+    {
+      "furigana": ["しやくしょ"],
+      "kanji": ["市役所"],
+      "imi": ["town hall"]
+    },
+    {
+      "furigana": ["こうこう"],
+      "kanji": ["高校"],
+      "imi": ["senior highschool"]
+    },
+    {
+      "furigana": ["はいしゃ"],
+      "kanji": ["歯医者"],
+      "imi": ["dentist"]
+    },
+    {
+      "furigana": ["どくしん"],
+      "kanji": ["独身"],
+      "imi": ["single", "unmarried"]
+    },
+    {
+      "furigana": ["すみません"],
+      "kanji": [""],
+      "imi": ["I am sorry."]
+    }    
+]  
+},
+  {
+    "lection": 16,
+    "words": [
+    {
+      "furigana": ["のります１"],
+      "kanji": ["乗ります１"],
+      "imi": ["to drive 1"]
+    },
+    {
+      "furigana": ["でんしゃにのります１"],
+      "kanji": ["電車を乗ります１"],
+      "imi": ["to take the train 1", "to board a train 1"]
+    },
+    {
+      "furigana": ["おります２"],
+      "kanji": ["降ります２"],
+      "imi": ["to descend 2"]
+    },
+    {
+      "furigana": ["でんしゃをのおります２"],
+      "kanji": ["電車を降ります２"],
+      "imi": ["to leave a train 2"]
+    },
+    {
+      "furigana": ["のりかえます２"],
+      "kanji": ["乗り換えます２"],
+      "imi": ["to change trains 2"]
+    },
+    {
+      "furigana": ["あびます２"],
+      "kanji": ["浴びます２"],
+      "imi": ["to shower 2"]
+    },
+    {
+      "furigana": ["シャーワをあびます１"],
+      "kanji": ["浴びます１"],
+      "imi": ["to take a shower 1"]
+    },
+    {
+      "furigana": ["いれます２"],
+      "kanji": ["入れます２"],
+      "imi": ["to put in 2"]
+    },
+    {
+      "furigana": ["だします１"],
+      "kanji": ["出します１"],
+      "imi": ["to take out 1", "to send 1"]
+    },
+    {
+      "furigana": ["おろします１"],
+      "kanji": ["下ろします１"],
+      "imi": ["to withdraw 1"]
+    },
+    {
+      "furigana": ["おかねをおろします１"],
+      "kanji": ["お金を下ろします１"],
+      "imi": ["to withdraw money 1"]
+    },
+    {
+      "furigana": ["はいります１"],
+      "kanji": ["入ります１"],
+      "imi": ["to enter 1"]
+    },
+    {
+      "furigana": ["だいがくをはいります１"],
+      "kanji": ["大学を入ります１"],
+      "imi": ["to enter a university 1"]
+    },
+    {
+      "furigana": ["でます２"],
+      "kanji": ["出ます２"],
+      "imi": ["to complete 2", "to finish 2"]
+    },
+    {
+      "furigana": ["だいがくをでます２"],
+      "kanji": ["大学を出ます２"],
+      "imi": ["to graduate 2"]
+    },
+    {
+      "furigana": ["おします１"],
+      "kanji": ["押します１"],
+      "imi": ["to push 1"]
+    },
+    {
+      "furigana": ["のみます１"],
+      "kanji": ["飲みます１"],
+      "imi": ["to drink alcohol 1"]
+    },
+    {
+      "furigana": ["はじめます２"],
+      "kanji": ["始めます２"],
+      "imi": ["to start 2", "to begin 2"]
+    },
+    {
+      "furigana": ["けんがくします３"],
+      "kanji": ["見学します３"],
+      "imi": ["to tour 3", "to view", "to visit 3"]
+    },
+    {
+      "furigana": ["でんわします３"],
+      "kanji": ["電話します３"],
+      "imi": ["to phone 3", "to call 3"]
+    },
+    {
+      "furigana": ["わかい"],
+      "kanji": ["若い"],
+      "imi": ["young"]
+    },
+    {
+      "furigana": ["ながい"],
+      "kanji": ["長い"],
+      "imi": ["long"]
+    },
+    {
+      "furigana": ["みじかい"],
+      "kanji": ["短い"],
+      "imi": ["short"]
+    },
+    {
+      "furigana": ["あかるい"],
+      "kanji": ["明るい"],
+      "imi": ["bright"]
+    },
+    {
+      "furigana": ["くらい"],
+      "kanji": ["暗い"],
+      "imi": ["dark"]
+    },
+    {
+      "furigana": ["からだ"],
+      "kanji": ["体"],
+      "imi": ["body", "health"]
+    },
+    {
+      "furigana": ["あたま"],
+      "kanji": ["頭"],
+      "imi": ["head", "mind"]
+    },
+    {
+      "furigana": ["かみ"],
+      "kanji": ["髪"],
+      "imi": ["hair"]
+    },
+    {
+      "furigana": ["かお"],
+      "kanji": ["顔"],
+      "imi": ["face"]
+    },
+    {
+      "furigana": ["め"],
+      "kanji": ["目"],
+      "imi": ["eye"]
+    },
+    {
+      "furigana": ["みみ"],
+      "kanji": ["耳"],
+      "imi": ["ear"]
+    },
+    {
+      "furigana": ["はな"],
+      "kanji": ["鼻"],
+      "imi": ["nose"]
+    },
+    {
+      "furigana": ["くち"],
+      "kanji": ["口"],
+      "imi": ["mouth"]
+    },
+    {
+      "furigana": ["は"],
+      "kanji": ["歯"],
+      "imi": ["tooth"]
+    },
+    {
+      "furigana": ["おなか"],
+      "kanji": [""],
+      "imi": ["belly"]
+    },
+    {
+      "furigana": ["あし"],
+      "kanji": ["足"],
+      "imi": ["foot", "leg"]
+    },
+    {
+      "furigana": ["せ"],
+      "kanji": ["背"],
+      "imi": ["body size"]
+    },
+    {
+      "furigana": ["サービス"],
+      "kanji": [""],
+      "imi": ["service"]
+    },
+    {
+      "furigana": ["ジョッギング"],
+      "kanji": [""],
+      "imi": ["jogging"]
+    },
+    {
+      "furigana": ["ジョッギングをします"],
+      "kanji": [""],
+      "imi": ["to jog"]
+    },
+    {
+      "furigana": ["シャワー"],
+      "kanji": [""],
+      "imi": ["shower"]
+    },
+    {
+      "furigana": ["みどり"],
+      "kanji": ["緑"],
+      "imi": ["green", "the green"]
+    },
+    {
+      "furigana": ["おてら"],
+      "kanji": ["お寺"],
+      "imi": ["buddhist temple"]
+    },
+    {
+      "furigana": ["じんじゃ"],
+      "kanji": ["神社"],
+      "imi": ["shinto shrine"]
+    },
+    {
+      "furigana": ["-ばん"],
+      "kanji": ["-番"],
+      "imi": ["number -"]
+    },
+    {
+      "furigana": ["どうやって"],
+      "kanji": [""],
+      "imi": ["how"]
+    },
+    {
+      "furigana": ["どの~"],
+      "kanji": [""],
+      "imi": ["which ~ (of three or more)"]
+    },
+    {
+      "furigana": ["どれ"],
+      "kanji": [""],
+      "imi": ["which one (of three or more)"]
+    }    
+]  
+},
+  {
+    "lection": 17,
+    "words": [
+    {
+      "furigana": ["おぼえます２"],
+      "kanji": ["覚えます２"],
+      "imi": ["to learn 2", "to memorize 2"]
+    },
+    {
+      "furigana": ["わすれます２"],
+      "kanji": ["忘れます２"],
+      "imi": ["to forget 2"]
+    },
+    {
+      "furigana": ["なくします１"],
+      "kanji": [""],
+      "imi": ["to lose 1"]
+    },
+    {
+      "furigana": ["はらいます１"],
+      "kanji": ["払います１"],
+      "imi": ["to pay 1"]
+    },
+    {
+      "furigana": ["かえします１"],
+      "kanji": ["返します１"],
+      "imi": ["to give back 1"]
+    },
+    {
+      "furigana": ["でかけます２"],
+      "kanji": ["出かけます２"],
+      "imi": ["to go away 2", "to go out 2", "to leave the house 2"]
+    },
+    {
+      "furigana": ["ぬぎます１"],
+      "kanji": ["脱ぎます１"],
+      "imi": ["to undress 1"]
+    },
+    {
+      "furigana": ["もっていきます１"],
+      "kanji": ["持って行きます１"],
+      "imi": ["to take smth. 1"]
+    },
+    {
+      "furigana": ["もってきます３"],
+      "kanji": ["持って来ます３"],
+      "imi": ["to bring smth. 3"]
+    },
+    {
+      "furigana": ["しんぱいします３"],
+      "kanji": ["心配します３"],
+      "imi": ["to worry 3"]
+    },
+    {
+      "furigana": ["ざんぎょうします３"],
+      "kanji": ["残業します３"],
+      "imi": ["to work overtime 3"]
+    },
+    {
+      "furigana": ["しゅっちょうします３"],
+      "kanji": ["出張します３"],
+      "imi": ["to go on a business trip 3"]
+    },
+    {
+      "furigana": ["のみます１"],
+      "kanji": ["飲みます１"],
+      "imi": ["to take in 1"]
+    },
+    {
+      "furigana": ["くすりをのみます１"],
+      "kanji": ["薬を飲みます１"],
+      "imi": ["to take remedy 1"]
+    },
+    {
+      "furigana": ["おふろにはいります１"],
+      "kanji": ["おふろに入ります１"],
+      "imi": ["to take a bath 1"]
+    },
+    {
+      "furigana": ["たいせつな"],
+      "kanji": ["大切な"],
+      "imi": ["important", "valuable"]
+    },
+    {
+      "furigana": ["だいじょうぶな"],
+      "kanji": ["大丈夫な"],
+      "imi": ["okay", "no problem"]
+    },
+    {
+      "furigana": ["あぶない"],
+      "kanji": ["危ない"],
+      "imi": ["dangerous"]
+    },
+    {
+      "furigana": ["きんえん"],
+      "kanji": ["禁煙"],
+      "imi": ["smoking ban"]
+    },
+    {
+      "furigana": ["ほけんしょう"],
+      "kanji": ["保険証"],
+      "imi": ["insurance card"]
+    },
+    {
+      "furigana": ["けんこうほけんしょう"],
+      "kanji": ["健康保険証"],
+      "imi": ["health insurance card"]
+    },
+    {
+      "furigana": ["ねつ"],
+      "kanji": ["熱"],
+      "imi": ["fever"]
+    },
+    {
+      "furigana": ["びょうき"],
+      "kanji": ["病気"],
+      "imi": ["illness"]
+    },
+    {
+      "furigana": ["くすり"],
+      "kanji": ["薬"],
+      "imi": ["remedy", "medicine"]
+    },
+    {
+      "furigana": ["おふろ"],
+      "kanji": [""],
+      "imi": ["bath (hot jap. bath)"]
+    },
+    {
+      "furigana": ["うわぎ"],
+      "kanji": ["上着"],
+      "imi": ["jacket"]
+    },
+    {
+      "furigana": ["したぎ"],
+      "kanji": ["下着"],
+      "imi": ["underwear"]
+    },
+    {
+      "furigana": ["２，３にち"],
+      "kanji": ["２，３日"],
+      "imi": ["a few days"]
+    },
+    {
+      "furigana": ["２，３~"],
+      "kanji": [""],
+      "imi": ["a few ~"]
+    },
+    {
+      "furigana": ["~までに"],
+      "kanji": [""],
+      "imi": ["until ~"]
+    },
+    {
+      "furigana": ["ですから"],
+      "kanji": [""],
+      "imi": ["therefore"]
+    }    
+]  
+},
+  {
+    "lection": 18,
+    "words": [
+    {
+      "furigana": ["できます２"],
+      "kanji": [""],
+      "imi": ["to can 2", "to be able 2", "to be possible 2"]
+    },
+    {
+      "furigana": ["あらいます１"],
+      "kanji": ["洗います１"],
+      "imi": ["to wash dishes 1"]
+    },
+    {
+      "furigana": ["ひきます１"],
+      "kanji": ["弾きます１"],
+      "imi": ["to play a string instrument 1"]
+    },
+    {
+      "furigana": ["うたいます１"],
+      "kanji": ["歌います１"],
+      "imi": ["to sing 1"]
+    },
+    {
+      "furigana": ["あつめます２"],
+      "kanji": ["集めます２"],
+      "imi": ["to collect 2"]
+    },
+    {
+      "furigana": ["すてます２"],
+      "kanji": ["捨てます２"],
+      "imi": ["to throw away 2"]
+    },
+    {
+      "furigana": ["かえます２"],
+      "kanji": ["換えます２"],
+      "imi": ["to change 2", "to exchange 2"]
+    },
+    {
+      "furigana": ["うんてんします３"],
+      "kanji": ["運転します３"],
+      "imi": ["to drive a vehicle 3"]
+    },
+    {
+      "furigana": ["よやくします３"],
+      "kanji": ["予約します３"],
+      "imi": ["to reserve 3"]
+    },
+    {
+      "furigana": ["ピアノ"],
+      "kanji": [""],
+      "imi": ["piano"]
+    },
+    {
+      "furigana": ["-メートル"],
+      "kanji": [""],
+      "imi": ["- meter"]
+    },
+    {
+      "furigana": ["げんきん"],
+      "kanji": ["現金"],
+      "imi": ["cash"]
+    },
+    {
+      "furigana": ["しゅみ"],
+      "kanji": ["趣味"],
+      "imi": ["hobby"]
+    },
+    {
+      "furigana": ["にっき"],
+      "kanji": ["日記"],
+      "imi": ["diary"]
+    },
+    {
+      "furigana": ["おいのり"],
+      "kanji": ["お祈り"],
+      "imi": ["prayer"]
+    },
+    {
+      "furigana": ["おいのりをします"],
+      "kanji": ["お祈りをします"],
+      "imi": ["to pray"]
+    },
+    {
+      "furigana": ["かちょう"],
+      "kanji": ["課徴"],
+      "imi": ["head of section"]
+    },
+    {
+      "furigana": ["ぶちょう"],
+      "kanji": ["部長"],
+      "imi": ["head of department"]
+    },
+    {
+      "furigana": ["しゃちょう"],
+      "kanji": ["社長"],
+      "imi": ["head of company"]
+    },
+    {
+      "furigana": ["どうぶつ"],
+      "kanji": ["動物"],
+      "imi": ["animal"]
+    },
+    {
+      "furigana": ["うま"],
+      "kanji": ["馬"],
+      "imi": ["horse"]
+    },
+    {
+      "furigana": ["インターネット"],
+      "kanji": [""],
+      "imi": ["internet"]
+    }    
+]  
+},
+  {
+    "lection": 19,
+    "words": [
+    {
+      "furigana": ["のぼります１"],
+      "kanji": ["上ります１", "ります１"],
+      "imi": ["to climb 1", "to ascend 1"]
+    },
+    {
+      "furigana": ["とまります１"],
+      "kanji": ["泊まります１"],
+      "imi": ["to spend the night 1"]
+    },
+    {
+      "furigana": ["ホテルにとまります１"],
+      "kanji": ["ホテルに泊まります１"],
+      "imi": ["to spend the night in a hotel 1"]
+    },
+    {
+      "furigana": ["そうじします３"],
+      "kanji": ["掃除します３"],
+      "imi": ["to clean 3", "to tidy up 3"]
+    },
+    {
+      "furigana": ["せんたくします３"],
+      "kanji": ["洗濯します３"],
+      "imi": ["to wash clothes 3"]
+    },
+    {
+      "furigana": ["なります１"],
+      "kanji": [""],
+      "imi": ["to become 1", "to get 1"]
+    },
+    {
+      "furigana": ["ねむい"],
+      "kanji": ["眠い"],
+      "imi": ["sleepy"]
+    },
+    {
+      "furigana": ["つよい"],
+      "kanji": ["強い"],
+      "imi": ["strong"]
+    },
+    {
+      "furigana": ["よわい"],
+      "kanji": ["弱い"],
+      "imi": ["weak"]
+    },
+    {
+      "furigana": ["れんしゅう"],
+      "kanji": ["練習"],
+      "imi": ["exercise", "practice"]
+    },
+    {
+      "furigana": ["れんしゅうをします"],
+      "kanji": ["練習をします"],
+      "imi": ["to practice"]
+    },
+    {
+      "furigana": ["ゴルフ"],
+      "kanji": [""],
+      "imi": ["golf"]
+    },
+    {
+      "furigana": ["ゴルフをします"],
+      "kanji": [""],
+      "imi": ["to golf"]
+    },
+    {
+      "furigana": ["すもう"],
+      "kanji": ["相撲"],
+      "imi": ["Sumo"]
+    },
+    {
+      "furigana": ["すもうをします"],
+      "kanji": ["相撲をします"],
+      "imi": ["to fight in a Sumo match"]
+    },
+    {
+      "furigana": ["おちゃ"],
+      "kanji": ["お茶"],
+      "imi": ["tea ceremony"]
+    },
+    {
+      "furigana": ["ひ"],
+      "kanji": ["日"],
+      "imi": ["day", "date"]
+    },
+    {
+      "furigana": ["ちょうし"],
+      "kanji": ["調子"],
+      "imi": ["physical condition"]
+    },
+    {
+      "furigana": ["いちど"],
+      "kanji": ["一度"],
+      "imi": ["once"]
+    },
+    {
+      "furigana": ["いちども"],
+      "kanji": ["一度も"],
+      "imi": ["not once (neg.)"]
+    },
+    {
+      "furigana": ["だんだん"],
+      "kanji": [""],
+      "imi": ["slowly changing"]
+    },
+    {
+      "furigana": ["もうすぐ"],
+      "kanji": [""],
+      "imi": ["soon"]
+    },
+    {
+      "furigana": ["おかげさまで。"],
+      "kanji": [""],
+      "imi": ["Thanks for your help."]
+    },
+    {
+      "furigana": ["でも"],
+      "kanji": [""],
+      "imi": ["but"]
+    }    
+]  
+},
+  {
+    "lection": 20,
+    "words": [
+    {
+      "furigana": ["いります１"],
+      "kanji": ["要ります１"],
+      "imi": ["to need 1"]
+    },
+    {
+      "furigana": ["ビザがいります１"],
+      "kanji": ["ビザが要ります１"],
+      "imi": ["to need a visa 1"]
+    },
+    {
+      "furigana": ["しらべます２"],
+      "kanji": ["調べます２"],
+      "imi": ["to inspect 2"]
+    },
+    {
+      "furigana": ["しゅうりします３"],
+      "kanji": ["修理します３"],
+      "imi": ["to repair 3"]
+    },
+    {
+      "furigana": ["ぼく"],
+      "kanji": ["僕"],
+      "imi": ["I (informal)"]
+    },
+    {
+      "furigana": ["きみ"],
+      "kanji": ["君"],
+      "imi": ["you (informal)"]
+    },
+    {
+      "furigana": ["~くん"],
+      "kanji": ["~君"],
+      "imi": ["Mr. (informal)"]
+    },
+    {
+      "furigana": ["うん"],
+      "kanji": [""],
+      "imi": ["yes (informal)"]
+    },
+    {
+      "furigana": ["ううん"],
+      "kanji": [""],
+      "imi": ["no (informal)"]
+    },
+    {
+      "furigana": ["ことば"],
+      "kanji": [""],
+      "imi": ["word", "language"]
+    },
+    {
+      "furigana": ["きもの"],
+      "kanji": ["着物"],
+      "imi": ["kimono"]
+    },
+    {
+      "furigana": ["ビザ"],
+      "kanji": [""],
+      "imi": ["visa"]
+    },
+    {
+      "furigana": ["はじめ"],
+      "kanji": ["初め"],
+      "imi": ["beginning"]
+    },
+    {
+      "furigana": ["おわり"],
+      "kanji": ["終わり"],
+      "imi": ["end"]
+    },
+    {
+      "furigana": ["こっち"],
+      "kanji": [""],
+      "imi": ["here (informal)"]
+    },
+    {
+      "furigana": ["そっち"],
+      "kanji": [""],
+      "imi": ["there (informal)"]
+    },
+    {
+      "furigana": ["あっち"],
+      "kanji": [""],
+      "imi": ["over there (informal)"]
+    },
+    {
+      "furigana": ["どっち"],
+      "kanji": [""],
+      "imi": ["which one (of two)", "in which direction (informal)"]
+    },
+    {
+      "furigana": ["みんなで"],
+      "kanji": [""],
+      "imi": ["all together (only people)"]
+    },
+    {
+      "furigana": ["~けど"],
+      "kanji": [""],
+      "imi": ["~", "but (informal)"]
+    },
+    {
+      "furigana": ["おなかがいっぱいです"],
+      "kanji": [""],
+      "imi": ["I am full."]
+    }    
+]  
+},
+  {
+    "lection": 21,
+    "words": [
+    {
+      "furigana": ["おもいます１"],
+      "kanji": ["思います１"],
+      "imi": ["to think 1", "to believe 1", "to have the opinion 1"]
+    },
+    {
+      "furigana": ["いいます１"],
+      "kanji": ["言います１"],
+      "imi": ["to say 1"]
+    },
+    {
+      "furigana": ["かちます１"],
+      "kanji": ["勝ちます１"],
+      "imi": ["to win 1"]
+    },
+    {
+      "furigana": ["まけます２"],
+      "kanji": ["負けます２"],
+      "imi": ["to loose (a game) 2"]
+    },
+    {
+      "furigana": ["あります１"],
+      "kanji": [""],
+      "imi": ["to take place 1"]
+    },
+    {
+      "furigana": ["おまつりがあります１"],
+      "kanji": ["お祭があります１"],
+      "imi": ["a festival takes place 1"]
+    },
+    {
+      "furigana": ["やくにたちます１"],
+      "kanji": ["役に立ちます１"],
+      "imi": ["to be useful 1"]
+    },
+    {
+      "furigana": ["うごきます１"],
+      "kanji": ["動きます１"],
+      "imi": ["to be moving 1", "to be operating 1"]
+    },
+    {
+      "furigana": ["やめます２"],
+      "kanji": [""],
+      "imi": ["to quit 2"]
+    },
+    {
+      "furigana": ["かいしゃをやめます２"],
+      "kanji": ["会社をやめます２"],
+      "imi": ["to leave a company 2"]
+    },
+    {
+      "furigana": ["きをつけます２"],
+      "kanji": ["気をつけます２"],
+      "imi": ["to pay attention 2", "to watch out 2", "to look after 2"]
+    },
+    {
+      "furigana": ["りゅうがくします３"],
+      "kanji": ["留学します３"],
+      "imi": ["to study abroad 3"]
+    },
+    {
+      "furigana": ["むだな"],
+      "kanji": [""],
+      "imi": ["useless", "pointless", "wasteful"]
+    },
+    {
+      "furigana": ["ふべん"],
+      "kanji": ["不便な"],
+      "imi": ["impractical"]
+    },
+    {
+      "furigana": ["すごい"],
+      "kanji": [""],
+      "imi": ["great", "wonderful", "amazing", "astonishing", "surprising", "terribly"]
+    },
+    {
+      "furigana": ["ほんとう"],
+      "kanji": [""],
+      "imi": ["truth"]
+    },
+    {
+      "furigana": ["うそ"],
+      "kanji": [""],
+      "imi": ["lie"]
+    },
+    {
+      "furigana": ["じどうしゃ"],
+      "kanji": ["自動車"],
+      "imi": ["car"]
+    },
+    {
+      "furigana": ["こうつう"],
+      "kanji": ["交通"],
+      "imi": ["traffic"]
+    },
+    {
+      "furigana": ["ぶっか"],
+      "kanji": ["物価"],
+      "imi": ["prices"]
+    },
+    {
+      "furigana": ["ほうそう"],
+      "kanji": ["放送"],
+      "imi": ["broadcast", "announcement"]
+    },
+    {
+      "furigana": ["ニュース"],
+      "kanji": [""],
+      "imi": ["news"]
+    },
+    {
+      "furigana": ["デザイン"],
+      "kanji": [""],
+      "imi": ["design"]
+    },
+    {
+      "furigana": ["ゆめ"],
+      "kanji": ["夢"],
+      "imi": ["dream"]
+    },
+    {
+      "furigana": ["てんさい"],
+      "kanji": ["天才"],
+      "imi": ["genius"]
+    },
+    {
+      "furigana": ["しあい"],
+      "kanji": ["試合"],
+      "imi": ["game", "match"]
+    },
+    {
+      "furigana": ["しあいをします"],
+      "kanji": ["試合をします"],
+      "imi": ["to make a game", "to make a match"]
+    },
+    {
+      "furigana": ["いけん"],
+      "kanji": ["意見"],
+      "imi": ["opinion"]
+    },
+    {
+      "furigana": ["はなし"],
+      "kanji": ["話"],
+      "imi": ["story", "speech", "talk"]
+    },
+    {
+      "furigana": ["はなしをします"],
+      "kanji": ["話をします"],
+      "imi": ["to talk", "to tell a story"]
+    },
+    {
+      "furigana": ["ちきゅう"],
+      "kanji": ["地球"],
+      "imi": ["earth"]
+    },
+    {
+      "furigana": ["つき"],
+      "kanji": ["月"],
+      "imi": ["moon"]
+    },
+    {
+      "furigana": ["さいきん"],
+      "kanji": ["最近"],
+      "imi": ["recently"]
+    },
+    {
+      "furigana": ["たぶん"],
+      "kanji": [""],
+      "imi": ["probably"]
+    },
+    {
+      "furigana": ["きっと"],
+      "kanji": [""],
+      "imi": ["surely"]
+    },
+    {
+      "furigana": ["ほんとうに"],
+      "kanji": [""],
+      "imi": ["for real"]
+    },
+    {
+      "furigana": ["そんなに"],
+      "kanji": [""],
+      "imi": ["not so (neg.)", "not so much (neg.)"]
+    },
+    {
+      "furigana": ["~について"],
+      "kanji": [""],
+      "imi": ["about ~", "concerning ~", "regarding ~"]
+    }    
+]  
+},
+  {
+    "lection": 22,
+    "words": [
+    {
+      "furigana": ["きます２"],
+      "kanji": ["着ます２"],
+      "imi": ["to wear (shirts) 2"]
+    },
+    {
+      "furigana": ["はきます１"],
+      "kanji": [""],
+      "imi": ["to wear (shoes) 1"]
+    },
+    {
+      "furigana": ["かぶります１"],
+      "kanji": [""],
+      "imi": ["to put on (hat) 1"]
+    },
+    {
+      "furigana": ["かけます２"],
+      "kanji": [""],
+      "imi": ["to wear 2"]
+    },
+    {
+      "furigana": ["めがねをかけます２"],
+      "kanji": ["眼鏡をかけます２"],
+      "imi": ["to wear glasses 2"]
+    },
+    {
+      "furigana": ["ネクタイをします３"],
+      "kanji": [""],
+      "imi": ["to wear a necktie 3"]
+    },
+    {
+      "furigana": ["うまれます２"],
+      "kanji": ["生まれます２"],
+      "imi": ["to be born 2"]
+    },
+    {
+      "furigana": ["わたしたち"],
+      "kanji": [""],
+      "imi": ["we"]
+    },
+    {
+      "furigana": ["コート"],
+      "kanji": [""],
+      "imi": ["coat"]
+    },
+    {
+      "furigana": ["セーター"],
+      "kanji": [""],
+      "imi": ["sweater"]
+    },
+    {
+      "furigana": ["スーツ"],
+      "kanji": [""],
+      "imi": ["suit"]
+    },
+    {
+      "furigana": ["ぼうし"],
+      "kanji": ["帽子"],
+      "imi": ["hat", "cap"]
+    },
+    {
+      "furigana": ["めがね"],
+      "kanji": ["眼鏡"],
+      "imi": ["glasses"]
+    },
+    {
+      "furigana": ["ケーキ"],
+      "kanji": [""],
+      "imi": ["cake"]
+    },
+    {
+      "furigana": ["おべんとう"],
+      "kanji": ["お弁当"],
+      "imi": ["Obento", "lunch packet"]
+    },
+    {
+      "furigana": ["ロボット"],
+      "kanji": [""],
+      "imi": ["robot"]
+    },
+    {
+      "furigana": ["ユーモア"],
+      "kanji": [""],
+      "imi": ["humour"]
+    },
+    {
+      "furigana": ["つごう"],
+      "kanji": ["都合"],
+      "imi": ["circumstances"]
+    },
+    {
+      "furigana": ["よく"],
+      "kanji": [""],
+      "imi": ["often"]
+    }    
+]  
+},
+  {
+    "lection": 23,
+    "words": [
+    {
+      "furigana": ["ききます１"],
+      "kanji": ["聞きます１"],
+      "imi": ["to ask 1"]
+    },
+    {
+      "furigana": ["せんせいにききます１"],
+      "kanji": ["先生に聞きます１"],
+      "imi": ["to ask the teacher 1"]
+    },
+    {
+      "furigana": ["まわします１"],
+      "kanji": ["回します１"],
+      "imi": ["to rotate 1"]
+    },
+    {
+      "furigana": ["ひきます１"],
+      "kanji": ["引きます１"],
+      "imi": ["to pull 1"]
+    },
+    {
+      "furigana": ["かえます２"],
+      "kanji": ["変えます２"],
+      "imi": ["to change 2"]
+    },
+    {
+      "furigana": ["さわります１"],
+      "kanji": ["触ります１"],
+      "imi": ["to touch 1"]
+    },
+    {
+      "furigana": ["ドアにすわります１"],
+      "kanji": ["ドアに触ります１"],
+      "imi": ["to touch the door 1"]
+    },
+    {
+      "furigana": ["でます２"],
+      "kanji": ["出ます２"],
+      "imi": ["to come out 2"]
+    },
+    {
+      "furigana": ["おつりがでます２"],
+      "kanji": ["お釣りが出ます２"],
+      "imi": ["change comes out 2"]
+    },
+    {
+      "furigana": ["あるきます１"],
+      "kanji": ["歩きます１"],
+      "imi": ["to walk 1"]
+    },
+    {
+      "furigana": ["わたります１"],
+      "kanji": ["渡ります１"],
+      "imi": ["to cross 1"]
+    },
+    {
+      "furigana": ["はしをわたります１"],
+      "kanji": ["橋を渡ります１"],
+      "imi": ["to cross a bridge 1"]
+    },
+    {
+      "furigana": ["まがります１"],
+      "kanji": ["曲がります１"],
+      "imi": ["to turn 1"]
+    },
+    {
+      "furigana": ["みぎへまがります１"],
+      "kanji": ["右へ曲がります１"],
+      "imi": ["to turn right 1"]
+    },
+    {
+      "furigana": ["さびしい"],
+      "kanji": ["寂しい"],
+      "imi": ["lonely"]
+    },
+    {
+      "furigana": ["おゆ"],
+      "kanji": ["お湯"],
+      "imi": ["hot water"]
+    },
+    {
+      "furigana": ["おと"],
+      "kanji": ["音"],
+      "imi": ["tone", "sound"]
+    },
+    {
+      "furigana": ["サイズ"],
+      "kanji": [""],
+      "imi": ["size"]
+    },
+    {
+      "furigana": ["こしょう"],
+      "kanji": ["故障"],
+      "imi": ["breakdown", "malfunction"]
+    },
+    {
+      "furigana": ["こしょうします"],
+      "kanji": ["故障します"],
+      "imi": ["to fail", "to break down", "to malfunction"]
+    },
+    {
+      "furigana": ["みち"],
+      "kanji": ["道"],
+      "imi": ["way"]
+    },
+    {
+      "furigana": ["こうさてん"],
+      "kanji": ["交差点"],
+      "imi": ["crossroad"]
+    },
+    {
+      "furigana": ["しんごう"],
+      "kanji": ["信号"],
+      "imi": ["traffic light"]
+    },
+    {
+      "furigana": ["かど"],
+      "kanji": ["角"],
+      "imi": ["edge"]
+    },
+    {
+      "furigana": ["はし"],
+      "kanji": ["橋"],
+      "imi": ["bridge"]
+    },
+    {
+      "furigana": ["ちゅうしゃじょう"],
+      "kanji": ["駐車場"],
+      "imi": ["parking lot"]
+    },
+    {
+      "furigana": ["たてもの"],
+      "kanji": ["建物"],
+      "imi": ["building"]
+    },
+    {
+      "furigana": ["なんかいも"],
+      "kanji": ["何回も"],
+      "imi": ["again and again", "repeatedly"]
+    },
+    {
+      "furigana": ["-め"],
+      "kanji": [""],
+      "imi": ["the -th"]
+    }    
+]  
+},
+  {
+    "lection": 24,
+    "words": [
+    {
+      "furigana": ["くれます２"],
+      "kanji": [""],
+      "imi": ["to give me 2"]
+    },
+    {
+      "furigana": ["なおします１"],
+      "kanji": ["直します１"],
+      "imi": ["to repair 1", "to correct 1"]
+    },
+    {
+      "furigana": ["つれていきます１"],
+      "kanji": ["連れて行きます１"],
+      "imi": ["to take smbd. with you 1"]
+    },
+    {
+      "furigana": ["つれてきます３"],
+      "kanji": ["連れて来ます３"],
+      "imi": ["to bring smth. with you 3"]
+    },
+    {
+      "furigana": ["おくります１"],
+      "kanji": ["送ります１"],
+      "imi": ["to bring 1"]
+    },
+    {
+      "furigana": ["ひとをおくります１"],
+      "kanji": ["人を送ります１"],
+      "imi": ["to bring a person 1"]
+    },
+    {
+      "furigana": ["しょうかいします３"],
+      "kanji": ["紹介します３"],
+      "imi": ["to introduce smbd. 3"]
+    },
+    {
+      "furigana": ["あんないします３"],
+      "kanji": ["案内します３"],
+      "imi": ["to lead 3", "to show the way 3"]
+    },
+    {
+      "furigana": ["せつめいします３"],
+      "kanji": ["説明します３"],
+      "imi": ["to explain 3"]
+    },
+    {
+      "furigana": ["おじいさん", "おじいちゃん"],
+      "kanji": [""],
+      "imi": ["grandfather", "old man"]
+    },
+    {
+      "furigana": ["おばあさん", "おばあちゃん"],
+      "kanji": [""],
+      "imi": ["grandmother", "old woman"]
+    },
+    {
+      "furigana": ["じゅんび"],
+      "kanji": ["準備"],
+      "imi": ["preparation"]
+    },
+    {
+      "furigana": ["じゅんびしま", "すじゅんびをします"],
+      "kanji": ["準備します", "準備をします"],
+      "imi": ["to prepare"]
+    },
+    {
+      "furigana": ["ひっこし"],
+      "kanji": ["引っ越し"],
+      "imi": ["relocation"]
+    },
+    {
+      "furigana": ["ひっこしします", "ひっこしをします"],
+      "kanji": ["引っ越しします", "引っ越しをします"],
+      "imi": ["to relocate"]
+    },
+    {
+      "furigana": ["おかし"],
+      "kanji": ["お菓子"],
+      "imi": ["sweets"]
+    },
+    {
+      "furigana": ["ホームステイ"],
+      "kanji": [""],
+      "imi": ["homestay"]
+    },
+    {
+      "furigana": ["ぜんぶ"],
+      "kanji": ["全部"],
+      "imi": ["all (things)"]
+    },
+    {
+      "furigana": ["じぶんで"],
+      "kanji": ["自分で"],
+      "imi": ["self", "oneself", "independent"]
+    }    
+]  
+},
+  {
+    "lection": 25,
+    "words": [
+    {
+      "furigana": ["かんがえます２"],
+      "kanji": ["考えます２"],
+      "imi": ["to think 2"]
+    },
+    {
+      "furigana": ["つきます１"],
+      "kanji": ["着きます１"],
+      "imi": ["to arrive 1"]
+    },
+    {
+      "furigana": ["とります１"],
+      "kanji": ["取ります１"],
+      "imi": ["to become 1"]
+    },
+    {
+      "furigana": ["としをとります１"],
+      "kanji": ["年を取ります１"],
+      "imi": ["to grow old 1"]
+    },
+    {
+      "furigana": ["たります２"],
+      "kanji": ["足ります２"],
+      "imi": ["to be sufficient 2"]
+    },
+    {
+      "furigana": ["いなか"],
+      "kanji": ["田舎"],
+      "imi": ["country", "place of origin"]
+    },
+    {
+      "furigana": ["チャンス"],
+      "kanji": [""],
+      "imi": ["chance", "occasion"]
+    },
+    {
+      "furigana": ["おく"],
+      "kanji": ["億"],
+      "imi": ["100 million"]
+    },
+    {
+      "furigana": ["もし"],
+      "kanji": [""],
+      "imi": ["when", "if"]
+    },
+    {
+      "furigana": ["もし~たら"],
+      "kanji": [""],
+      "imi": ["when ~", "if ~"]
+    },
+    {
+      "furigana": ["いみ"],
+      "kanji": ["意味"],
+      "imi": ["meaning"]
+    }    
+]  
+}
+  ]
+}

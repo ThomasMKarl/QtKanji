@@ -11,6 +11,8 @@ moc_*
 *.dll
 bin/qtkanji
 bin/qtkanji.exe
+bin/json_converter
+bin/json_converter.exe
 doc/html
 doc/latex
 *.html
@@ -20,5 +22,8 @@ Makefile.Release
 kanji.pro.user
 qtkanji_resource.rc
 unknown_indices.txt
-bin/kanjidb.dat
-bin/examples.dat
+CPPLINT.cfg
+*.gcno
+*.gcda
+check
+cov
