@@ -8,24 +8,24 @@ class JsonParser
 public:
   JsonParser()
   {
-    std::ifstream kanjiDB{"bin/kanjidb.json"};
+    std::ifstream kanjiDB{"/mnt/RAID/saves/work_offload/Git/QtKanji/bin/kanjidb.json"};
     std::string kanjiDB_string = std::string{std::istreambuf_iterator<char>(kanjiDB), std::istreambuf_iterator<char>()};
     kanji_JSON.Parse(kanjiDB_string.c_str());
     assert(kanji_JSON.IsObject());
     assert(kanji_JSON.HasMember("flashcard"));
 
-    std::ifstream examplesDB{"bin/examples.json"};
+    std::ifstream examplesDB{"/mnt/RAID/saves/work_offload/Git/QtKanji/bin/examples.json"};
     std::string examplesDB_string =
         std::string{std::istreambuf_iterator<char>(examplesDB), std::istreambuf_iterator<char>()};
     examples_JSON.Parse(examplesDB_string.c_str());
     assert(examples_JSON.IsObject());
     assert(examples_JSON.HasMember("examples"));
 
-    std::ifstream wordsDB{"bin/words.json"};
+    /*std::ifstream wordsDB{"bin/words.json"};
     std::string wordsDB_string = std::string{std::istreambuf_iterator<char>(wordsDB), std::istreambuf_iterator<char>()};
     kanji_JSON.Parse(wordsDB_string.c_str());
     assert(words_JSON.IsObject());
-    assert(words_JSON.HasMember("vocabulary"));
+    assert(words_JSON.HasMember("vocabulary"));*/
   }
 
   unsigned int getID_kanji(unsigned int element) const
@@ -37,7 +37,7 @@ public:
   unsigned int getHID_kanji(unsigned int element) const
   {
     auto &JSON = kanji_JSON["flashcard"][element];
-    return JSON["id"].GetUint();
+    return JSON["hid"].GetUint();
   }
 
   std::string getSign_kanji(unsigned int element) const
@@ -100,7 +100,7 @@ public:
     auto &JSON = examples_JSON["examples"][element];
     return JSON["imi"].GetString();
   }
-
+/*
   unsigned int getLection_words(unsigned int element) const
   {
     auto &JSON = examples_JSON["vocabulary"][element];
@@ -136,14 +136,14 @@ public:
       output.append(word.GetString());
     return output;
   }
-
+*/
 private:
   rapidjson::Document kanji_JSON{};
   rapidjson::Document examples_JSON{};
   rapidjson::Document words_JSON{};
 };
 
-static const QtKanji::JsonParser qtkanji_JSON{};
+static const JsonParser qtkanji_JSON{};
 } // namespace QtKanji
 
 #endif

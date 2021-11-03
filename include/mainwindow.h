@@ -12,7 +12,7 @@
 namespace QtKanji
 {
 
-class MainWindow : public QWidget
+class MainWindow : public QDialog
 {
   Q_OBJECT
 
@@ -36,6 +36,8 @@ private slots:
   void signButtonClicked();
   void cardboxButtonClicked();
   void exampleButtonClicked();
+  void furikanjiButtonClicked();
+  void kanjifuriButtonClicked();
   void engjapButtonClicked();
   void japengButtonClicked();
   void printExampleButtonClicked();
@@ -43,6 +45,7 @@ private slots:
   void searchButtonClicked();
   void boxChecked();
   void randomizeChecked();
+  void kanjiChecked();
 
 private:
   explicit MainWindow(QWidget *parent = 0);
@@ -52,21 +55,30 @@ private:
   void addDisplaysToLayout();
   void startFlashcardWindow(bool fromCardbox);
   void startFlashcardWindow(unsigned int ID);
-  Error checkLimits(unsigned int lowerLimit, unsigned int upperLimit);
+  Error checkLimits(unsigned int lowerLimit, unsigned int upperLimit, unsigned int max);
   void displayErrorMessage(QtKanji::Error err);
   void hideErrors();
 
   bool randomize{false};
-  bool fromEngToJap{true};
+  bool kanji{false};
+  bool fromFuriToKanji{true};
+  bool fromJapToEng{true};
 
-  QLineEdit displayLowerLimit{}, displayUpperLimit{}, search{};
-  QLabel lowerLimit{"from:"}, upperLimit{"to:"}, dataFail{"file error!"}, cardboxFail{"no cards in box."},
-      searchFail{"no such kanji in DB"}, cardboxLimitFail{"no cards within limits"};
-  QPushButton signButton{"train kanji"}, cardboxButton{"cardbox"}, exampleButton{"train words"},
-      engjapButton{"ふりがな - 漢字"}, japengButton{"漢字 - ふりがな"}, printExampleButton{"print examples"},
-      printSignButton{"print kanji sorted"}, searchButton{"search"};
-  QCheckBox randomizeBox{"randomize"};
+  std::unique_ptr<QTabWidget> tabWidget{};
+  std::unique_ptr<QTabWidget> tabHadWidget{};
+  QLineEdit displayLowerLimit{}, displayUpperLimit{}, displayLowerLection{}, displayUpperLection{}, search{};
+  QLabel lowerLimit{"kanji from:"}, upperLimit{"kanji to:"}, dataFail{"file error!"}, cardboxFail{"no cards in box."},
+      searchFail{"kanji not found in DB"}, cardboxLimitFail{"no cards within limits"}, lowerLection{"lection from:"},
+      upperLection{"lection to:"}, cardboxes{"cardboxes:"};
+  QPushButton signButton{"train kanji"}, exampleButton{"train examples"}, wordButton{"train words"},
+      furikanjiButton{"ふりがな - 漢字"}, kanjifuriButton{"漢字 - ふりがな"}, engjapButton{"Eng. - Jap."},
+      japengButton{"Jap. - Eng."}, printExampleButton{"print examples"}, printSignButton{"print kanji sorted"},
+      searchButton{"search"};
+  QCheckBox randomizeBox{"randomize"}, kanjiBox{"words with kanji"};
   QGridLayout layout{};
+  Buttons cardboxKanjiButtons{NUMBER_OF_CARDBOX_BUTTONS};
+  Buttons cardboxExampleButtons{NUMBER_OF_CARDBOX_BUTTONS};
+  Buttons cardboxWordButtons{NUMBER_OF_CARDBOX_BUTTONS};
   QFont textfont{};
 };
 

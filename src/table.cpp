@@ -8,6 +8,11 @@ QtKanji::Table::Table(QWidget *parent) : QWidget(parent)
   textfont.setPointSize(15);
   textfont.setBold(false);
   setFont(std::move(textfont));
+  QPalette pal = palette();
+  pal.setColor(QPalette::Window, Qt::gray);
+  setAutoFillBackground(true);
+  setPalette(pal);
+
   setWindowTitle("QtKanji Table");
   setWindowIcon(QIcon("kanji.ico"));
 

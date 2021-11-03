@@ -1,15 +1,26 @@
 #include "mainwindow.h"
 
-QtKanji::MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
+QtKanji::MainWindow::MainWindow(QWidget *parent) : QDialog(parent)
 {
   move(0, 0);
+
+  QPalette pal = palette();
+  pal.setColor(QPalette::Window, Qt::gray);
+  setAutoFillBackground(true);
+  setPalette(pal);
+
+  tabWidget = std::make_unique<QTabWidget>();
+  tabWidget->setTabsClosable(true);
 
   table = std::make_shared<Table>();
   table->show();
 
   printSignButton.setEnabled(false);
   hadamitzkyWindow.printSignButton = &printSignButton;
-  hadamitzkyWindow.show();
+  tabHadWidget = std::make_unique<QTabWidget>();
+  tabHadWidget->addTab(&hadamitzkyWindow, tr("Graphemes"));
+  tabHadWidget->setCurrentIndex(tabHadWidget->count() - 1);
+  layout.addWidget(tabHadWidget.get(), 1, 7, 10, 1);
 
   textfont.setPointSize(15);
   textfont.setBold(false);
@@ -23,6 +34,7 @@ QtKanji::MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 
   hideErrors();
 
+  layout.addWidget(&cardboxes, 5, 0);
   layout.addWidget(&dataFail, 5, 1);
   layout.addWidget(&cardboxFail, 5, 1);
   layout.addWidget(&searchFail, 5, 1);
@@ -33,40 +45,99 @@ QtKanji::MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 
 void QtKanji::MainWindow::addButtonsToLayout()
 {
-  signButton.setFixedSize(150, 30);
+  QPalette pal = signButton.palette();
+  pal.setColor(QPalette::Button, QColor(Qt::darkRed));
+
+  signButton.setFixedSize(160, 30);
+  signButton.setAutoFillBackground(true);
+  signButton.setPalette(pal);
   connect(&signButton, &QPushButton::clicked, this, &MainWindow::signButtonClicked);
   layout.addWidget(&signButton, 4, 0);
 
-  cardboxButton.setFixedSize(150, 30);
-  connect(&cardboxButton, &QPushButton::clicked, this, &MainWindow::cardboxButtonClicked);
-  layout.addWidget(&cardboxButton, 5, 0);
-
-  exampleButton.setFixedSize(150, 30);
+  exampleButton.setFixedSize(160, 30);
+  exampleButton.setAutoFillBackground(true);
+  exampleButton.setPalette(pal);
   connect(&exampleButton, &QPushButton::clicked, this, &MainWindow::exampleButtonClicked);
   layout.addWidget(&exampleButton, 4, 1);
 
-  engjapButton.setFixedSize(150, 30);
-  connect(&engjapButton, &QPushButton::clicked, this, &MainWindow::engjapButtonClicked);
-  layout.addWidget(&engjapButton, 1, 0);
-  engjapButton.setCheckable(true);
-  engjapButton.setChecked(true);
+  wordButton.setFixedSize(160, 30);
+  wordButton.setAutoFillBackground(true);
+  wordButton.setPalette(pal);
+  connect(&wordButton, &QPushButton::clicked, this, &MainWindow::exampleButtonClicked);
+  layout.addWidget(&wordButton, 4, 2);
 
-  japengButton.setFixedSize(150, 30);
+  for (unsigned int button = 0; button < NUMBER_OF_CARDBOX_BUTTONS; ++button)
+  {
+    if (button == 0 || button == 1)
+      pal.setColor(QPalette::Button, QColor(Qt::red));
+    if (button == 2 || button == 3)
+      pal.setColor(QPalette::Button, QColor(Qt::darkYellow));
+    if (button == 4)
+      pal.setColor(QPalette::Button, QColor(Qt::darkGreen));
+
+    cardboxKanjiButtons[button].setFixedSize(30, 30);
+    cardboxKanjiButtons[button].setAutoFillBackground(true);
+    cardboxKanjiButtons[button].setPalette(pal);
+    cardboxKanjiButtons[button].setText(QString::number(button + 1));
+    connect(&cardboxKanjiButtons[button], &QPushButton::clicked, this, &MainWindow::cardboxButtonClicked);
+    layout.addWidget(&cardboxKanjiButtons[button], 6 + button, 0);
+
+    cardboxExampleButtons[button].setText(QString::number(button + 1));
+    cardboxExampleButtons[button].setAutoFillBackground(true);
+    cardboxExampleButtons[button].setPalette(pal);
+    cardboxExampleButtons[button].setFixedSize(30, 30);
+    connect(&cardboxExampleButtons[button], &QPushButton::clicked, this, &MainWindow::cardboxButtonClicked);
+    layout.addWidget(&cardboxExampleButtons[button], 6 + button, 1);
+
+    cardboxWordButtons[button].setText(QString::number(button + 1));
+    cardboxWordButtons[button].setAutoFillBackground(true);
+    cardboxWordButtons[button].setPalette(pal);
+    cardboxWordButtons[button].setFixedSize(30, 30);
+    connect(&cardboxWordButtons[button], &QPushButton::clicked, this, &MainWindow::cardboxButtonClicked);
+    layout.addWidget(&cardboxWordButtons[button], 6 + button, 2);
+  }
+
+  furikanjiButton.setFixedSize(160, 30);
+  connect(&furikanjiButton, &QPushButton::clicked, this, &MainWindow::furikanjiButtonClicked);
+  layout.addWidget(&furikanjiButton, 1, 0);
+  furikanjiButton.setCheckable(true);
+  furikanjiButton.setChecked(true);
+
+  kanjifuriButton.setFixedSize(160, 30);
+  connect(&kanjifuriButton, &QPushButton::clicked, this, &MainWindow::kanjifuriButtonClicked);
+  layout.addWidget(&kanjifuriButton, 1, 1);
+  kanjifuriButton.setCheckable(true);
+
+  japengButton.setFixedSize(160, 30);
   connect(&japengButton, &QPushButton::clicked, this, &MainWindow::japengButtonClicked);
-  layout.addWidget(&japengButton, 1, 1);
+  layout.addWidget(&japengButton, 1, 2);
   japengButton.setCheckable(true);
+  japengButton.setChecked(true);
 
+  engjapButton.setFixedSize(160, 30);
+  connect(&engjapButton, &QPushButton::clicked, this, &MainWindow::engjapButtonClicked);
+  layout.addWidget(&engjapButton, 1, 3);
+  engjapButton.setCheckable(true);
+
+  pal.setColor(QPalette::Button, QColor(Qt::blue));
   printExampleButton.setFixedSize(190, 30);
+  printExampleButton.setAutoFillBackground(true);
+  printExampleButton.setPalette(pal);
   connect(&printExampleButton, &QPushButton::clicked, this, &MainWindow::printExampleButtonClicked);
-  layout.addWidget(&printExampleButton, 3, 3);
+  layout.addWidget(&printExampleButton, 3, 5);
 
   printSignButton.setFixedSize(190, 30);
+  printSignButton.setAutoFillBackground(true);
+  printSignButton.setPalette(pal);
   connect(&printSignButton, &QPushButton::clicked, this, &MainWindow::printSignButtonClicked);
-  layout.addWidget(&printSignButton, 4, 3);
+  layout.addWidget(&printSignButton, 4, 5);
 
-  searchButton.setFixedSize(150, 30);
+  pal.setColor(QPalette::Button, QColor(Qt::red));
+  searchButton.setFixedSize(160, 30);
+  searchButton.setAutoFillBackground(true);
+  searchButton.setPalette(pal);
   connect(&searchButton, &QPushButton::clicked, this, &MainWindow::searchButtonClicked);
-  layout.addWidget(&searchButton, 6, 2);
+  layout.addWidget(&searchButton, 2, 5);
 }
 
 void QtKanji::MainWindow::addBoxesToLayout()
@@ -86,13 +157,17 @@ void QtKanji::MainWindow::addBoxesToLayout()
   connect(boxes_->onBox.get(), &QCheckBox::clicked, this, &MainWindow::boxChecked);
 
   boxes = std::move(boxes_);
-  layout.addWidget(boxes->imiBox.get(), 2, 2);
-  layout.addWidget(boxes->kunBox.get(), 3, 2);
-  layout.addWidget(boxes->onBox.get(), 4, 2);
+  layout.addWidget(boxes->imiBox.get(), 2, 4);
+  layout.addWidget(boxes->kunBox.get(), 3, 4);
+  layout.addWidget(boxes->onBox.get(), 4, 4);
 
   randomizeBox.setChecked(randomize);
   connect(&randomizeBox, &QCheckBox::clicked, this, &MainWindow::randomizeChecked);
-  layout.addWidget(&randomizeBox, 2, 3);
+  layout.addWidget(&randomizeBox, 5, 3);
+
+  randomizeBox.setChecked(kanji);
+  connect(&kanjiBox, &QCheckBox::clicked, this, &MainWindow::kanjiChecked);
+  layout.addWidget(&kanjiBox, 4, 3);
 }
 
 void QtKanji::MainWindow::addDisplaysToLayout()
@@ -107,11 +182,21 @@ void QtKanji::MainWindow::addDisplaysToLayout()
   layout.addWidget(&upperLimit, 3, 0);
   layout.addWidget(&displayUpperLimit, 3, 1);
 
+  displayLowerLection.setFixedSize(150, 30);
+  displayLowerLection.setText(QString::number(1));
+  layout.addWidget(&lowerLection, 2, 2);
+  layout.addWidget(&displayLowerLection, 2, 3);
+
+  displayUpperLection.setFixedSize(150, 30);
+  displayUpperLection.setText(QString::number(25));
+  layout.addWidget(&upperLection, 3, 2);
+  layout.addWidget(&displayUpperLection, 3, 3);
+
   search.setFixedSize(50, 50);
   QFont searchTextfont{};
   searchTextfont.setPointSize(30);
   search.setFont(std::move(searchTextfont));
-  layout.addWidget(&search, 5, 2);
+  layout.addWidget(&search, 1, 5);
 
   table->search = &search;
   hadamitzkyWindow.search = &search;
@@ -135,9 +220,13 @@ void QtKanji::MainWindow::exampleButtonClicked()
 
   unsigned int lowerLimit = displayLowerLimit.text().toInt(); // characters become zero
   unsigned int upperLimit = displayUpperLimit.text().toInt();
-  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, NUMBER_OF_KANJI));
 
-  DataHandler dataHandler{lowerLimit, upperLimit, fromEngToJap};
+  unsigned int lowerLection = displayLowerLection.text().toInt(); // characters become zero
+  unsigned int upperLection = displayUpperLection.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, 25));
+
+  DataHandler dataHandler{lowerLimit, upperLimit, lowerLection, upperLection, fromFuriToKanji, fromJapToEng};
 
   CHECK_ERROR(dataHandler.computeExampleData(randomize));
 
@@ -152,9 +241,13 @@ void QtKanji::MainWindow::printExampleButtonClicked()
 
   unsigned int lowerLimit = displayLowerLimit.text().toInt(); // characters become zero
   unsigned int upperLimit = displayUpperLimit.text().toInt();
-  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, NUMBER_OF_KANJI));
 
-  DataHandler dataHandler{lowerLimit, upperLimit, fromEngToJap};
+  unsigned int lowerLection = displayLowerLection.text().toInt(); // characters become zero
+  unsigned int upperLection = displayUpperLection.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, 25));
+
+  DataHandler dataHandler{lowerLimit, upperLimit, lowerLection, upperLection, fromFuriToKanji, fromJapToEng};
 
   CHECK_ERROR(dataHandler.computeExampleData(randomize));
 
@@ -167,7 +260,7 @@ void QtKanji::MainWindow::printSignButtonClicked()
 
   unsigned int lowerLimit = displayLowerLimit.text().toInt(); // characters become zero
   unsigned int upperLimit = displayUpperLimit.text().toInt();
-  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, NUMBER_OF_KANJI));
 
   printSignButton.setText("print kanji sorted");
   CHECK_ERROR(hadamitzkyWindow.printSigns(lowerLimit, upperLimit));
@@ -222,17 +315,36 @@ void QtKanji::MainWindow::randomizeChecked()
   randomize = !randomize;
 }
 
-void QtKanji::MainWindow::engjapButtonClicked()
+void QtKanji::MainWindow::kanjiChecked()
 {
-  if (engjapButton.isChecked())
+  kanji = !kanji;
+}
+
+void QtKanji::MainWindow::furikanjiButtonClicked()
+{
+  if (furikanjiButton.isChecked())
   {
-    fromEngToJap = true;
-    japengButton.setChecked(false);
+    fromFuriToKanji = true;
+    kanjifuriButton.setChecked(false);
   }
   else
   {
-    japengButton.setChecked(true);
-    japengButtonClicked();
+    kanjifuriButton.setChecked(true);
+    kanjifuriButtonClicked();
+  }
+}
+
+void QtKanji::MainWindow::kanjifuriButtonClicked()
+{
+  if (kanjifuriButton.isChecked())
+  {
+    fromFuriToKanji = false;
+    furikanjiButton.setChecked(false);
+  }
+  else
+  {
+    furikanjiButton.setChecked(true);
+    furikanjiButtonClicked();
   }
 }
 
@@ -240,7 +352,7 @@ void QtKanji::MainWindow::japengButtonClicked()
 {
   if (japengButton.isChecked())
   {
-    fromEngToJap = false;
+    fromJapToEng = true;
     engjapButton.setChecked(false);
   }
   else
@@ -250,40 +362,66 @@ void QtKanji::MainWindow::japengButtonClicked()
   }
 }
 
+void QtKanji::MainWindow::engjapButtonClicked()
+{
+  if (engjapButton.isChecked())
+  {
+    fromJapToEng = false;
+    japengButton.setChecked(false);
+  }
+  else
+  {
+    japengButton.setChecked(true);
+    japengButtonClicked();
+  }
+}
+
 void QtKanji::MainWindow::startFlashcardWindow(bool fromCardbox)
 {
   hideErrors();
 
   unsigned int lowerLimit = displayLowerLimit.text().toInt(); // characters become zero
   unsigned int upperLimit = displayUpperLimit.text().toInt();
-  CHECK_ERROR(checkLimits(lowerLimit, upperLimit));
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, NUMBER_OF_KANJI));
 
-  DataHandler dataHandler{lowerLimit, upperLimit, fromEngToJap};
+  unsigned int lowerLection = displayLowerLection.text().toInt(); // characters become zero
+  unsigned int upperLection = displayUpperLection.text().toInt();
+  CHECK_ERROR(checkLimits(lowerLimit, upperLimit, 25));
+
+  DataHandler dataHandler{lowerLimit, upperLimit, lowerLection, upperLection, fromFuriToKanji, fromJapToEng};
 
   if (fromCardbox)
-    CHECK_ERROR(dataHandler.computeContainerData());
+  {
+    CHECK_ERROR(dataHandler.computeKanjiCardboxData());
+    tabWidget->addTab(FlashcardWindow::createFlashcardWindow(randomize, fromCardbox, dataHandler, boxes, table),
+                      tr("Cardbox"));
+  }
   else
-    dataHandler.computeContainerData();
+  {
+    dataHandler.computeKanjiCardboxData();
+    tabWidget->addTab(FlashcardWindow::createFlashcardWindow(randomize, fromCardbox, dataHandler, boxes, table),
+                      tr("Flashcard"));
+  }
 
-  FlashcardWindow *flashcard =
-      FlashcardWindow::createFlashcardWindow(randomize, fromCardbox, dataHandler, boxes, table);
-  flashcard->show();
+  tabWidget->setCurrentIndex(tabWidget->count() - 1);
+  layout.addWidget(tabWidget.get(), 11, 0, 1, 10);
 }
 
 void QtKanji::MainWindow::startFlashcardWindow(unsigned int ID)
 {
   hideErrors();
 
-  FlashcardWindow *flashcard = FlashcardWindow::createFlashcardWindow(ID);
-  flashcard->show();
+  tabWidget->addTab(FlashcardWindow::createFlashcardWindow(ID), tr("Search"));
+  tabWidget->setCurrentIndex(tabWidget->count() - 1);
+  layout.addWidget(tabWidget.get(), 11, 0, 1, 10);
 }
 
-QtKanji::Error QtKanji::MainWindow::checkLimits(unsigned int lowerLimit, unsigned int upperLimit)
+QtKanji::Error QtKanji::MainWindow::checkLimits(unsigned int lowerLimit, unsigned int upperLimit, unsigned int max)
 {
-  if (upperLimit > NUMBER_OF_KANJI)
+  if (upperLimit > max)
   {
-    upperLimit = NUMBER_OF_KANJI;
-    displayUpperLimit.setText(QString::number(NUMBER_OF_KANJI));
+    upperLimit = max;
+    displayUpperLimit.setText(QString::number(max));
   }
 
   if (upperLimit < lowerLimit)

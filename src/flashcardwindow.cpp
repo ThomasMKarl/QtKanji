@@ -10,7 +10,7 @@ QtKanji::FlashcardWindow::FlashcardWindow(bool randomize_, bool fromCardbox_, Da
   textfont.setBold(false);
   setFont(textfont);
 
-  if (!dataHandler.fromEngToJap)
+  if (!dataHandler.fromFuriToKanji)
   {
     table->flashcards.push_back(this);
     flashcardWindowIndex = table->flashcards.size() - 1;
@@ -24,7 +24,7 @@ QtKanji::FlashcardWindow::FlashcardWindow(bool randomize_, bool fromCardbox_, Da
 
   update();
 
-  std::ofstream containerData{dataHandler.pathToContainerData, std::ios::app};
+  std::ofstream containerData{dataHandler.pathToKanjiCardboxData, std::ios::app};
   if (!containerData)
     addButton.hide();
 }
@@ -87,15 +87,16 @@ void QtKanji::FlashcardWindow::addButtonClicked()
   removeButton.show();
   addButton.hide();
 
-  const auto index = std::find(std::begin(dataHandler.indexInCardbox), std::end(dataHandler.indexInCardbox), currentId);
-  if (index == std::end(dataHandler.indexInCardbox))
+  const auto index =
+      std::find(std::begin(dataHandler.indexInKanjiCardbox), std::end(dataHandler.indexInKanjiCardbox), currentId);
+  if (index == std::end(dataHandler.indexInKanjiCardbox))
   {
-    dataHandler.indexInCardbox.push_back(currentId);
+    dataHandler.indexInKanjiCardbox.push_back(currentId);
 
     if (fromCardbox)
       --numberOfRemoves;
 
-    std::ofstream containerData{dataHandler.pathToContainerData, std::ios::app};
+    std::ofstream containerData{dataHandler.pathToKanjiCardboxData, std::ios::app};
     containerData << std::to_string(currentId) + ":";
   }
 }
@@ -105,25 +106,24 @@ void QtKanji::FlashcardWindow::removeButtonClicked()
   removeButton.hide();
   addButton.show();
 
-  const auto index = std::find(std::begin(dataHandler.indexInCardbox), std::end(dataHandler.indexInCardbox), currentId);
+  const auto index =
+      std::find(std::begin(dataHandler.indexInKanjiCardbox), std::end(dataHandler.indexInKanjiCardbox), currentId);
 
-  if (index == std::end(dataHandler.indexInCardbox))
+  if (index == std::end(dataHandler.indexInKanjiCardbox))
     return;
 
-  std::ofstream containerData{dataHandler.pathToContainerData, std::ios::trunc};
+  std::ofstream containerData{dataHandler.pathToKanjiCardboxData, std::ios::trunc};
 
-  // std::cout << dataHandler.indexInCardbox[0] << std::endl;
-  dataHandler.indexInCardbox.erase(index);
-  // std::cout << dataHandler.indexInCardbox[0] << std::endl;
+  dataHandler.indexInKanjiCardbox.erase(index);
 
   if (fromCardbox)
     ++numberOfRemoves;
 
-  if (dataHandler.indexInCardbox.empty())
+  if (dataHandler.indexInKanjiCardbox.empty())
     containerData << "";
   else
   {
-    for (const auto Id : dataHandler.indexInCardbox)
+    for (const auto Id : dataHandler.indexInKanjiCardbox)
       containerData << std::to_string(Id) + ":";
   }
 }
@@ -139,7 +139,7 @@ void QtKanji::FlashcardWindow::showSuccess()
 
   ++successes;
 
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     QString output{""};
     for (const auto &kun : FC.dataKunVector)
@@ -180,7 +180,7 @@ void QtKanji::FlashcardWindow::showFailure()
 
   ++failures;
 
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     QString output{""};
     for (const auto &kun : FC.dataKunVector)
@@ -225,9 +225,9 @@ void QtKanji::FlashcardWindow::showResult()
   Rate.setText("Success Rate:");
   Rate2.setText(QString::number(ratio) + "%");
 
-  cards.setText("Number of cards in box: " + QString::number(dataHandler.indexInCardbox.size()));
+  cards.setText("Number of cards in box: " + QString::number(dataHandler.indexInKanjiCardbox.size()));
 
-  if (dataHandler.indexInCardbox.empty())
+  if (dataHandler.indexInKanjiCardbox.empty())
     cards.setStyleSheet("color: green; font-size: 30px");
   else
     cards.setStyleSheet("color: red;   font-size: 30px");
@@ -378,7 +378,7 @@ void QtKanji::FlashcardWindow::update()
 {
   unsigned int range{};
   if (fromCardbox)
-    range = dataHandler.indexInCardbox.size() + numberOfRemoves;
+    range = dataHandler.indexInKanjiCardbox.size() + numberOfRemoves;
   else
     range = dataHandler.upperLimit - dataHandler.lowerLimit + 1;
 
@@ -394,14 +394,14 @@ void QtKanji::FlashcardWindow::update()
   {
     currentId = dataHandler.lowerLimit + successes + failures;
     if (fromCardbox)
-      currentId = dataHandler.indexInCardbox[currentId - 1];
+      currentId = dataHandler.indexInKanjiCardbox[currentId - 1];
   }
 
   dataHandler.computeKanjiData(currentId);
 
   setFlashcardLayout();
 
-  if (contains(dataHandler.indexInCardbox, currentId))
+  if (contains(dataHandler.indexInKanjiCardbox, currentId))
   {
     addButton.hide();
     removeButton.show();
@@ -412,7 +412,7 @@ void QtKanji::FlashcardWindow::update()
     removeButton.hide();
   }
 
-  if (dataHandler.getFromEngToJap())
+  if (dataHandler.getFromFuriToKanji())
   {
     if (!boxes->hideKun)
       displayKun.clear();

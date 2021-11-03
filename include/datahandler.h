@@ -20,8 +20,10 @@ class DataHandler
 {
 public:
   DataHandler() = default;
-  explicit DataHandler(unsigned int lowerLimit_, unsigned int upperLimit_, bool fromEngToJap_)
-      : lowerLimit(lowerLimit_), upperLimit(upperLimit_), fromEngToJap(fromEngToJap_)
+  explicit DataHandler(unsigned int lowerLimit_, unsigned int upperLimit_, unsigned int lowerLection_,
+                       unsigned int upperLection_, bool fromFuriToKanji_, bool fromJapToEng_)
+      : lowerLimit(lowerLimit_), upperLimit(upperLimit_), lowerLection(lowerLection_), upperLection(upperLection_),
+        fromFuriToKanji(fromFuriToKanji_), fromJapToEng(fromJapToEng_)
   {
   }
 
@@ -29,25 +31,37 @@ public:
   unsigned int upperLimit{NUMBER_OF_KANJI};
   unsigned int lowerLection{1};
   unsigned int upperLection{25};
-  bool fromEngToJap{true};
+  bool fromFuriToKanji{true};
+  bool fromJapToEng{true};
 
-  std::string pathToContainerData{"container.dat"};
+  std::string pathToKanjiCardboxData{"kanjiCardbox.dat"};
+  std::string pathToExampleCardboxData{"exampleCardbox.dat"};
+  std::string pathToWordCardboxData{"wordCardbox.dat"};
 
-  Uints indexInCardbox{};
+  Uints indexInKanjiCardbox{};
+  Uints indexInExampleCardbox{};
+  Uints indexInWordCardbox{};
 
   Examples examples{};
   Examples words{};
   Flashcard flashcard{};
 
-  bool getFromEngToJap() const
+  bool getFromFuriToKanji() const
   {
-    return fromEngToJap;
+    return fromFuriToKanji;
+  }
+
+  bool getFromJapToEng() const
+  {
+    return fromJapToEng;
   }
 
   Error computeExampleData(bool randomize);
   Error computeWordData(bool randomize);
-  Error computeContainerData();
   Error computeKanjiData(unsigned int Id);
+
+  Error computeKanjiCardboxData();
+
   void setKanjiData(unsigned int ID);
 
   unsigned int computeRandomId(bool fromCardbox, unsigned int removeFlag);
@@ -55,7 +69,9 @@ public:
   Error printExamples();
 
 private:
-  Uints indexContainer{};
+  Uints indexKanjiContainer{};
+  Uints indexExampleContainer{};
+  Uints indexWordContainer{};
 };
 
 }; // namespace QtKanji

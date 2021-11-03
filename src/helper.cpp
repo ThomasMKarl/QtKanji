@@ -97,6 +97,7 @@ QtKanji::Uints QtKanji::Maps::computeContainingKanjiIndices(unsigned int graphem
   QtKanji::Uints kanjiIndices{};
   QtKanji::Uints radicalStrokeNumbers{};
   radicalStrokeNumbers.resize(NUMBER_OF_KANJI);
+
   for (unsigned int index = 1; index <= NUMBER_OF_KANJI; ++index)
   {
     if (dataHandler.computeKanjiData(index) != Error::SUCCESS)
@@ -119,7 +120,7 @@ QtKanji::Uints QtKanji::Maps::computeContainingKanjiIndices(unsigned int graphem
     radicalStrokeNumbers[index - 1] = data.radicalStrokeNumber;
   }
 
-  uint8 maxNumberOfStrokes = 29;
+  unsigned short int maxNumberOfStrokes{29};
   radicalStrokeNumberMaps.resize(maxNumberOfStrokes);
   for (const auto &[strokeNumber, indices] : strokeMap)
   {

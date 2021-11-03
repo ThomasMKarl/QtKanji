@@ -23,7 +23,7 @@ void QtKanji::ExampleWindow::setExampleWindowLayout()
   layout.addWidget(&Furigana, 1, 0);
   layout.addWidget(&Kanji, 2, 0);
 
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     layout.addWidget(&displayFurigana, 1, 1);
 
@@ -78,7 +78,7 @@ void QtKanji::ExampleWindow::update()
   continueButton.hide();
   submitButton.show();
 
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     Kanji2.setText(QString::fromStdString(EX.dataKanji[Id - 1]));
     displayFurigana.setText("");
@@ -108,7 +108,7 @@ void QtKanji::ExampleWindow::submitButtonClicked()
   unsigned int Id = failures + successes + 1;
 
   std::string dataFurigana{}, dataKanji{};
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     dataFurigana = displayFurigana.text().toStdString();
 
@@ -143,7 +143,7 @@ void QtKanji::ExampleWindow::showSuccess()
   Failure.hide();
   continueButton.show();
 
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     displayFurigana.setText(QString::fromStdString(EX.dataFurigana[Id - 1]));
 
@@ -171,7 +171,7 @@ void QtKanji::ExampleWindow::showFailure()
   Failure.show();
   continueButton.show();
 
-  if (dataHandler.fromEngToJap)
+  if (dataHandler.fromFuriToKanji)
   {
     displayFurigana.setText(QString::fromStdString(EX.dataFurigana[Id - 1]));
 
@@ -204,9 +204,9 @@ void QtKanji::ExampleWindow::showResult()
   Rate.setText("Success Rate:");
   Rate2.setText(QString::number(ratio) + "%");
 
-  cards.setText("Number of cards in box: " + QString::number(dataHandler.indexInCardbox.size()));
+  cards.setText("Number of cards in box: " + QString::number(dataHandler.indexInKanjiCardbox.size()));
 
-  if (dataHandler.indexInCardbox.empty())
+  if (dataHandler.indexInKanjiCardbox.empty())
     cards.setStyleSheet("color: green; font-size: 30px");
   else
     cards.setStyleSheet("color: red;   font-size: 30px");

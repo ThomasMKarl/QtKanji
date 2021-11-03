@@ -33,7 +33,7 @@ QtKanji::Error QtKanji::DataHandler::computeExampleData(bool randomize)
 
 QtKanji::Error QtKanji::DataHandler::computeWordData(bool randomize)
 {
-  words.clear();
+/*  words.clear();
 
   unsigned int tryLection{0};
   unsigned int counter{0};
@@ -53,15 +53,15 @@ QtKanji::Error QtKanji::DataHandler::computeWordData(bool randomize)
 
   if (randomize)
     words.shuffle();
-
+*/
   return QtKanji::Error::SUCCESS;
 }
 
-QtKanji::Error QtKanji::DataHandler::computeContainerData()
+QtKanji::Error QtKanji::DataHandler::computeKanjiCardboxData()
 {
-  indexInCardbox.clear();
+  indexInKanjiCardbox.clear();
 
-  std::ifstream containerData{pathToContainerData};
+  std::ifstream containerData{pathToKanjiCardboxData};
   if (!containerData)
     return QtKanji::Error::FILE_ERROR;
 
@@ -71,12 +71,12 @@ QtKanji::Error QtKanji::DataHandler::computeContainerData()
     return QtKanji::Error::EMPTY_CARDBOX;
 
   Strings help = explode(":", std::move(linedata));
-  indexInCardbox = convertStringsToIntegers(std::move(help));
+  indexInKanjiCardbox = convertStringsToIntegers(std::move(help));
 
-  std::sort(std::begin(indexInCardbox), std::end(indexInCardbox));
+  std::sort(std::begin(indexInKanjiCardbox), std::end(indexInKanjiCardbox));
 
-  getSortedSubarray(indexInCardbox, lowerLimit, upperLimit);
-  if (indexInCardbox.empty())
+  getSortedSubarray(indexInKanjiCardbox, lowerLimit, upperLimit);
+  if (indexInKanjiCardbox.empty())
     return QtKanji::Error::NO_KANJI_WITHIN_RANGE;
 
   return QtKanji::Error::SUCCESS;
@@ -124,10 +124,10 @@ unsigned int QtKanji::DataHandler::computeRandomId(bool fromCardbox, unsigned in
   srand(time(NULL));
 
   unsigned int range = upperLimit - lowerLimit + 1;
-  unsigned int cardboxSize = indexInCardbox.size();
+  unsigned int cardboxSize = indexInKanjiCardbox.size();
   unsigned int randomIndex, randId;
 
-  bool notFinished = indexContainer.size() != range + removeFlag;
+  bool notFinished = indexKanjiContainer.size() != range + removeFlag;
   bool gotAlreadyIndex{};
   if (fromCardbox)
   {
@@ -135,8 +135,8 @@ unsigned int QtKanji::DataHandler::computeRandomId(bool fromCardbox, unsigned in
     while (gotAlreadyIndex && notFinished)
     {
       randomIndex = rand() % (cardboxSize);
-      randId = indexInCardbox[randomIndex];
-      gotAlreadyIndex = contains(indexContainer, randId);
+      randId = indexInKanjiCardbox[randomIndex];
+      gotAlreadyIndex = contains(indexKanjiContainer, randId);
     }
   }
   else
@@ -145,11 +145,11 @@ unsigned int QtKanji::DataHandler::computeRandomId(bool fromCardbox, unsigned in
     while (gotAlreadyIndex && notFinished)
     {
       randId = lowerLimit + rand() % range;
-      gotAlreadyIndex = contains(indexContainer, randId);
+      gotAlreadyIndex = contains(indexKanjiContainer, randId);
     }
   }
 
-  indexContainer.push_back(randId);
+  indexKanjiContainer.push_back(randId);
 
   return randId;
 }

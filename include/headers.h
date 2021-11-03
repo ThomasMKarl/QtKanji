@@ -12,6 +12,8 @@
 #include <QString>
 #include <QTimer>
 #include <QWidget>
+#include <QDialog>
+#include <QTabWidget>
 
 #include <fstream>
 #include <future>
@@ -27,6 +29,7 @@
 #define NUMBER_OF_KANJI 540
 #define NUMBER_OF_HADAMITZKY_KANJI 2141
 #define NUMBER_OF_GRAPHEMES 80
+#define NUMBER_OF_CARDBOX_BUTTONS 3
 
 namespace QtKanji
 {
